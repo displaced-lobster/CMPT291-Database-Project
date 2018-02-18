@@ -1,4 +1,4 @@
 # CMPT291 Database Project
-## Used
+## Using
 - Visual Studio Code 2017
 - VB.NET
