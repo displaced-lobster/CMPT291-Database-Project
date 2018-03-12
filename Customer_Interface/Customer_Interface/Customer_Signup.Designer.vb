@@ -47,6 +47,7 @@ Partial Class Customer_SignUp
         Me.unlim1 = New System.Windows.Forms.RadioButton()
         Me.unlim2 = New System.Windows.Forms.RadioButton()
         Me.unlim3 = New System.Windows.Forms.RadioButton()
+        Me.createAccount = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -178,6 +179,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop1.FormattingEnabled = True
         Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
         Me.phoneDrop1.Location = New System.Drawing.Point(19, 84)
+        Me.phoneDrop1.MaxDropDownItems = 3
         Me.phoneDrop1.Name = "phoneDrop1"
         Me.phoneDrop1.Size = New System.Drawing.Size(121, 21)
         Me.phoneDrop1.TabIndex = 16
@@ -189,6 +191,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop2.FormattingEnabled = True
         Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
         Me.phoneDrop2.Location = New System.Drawing.Point(19, 111)
+        Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
         Me.phoneDrop2.Size = New System.Drawing.Size(121, 21)
         Me.phoneDrop2.TabIndex = 17
@@ -216,6 +219,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop3.FormattingEnabled = True
         Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
         Me.phoneDrop3.Location = New System.Drawing.Point(19, 138)
+        Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
         Me.phoneDrop3.Size = New System.Drawing.Size(121, 21)
         Me.phoneDrop3.TabIndex = 19
@@ -274,11 +278,21 @@ Partial Class Customer_SignUp
         Me.unlim3.Text = "Unlimited 3"
         Me.unlim3.UseVisualStyleBackColor = True
         '
+        'createAccount
+        '
+        Me.createAccount.Location = New System.Drawing.Point(220, 437)
+        Me.createAccount.Name = "createAccount"
+        Me.createAccount.Size = New System.Drawing.Size(118, 23)
+        Me.createAccount.TabIndex = 26
+        Me.createAccount.Text = "Create Account"
+        Me.createAccount.UseVisualStyleBackColor = True
+        '
         'Customer_SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(557, 407)
+        Me.ClientSize = New System.Drawing.Size(557, 487)
+        Me.Controls.Add(Me.createAccount)
         Me.Controls.Add(Me.unlim3)
         Me.Controls.Add(Me.unlim2)
         Me.Controls.Add(Me.unlim1)
@@ -336,4 +350,5 @@ Partial Class Customer_SignUp
     Friend WithEvents unlim1 As RadioButton
     Friend WithEvents unlim2 As RadioButton
     Friend WithEvents unlim3 As RadioButton
+    Friend WithEvents createAccount As Button
 End Class

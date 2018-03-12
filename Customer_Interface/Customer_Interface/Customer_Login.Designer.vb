@@ -22,38 +22,39 @@ Partial Class Customer_Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.username = New System.Windows.Forms.TextBox()
+        Me.passwd = New System.Windows.Forms.TextBox()
+        Me.accessAccount = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.forgotPwd = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'username
         '
-        Me.TextBox1.Location = New System.Drawing.Point(78, 47)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(135, 20)
-        Me.TextBox1.TabIndex = 0
-        Me.TextBox1.Text = "Account Number"
+        Me.username.Location = New System.Drawing.Point(78, 47)
+        Me.username.MaxLength = 31
+        Me.username.Name = "username"
+        Me.username.Size = New System.Drawing.Size(135, 20)
+        Me.username.TabIndex = 0
+        Me.username.WordWrap = False
         '
-        'TextBox2
+        'passwd
         '
-        Me.TextBox2.Location = New System.Drawing.Point(78, 86)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(135, 20)
-        Me.TextBox2.TabIndex = 1
-        Me.TextBox2.Text = "Password"
+        Me.passwd.Location = New System.Drawing.Point(78, 86)
+        Me.passwd.Name = "passwd"
+        Me.passwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.passwd.Size = New System.Drawing.Size(135, 20)
+        Me.passwd.TabIndex = 1
         '
-        'Button1
+        'accessAccount
         '
-        Me.Button1.Location = New System.Drawing.Point(78, 127)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.accessAccount.Location = New System.Drawing.Point(78, 127)
+        Me.accessAccount.Name = "accessAccount"
+        Me.accessAccount.Size = New System.Drawing.Size(123, 23)
+        Me.accessAccount.TabIndex = 2
+        Me.accessAccount.Text = "Login"
+        Me.accessAccount.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -73,26 +74,26 @@ Partial Class Customer_Login
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Password"
         '
-        'Button2
+        'forgotPwd
         '
-        Me.Button2.Location = New System.Drawing.Point(78, 157)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(123, 23)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Forgot my password"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.forgotPwd.Location = New System.Drawing.Point(78, 157)
+        Me.forgotPwd.Name = "forgotPwd"
+        Me.forgotPwd.Size = New System.Drawing.Size(123, 23)
+        Me.forgotPwd.TabIndex = 5
+        Me.forgotPwd.Text = "Forgot my password"
+        Me.forgotPwd.UseVisualStyleBackColor = True
         '
         'Customer_Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(256, 241)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.forgotPwd)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.accessAccount)
+        Me.Controls.Add(Me.passwd)
+        Me.Controls.Add(Me.username)
         Me.Name = "Customer_Login"
         Me.Text = "Login"
         Me.ResumeLayout(False)
@@ -100,10 +101,10 @@ Partial Class Customer_Login
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents username As TextBox
+    Friend WithEvents passwd As TextBox
+    Friend WithEvents accessAccount As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents forgotPwd As Button
 End Class
