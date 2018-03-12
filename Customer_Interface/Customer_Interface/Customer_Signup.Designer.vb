@@ -43,6 +43,10 @@ Partial Class Customer_SignUp
         Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'Label1
@@ -226,11 +230,59 @@ Partial Class Customer_SignUp
         Me.Label4.TabIndex = 21
         Me.Label4.Text = "Membership"
         '
-        'Customer_Info
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(22, 365)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(58, 17)
+        Me.RadioButton1.TabIndex = 22
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Limited"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(102, 365)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(77, 17)
+        Me.RadioButton2.TabIndex = 23
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Unlimited 1"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(198, 365)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(77, 17)
+        Me.RadioButton3.TabIndex = 24
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Unlimited 2"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(296, 365)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(77, 17)
+        Me.RadioButton4.TabIndex = 25
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Unlimited 3"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'Customer_SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(557, 509)
+        Me.ClientSize = New System.Drawing.Size(557, 407)
+        Me.Controls.Add(Me.RadioButton4)
+        Me.Controls.Add(Me.RadioButton3)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox14)
         Me.Controls.Add(Me.ComboBox3)
@@ -252,8 +304,8 @@ Partial Class Customer_SignUp
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Customer_Info"
-        Me.Text = "Form1"
+        Me.Name = "Customer_SignUp"
+        Me.Text = "New Customer Form"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -280,4 +332,8 @@ Partial Class Customer_SignUp
     Friend WithEvents TextBox14 As TextBox
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton4 As RadioButton
 End Class
