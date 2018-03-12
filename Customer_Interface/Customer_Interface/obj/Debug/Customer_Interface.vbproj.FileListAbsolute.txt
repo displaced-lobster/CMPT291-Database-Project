@@ -16,11 +16,11 @@ C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.pdb
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.xml
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbprojResolveAssemblyReference.cache
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Rep.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Info.resources
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Resources.resources
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbproj.GenerateResource.cache
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbproj.CoreCompileInputs.cache
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.exe
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.xml
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.pdb
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Signup.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Rep.resources

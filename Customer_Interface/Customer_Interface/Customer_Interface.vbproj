@@ -72,17 +72,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer_Info.vb">
+    <Compile Include="Customer_SignUp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer_Info.Designer.vb">
-      <DependentUpon>Customer_Info.vb</DependentUpon>
+    <Compile Include="Customer_SignUp.Designer.vb">
+      <DependentUpon>Customer_SignUp.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer_Signup.Designer.vb">
-      <DependentUpon>Customer_Signup.vb</DependentUpon>
+    <Compile Include="Customer_Rep.Designer.vb">
+      <DependentUpon>Customer_Rep.vb</DependentUpon>
     </Compile>
-    <Compile Include="Customer_Signup.vb">
+    <Compile Include="Customer_Rep.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -102,11 +102,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Customer_Signup.resx">
-      <DependentUpon>Customer_Signup.vb</DependentUpon>
+    <EmbeddedResource Include="Customer_Rep.resx">
+      <DependentUpon>Customer_Rep.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_Info.resx">
-      <DependentUpon>Customer_Info.vb</DependentUpon>
+    <EmbeddedResource Include="Customer_SignUp.resx">
+      <DependentUpon>Customer_SignUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
