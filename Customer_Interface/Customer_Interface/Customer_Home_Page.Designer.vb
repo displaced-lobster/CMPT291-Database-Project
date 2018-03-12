@@ -22,37 +22,37 @@ Partial Class Customer_Home_Page
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.create = New System.Windows.Forms.Button()
+        Me.login = New System.Windows.Forms.Button()
+        Me.query = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'create
         '
-        Me.Button1.Location = New System.Drawing.Point(582, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Create Account"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.create.Location = New System.Drawing.Point(582, 12)
+        Me.create.Name = "create"
+        Me.create.Size = New System.Drawing.Size(100, 23)
+        Me.create.TabIndex = 0
+        Me.create.Text = "Create Account"
+        Me.create.UseVisualStyleBackColor = True
         '
-        'Button2
+        'login
         '
-        Me.Button2.Location = New System.Drawing.Point(688, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Login"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.login.Location = New System.Drawing.Point(688, 12)
+        Me.login.Name = "login"
+        Me.login.Size = New System.Drawing.Size(100, 23)
+        Me.login.TabIndex = 1
+        Me.login.Text = "Login"
+        Me.login.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'query
         '
-        Me.TextBox1.Location = New System.Drawing.Point(16, 46)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Keywords"
+        Me.query.Location = New System.Drawing.Point(16, 46)
+        Me.query.Name = "query"
+        Me.query.Size = New System.Drawing.Size(100, 20)
+        Me.query.TabIndex = 2
+        Me.query.Text = "Keywords"
         '
         'Label1
         '
@@ -69,9 +69,9 @@ Partial Class Customer_Home_Page
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.query)
+        Me.Controls.Add(Me.login)
+        Me.Controls.Add(Me.create)
         Me.Name = "Customer_Home_Page"
         Me.Text = "Customer Home Page"
         Me.ResumeLayout(False)
@@ -79,8 +79,8 @@ Partial Class Customer_Home_Page
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents create As Button
+    Friend WithEvents login As Button
+    Friend WithEvents query As TextBox
     Friend WithEvents Label1 As Label
 End Class
