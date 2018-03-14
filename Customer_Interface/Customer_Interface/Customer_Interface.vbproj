@@ -118,6 +118,12 @@
     <Compile Include="Customer_Interactions.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Test_Query_Page.Designer.vb">
+      <DependentUpon>Test_Query_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Query_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main_Interface.Designer.vb">
       <DependentUpon>Main_Interface.vb</DependentUpon>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Interactions.resx">
       <DependentUpon>Customer_Interactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Query_Page.resx">
+      <DependentUpon>Test_Query_Page.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Interface.resx">
       <DependentUpon>Main_Interface.vb</DependentUpon>

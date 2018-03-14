@@ -27,6 +27,8 @@ Partial Class Main_Interface
         Me.btn3 = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
         Me.btn5 = New System.Windows.Forms.Button()
+        Me.exitBtn = New System.Windows.Forms.Button()
+        Me.btn6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn1
@@ -74,11 +76,31 @@ Partial Class Main_Interface
         Me.btn5.Text = "Open Customer Signup"
         Me.btn5.UseVisualStyleBackColor = True
         '
+        'exitBtn
+        '
+        Me.exitBtn.Location = New System.Drawing.Point(52, 338)
+        Me.exitBtn.Name = "exitBtn"
+        Me.exitBtn.Size = New System.Drawing.Size(191, 23)
+        Me.exitBtn.TabIndex = 5
+        Me.exitBtn.Text = "Exit"
+        Me.exitBtn.UseVisualStyleBackColor = True
+        '
+        'btn6
+        '
+        Me.btn6.Location = New System.Drawing.Point(52, 199)
+        Me.btn6.Name = "btn6"
+        Me.btn6.Size = New System.Drawing.Size(191, 23)
+        Me.btn6.TabIndex = 6
+        Me.btn6.Text = "Open Test Query"
+        Me.btn6.UseVisualStyleBackColor = True
+        '
         'Main_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(564, 405)
+        Me.Controls.Add(Me.btn6)
+        Me.Controls.Add(Me.exitBtn)
         Me.Controls.Add(Me.btn5)
         Me.Controls.Add(Me.btn2)
         Me.Controls.Add(Me.btn3)
@@ -95,4 +117,6 @@ Partial Class Main_Interface
     Friend WithEvents btn3 As Button
     Friend WithEvents btn2 As Button
     Friend WithEvents btn5 As Button
+    Friend WithEvents exitBtn As Button
+    Friend WithEvents btn6 As Button
 End Class
