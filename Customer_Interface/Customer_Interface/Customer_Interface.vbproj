@@ -13,6 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,17 +87,41 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Customer_Home_Page.Designer.vb">
+      <DependentUpon>Customer_Home_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Home_Page.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Customer_SignUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_SignUp.Designer.vb">
+      <DependentUpon>Customer_SignUp.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer_Rep.Designer.vb">
       <DependentUpon>Customer_Rep.vb</DependentUpon>
     </Compile>
     <Compile Include="Customer_Rep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_Login.Designer.vb">
+      <DependentUpon>Customer_Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_Interactions.Designer.vb">
+      <DependentUpon>Customer_Interactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Interactions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Interface.Designer.vb">
+      <DependentUpon>Main_Interface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Interface.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -102,11 +141,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Customer_Home_Page.resx">
+      <DependentUpon>Customer_Home_Page.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer_Rep.resx">
       <DependentUpon>Customer_Rep.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Customer_SignUp.resx">
+      <DependentUpon>Customer_SignUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_Login.resx">
+      <DependentUpon>Customer_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_Interactions.resx">
+      <DependentUpon>Customer_Interactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Interface.resx">
+      <DependentUpon>Main_Interface.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -126,6 +177,18 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
