@@ -112,6 +112,12 @@
     <Compile Include="Customer_Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Customer_Interactions.Designer.vb">
+      <DependentUpon>Customer_Interactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Interactions.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Login.resx">
       <DependentUpon>Customer_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_Interactions.resx">
+      <DependentUpon>Customer_Interactions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
