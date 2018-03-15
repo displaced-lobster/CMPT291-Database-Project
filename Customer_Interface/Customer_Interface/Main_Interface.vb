@@ -18,4 +18,13 @@
     Private Sub btn5_Click(sender As Object, e As EventArgs) Handles btn5.Click
         Customer_SignUp.Show()
     End Sub
+
+    Private Sub btn6_Click(sender As Object, e As EventArgs) Handles btn6.Click
+        Test_Query_Page.Show()
+    End Sub
+
+    Private Sub exitBtn_Click(sender As Object, e As EventArgs) Handles exitBtn.Click
+        Me.Close()
+    End Sub
+
 End Class
