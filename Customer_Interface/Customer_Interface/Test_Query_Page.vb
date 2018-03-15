@@ -1,4 +1,4 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.Data.SqlClient
 
 Public Class Test_Query_Page
     Private Shared Function GetConnectionString() As String
@@ -12,12 +12,12 @@ Public Class Test_Query_Page
 
         Dim queryString As String = "SELECT first_name FROM Customer_Data" ' + Idtxt.Text.ToString
 
-        Using connection As New OleDbConnection(connectionString)
-            Dim command As OleDbCommand = connection.CreateCommand()
+        Using connection As New SqlConnection(connectionString)
+            Dim command As SqlCommand = connection.CreateCommand()
             command.CommandText = queryString
             Try
                 connection.Open()
-                Dim dataReader As OleDbDataReader = command.ExecuteReader()
+                Dim dataReader As SqlDataReader = command.ExecuteReader()
 
                 Do While dataReader.Read()
                     Button1.Text = dataReader(0).ToString
