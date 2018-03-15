@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Customer_Interface"
+    "\\Customer_Interface",
+    "\\Customer_Interface\\Customer_Interface"
   ],
   "SelectedNode": "\\Customer_Interface\\Customer_Interface.sln",
   "PreviewInSolutionExplorer": false
