@@ -27,3 +27,4 @@ C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Home_Page.resources
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Login.resources
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Interactions.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Interface.resources
