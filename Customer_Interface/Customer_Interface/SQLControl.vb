@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
-' https://www.youtube.com/watch?v=7Z4BGEHD-JQ used to create this class
+' Source code borrowed from https://www.youtube.com/watch?v=7Z4BGEHD-JQ
+
 Public Class SQLControl
 
     Private SQLcon As New SqlConnection("Server=localhost;Database=CMPT291_Project;Integrated Security=True")
