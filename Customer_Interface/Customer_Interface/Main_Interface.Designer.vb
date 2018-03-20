@@ -43,7 +43,7 @@ Partial Class Main_Interface
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.File, Me.EditToolStripMenuItem, Me.WindowToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(679, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(883, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -58,7 +58,7 @@ Partial Class Main_Interface
         '
         Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.C_Home_Page, Me.C_Interactions, Me.C_Login, Me.C_Rep, Me.C_Signup, Me.Test_Q})
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(180, 22)
+        Me.Open.Size = New System.Drawing.Size(103, 22)
         Me.Open.Text = "Open"
         '
         'C_Home_Page
@@ -100,7 +100,7 @@ Partial Class Main_Interface
         'Close
         '
         Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(180, 22)
+        Me.Close.Size = New System.Drawing.Size(103, 22)
         Me.Close.Text = "Close"
         '
         'EditToolStripMenuItem
@@ -119,14 +119,14 @@ Partial Class Main_Interface
         'About
         '
         Me.About.Name = "About"
-        Me.About.Size = New System.Drawing.Size(180, 22)
+        Me.About.Size = New System.Drawing.Size(107, 22)
         Me.About.Text = "About"
         '
         'Main_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(679, 444)
+        Me.ClientSize = New System.Drawing.Size(883, 571)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1

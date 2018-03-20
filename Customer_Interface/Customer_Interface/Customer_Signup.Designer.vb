@@ -25,7 +25,7 @@ Partial Class Customer_SignUp
         Me.Label1 = New System.Windows.Forms.Label()
         Me.firstName = New System.Windows.Forms.TextBox()
         Me.lastName = New System.Windows.Forms.TextBox()
-        Me.City = New System.Windows.Forms.TextBox()
+        Me.city = New System.Windows.Forms.TextBox()
         Me.state = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.street = New System.Windows.Forms.TextBox()
@@ -75,13 +75,13 @@ Partial Class Customer_SignUp
         Me.lastName.TabIndex = 3
         Me.lastName.Text = "Last Name"
         '
-        'City
+        'city
         '
-        Me.City.Location = New System.Drawing.Point(19, 224)
-        Me.City.Name = "City"
-        Me.City.Size = New System.Drawing.Size(173, 20)
-        Me.City.TabIndex = 4
-        Me.City.Text = "City"
+        Me.city.Location = New System.Drawing.Point(19, 224)
+        Me.city.Name = "city"
+        Me.city.Size = New System.Drawing.Size(173, 20)
+        Me.city.TabIndex = 4
+        Me.city.Text = "City"
         '
         'state
         '
@@ -280,6 +280,7 @@ Partial Class Customer_SignUp
         '
         'createAccount
         '
+        Me.createAccount.Enabled = False
         Me.createAccount.Location = New System.Drawing.Point(220, 437)
         Me.createAccount.Name = "createAccount"
         Me.createAccount.Size = New System.Drawing.Size(118, 23)
@@ -314,7 +315,7 @@ Partial Class Customer_SignUp
         Me.Controls.Add(Me.street)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.state)
-        Me.Controls.Add(Me.City)
+        Me.Controls.Add(Me.city)
         Me.Controls.Add(Me.lastName)
         Me.Controls.Add(Me.firstName)
         Me.Controls.Add(Me.Label1)
@@ -328,7 +329,7 @@ Partial Class Customer_SignUp
     Friend WithEvents Label1 As Label
     Friend WithEvents firstName As TextBox
     Friend WithEvents lastName As TextBox
-    Friend WithEvents City As TextBox
+    Friend WithEvents city As TextBox
     Friend WithEvents state As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents street As TextBox
