@@ -1,35 +1,30 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Test_Query_Page
-    Private Shared Function GetConnectionString() As String
-        Return "Server=localhost;Database=CMPT291_Project;Integrated Security=True" 'DESKTOP-UOGE2DE is the localhost
-    End Function
+    Public SQL As New SQLControl ' can put new string in here ("") if we want
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim connectionString As String = GetConnectionString()
+    Private Sub LoadData(Optional Query As String = "")
+        If Query = "" Then
+            SQL.ExecuteQuery("SELECT * FROM customer_data;") ' run the query
+        Else
+            SQL.ExecuteQuery(Query)
+        End If
 
-        Dim queryString As String = "SELECT first_name FROM Customer_Data" ' + Idtxt.Text.ToString
-        Using connection As New SqlConnection(connectionString)
-            Dim commands As SqlCommand = connection.CreateCommand()
-            commands.CommandText = queryString
+        ' Error Handling
+        If SQL.HasException(False) Then Exit Sub ' check for errors and exit gracefully
+        dgvData.DataSource = SQL.SQLTable ' get the data and insert into the data grid
+    End Sub
 
-            Try
-                connection.Open()
-                Dim dataReader As SqlDataReader = commands.ExecuteReader()
-
-                Do While dataReader.Read()
-                    Answer1.text = dataReader(0).ToString
-                Loop
-                answer1.Refresh()
-
-                dataReader.Close()
-            Catch ex As Exception
-                Console.WriteLine(ex.Message)
-            End Try
-        End Using
+    Private Sub FindName()
+        SQL.AddParam("@name", "%" & txtSearch.Text & "%")
+        LoadData("SELECT * FROM customer_data WHERE first_name LIKE @name;") ' need like for wild cards
     End Sub
 
     Private Sub Test_Query_Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Main_Interface
+    End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        FindName() ' Execute query 
     End Sub
 End Class
