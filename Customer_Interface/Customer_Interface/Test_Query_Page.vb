@@ -1,8 +1,10 @@
 ﻿Imports System.Data.SqlClient
 
+
+
 Public Class Test_Query_Page
     Private Shared Function GetConnectionString() As String
-        Return "Data Source=localhost\MSSQLSERVER2014;Initial Catalog=CMPT291_Project;Integrated Security=True"
+        Return "Server=DESKTOP-UOGE2DE;Database=CMPT291_Project;Integrated Security=True"
 
     End Function
 
@@ -35,4 +37,7 @@ Public Class Test_Query_Page
         End Using
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
 End Class
