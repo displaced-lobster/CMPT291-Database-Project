@@ -5,8 +5,6 @@ Public Class Test_Query_Page
         Return "Server=localhost;Database=CMPT291_Project;Integrated Security=True" 'DESKTOP-UOGE2DE is the localhost
     End Function
 
-    Dim SQL As New SQLControl
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim connectionString As String = GetConnectionString()
 
