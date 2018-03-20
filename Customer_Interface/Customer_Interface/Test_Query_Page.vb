@@ -28,4 +28,8 @@ Public Class Test_Query_Page
             End Try
         End Using
     End Sub
+
+    Private Sub Test_Query_Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
