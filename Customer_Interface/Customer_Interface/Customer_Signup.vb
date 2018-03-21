@@ -14,27 +14,22 @@ Public Class Customer_SignUp
     End Function
 
     Private Sub AddUser() ' method for inserting new user
-        ' create random number for ID
-        ' need to check to make sure it is not already in the table, maybe a global variable for account instead
-        'Dim randNum As Integer
-        'Randomize()
-        'randNum = Int(Rnd() * 999) + 1
+        ' create account number
         Dim accountNum = CreateAccountNum()
+
         ' create SQL parameters to add
         SQL.AddParam("@first", firstName.Text)
         SQL.AddParam("@last", lastName.Text)
         SQL.AddParam("@email", email.Text)
-
         ' Mandatory phone number 1
-        ' needs to be adjusted so that the values are added to the right table
-        SQL.AddParam("@phoneType1", phoneDrop1.Text) ' get drop down value
+        SQL.AddParam("@phoneType1", phoneDrop1.Text)
         SQL.AddParam("@phoneNum1", num1.Text)
         ' Extra numbers
         SQL.AddParam("@phoneType2", phoneDrop2.Text)
         SQL.AddParam("@phoneNum2", num2.Text)
         SQL.AddParam("@phoneType3", phoneDrop3.Text)
         SQL.AddParam("@phoneNum3", num3.Text)
-
+        ' address and payment info
         SQL.AddParam("@streetNum", streetNum.Text)
         SQL.AddParam("@street", street.Text)
         SQL.AddParam("@aptNum", aptNum.Text)
@@ -46,7 +41,7 @@ Public Class Customer_SignUp
         SQL.AddParam("@accNum", accountNum)
         ' create password account vitals
         SQL.AddParam("@username", txtUser.Text)
-        SQL.AddParam("@password", txtPass.Text)
+        SQL.AddParam("@password", txtPass.Text) '.GetHashCode() could hash if needed
         ' set which ever membership
         If limited.Checked = True Then SQL.AddParam("@membership", "limited")
         If unlim1.Checked = True Then SQL.AddParam("@membership", "unlimited1")
@@ -73,16 +68,15 @@ Public Class Customer_SignUp
                              "VALUES (@accNum, @phoneNum3, @phoneType3);")
         End If
         If SQL.HasException(True) Then Exit Sub
-
+        ' inform user of account creation
         MsgBox("User Created") ' for test
     End Sub
 
     Private Sub createAccount_Click(sender As Object, e As EventArgs) Handles createAccount.Click
         ' create user
-        'AddUser()
+        AddUser()
         ' exit page
         Me.Close()
-
     End Sub
 
     ' Apartment number should be able to be null so perhaps we need to change it
@@ -98,11 +92,32 @@ Public Class Customer_SignUp
                 Not String.IsNullOrWhiteSpace(zip.Text) AndAlso Not String.IsNullOrWhiteSpace(cardNum.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(txtUser.Text) AndAlso Not String.IsNullOrWhiteSpace(txtPass.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(phoneDrop1.Text) AndAlso Not String.IsNullOrWhiteSpace(num1.Text) AndAlso
-                (limited.Checked = True Or unlim1.Checked = True Or unlim2.Checked = True Or unlim3.Checked = True) Then
+                (limited.Checked = True Or unlim1.Checked = True Or unlim2.Checked = True Or unlim3.Checked = True) AndAlso
+                IsUnique() = True Then
+
             createAccount.Enabled = True
             ' is there a way to poll to see if the true conditions have changed ?
         End If
     End Sub
 
+    Private Function IsUnique() As Boolean
+        ' Clear Existing records
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+
+        SQL.ExecuteQuery("SELECT * " &
+                         "FROM Customer_Passwords " &
+                         "WHERE username='" & txtUser.Text & "' " &
+                         "COLLATE SQL_Latin1_General_CP1_CS_AS") ' force case sensitive nature
+
+        If SQL.SQLTable.Rows.Count() > 0 Then
+            MsgBox("Username Already Exists", MsgBoxStyle.Critical, "LOGIN FAILED")
+            txtPass.Clear()
+            txtUser.Clear()
+            Return False
+        End If
+        Return True
+    End Function
 
 End Class
