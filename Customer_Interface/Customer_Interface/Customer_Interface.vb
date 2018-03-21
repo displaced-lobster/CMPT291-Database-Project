@@ -24,9 +24,8 @@ Public Class Customer_Interface
                            "Email: " & i.Item("email") & vbCrLf & vbCrLf &
                            "Address: " & "#" & i.Item("apartment_num") & " " & i.Item("street_num") & " " & i.Item("street") & vbCrLf &
                            "    " & i.Item("city") & ", " & i.Item("state") & ", " & i.Item("zip_code") & vbCrLf & vbCrLf &
-                           "Credit Card Type: " & i.Item("type") & vbCrLf &
                            "Card Number: " & i.Item("credit_card_num") & vbCrLf & vbCrLf &
-                           "Account Type: " & vbCrLf & ' add from other table
+                           "Account Type: " & i.Item("type") & vbCrLf & ' add from other table
                            "Account Created On: " & i.Item("creation_date")
         Next
     End Sub

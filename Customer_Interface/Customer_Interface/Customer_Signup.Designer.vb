@@ -34,7 +34,6 @@ Partial Class Customer_SignUp
         Me.aptNum = New System.Windows.Forms.TextBox()
         Me.email = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cardType = New System.Windows.Forms.TextBox()
         Me.cardNum = New System.Windows.Forms.TextBox()
         Me.num1 = New System.Windows.Forms.TextBox()
         Me.phoneDrop1 = New System.Windows.Forms.ComboBox()
@@ -59,8 +58,11 @@ Partial Class Customer_SignUp
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.label16 = New System.Windows.Forms.Label()
+        Me.txtUser = New System.Windows.Forms.TextBox()
+        Me.txtPass = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -153,16 +155,9 @@ Partial Class Customer_SignUp
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Payment Information"
         '
-        'cardType
-        '
-        Me.cardType.Location = New System.Drawing.Point(80, 332)
-        Me.cardType.Name = "cardType"
-        Me.cardType.Size = New System.Drawing.Size(113, 20)
-        Me.cardType.TabIndex = 13
-        '
         'cardNum
         '
-        Me.cardNum.Location = New System.Drawing.Point(264, 332)
+        Me.cardNum.Location = New System.Drawing.Point(83, 334)
         Me.cardNum.Name = "cardNum"
         Me.cardNum.Size = New System.Drawing.Size(207, 20)
         Me.cardNum.TabIndex = 14
@@ -277,7 +272,7 @@ Partial Class Customer_SignUp
         'createAccount
         '
         Me.createAccount.Enabled = False
-        Me.createAccount.Location = New System.Drawing.Point(220, 437)
+        Me.createAccount.Location = New System.Drawing.Point(217, 524)
         Me.createAccount.Name = "createAccount"
         Me.createAccount.Size = New System.Drawing.Size(118, 23)
         Me.createAccount.TabIndex = 26
@@ -383,31 +378,58 @@ Partial Class Customer_SignUp
         Me.Label15.TabIndex = 37
         Me.Label15.Text = "Zip"
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(18, 335)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(56, 13)
-        Me.Label16.TabIndex = 38
-        Me.Label16.Text = "Card Type"
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(199, 335)
+        Me.Label17.Location = New System.Drawing.Point(18, 337)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(59, 13)
         Me.Label17.TabIndex = 39
         Me.Label17.Text = "Credit Card"
         '
+        'label16
+        '
+        Me.label16.AutoSize = True
+        Me.label16.Location = New System.Drawing.Point(18, 440)
+        Me.label16.Name = "label16"
+        Me.label16.Size = New System.Drawing.Size(55, 13)
+        Me.label16.TabIndex = 40
+        Me.label16.Text = "Username"
+        '
+        'txtUser
+        '
+        Me.txtUser.Location = New System.Drawing.Point(83, 437)
+        Me.txtUser.Name = "txtUser"
+        Me.txtUser.Size = New System.Drawing.Size(207, 20)
+        Me.txtUser.TabIndex = 41
+        '
+        'txtPass
+        '
+        Me.txtPass.Location = New System.Drawing.Point(82, 463)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPass.Size = New System.Drawing.Size(207, 20)
+        Me.txtPass.TabIndex = 43
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(17, 466)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(53, 13)
+        Me.Label18.TabIndex = 42
+        Me.Label18.Text = "Password"
+        '
         'Customer_SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(557, 487)
+        Me.ClientSize = New System.Drawing.Size(557, 559)
+        Me.Controls.Add(Me.txtPass)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.txtUser)
+        Me.Controls.Add(Me.label16)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
@@ -432,7 +454,6 @@ Partial Class Customer_SignUp
         Me.Controls.Add(Me.phoneDrop1)
         Me.Controls.Add(Me.num1)
         Me.Controls.Add(Me.cardNum)
-        Me.Controls.Add(Me.cardType)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.email)
         Me.Controls.Add(Me.aptNum)
@@ -464,7 +485,6 @@ Partial Class Customer_SignUp
     Friend WithEvents aptNum As TextBox
     Friend WithEvents email As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents cardType As TextBox
     Friend WithEvents cardNum As TextBox
     Friend WithEvents num1 As TextBox
     Friend WithEvents phoneDrop1 As ComboBox
@@ -489,6 +509,9 @@ Partial Class Customer_SignUp
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
+    Friend WithEvents label16 As Label
+    Friend WithEvents txtUser As TextBox
+    Friend WithEvents txtPass As TextBox
+    Friend WithEvents Label18 As Label
 End Class

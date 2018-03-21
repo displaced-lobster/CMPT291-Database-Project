@@ -36,21 +36,26 @@ Public Class Customer_SignUp
         SQL.AddParam("@city", city.Text)
         SQL.AddParam("@state", state.Text)
         SQL.AddParam("@zip", zip.Text)
-        SQL.AddParam("@cardType", cardType.Text)
         SQL.AddParam("@cardNum", Convert.ToInt32(cardNum.Text))
         SQL.AddParam("@date", Date.Now)
         SQL.AddParam("@accNum", randNum)
         ' set which ever membership
-        ' need to figure out which table this will go to
         If limited.Checked = True Then SQL.AddParam("@membership", limited.Checked)
         If unlim1.Checked = True Then SQL.AddParam("@membership", unlim1.Checked)
         If unlim2.Checked = True Then SQL.AddParam("@membership", unlim2.Checked)
         If unlim3.Checked = True Then SQL.AddParam("@membership", unlim3.Checked)
-
+        ' add values to table
         SQL.ExecuteQuery("INSERT INTO customer_data (account_number, first_name, last_name, city, " &
                          "state, zip_code, street, street_num, apartment_num, email, creation_date, " &
                          "credit_card_num, type) VALUES (@accNum, @first, @last, @city, @state, " &
-                         "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @cardType);")
+                         "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @membership);")
+        ' add phone numbers
+
+        ' create password account vitals
+        SQL.AddParam("@username", txtUser.Text)
+        SQL.AddParam("@password", txtPass.Text)
+        SQL.ExecuteQuery("INSERT INTO Customer_Passwords (account_number, username, password) " &
+                         "VALUES (@accNum, @username, @password);")
 
         If SQL.HasException(True) Then Exit Sub
         MsgBox("User Created") ' for test
@@ -67,16 +72,16 @@ Public Class Customer_SignUp
     ' Apartment number should be able to be null so perhaps we need to change it
     Private Sub txtFields_TextChanged(sender As Object, e As EventArgs) Handles firstName.TextChanged, lastName.TextChanged,
             email.TextChanged, streetNum.TextChanged, street.TextChanged, aptNum.TextChanged, city.TextChanged, state.TextChanged,
-            zip.TextChanged, cardType.TextChanged, cardNum.TextChanged
+            zip.TextChanged, cardNum.TextChanged
 
         If Not String.IsNullOrWhiteSpace(firstName.Text) AndAlso Not String.IsNullOrWhiteSpace(lastName.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(email.Text) AndAlso Not String.IsNullOrWhiteSpace(streetNum.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(street.Text) AndAlso Not String.IsNullOrWhiteSpace(aptNum.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(city.Text) AndAlso Not String.IsNullOrWhiteSpace(state.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(zip.Text) AndAlso Not String.IsNullOrWhiteSpace(cardType.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(cardNum.Text) Then
+                Not String.IsNullOrWhiteSpace(zip.Text) AndAlso Not String.IsNullOrWhiteSpace(cardNum.Text) AndAlso
+                Not String.IsNullOrWhiteSpace(txtUser.Text) AndAlso Not String.IsNullOrWhiteSpace(txtPass.Text) Then
             createAccount.Enabled = True
-            ' is there a way to poll to see if the true conditions have changed
+            ' is there a way to poll to see if the true conditions have changed ?
         End If
     End Sub
 

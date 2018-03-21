@@ -27,6 +27,7 @@ Partial Class Main_Interface
         Me.Open = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.About = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,27 +53,33 @@ Partial Class Main_Interface
         '
         'Open
         '
-        Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem})
+        Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1})
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(103, 22)
+        Me.Open.Size = New System.Drawing.Size(180, 22)
         Me.Open.Text = "Open"
         '
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.CustomersToolStripMenuItem.Text = "Customer Services"
+        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CustomersToolStripMenuItem.Text = "New User Signup"
         '
         'EmployeeServicesToolStripMenuItem
         '
         Me.EmployeeServicesToolStripMenuItem.Name = "EmployeeServicesToolStripMenuItem"
-        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.EmployeeServicesToolStripMenuItem.Text = "Employee Services"
+        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmployeeServicesToolStripMenuItem.Text = "Customer Services"
+        '
+        'EmployeeServicesToolStripMenuItem1
+        '
+        Me.EmployeeServicesToolStripMenuItem1.Name = "EmployeeServicesToolStripMenuItem1"
+        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EmployeeServicesToolStripMenuItem1.Text = "Employee Services"
         '
         'Close
         '
         Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(103, 22)
+        Me.Close.Size = New System.Drawing.Size(180, 22)
         Me.Close.Text = "Close"
         '
         'WindowToolStripMenuItem
@@ -120,4 +127,5 @@ Partial Class Main_Interface
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CustomersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmployeeServicesToolStripMenuItem1 As ToolStripMenuItem
 End Class
