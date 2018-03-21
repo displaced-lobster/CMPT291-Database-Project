@@ -112,12 +112,6 @@
     <Compile Include="Customer_Rep.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer_Interactions.Designer.vb">
-      <DependentUpon>Customer_Interactions.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer_Interactions.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Customer_Interface.Designer.vb">
       <DependentUpon>Customer_Interface.vb</DependentUpon>
     </Compile>
@@ -162,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_SignUp.resx">
       <DependentUpon>Customer_SignUp.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer_Interactions.resx">
-      <DependentUpon>Customer_Interactions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Interface.resx">
       <DependentUpon>Customer_Interface.vb</DependentUpon>
