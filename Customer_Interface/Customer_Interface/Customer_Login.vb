@@ -1,6 +1,6 @@
 ﻿Public Class Customer_Login
     Private SQL As New SQLControl
-    Public ValidUser As String
+    Public ValidUser As String ' global to pass user credentials to other classes
 
     Public Function UserAccount() As String
         Return ValidUser
@@ -39,8 +39,9 @@
     Private Sub AccessAccount_Click(sender As Object, e As EventArgs) Handles AccessAccount.Click
         If SQL.HasConnection = True Then
             If IsAuthenticated() = True Then
-                GetAccount()
+                'GetAccount()
                 'MsgBox(ValidUser)
+                ValidUser = SQL.SQLTable.Rows(0).Item("account_number")
                 MsgBox("Login Successful")
                 ' need to find way to keep user logged in for duration
                 Me.Hide() ' connection should stay open while this is open
@@ -56,9 +57,7 @@
         End If
 
         SQL.ExecuteQuery("SELECT account_number FROM Customer_Passwords WHERE username='" & username.Text & "';")
-        'DataGridView1.DataSource = SQL.SQLTable ' for test
         ValidUser = SQL.SQLTable.Rows(0).Item("account_number")
-        'MsgBox(ValidUser)
     End Sub
 
 
