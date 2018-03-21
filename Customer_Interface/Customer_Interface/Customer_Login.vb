@@ -39,26 +39,11 @@
     Private Sub AccessAccount_Click(sender As Object, e As EventArgs) Handles AccessAccount.Click
         If SQL.HasConnection = True Then
             If IsAuthenticated() = True Then
-                'GetAccount()
-                'MsgBox(ValidUser)
-                ValidUser = SQL.SQLTable.Rows(0).Item("account_number")
+                ValidUser = SQL.SQLTable.Rows(0).Item("account_number") ' pass authenticated primary key to global variable
                 MsgBox("Login Successful")
-                ' need to find way to keep user logged in for duration
-                Me.Hide() ' connection should stay open while this is open
+                Me.Hide() ' keep open to access global account number for duration of session
                 Customer_Interface.Show()
             End If
         End If
     End Sub
-
-
-    Public Sub GetAccount()
-        If SQL.SQLTable IsNot Nothing Then
-            SQL.SQLTable.Clear()
-        End If
-
-        SQL.ExecuteQuery("SELECT account_number FROM Customer_Passwords WHERE username='" & username.Text & "';")
-        ValidUser = SQL.SQLTable.Rows(0).Item("account_number")
-    End Sub
-
-
 End Class
