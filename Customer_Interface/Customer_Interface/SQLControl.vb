@@ -10,6 +10,7 @@ Public Class SQLControl
     ' Database Data
     Public SQLDataAdapter As SqlDataAdapter
     Public SQLTable As DataTable
+    Public SQLDS As DataSet
 
     ' Query Parameters
     Public Params As New List(Of SqlParameter)
@@ -25,6 +26,20 @@ Public Class SQLControl
     Public Sub New(connectionString As String)
         SQLcon = New SqlConnection(connectionString) ' allow new database connection string
     End Sub
+
+    ' for testing
+    Public Function HasConnection() As Boolean
+        Try
+            SQLcon.Open()
+            SQLcon.Close()
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+
+        Return False
+    End Function
 
     ' Execute Query 
     Public Sub ExecuteQuery(Query As String)
@@ -47,6 +62,7 @@ Public Class SQLControl
             SQLTable = New DataTable
             SQLDataAdapter = New SqlDataAdapter(SQLcmd)
             RecordCount = SQLDataAdapter.Fill(SQLTable)
+
 
         Catch ex As Exception
             ' Capture Errors

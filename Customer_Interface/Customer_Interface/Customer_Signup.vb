@@ -53,14 +53,14 @@ Public Class Customer_SignUp
                          "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @cardType);")
 
         If SQL.HasException(True) Then Exit Sub
-        'MsgBox("User Created") ' for test
+        MsgBox("User Created") ' for test
     End Sub
 
     Private Sub createAccount_Click(sender As Object, e As EventArgs) Handles createAccount.Click
         ' create user
         AddUser()
         ' exit page
-        Me.Close()
+        'Me.Close()
 
     End Sub
 
