@@ -172,6 +172,7 @@ Partial Class Customer_SignUp
         'phoneDrop1
         '
         Me.phoneDrop1.AllowDrop = True
+        Me.phoneDrop1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop1.FormattingEnabled = True
         Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
         Me.phoneDrop1.Location = New System.Drawing.Point(18, 138)
@@ -183,6 +184,7 @@ Partial Class Customer_SignUp
         'phoneDrop2
         '
         Me.phoneDrop2.AllowDrop = True
+        Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop2.FormattingEnabled = True
         Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
         Me.phoneDrop2.Location = New System.Drawing.Point(18, 165)
@@ -208,6 +210,7 @@ Partial Class Customer_SignUp
         'phoneDrop3
         '
         Me.phoneDrop3.AllowDrop = True
+        Me.phoneDrop3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop3.FormattingEnabled = True
         Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
         Me.phoneDrop3.Location = New System.Drawing.Point(18, 192)
@@ -487,7 +490,6 @@ Partial Class Customer_SignUp
     Friend WithEvents Label3 As Label
     Friend WithEvents cardNum As TextBox
     Friend WithEvents num1 As TextBox
-    Friend WithEvents phoneDrop1 As ComboBox
     Friend WithEvents phoneDrop2 As ComboBox
     Friend WithEvents num2 As TextBox
     Friend WithEvents num3 As TextBox
@@ -514,4 +516,5 @@ Partial Class Customer_SignUp
     Friend WithEvents txtUser As TextBox
     Friend WithEvents txtPass As TextBox
     Friend WithEvents Label18 As Label
+    Private WithEvents phoneDrop1 As ComboBox
 End Class

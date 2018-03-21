@@ -30,7 +30,6 @@ Partial Class Main_Interface
         Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.About = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -40,7 +39,7 @@ Partial Class Main_Interface
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.File, Me.WindowToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1059, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1203, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -56,7 +55,7 @@ Partial Class Main_Interface
         Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1})
         Me.Open.Name = "Open"
         Me.Open.Size = New System.Drawing.Size(180, 22)
-        Me.Open.Text = "Open"
+        Me.Open.Text = "Accounts"
         '
         'CustomersToolStripMenuItem
         '
@@ -84,16 +83,9 @@ Partial Class Main_Interface
         '
         'WindowToolStripMenuItem
         '
-        Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.About})
         Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
-        Me.WindowToolStripMenuItem.Text = "Edit"
-        '
-        'About
-        '
-        Me.About.Name = "About"
-        Me.About.Size = New System.Drawing.Size(107, 22)
-        Me.About.Text = "About"
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.WindowToolStripMenuItem.Text = "About"
         '
         'HelpToolStripMenuItem
         '
@@ -105,7 +97,7 @@ Partial Class Main_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1059, 602)
+        Me.ClientSize = New System.Drawing.Size(1203, 761)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
@@ -123,7 +115,6 @@ Partial Class Main_Interface
     Friend WithEvents Open As ToolStripMenuItem
     Friend WithEvents Close As ToolStripMenuItem
     Friend WithEvents WindowToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents About As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CustomersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem As ToolStripMenuItem

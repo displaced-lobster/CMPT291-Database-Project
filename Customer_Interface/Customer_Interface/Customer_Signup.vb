@@ -8,13 +8,18 @@ Public Class Customer_SignUp
         MdiParent = Main_Interface
     End Sub
 
+    Public Function CreateAccountNum() As Integer
+        SQL.ExecuteQuery("SELECT COUNT(account_number) as cnt FROM Customer_Data")
+        Return SQL.SQLTable.Rows(0).Item("cnt") + 1001
+    End Function
+
     Private Sub AddUser() ' method for inserting new user
         ' create random number for ID
         ' need to check to make sure it is not already in the table, maybe a global variable for account instead
-        Dim randNum As Integer
-        Randomize()
-        randNum = Int(Rnd() * 999) + 1
-
+        'Dim randNum As Integer
+        'Randomize()
+        'randNum = Int(Rnd() * 999) + 1
+        Dim accountNum = CreateAccountNum()
         ' create SQL parameters to add
         SQL.AddParam("@first", firstName.Text)
         SQL.AddParam("@last", lastName.Text)
@@ -22,12 +27,12 @@ Public Class Customer_SignUp
 
         ' Mandatory phone number 1
         ' needs to be adjusted so that the values are added to the right table
-        SQL.AddParam("@phoneType1", phoneDrop1.ToString) ' get drop down value
+        SQL.AddParam("@phoneType1", phoneDrop1.Text) ' get drop down value
         SQL.AddParam("@phoneNum1", num1.Text)
         ' Extra numbers
-        SQL.AddParam("@phoneType2", phoneDrop2.ToString)
+        SQL.AddParam("@phoneType2", phoneDrop2.Text)
         SQL.AddParam("@phoneNum2", num2.Text)
-        SQL.AddParam("@phoneType3", phoneDrop3.ToString)
+        SQL.AddParam("@phoneType3", phoneDrop3.Text)
         SQL.AddParam("@phoneNum3", num3.Text)
 
         SQL.AddParam("@streetNum", streetNum.Text)
@@ -38,7 +43,7 @@ Public Class Customer_SignUp
         SQL.AddParam("@zip", zip.Text)
         SQL.AddParam("@cardNum", Convert.ToInt32(cardNum.Text))
         SQL.AddParam("@date", Date.Now)
-        SQL.AddParam("@accNum", randNum)
+        SQL.AddParam("@accNum", accountNum)
         ' create password account vitals
         SQL.AddParam("@username", txtUser.Text)
         SQL.AddParam("@password", txtPass.Text)
@@ -48,28 +53,33 @@ Public Class Customer_SignUp
         If unlim2.Checked = True Then SQL.AddParam("@membership", "unlimited2")
         If unlim3.Checked = True Then SQL.AddParam("@membership", "unlimited3")
         ' add values to table
-        SQL.ExecuteQuery("INSERT INTO customer_data (account_number, first_name, last_name, city, " &
+        SQL.ExecuteQuery("INSERT INTO Customer_Data (account_number, first_name, last_name, city, " &
                          "state, zip_code, street, street_num, apartment_num, email, creation_date, " &
                          "credit_card_num, type) VALUES (@accNum, @first, @last, @city, @state, " &
                          "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @membership); " &
                          "INSERT INTO Customer_Passwords (account_number, username, password) " &
-                         "VALUES (@accNum, @username, @password);")
-        ' check if phone number field is filled
-
-        'SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, type) " &
-        '                 "VALUES (@accNum, @phoneNum1, @phoneType1);")
-        ' add phone numbers
-
-
-        'SQL.ExecuteQuery()
-
+                         "VALUES (@accNum, @username, @password); " &
+                         "INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
+                         "VALUES (@accNum, @phoneNum1, @phoneType1);")
         If SQL.HasException(True) Then Exit Sub
+        ' check if phone number field is filled and add additional numbers
+        If phoneDrop2.Text <> "" Then
+            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
+                             "VALUES (@accNum, @phoneNum2, @phoneType2);")
+        End If
+        If SQL.HasException(True) Then Exit Sub
+        If phoneDrop3.Text <> "" Then
+            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
+                             "VALUES (@accNum, @phoneNum3, @phoneType3);")
+        End If
+        If SQL.HasException(True) Then Exit Sub
+
         MsgBox("User Created") ' for test
     End Sub
 
     Private Sub createAccount_Click(sender As Object, e As EventArgs) Handles createAccount.Click
         ' create user
-        AddUser()
+        'AddUser()
         ' exit page
         Me.Close()
 
@@ -79,7 +89,7 @@ Public Class Customer_SignUp
     Private Sub txtFields_TextChanged(sender As Object, e As EventArgs) Handles firstName.TextChanged, lastName.TextChanged,
             email.TextChanged, streetNum.TextChanged, street.TextChanged, aptNum.TextChanged, city.TextChanged, state.TextChanged,
             zip.TextChanged, cardNum.TextChanged, txtUser.TextChanged, txtPass.TextChanged, limited.CheckedChanged, unlim1.CheckedChanged,
-            unlim2.CheckedChanged, unlim3.CheckedChanged
+            unlim2.CheckedChanged, unlim3.CheckedChanged, num1.TextChanged, phoneDrop1.TextChanged
 
         If Not String.IsNullOrWhiteSpace(firstName.Text) AndAlso Not String.IsNullOrWhiteSpace(lastName.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(email.Text) AndAlso Not String.IsNullOrWhiteSpace(streetNum.Text) AndAlso
@@ -87,6 +97,7 @@ Public Class Customer_SignUp
                 Not String.IsNullOrWhiteSpace(city.Text) AndAlso Not String.IsNullOrWhiteSpace(state.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(zip.Text) AndAlso Not String.IsNullOrWhiteSpace(cardNum.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(txtUser.Text) AndAlso Not String.IsNullOrWhiteSpace(txtPass.Text) AndAlso
+                Not String.IsNullOrWhiteSpace(phoneDrop1.Text) AndAlso Not String.IsNullOrWhiteSpace(num1.Text) AndAlso
                 (limited.Checked = True Or unlim1.Checked = True Or unlim2.Checked = True Or unlim3.Checked = True) Then
             createAccount.Enabled = True
             ' is there a way to poll to see if the true conditions have changed ?
