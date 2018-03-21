@@ -39,23 +39,29 @@ Public Class Customer_SignUp
         SQL.AddParam("@cardNum", Convert.ToInt32(cardNum.Text))
         SQL.AddParam("@date", Date.Now)
         SQL.AddParam("@accNum", randNum)
+        ' create password account vitals
+        SQL.AddParam("@username", txtUser.Text)
+        SQL.AddParam("@password", txtPass.Text)
         ' set which ever membership
-        If limited.Checked = True Then SQL.AddParam("@membership", limited.Checked)
-        If unlim1.Checked = True Then SQL.AddParam("@membership", unlim1.Checked)
-        If unlim2.Checked = True Then SQL.AddParam("@membership", unlim2.Checked)
-        If unlim3.Checked = True Then SQL.AddParam("@membership", unlim3.Checked)
+        If limited.Checked = True Then SQL.AddParam("@membership", "limited")
+        If unlim1.Checked = True Then SQL.AddParam("@membership", "unlimited1")
+        If unlim2.Checked = True Then SQL.AddParam("@membership", "unlimited2")
+        If unlim3.Checked = True Then SQL.AddParam("@membership", "unlimited3")
         ' add values to table
         SQL.ExecuteQuery("INSERT INTO customer_data (account_number, first_name, last_name, city, " &
                          "state, zip_code, street, street_num, apartment_num, email, creation_date, " &
                          "credit_card_num, type) VALUES (@accNum, @first, @last, @city, @state, " &
-                         "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @membership);")
+                         "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @membership); " &
+                         "INSERT INTO Customer_Passwords (account_number, username, password) " &
+                         "VALUES (@accNum, @username, @password);")
+        ' check if phone number field is filled
+
+        'SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, type) " &
+        '                 "VALUES (@accNum, @phoneNum1, @phoneType1);")
         ' add phone numbers
 
-        ' create password account vitals
-        SQL.AddParam("@username", txtUser.Text)
-        SQL.AddParam("@password", txtPass.Text)
-        SQL.ExecuteQuery("INSERT INTO Customer_Passwords (account_number, username, password) " &
-                         "VALUES (@accNum, @username, @password);")
+
+        'SQL.ExecuteQuery()
 
         If SQL.HasException(True) Then Exit Sub
         MsgBox("User Created") ' for test
@@ -65,21 +71,23 @@ Public Class Customer_SignUp
         ' create user
         AddUser()
         ' exit page
-        'Me.Close()
+        Me.Close()
 
     End Sub
 
     ' Apartment number should be able to be null so perhaps we need to change it
     Private Sub txtFields_TextChanged(sender As Object, e As EventArgs) Handles firstName.TextChanged, lastName.TextChanged,
             email.TextChanged, streetNum.TextChanged, street.TextChanged, aptNum.TextChanged, city.TextChanged, state.TextChanged,
-            zip.TextChanged, cardNum.TextChanged
+            zip.TextChanged, cardNum.TextChanged, txtUser.TextChanged, txtPass.TextChanged, limited.CheckedChanged, unlim1.CheckedChanged,
+            unlim2.CheckedChanged, unlim3.CheckedChanged
 
         If Not String.IsNullOrWhiteSpace(firstName.Text) AndAlso Not String.IsNullOrWhiteSpace(lastName.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(email.Text) AndAlso Not String.IsNullOrWhiteSpace(streetNum.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(street.Text) AndAlso Not String.IsNullOrWhiteSpace(aptNum.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(city.Text) AndAlso Not String.IsNullOrWhiteSpace(state.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(zip.Text) AndAlso Not String.IsNullOrWhiteSpace(cardNum.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(txtUser.Text) AndAlso Not String.IsNullOrWhiteSpace(txtPass.Text) Then
+                Not String.IsNullOrWhiteSpace(txtUser.Text) AndAlso Not String.IsNullOrWhiteSpace(txtPass.Text) AndAlso
+                (limited.Checked = True Or unlim1.Checked = True Or unlim2.Checked = True Or unlim3.Checked = True) Then
             createAccount.Enabled = True
             ' is there a way to poll to see if the true conditions have changed ?
         End If
