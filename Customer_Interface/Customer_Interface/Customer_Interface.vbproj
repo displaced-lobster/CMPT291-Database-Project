@@ -65,6 +65,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -92,10 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CMPT291_ProjectDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Customer_Home_Page.Designer.vb">
-      <DependentUpon>Customer_Home_Page.vb</DependentUpon>
+    <Compile Include="Customer_Login.Designer.vb">
+      <DependentUpon>Customer_Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Customer_Home_Page.vb">
+    <Compile Include="Customer_Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer_SignUp.vb">
@@ -111,16 +112,16 @@
     <Compile Include="Customer_Rep.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer_Login.Designer.vb">
-      <DependentUpon>Customer_Login.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer_Login.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Customer_Interactions.Designer.vb">
       <DependentUpon>Customer_Interactions.vb</DependentUpon>
     </Compile>
     <Compile Include="Customer_Interactions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_Interface.Designer.vb">
+      <DependentUpon>Customer_Interface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Interface.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SQLControl.vb" />
@@ -153,8 +154,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Customer_Home_Page.resx">
-      <DependentUpon>Customer_Home_Page.vb</DependentUpon>
+    <EmbeddedResource Include="Customer_Login.resx">
+      <DependentUpon>Customer_Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Rep.resx">
       <DependentUpon>Customer_Rep.vb</DependentUpon>
@@ -162,11 +163,11 @@
     <EmbeddedResource Include="Customer_SignUp.resx">
       <DependentUpon>Customer_SignUp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_Login.resx">
-      <DependentUpon>Customer_Login.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customer_Interactions.resx">
       <DependentUpon>Customer_Interactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_Interface.resx">
+      <DependentUpon>Customer_Interface.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Query_Page.resx">
       <DependentUpon>Test_Query_Page.vb</DependentUpon>
