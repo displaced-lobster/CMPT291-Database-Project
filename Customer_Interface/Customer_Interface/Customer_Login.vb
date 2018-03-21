@@ -11,11 +11,6 @@
     End Sub
 
     Private Function IsAuthenticated() As Boolean
-        ' Clear Existing records
-        If SQL.SQLTable IsNot Nothing Then
-            SQL.SQLTable.Clear()
-        End If
-
         SQL.ExecuteQuery("SELECT * " &
                          "FROM Customer_Passwords " &
                          "WHERE username='" & username.Text & "' " &

@@ -2,7 +2,8 @@
 
 ' Source code borrowed from https://www.youtube.com/watch?v=7Z4BGEHD-JQ
 
-Public Class SQLControl
+Public Class Temp
+
     Private SQLcon As New SqlConnection("Server=localhost;Database=CMPT291_Project;Integrated Security=True")
     Private SQLcmd As SqlCommand
 
@@ -88,6 +89,10 @@ Public Class SQLControl
 End Class
 
 'Private Sub Findbtn_Click(sender As Object, e As EventArgs) Handles Findbtn.Click
+'   Dim connectionString As String = GetConnectionString()
+
+'   Dim queryString As String = "SELECT LastName, FirstName FROM users where userID = " +
+'       Idtxt.Text.ToString
 
 '   Using connection As New OleDbConnection(connectionString)
 '       Dim command As OleDbCommand = connection.CreateCommand()
@@ -111,35 +116,3 @@ End Class
 '   End Using
 'End Sub
 
-
-' Execute Query 
-'Public Sub ExecuteQuery(Query As String)
-' Reset query statistics
-'   RecordCount = 0
-'   Exception = ""
-
-'   Using SQLcon
-'       SQLcmd = SQLcon.CreateCommand()
-'       SQLcmd.CommandText = Query
-'       Try
-'           SQLcon.Open() ' connection is opened
-'           create database command
-'           Dim dataReader As SqlDataReader = SQLcmd.ExecuteReader()
-
-'           Do While 
-'                Execute command and fill dataset
-'               SQLTable = New DataTable
-'               SqlDataAdapter = New SqlDataAdapter(SQLcmd)
-'               RecordCount = SqlDataAdapter.Fill(SQLTable)
-
-
-'       Catch ex As Exception
-'           Capture Errors
-'           Exception = "ExecuteQuery Error: " & vbNewLine & ex.Message
-
-'       Finally
-'           Close connection if still open
-'           If SQLcon.State = ConnectionState.Open Then SQLcon.Close()
-'       End Try
-'   End Using
-'End Sub

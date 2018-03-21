@@ -4,6 +4,7 @@ Public Class Test_Query_Page
     Public SQL As New SQLControl ' can put new string in here ("") if we want
 
     Private Sub LoadData(Optional Query As String = "")
+
         If Query = "" Then
             SQL.ExecuteQuery("SELECT * FROM customer_data;") ' run the query
         Else
@@ -12,6 +13,8 @@ Public Class Test_Query_Page
 
         ' Error Handling
         If SQL.HasException(False) Then Exit Sub ' check for errors and exit gracefully
+
+        'DataReader.Read()
         dgvData.DataSource = SQL.SQLTable ' get the data and insert into the data grid
     End Sub
 
@@ -19,6 +22,7 @@ Public Class Test_Query_Page
         SQL.AddParam("@name", "%" & txtSearch.Text & "%")
         LoadData("SELECT * FROM customer_data WHERE first_name LIKE @name;") ' need like for wild cards
     End Sub
+
 
     Private Sub Test_Query_Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface

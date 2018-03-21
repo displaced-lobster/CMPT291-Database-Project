@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main_Interface
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main_Interface
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.File = New System.Windows.Forms.ToolStripMenuItem()
@@ -28,7 +28,9 @@ Partial Class Main_Interface
         Me.CustomersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
@@ -45,14 +47,14 @@ Partial Class Main_Interface
         '
         'File
         '
-        Me.File.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Open, Me.Close})
+        Me.File.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Open, Me.Close, Me.TestToolStripMenuItem})
         Me.File.Name = "File"
         Me.File.Size = New System.Drawing.Size(37, 20)
         Me.File.Text = "File"
         '
         'Open
         '
-        Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1})
+        Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1, Me.TestQueryToolStripMenuItem})
         Me.Open.Name = "Open"
         Me.Open.Size = New System.Drawing.Size(180, 22)
         Me.Open.Text = "Accounts"
@@ -60,26 +62,38 @@ Partial Class Main_Interface
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.CustomersToolStripMenuItem.Text = "New User Signup"
         '
         'EmployeeServicesToolStripMenuItem
         '
         Me.EmployeeServicesToolStripMenuItem.Name = "EmployeeServicesToolStripMenuItem"
-        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.EmployeeServicesToolStripMenuItem.Text = "Customer Services"
         '
         'EmployeeServicesToolStripMenuItem1
         '
         Me.EmployeeServicesToolStripMenuItem1.Name = "EmployeeServicesToolStripMenuItem1"
-        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(171, 22)
         Me.EmployeeServicesToolStripMenuItem1.Text = "Employee Services"
+        '
+        'TestQueryToolStripMenuItem
+        '
+        Me.TestQueryToolStripMenuItem.Name = "TestQueryToolStripMenuItem"
+        Me.TestQueryToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.TestQueryToolStripMenuItem.Text = "Test Query"
         '
         'Close
         '
         Me.Close.Name = "Close"
         Me.Close.Size = New System.Drawing.Size(180, 22)
         Me.Close.Text = "Close"
+        '
+        'TestToolStripMenuItem
+        '
+        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TestToolStripMenuItem.Text = "Test"
         '
         'WindowToolStripMenuItem
         '
@@ -119,4 +133,6 @@ Partial Class Main_Interface
     Friend WithEvents CustomersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TestQueryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TestToolStripMenuItem As ToolStripMenuItem
 End Class
