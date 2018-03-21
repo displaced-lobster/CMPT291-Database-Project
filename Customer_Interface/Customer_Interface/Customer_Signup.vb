@@ -16,7 +16,6 @@ Public Class Customer_SignUp
     Private Sub AddUser() ' method for inserting new user
         ' create account number
         Dim accountNum = CreateAccountNum()
-
         ' create SQL parameters to add
         SQL.AddParam("@first", firstName.Text)
         SQL.AddParam("@last", lastName.Text)
@@ -24,11 +23,6 @@ Public Class Customer_SignUp
         ' Mandatory phone number 1
         SQL.AddParam("@phoneType1", phoneDrop1.Text)
         SQL.AddParam("@phoneNum1", num1.Text)
-        ' Extra numbers
-        SQL.AddParam("@phoneType2", phoneDrop2.Text)
-        SQL.AddParam("@phoneNum2", num2.Text)
-        SQL.AddParam("@phoneType3", phoneDrop3.Text)
-        SQL.AddParam("@phoneNum3", num3.Text)
         ' address and payment info
         SQL.AddParam("@streetNum", streetNum.Text)
         SQL.AddParam("@street", street.Text)
@@ -59,11 +53,17 @@ Public Class Customer_SignUp
         If SQL.HasException(True) Then Exit Sub
         ' check if phone number field is filled and add additional numbers
         If phoneDrop2.Text <> "" Then
+            SQL.AddParam("@phoneType2", phoneDrop2.Text)
+            SQL.AddParam("@phoneNum2", num2.Text)
+            SQL.AddParam("@accNum", accountNum)
             SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
                              "VALUES (@accNum, @phoneNum2, @phoneType2);")
         End If
         If SQL.HasException(True) Then Exit Sub
         If phoneDrop3.Text <> "" Then
+            SQL.AddParam("@phoneType3", phoneDrop3.Text)
+            SQL.AddParam("@phoneNum3", num3.Text)
+            SQL.AddParam("@accNum", accountNum)
             SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
                              "VALUES (@accNum, @phoneNum3, @phoneType3);")
         End If
