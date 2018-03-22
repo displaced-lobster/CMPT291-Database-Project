@@ -19,4 +19,8 @@
     Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestToolStripMenuItem.Click
         Test_Query_Page.Show()
     End Sub
+
+    Private Sub Main_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

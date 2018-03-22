@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Customer_Interface
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Customer_Interface
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.BtnExit = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -29,15 +29,14 @@ Partial Class Customer_Interface
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnChangeInfo = New System.Windows.Forms.Button()
         Me.txtInfo = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -52,6 +51,7 @@ Partial Class Customer_Interface
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.Label()
+        Me.txtPrev = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -94,10 +94,10 @@ Partial Class Customer_Interface
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtPrev)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.ComboBox2)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.Label1)
@@ -135,15 +135,6 @@ Partial Class Customer_Interface
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Movie Queue"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 136)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(349, 224)
-        Me.TextBox1.TabIndex = 4
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -173,8 +164,7 @@ Partial Class Customer_Interface
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btnChangeInfo)
         Me.GroupBox1.Controls.Add(Me.txtInfo)
         Me.GroupBox1.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox1.Name = "GroupBox1"
@@ -183,23 +173,14 @@ Partial Class Customer_Interface
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Account Information"
         '
-        'Button2
+        'btnChangeInfo
         '
-        Me.Button2.Location = New System.Drawing.Point(224, 366)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(107, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Change Password"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(111, 366)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(107, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Edit Information"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnChangeInfo.Location = New System.Drawing.Point(179, 366)
+        Me.btnChangeInfo.Name = "btnChangeInfo"
+        Me.btnChangeInfo.Size = New System.Drawing.Size(107, 23)
+        Me.btnChangeInfo.TabIndex = 1
+        Me.btnChangeInfo.Text = "Edit Account"
+        Me.btnChangeInfo.UseVisualStyleBackColor = True
         '
         'txtInfo
         '
@@ -216,6 +197,7 @@ Partial Class Customer_Interface
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
         Me.TabPage2.Controls.Add(Me.Button4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
@@ -225,6 +207,15 @@ Partial Class Customer_Interface
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Movies"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(601, 166)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(107, 23)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Return Movie"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -373,6 +364,14 @@ Partial Class Customer_Interface
         Me.txtUserName.TabIndex = 5
         Me.txtUserName.Text = "User"
         '
+        'txtPrev
+        '
+        Me.txtPrev.Location = New System.Drawing.Point(6, 137)
+        Me.txtPrev.Multiline = True
+        Me.txtPrev.Name = "txtPrev"
+        Me.txtPrev.Size = New System.Drawing.Size(355, 223)
+        Me.txtPrev.TabIndex = 8
+        '
         'Customer_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -405,14 +404,12 @@ Partial Class Customer_Interface
     Friend WithEvents txtUserName As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtInfo As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnChangeInfo As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents RadioButton4 As RadioButton
@@ -428,4 +425,6 @@ Partial Class Customer_Interface
     Friend WithEvents Button6 As Button
     Friend WithEvents movieSelect As ComboBox
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtPrev As TextBox
 End Class

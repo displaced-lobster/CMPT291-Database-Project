@@ -29,9 +29,9 @@ Partial Class Main_Interface
         Me.EmployeeServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,7 +55,7 @@ Partial Class Main_Interface
         '
         Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1})
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(180, 22)
+        Me.Open.Size = New System.Drawing.Size(124, 22)
         Me.Open.Text = "Accounts"
         '
         'CustomersToolStripMenuItem
@@ -79,8 +79,14 @@ Partial Class Main_Interface
         'Close
         '
         Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(180, 22)
+        Me.Close.Size = New System.Drawing.Size(124, 22)
         Me.Close.Text = "Close"
+        '
+        'TestToolStripMenuItem
+        '
+        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.TestToolStripMenuItem.Text = "Test"
         '
         'WindowToolStripMenuItem
         '
@@ -93,12 +99,6 @@ Partial Class Main_Interface
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'TestToolStripMenuItem
-        '
-        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TestToolStripMenuItem.Text = "Test"
         '
         'Main_Interface
         '

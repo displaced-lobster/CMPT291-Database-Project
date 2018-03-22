@@ -164,7 +164,7 @@ Partial Class Customer_SignUp
         '
         'num1
         '
-        Me.num1.Location = New System.Drawing.Point(145, 140)
+        Me.num1.Location = New System.Drawing.Point(20, 132)
         Me.num1.Name = "num1"
         Me.num1.Size = New System.Drawing.Size(125, 20)
         Me.num1.TabIndex = 15
@@ -175,7 +175,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop1.FormattingEnabled = True
         Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
-        Me.phoneDrop1.Location = New System.Drawing.Point(18, 138)
+        Me.phoneDrop1.Location = New System.Drawing.Point(151, 132)
         Me.phoneDrop1.MaxDropDownItems = 3
         Me.phoneDrop1.Name = "phoneDrop1"
         Me.phoneDrop1.Size = New System.Drawing.Size(121, 21)
@@ -187,7 +187,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop2.FormattingEnabled = True
         Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
-        Me.phoneDrop2.Location = New System.Drawing.Point(18, 165)
+        Me.phoneDrop2.Location = New System.Drawing.Point(151, 159)
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
         Me.phoneDrop2.Size = New System.Drawing.Size(121, 21)
@@ -195,14 +195,14 @@ Partial Class Customer_SignUp
         '
         'num2
         '
-        Me.num2.Location = New System.Drawing.Point(145, 166)
+        Me.num2.Location = New System.Drawing.Point(20, 158)
         Me.num2.Name = "num2"
         Me.num2.Size = New System.Drawing.Size(125, 20)
         Me.num2.TabIndex = 18
         '
         'num3
         '
-        Me.num3.Location = New System.Drawing.Point(145, 193)
+        Me.num3.Location = New System.Drawing.Point(20, 185)
         Me.num3.Name = "num3"
         Me.num3.Size = New System.Drawing.Size(125, 20)
         Me.num3.TabIndex = 20
@@ -213,7 +213,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop3.FormattingEnabled = True
         Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
-        Me.phoneDrop3.Location = New System.Drawing.Point(18, 192)
+        Me.phoneDrop3.Location = New System.Drawing.Point(151, 186)
         Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
         Me.phoneDrop3.Size = New System.Drawing.Size(121, 21)
@@ -312,7 +312,7 @@ Partial Class Customer_SignUp
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 122)
+        Me.Label8.Location = New System.Drawing.Point(148, 116)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(31, 13)
         Me.Label8.TabIndex = 30
@@ -321,20 +321,20 @@ Partial Class Customer_SignUp
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(142, 122)
+        Me.Label9.Location = New System.Drawing.Point(17, 114)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(44, 13)
+        Me.Label9.Size = New System.Drawing.Size(38, 13)
         Me.Label9.TabIndex = 31
-        Me.Label9.Text = "Number"
+        Me.Label9.Text = "Phone"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(15, 238)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(71, 13)
+        Me.Label10.Size = New System.Drawing.Size(75, 13)
         Me.Label10.TabIndex = 32
-        Me.Label10.Text = "street number"
+        Me.Label10.Text = "Street Number"
         '
         'Label11
         '
