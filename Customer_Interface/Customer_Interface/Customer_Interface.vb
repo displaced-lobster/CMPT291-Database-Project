@@ -9,6 +9,56 @@ Public Class Customer_Interface
 
     Private Sub Customer_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
+
+        LoadData()
+        LoadMovies()
+
+    End Sub
+
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+        Me.Close()
+        Customer_Login.Close() ' terminate the session
+        MsgBox("Current Session Closed")
+    End Sub
+
+    Private Sub btnChangeInfo_Click(sender As Object, e As EventArgs) Handles btnChangeInfo.Click
+        Edit_Customer_Account.Show()
+    End Sub
+
+    Private Sub btnChangePass_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LoadMovies()
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
+                         "FROM Order_Data as OD, Movie_Data as MD " &
+                         "WHERE OD.movie_id = MD.movie_id AND return_flag = 1 AND account_number = " & CInt(GetAccount()) & ";")
+        Dim ttlRows As Integer = SQL.SQLTable.Rows.Count()
+        For i As Integer = 0 To (ttlRows - 1)
+            cbxPrev.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
+
+        ' load pull down current movies
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
+                         "FROM Order_Data as OD, Movie_Data as MD " &
+                         "WHERE OD.movie_id = MD.movie_id AND return_flag = 0 AND account_number = " & CInt(GetAccount()) & ";")
+        ttlRows = SQL.SQLTable.Rows.Count()
+        For i As Integer = 0 To (ttlRows - 1)
+            cbxCur.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
+
+        ' load pull down for order queue
+        SQL.SQLTable.Clear()
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
+                         "FROM Order_Queue as OQ, Movie_Data as MD " &
+                         "WHERE OQ.movie_id = MD.movie_id AND account_number = " & CInt(GetAccount()) & ";")
+        ttlRows = SQL.SQLTable.Rows.Count()
+        For i As Integer = 0 To (ttlRows - 1)
+            cbxQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
+    End Sub
+
+    Private Sub LoadData()
         Dim user As String = GetAccount()
 
         ' clear table
@@ -51,52 +101,25 @@ Public Class Customer_Interface
                        "Account Type: " & i.Item("type") & vbCrLf & ' add from other table
                        "Account Created On: " & i.Item("creation_date")
 
-        LoadMovies()
-
     End Sub
 
-    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
-        Me.Close()
-        Customer_Login.Close() ' terminate the session
-        MsgBox("Current Session Closed")
+    Private Sub Radials_CheckedChanged(sender As Object, e As EventArgs) Handles Rtitles.CheckedChanged, Ractors.CheckedChanged,
+            Rmovies.CheckedChanged, RbestSellers.CheckedChanged, Rpersonal.CheckedChanged
+        btnSearch.Enabled = True
+
+        If Rtitles.Checked Then
+            ' search by title string(s)
+        ElseIf Ractors.Checked Then
+            ' search by actor string(s)
+        ElseIf Rmovies.Checked Then
+            ' search by type
+
+        ElseIf RbestSellers.Checked Then
+            ' search by top rating
+        ElseIf Rpersonal.Checked Then
+            ' filter to find most rented type of movies and then search based on that rating
+        End If
+
     End Sub
-
-    Private Sub btnChangeInfo_Click(sender As Object, e As EventArgs) Handles btnChangeInfo.Click
-        Edit_Customer_Account.Show()
-    End Sub
-
-    Private Sub btnChangePass_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Sub LoadMovies()
-        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
-                         "FROM Order_Data as OD, Movie_Data as MD " &
-                         "WHERE OD.movie_id = MD.movie_id AND return_flag = 1 AND account_number = " & CInt(GetAccount()) & ";")
-        Dim ttlRows As Integer = SQL.SQLTable.Rows.Count()
-        For i As Integer = 0 To (ttlRows - 1)
-            cbxPrev.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-        Next
-
-        ' load pull down current movies
-        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
-                         "FROM Order_Data as OD, Movie_Data as MD " &
-                         "WHERE OD.movie_id = MD.movie_id AND return_flag = 0 AND account_number = " & CInt(GetAccount()) & ";")
-        ttlRows = SQL.SQLTable.Rows.Count()
-        For i As Integer = 0 To (ttlRows - 1)
-            cbxCur.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-        Next
-
-        ' load pull down for order queue
-        SQL.SQLTable.Clear()
-        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
-                         "FROM Order_Queue as OQ, Movie_Data as MD " &
-                         "WHERE OQ.movie_id = MD.movie_id AND account_number = " & CInt(GetAccount()) & ";")
-        ttlRows = SQL.SQLTable.Rows.Count()
-        For i As Integer = 0 To (ttlRows - 1)
-            cbxQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-        Next
-    End Sub
-
 
 End Class
