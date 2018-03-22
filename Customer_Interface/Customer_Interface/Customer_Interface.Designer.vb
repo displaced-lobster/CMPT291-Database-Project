@@ -26,11 +26,12 @@ Partial Class Customer_Interface
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cbxPrev = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cbxQueue = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbxCur = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnChangeInfo = New System.Windows.Forms.Button()
@@ -51,7 +52,6 @@ Partial Class Customer_Interface
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.Label()
-        Me.txtPrev = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -94,12 +94,12 @@ Partial Class Customer_Interface
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.txtPrev)
+        Me.GroupBox2.Controls.Add(Me.cbxPrev)
         Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
+        Me.GroupBox2.Controls.Add(Me.cbxQueue)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.cbxCur)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Location = New System.Drawing.Point(471, 7)
         Me.GroupBox2.Name = "GroupBox2"
@@ -108,23 +108,32 @@ Partial Class Customer_Interface
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Rental History"
         '
+        'cbxPrev
+        '
+        Me.cbxPrev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxPrev.FormattingEnabled = True
+        Me.cbxPrev.Location = New System.Drawing.Point(92, 117)
+        Me.cbxPrev.Name = "cbxPrev"
+        Me.cbxPrev.Size = New System.Drawing.Size(269, 21)
+        Me.cbxPrev.TabIndex = 8
+        '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(165, 78)
+        Me.Button3.Location = New System.Drawing.Point(245, 78)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(107, 23)
+        Me.Button3.Size = New System.Drawing.Size(116, 23)
         Me.Button3.TabIndex = 7
-        Me.Button3.Text = "Edit Movie Queue"
+        Me.Button3.Text = "Edit Movie Queue ?"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'cbxQueue
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(92, 51)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(269, 21)
-        Me.ComboBox2.TabIndex = 6
+        Me.cbxQueue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxQueue.FormattingEnabled = True
+        Me.cbxQueue.Location = New System.Drawing.Point(92, 51)
+        Me.cbxQueue.Name = "cbxQueue"
+        Me.cbxQueue.Size = New System.Drawing.Size(269, 21)
+        Me.cbxQueue.TabIndex = 6
         '
         'Label3
         '
@@ -144,14 +153,14 @@ Partial Class Customer_Interface
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Past Orders"
         '
-        'ComboBox1
+        'cbxCur
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(92, 20)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(269, 21)
-        Me.ComboBox1.TabIndex = 1
+        Me.cbxCur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxCur.FormattingEnabled = True
+        Me.cbxCur.Location = New System.Drawing.Point(92, 20)
+        Me.cbxCur.Name = "cbxCur"
+        Me.cbxCur.Size = New System.Drawing.Size(269, 21)
+        Me.cbxCur.TabIndex = 1
         '
         'Label1
         '
@@ -364,14 +373,6 @@ Partial Class Customer_Interface
         Me.txtUserName.TabIndex = 5
         Me.txtUserName.Text = "User"
         '
-        'txtPrev
-        '
-        Me.txtPrev.Location = New System.Drawing.Point(6, 137)
-        Me.txtPrev.Multiline = True
-        Me.txtPrev.Name = "txtPrev"
-        Me.txtPrev.Size = New System.Drawing.Size(355, 223)
-        Me.txtPrev.TabIndex = 8
-        '
         'Customer_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -406,9 +407,9 @@ Partial Class Customer_Interface
     Friend WithEvents txtInfo As TextBox
     Friend WithEvents btnChangeInfo As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbxCur As ComboBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cbxQueue As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
@@ -426,5 +427,5 @@ Partial Class Customer_Interface
     Friend WithEvents movieSelect As ComboBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents txtPrev As TextBox
+    Friend WithEvents cbxPrev As ComboBox
 End Class

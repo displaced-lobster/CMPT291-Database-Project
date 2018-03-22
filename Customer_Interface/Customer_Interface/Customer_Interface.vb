@@ -70,16 +70,33 @@ Public Class Customer_Interface
     End Sub
 
     Sub LoadMovies()
-        SQL.ExecuteQuery("SELECT movie_name as Movies " &
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
                          "FROM Order_Data as OD, Movie_Data as MD " &
                          "WHERE OD.movie_id = MD.movie_id AND return_flag = 1 AND account_number = " & CInt(GetAccount()) & ";")
         Dim ttlRows As Integer = SQL.SQLTable.Rows.Count()
-        Dim movieList As String = ""
-        ' Populate the previous watched movies list
         For i As Integer = 0 To (ttlRows - 1)
-            movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies") + vbCrLf
+            cbxPrev.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
         Next
-        txtPrev.Text = movieList
+
+        ' load pull down current movies
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
+                         "FROM Order_Data as OD, Movie_Data as MD " &
+                         "WHERE OD.movie_id = MD.movie_id AND return_flag = 0 AND account_number = " & CInt(GetAccount()) & ";")
+        ttlRows = SQL.SQLTable.Rows.Count()
+        For i As Integer = 0 To (ttlRows - 1)
+            cbxCur.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
+
+        ' load pull down for order queue
+        SQL.SQLTable.Clear()
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
+                         "FROM Order_Queue as OQ, Movie_Data as MD " &
+                         "WHERE OQ.movie_id = MD.movie_id AND account_number = " & CInt(GetAccount()) & ";")
+        ttlRows = SQL.SQLTable.Rows.Count()
+        For i As Integer = 0 To (ttlRows - 1)
+            cbxQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
     End Sub
+
 
 End Class
