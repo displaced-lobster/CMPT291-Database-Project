@@ -22,7 +22,7 @@ Public Class Test_Query_Page
 
     Private Sub Test_Query_Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
-        LoadData("SELECT first_name, last_name, account_number FROM customer_data") ' filter columns
+        LoadData("SELECT * FROM customer_data as CD, Customer_Phone_Numbers as CP WHERE CD.account_number = CP.account_number;") ' filter columns
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

@@ -20,7 +20,7 @@
                          "FROM Customer_Passwords " &
                          "WHERE username='" & username.Text & "' " &
                          "AND password='" & passwd.Text & "' " &
-                         "COLLATE SQL_Latin1_General_CP1_CS_AS") ' force case sensitive nature
+                         "COLLATE SQL_Latin1_General_CP1_CS_AS") ' force case sensitive nature **** this does not work, find solution
 
         If SQL.SQLTable.Rows.Count() <= 0 Then
             MsgBox("Invalid Credentials", MsgBoxStyle.Critical, "LOGIN FAILED")
