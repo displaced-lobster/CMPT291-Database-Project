@@ -52,6 +52,7 @@ Partial Class Customer_Interface
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.Label()
+        Me.rbCategory = New System.Windows.Forms.RadioButton()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -228,6 +229,7 @@ Partial Class Customer_Interface
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rbCategory)
         Me.GroupBox3.Controls.Add(Me.rbActor)
         Me.GroupBox3.Controls.Add(Me.rbTitle)
         Me.GroupBox3.Controls.Add(Me.btnSearch)
@@ -370,6 +372,17 @@ Partial Class Customer_Interface
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
         '
+        'rbCategory
+        '
+        Me.rbCategory.AutoSize = True
+        Me.rbCategory.Location = New System.Drawing.Point(317, 53)
+        Me.rbCategory.Name = "rbCategory"
+        Me.rbCategory.Size = New System.Drawing.Size(118, 17)
+        Me.rbCategory.TabIndex = 11
+        Me.rbCategory.TabStop = True
+        Me.rbCategory.Text = "Search by Category"
+        Me.rbCategory.UseVisualStyleBackColor = True
+        '
         'Customer_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -425,4 +438,5 @@ Partial Class Customer_Interface
     Friend WithEvents btnSearch As Button
     Friend WithEvents rbActor As RadioButton
     Friend WithEvents rbTitle As RadioButton
+    Friend WithEvents rbCategory As RadioButton
 End Class
