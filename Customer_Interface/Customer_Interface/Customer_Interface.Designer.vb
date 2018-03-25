@@ -36,14 +36,32 @@ Partial Class Customer_Interface
         Me.btnChangeInfo = New System.Windows.Forms.Button()
         Me.txtInfo = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.cbRateRes = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnRate = New System.Windows.Forms.Button()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.rb5 = New System.Windows.Forms.RadioButton()
+        Me.rb4 = New System.Windows.Forms.RadioButton()
+        Me.rb2 = New System.Windows.Forms.RadioButton()
+        Me.rb3 = New System.Windows.Forms.RadioButton()
+        Me.rb1 = New System.Windows.Forms.RadioButton()
+        Me.rbRateActor = New System.Windows.Forms.RadioButton()
+        Me.btnRatingSearch = New System.Windows.Forms.Button()
+        Me.rbRateMovie = New System.Windows.Forms.RadioButton()
+        Me.txtRatingSearch = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.rbCategory = New System.Windows.Forms.RadioButton()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.btnEditQueue = New System.Windows.Forms.Button()
         Me.rbActor = New System.Windows.Forms.RadioButton()
+        Me.cbEditQueue = New System.Windows.Forms.ComboBox()
         Me.rbTitle = New System.Windows.Forms.RadioButton()
+        Me.btnReturnMovie = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtRes = New System.Windows.Forms.TextBox()
         Me.btnPersonal = New System.Windows.Forms.Button()
         Me.btnBest = New System.Windows.Forms.Button()
@@ -51,14 +69,15 @@ Partial Class Customer_Interface
         Me.Label5 = New System.Windows.Forms.Label()
         Me.movieSelect = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -199,10 +218,8 @@ Partial Class Customer_Interface
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Button3)
-        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Controls.Add(Me.GroupBox5)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
-        Me.TabPage2.Controls.Add(Me.Button4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -211,29 +228,177 @@ Partial Class Customer_Interface
         Me.TabPage2.Text = "Movies"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Button3
+        'GroupBox5
         '
-        Me.Button3.Location = New System.Drawing.Point(606, 213)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(116, 23)
-        Me.Button3.TabIndex = 10
-        Me.Button3.Text = "Edit Movie Queue ?"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.GroupBox5.Controls.Add(Me.GroupBox7)
+        Me.GroupBox5.Controls.Add(Me.rbRateActor)
+        Me.GroupBox5.Controls.Add(Me.btnRatingSearch)
+        Me.GroupBox5.Controls.Add(Me.rbRateMovie)
+        Me.GroupBox5.Controls.Add(Me.txtRatingSearch)
+        Me.GroupBox5.Location = New System.Drawing.Point(474, 7)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(364, 408)
+        Me.GroupBox5.TabIndex = 14
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Ratings"
         '
-        'Button1
+        'GroupBox7
         '
-        Me.Button1.Location = New System.Drawing.Point(606, 155)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(116, 23)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Return Movie"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.GroupBox7.Controls.Add(Me.cbRateRes)
+        Me.GroupBox7.Controls.Add(Me.Label4)
+        Me.GroupBox7.Controls.Add(Me.btnRate)
+        Me.GroupBox7.Controls.Add(Me.GroupBox6)
+        Me.GroupBox7.Location = New System.Drawing.Point(6, 128)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(352, 273)
+        Me.GroupBox7.TabIndex = 20
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Results"
+        '
+        'cbRateRes
+        '
+        Me.cbRateRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbRateRes.FormattingEnabled = True
+        Me.cbRateRes.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.cbRateRes.Location = New System.Drawing.Point(6, 79)
+        Me.cbRateRes.MaxDropDownItems = 50
+        Me.cbRateRes.Name = "cbRateRes"
+        Me.cbRateRes.Size = New System.Drawing.Size(186, 21)
+        Me.cbRateRes.TabIndex = 16
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(7, 20)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(81, 13)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "Choose a rating"
+        '
+        'btnRate
+        '
+        Me.btnRate.Location = New System.Drawing.Point(199, 77)
+        Me.btnRate.Name = "btnRate"
+        Me.btnRate.Size = New System.Drawing.Size(89, 23)
+        Me.btnRate.TabIndex = 17
+        Me.btnRate.Text = "Rate"
+        Me.btnRate.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.rb5)
+        Me.GroupBox6.Controls.Add(Me.rb4)
+        Me.GroupBox6.Controls.Add(Me.rb2)
+        Me.GroupBox6.Controls.Add(Me.rb3)
+        Me.GroupBox6.Controls.Add(Me.rb1)
+        Me.GroupBox6.Location = New System.Drawing.Point(7, 39)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(185, 32)
+        Me.GroupBox6.TabIndex = 18
+        Me.GroupBox6.TabStop = False
+        '
+        'rb5
+        '
+        Me.rb5.AutoSize = True
+        Me.rb5.Location = New System.Drawing.Point(154, 11)
+        Me.rb5.Name = "rb5"
+        Me.rb5.Size = New System.Drawing.Size(31, 17)
+        Me.rb5.TabIndex = 21
+        Me.rb5.TabStop = True
+        Me.rb5.Text = "5"
+        Me.rb5.UseVisualStyleBackColor = True
+        '
+        'rb4
+        '
+        Me.rb4.AutoSize = True
+        Me.rb4.Location = New System.Drawing.Point(117, 11)
+        Me.rb4.Name = "rb4"
+        Me.rb4.Size = New System.Drawing.Size(31, 17)
+        Me.rb4.TabIndex = 20
+        Me.rb4.TabStop = True
+        Me.rb4.Text = "4"
+        Me.rb4.UseVisualStyleBackColor = True
+        '
+        'rb2
+        '
+        Me.rb2.AutoSize = True
+        Me.rb2.Location = New System.Drawing.Point(43, 11)
+        Me.rb2.Name = "rb2"
+        Me.rb2.Size = New System.Drawing.Size(31, 17)
+        Me.rb2.TabIndex = 17
+        Me.rb2.TabStop = True
+        Me.rb2.Text = "2"
+        Me.rb2.UseVisualStyleBackColor = True
+        '
+        'rb3
+        '
+        Me.rb3.AutoSize = True
+        Me.rb3.Location = New System.Drawing.Point(80, 11)
+        Me.rb3.Name = "rb3"
+        Me.rb3.Size = New System.Drawing.Size(31, 17)
+        Me.rb3.TabIndex = 19
+        Me.rb3.TabStop = True
+        Me.rb3.Text = "3"
+        Me.rb3.UseVisualStyleBackColor = True
+        '
+        'rb1
+        '
+        Me.rb1.AutoSize = True
+        Me.rb1.Location = New System.Drawing.Point(6, 11)
+        Me.rb1.Name = "rb1"
+        Me.rb1.Size = New System.Drawing.Size(31, 17)
+        Me.rb1.TabIndex = 16
+        Me.rb1.TabStop = True
+        Me.rb1.Text = "1"
+        Me.rb1.UseVisualStyleBackColor = True
+        '
+        'rbRateActor
+        '
+        Me.rbRateActor.AutoSize = True
+        Me.rbRateActor.Location = New System.Drawing.Point(6, 42)
+        Me.rbRateActor.Name = "rbRateActor"
+        Me.rbRateActor.Size = New System.Drawing.Size(106, 17)
+        Me.rbRateActor.TabIndex = 15
+        Me.rbRateActor.TabStop = True
+        Me.rbRateActor.Text = "Search by Actors"
+        Me.rbRateActor.UseVisualStyleBackColor = True
+        '
+        'btnRatingSearch
+        '
+        Me.btnRatingSearch.Location = New System.Drawing.Point(199, 60)
+        Me.btnRatingSearch.Name = "btnRatingSearch"
+        Me.btnRatingSearch.Size = New System.Drawing.Size(89, 23)
+        Me.btnRatingSearch.TabIndex = 10
+        Me.btnRatingSearch.Text = "Search"
+        Me.btnRatingSearch.UseVisualStyleBackColor = True
+        '
+        'rbRateMovie
+        '
+        Me.rbRateMovie.AutoSize = True
+        Me.rbRateMovie.Location = New System.Drawing.Point(6, 19)
+        Me.rbRateMovie.Name = "rbRateMovie"
+        Me.rbRateMovie.Size = New System.Drawing.Size(96, 17)
+        Me.rbRateMovie.TabIndex = 14
+        Me.rbRateMovie.TabStop = True
+        Me.rbRateMovie.Text = "Search by Title"
+        Me.rbRateMovie.UseVisualStyleBackColor = True
+        '
+        'txtRatingSearch
+        '
+        Me.txtRatingSearch.Location = New System.Drawing.Point(6, 62)
+        Me.txtRatingSearch.Name = "txtRatingSearch"
+        Me.txtRatingSearch.Size = New System.Drawing.Size(186, 20)
+        Me.txtRatingSearch.TabIndex = 9
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.rbCategory)
+        Me.GroupBox3.Controls.Add(Me.ComboBox1)
+        Me.GroupBox3.Controls.Add(Me.btnEditQueue)
         Me.GroupBox3.Controls.Add(Me.rbActor)
+        Me.GroupBox3.Controls.Add(Me.cbEditQueue)
         Me.GroupBox3.Controls.Add(Me.rbTitle)
+        Me.GroupBox3.Controls.Add(Me.btnReturnMovie)
         Me.GroupBox3.Controls.Add(Me.btnSearch)
         Me.GroupBox3.Controls.Add(Me.GroupBox4)
         Me.GroupBox3.Controls.Add(Me.btnPersonal)
@@ -260,6 +425,26 @@ Partial Class Customer_Interface
         Me.rbCategory.Text = "Search by Category"
         Me.rbCategory.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.ComboBox1.Location = New System.Drawing.Point(8, 353)
+        Me.ComboBox1.MaxDropDownItems = 50
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(186, 21)
+        Me.ComboBox1.TabIndex = 13
+        '
+        'btnEditQueue
+        '
+        Me.btnEditQueue.Location = New System.Drawing.Point(200, 378)
+        Me.btnEditQueue.Name = "btnEditQueue"
+        Me.btnEditQueue.Size = New System.Drawing.Size(116, 23)
+        Me.btnEditQueue.TabIndex = 11
+        Me.btnEditQueue.Text = "Edit Movie Queue"
+        Me.btnEditQueue.UseVisualStyleBackColor = True
+        '
         'rbActor
         '
         Me.rbActor.AutoSize = True
@@ -271,6 +456,17 @@ Partial Class Customer_Interface
         Me.rbActor.Text = "Search by Actors"
         Me.rbActor.UseVisualStyleBackColor = True
         '
+        'cbEditQueue
+        '
+        Me.cbEditQueue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbEditQueue.FormattingEnabled = True
+        Me.cbEditQueue.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.cbEditQueue.Location = New System.Drawing.Point(8, 380)
+        Me.cbEditQueue.MaxDropDownItems = 50
+        Me.cbEditQueue.Name = "cbEditQueue"
+        Me.cbEditQueue.Size = New System.Drawing.Size(186, 21)
+        Me.cbEditQueue.TabIndex = 10
+        '
         'rbTitle
         '
         Me.rbTitle.AutoSize = True
@@ -281,6 +477,15 @@ Partial Class Customer_Interface
         Me.rbTitle.TabStop = True
         Me.rbTitle.Text = "Search by Title"
         Me.rbTitle.UseVisualStyleBackColor = True
+        '
+        'btnReturnMovie
+        '
+        Me.btnReturnMovie.Location = New System.Drawing.Point(200, 351)
+        Me.btnReturnMovie.Name = "btnReturnMovie"
+        Me.btnReturnMovie.Size = New System.Drawing.Size(116, 23)
+        Me.btnReturnMovie.TabIndex = 9
+        Me.btnReturnMovie.Text = "Return A Movie"
+        Me.btnReturnMovie.UseVisualStyleBackColor = True
         '
         'btnSearch
         '
@@ -298,10 +503,18 @@ Partial Class Customer_Interface
         Me.GroupBox4.Controls.Add(Me.txtRes)
         Me.GroupBox4.Location = New System.Drawing.Point(7, 128)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(447, 245)
+        Me.GroupBox4.Size = New System.Drawing.Size(447, 192)
         Me.GroupBox4.TabIndex = 7
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Results"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(302, 20)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(139, 163)
+        Me.DataGridView1.TabIndex = 6
         '
         'txtRes
         '
@@ -310,7 +523,7 @@ Partial Class Customer_Interface
         Me.txtRes.Multiline = True
         Me.txtRes.Name = "txtRes"
         Me.txtRes.ReadOnly = True
-        Me.txtRes.Size = New System.Drawing.Size(434, 219)
+        Me.txtRes.Size = New System.Drawing.Size(434, 163)
         Me.txtRes.TabIndex = 0
         '
         'btnPersonal
@@ -333,9 +546,9 @@ Partial Class Customer_Interface
         '
         'btnAddQueue
         '
-        Me.btnAddQueue.Location = New System.Drawing.Point(199, 379)
+        Me.btnAddQueue.Location = New System.Drawing.Point(200, 324)
         Me.btnAddQueue.Name = "btnAddQueue"
-        Me.btnAddQueue.Size = New System.Drawing.Size(88, 23)
+        Me.btnAddQueue.Size = New System.Drawing.Size(116, 23)
         Me.btnAddQueue.TabIndex = 3
         Me.btnAddQueue.Text = "Add To Queue"
         Me.btnAddQueue.UseVisualStyleBackColor = True
@@ -354,11 +567,10 @@ Partial Class Customer_Interface
         Me.movieSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.movieSelect.FormattingEnabled = True
         Me.movieSelect.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.movieSelect.Location = New System.Drawing.Point(6, 381)
+        Me.movieSelect.Location = New System.Drawing.Point(7, 326)
         Me.movieSelect.MaxDropDownItems = 50
         Me.movieSelect.Name = "movieSelect"
         Me.movieSelect.Size = New System.Drawing.Size(186, 21)
-        Me.movieSelect.Sorted = True
         Me.movieSelect.TabIndex = 2
         '
         'txtSearch
@@ -368,15 +580,6 @@ Partial Class Customer_Interface
         Me.txtSearch.Size = New System.Drawing.Size(186, 20)
         Me.txtSearch.TabIndex = 0
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(606, 184)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(116, 23)
-        Me.Button4.TabIndex = 0
-        Me.Button4.Text = "Rate A Movie"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'txtUserName
         '
         Me.txtUserName.AutoSize = True
@@ -385,14 +588,6 @@ Partial Class Customer_Interface
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(192, 78)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
-        Me.DataGridView1.TabIndex = 6
         '
         'Customer_Interface
         '
@@ -411,6 +606,12 @@ Partial Class Customer_Interface
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -436,12 +637,10 @@ Partial Class Customer_Interface
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents Button4 As Button
     Friend WithEvents btnAddQueue As Button
     Friend WithEvents movieSelect As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnReturnMovie As Button
     Friend WithEvents cbxPrev As ComboBox
-    Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents btnPersonal As Button
     Friend WithEvents btnBest As Button
@@ -452,4 +651,22 @@ Partial Class Customer_Interface
     Friend WithEvents rbTitle As RadioButton
     Friend WithEvents rbCategory As RadioButton
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents btnEditQueue As Button
+    Friend WithEvents cbEditQueue As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents rbRateActor As RadioButton
+    Friend WithEvents btnRatingSearch As Button
+    Friend WithEvents rbRateMovie As RadioButton
+    Friend WithEvents txtRatingSearch As TextBox
+    Friend WithEvents btnRate As Button
+    Friend WithEvents cbRateRes As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents rb5 As RadioButton
+    Friend WithEvents rb4 As RadioButton
+    Friend WithEvents rb2 As RadioButton
+    Friend WithEvents rb3 As RadioButton
+    Friend WithEvents rb1 As RadioButton
+    Friend WithEvents GroupBox7 As GroupBox
 End Class
