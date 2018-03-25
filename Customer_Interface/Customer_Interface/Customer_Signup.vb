@@ -30,7 +30,7 @@ Public Class Customer_SignUp
         SQL.AddParam("@city", city.Text)
         SQL.AddParam("@state", state.Text)
         SQL.AddParam("@zip", zip.Text)
-        SQL.AddParam("@cardNum", Convert.ToInt32(cardNum.Text))
+        SQL.AddParam("@cardNum", cardNum.Text)
         SQL.AddParam("@date", Date.Now)
         SQL.AddParam("@accNum", accountNum)
         ' create password account vitals
@@ -44,11 +44,11 @@ Public Class Customer_SignUp
         ' add values to table
         SQL.ExecuteQuery("INSERT INTO Customer_Data (account_number, first_name, last_name, city, " &
                          "state, zip_code, street, street_num, apartment_num, email, creation_date, " &
-                         "credit_card_num, type) VALUES (@accNum, @first, @last, @city, @state, " &
+                         "credit_card_num, account_type) VALUES (@accNum, @first, @last, @city, @state, " &
                          "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @membership); " &
                          "INSERT INTO Customer_Passwords (account_number, username, password) " &
                          "VALUES (@accNum, @username, @password); " &
-                         "INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
+                         "INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, phone_type) " &
                          "VALUES (@accNum, @phoneNum1, @phoneType1);")
         If SQL.HasException(True) Then Exit Sub
         ' check if phone number field is filled and add additional numbers
@@ -56,7 +56,7 @@ Public Class Customer_SignUp
             SQL.AddParam("@phoneType2", phoneDrop2.Text)
             SQL.AddParam("@phoneNum2", num2.Text)
             SQL.AddParam("@accNum", accountNum)
-            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
+            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, phone_type) " &
                              "VALUES (@accNum, @phoneNum2, @phoneType2);")
         End If
         If SQL.HasException(True) Then Exit Sub
@@ -64,7 +64,7 @@ Public Class Customer_SignUp
             SQL.AddParam("@phoneType3", phoneDrop3.Text)
             SQL.AddParam("@phoneNum3", num3.Text)
             SQL.AddParam("@accNum", accountNum)
-            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, type) " &
+            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, phone_type) " &
                              "VALUES (@accNum, @phoneNum3, @phoneType3);")
         End If
         If SQL.HasException(True) Then Exit Sub

@@ -1,4 +1,5 @@
-﻿Public Class Customer_Login
+﻿
+Public Class Customer_Login
     Private SQL As New SQLControl
     Public ValidUser As String ' global to pass user credentials to other classes
 

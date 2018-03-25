@@ -40,6 +40,7 @@ Partial Class Customer_Interface
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.btnAddQueue = New System.Windows.Forms.Button()
         Me.movieSelect = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -52,7 +53,6 @@ Partial Class Customer_Interface
         Me.Rtitles = New System.Windows.Forms.RadioButton()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -257,6 +257,15 @@ Partial Class Customer_Interface
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Search Results"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(7, 34)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(247, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Movie Categories: Comedy, Drama, Action, Foreign"
+        '
         'btnAddQueue
         '
         Me.btnAddQueue.Location = New System.Drawing.Point(198, 116)
@@ -375,15 +384,6 @@ Partial Class Customer_Interface
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(7, 34)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(247, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Movie Categories: Comedy, Drama, Action, Foreign"
         '
         'Customer_Interface
         '
