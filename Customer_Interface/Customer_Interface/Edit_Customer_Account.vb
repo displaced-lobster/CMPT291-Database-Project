@@ -16,7 +16,7 @@ Public Class Edit_Customer_Account
         firstName.Text = i.Item("first_name")
         lastName.Text = i.item("last_name")
         email.Text = i.Item("email")
-        phoneDrop1.Text = i.Item("type1") ' maybe need to change name in table for joining
+        phoneDrop1.Text = i.Item("phone_type") ' maybe need to change name in table for joining
         'num1.Text = i.Item("")
 
     End Sub

@@ -1,13 +1,16 @@
 ﻿Public Class Customer_Rep
     Public SQL As New SQLControl
-    Private Sub rec_order_Click(sender As Object, e As EventArgs) Handles rec_order.Click
-
+    Private Sub rec_order_Click(sender As Object, e As EventArgs) Handles recOrder.Click
+        CreateOrder()
     End Sub
 
     Private Sub Customer_Rep_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
         SQL.ExecuteQuery("SELECT max(account_number) FROM customer_data")
         addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        recDate.Text = Today()
+        SQL.ExecuteQuery("SELECT max(order_id) FROM order_data")
+        recOrderID.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
     End Sub
 
     Private Sub LoadData(Optional Query As String = "")
@@ -21,6 +24,16 @@
         If SQL.HasException(False) Then Exit Sub ' check for errors and exit gracefully
 
         CustData.DataSource = SQL.SQLTable
+    End Sub
+
+    Private Sub CreateOrder()
+        SQL.AddParam("@orderid", recOrderID.Text)
+        SQL.AddParam("@acctnum", recAcctNum.Text)
+        SQL.AddParam("@movieid", recMovieID.Text)
+        SQL.AddParam("@date", recDate.Text)
+        SQL.AddParam("@sin", recSIN.Text)
+
+        SQL.ExecuteQuery("INSERT INTO order_data (order_id, date, return_flag, account_number, movie_id, SIN) VALUES (@orderid, @date, 0, @acctnum, @movieid, @sin);")
     End Sub
 
     Private Sub FindCust()

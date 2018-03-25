@@ -79,28 +79,28 @@ Partial Class Customer_SignUp
         Me.firstName.Location = New System.Drawing.Point(82, 52)
         Me.firstName.Name = "firstName"
         Me.firstName.Size = New System.Drawing.Size(192, 20)
-        Me.firstName.TabIndex = 2
+        Me.firstName.TabIndex = 1
         '
         'lastName
         '
         Me.lastName.Location = New System.Drawing.Point(340, 52)
         Me.lastName.Name = "lastName"
         Me.lastName.Size = New System.Drawing.Size(194, 20)
-        Me.lastName.TabIndex = 3
+        Me.lastName.TabIndex = 2
         '
         'city
         '
         Me.city.Location = New System.Drawing.Point(45, 262)
         Me.city.Name = "city"
         Me.city.Size = New System.Drawing.Size(184, 20)
-        Me.city.TabIndex = 4
+        Me.city.TabIndex = 13
         '
         'state
         '
         Me.state.Location = New System.Drawing.Point(273, 261)
         Me.state.Name = "state"
         Me.state.Size = New System.Drawing.Size(158, 20)
-        Me.state.TabIndex = 5
+        Me.state.TabIndex = 14
         '
         'Label2
         '
@@ -116,35 +116,35 @@ Partial Class Customer_SignUp
         Me.street.Location = New System.Drawing.Point(199, 235)
         Me.street.Name = "street"
         Me.street.Size = New System.Drawing.Size(194, 20)
-        Me.street.TabIndex = 7
+        Me.street.TabIndex = 11
         '
         'zip
         '
         Me.zip.Location = New System.Drawing.Point(465, 261)
         Me.zip.Name = "zip"
         Me.zip.Size = New System.Drawing.Size(68, 20)
-        Me.zip.TabIndex = 8
+        Me.zip.TabIndex = 15
         '
         'streetNum
         '
         Me.streetNum.Location = New System.Drawing.Point(92, 235)
         Me.streetNum.Name = "streetNum"
         Me.streetNum.Size = New System.Drawing.Size(60, 20)
-        Me.streetNum.TabIndex = 9
+        Me.streetNum.TabIndex = 10
         '
         'aptNum
         '
         Me.aptNum.Location = New System.Drawing.Point(465, 235)
         Me.aptNum.Name = "aptNum"
         Me.aptNum.Size = New System.Drawing.Size(68, 20)
-        Me.aptNum.TabIndex = 10
+        Me.aptNum.TabIndex = 12
         '
         'email
         '
         Me.email.Location = New System.Drawing.Point(98, 78)
         Me.email.Name = "email"
         Me.email.Size = New System.Drawing.Size(436, 20)
-        Me.email.TabIndex = 11
+        Me.email.TabIndex = 3
         '
         'Label3
         '
@@ -160,14 +160,14 @@ Partial Class Customer_SignUp
         Me.cardNum.Location = New System.Drawing.Point(83, 334)
         Me.cardNum.Name = "cardNum"
         Me.cardNum.Size = New System.Drawing.Size(207, 20)
-        Me.cardNum.TabIndex = 14
+        Me.cardNum.TabIndex = 16
         '
         'num1
         '
         Me.num1.Location = New System.Drawing.Point(20, 132)
         Me.num1.Name = "num1"
         Me.num1.Size = New System.Drawing.Size(125, 20)
-        Me.num1.TabIndex = 15
+        Me.num1.TabIndex = 4
         '
         'phoneDrop1
         '
@@ -179,7 +179,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop1.MaxDropDownItems = 3
         Me.phoneDrop1.Name = "phoneDrop1"
         Me.phoneDrop1.Size = New System.Drawing.Size(121, 21)
-        Me.phoneDrop1.TabIndex = 16
+        Me.phoneDrop1.TabIndex = 5
         '
         'phoneDrop2
         '
@@ -187,25 +187,25 @@ Partial Class Customer_SignUp
         Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop2.FormattingEnabled = True
         Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
-        Me.phoneDrop2.Location = New System.Drawing.Point(151, 159)
+        Me.phoneDrop2.Location = New System.Drawing.Point(151, 157)
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
         Me.phoneDrop2.Size = New System.Drawing.Size(121, 21)
-        Me.phoneDrop2.TabIndex = 17
+        Me.phoneDrop2.TabIndex = 7
         '
         'num2
         '
         Me.num2.Location = New System.Drawing.Point(20, 158)
         Me.num2.Name = "num2"
         Me.num2.Size = New System.Drawing.Size(125, 20)
-        Me.num2.TabIndex = 18
+        Me.num2.TabIndex = 6
         '
         'num3
         '
         Me.num3.Location = New System.Drawing.Point(20, 185)
         Me.num3.Name = "num3"
         Me.num3.Size = New System.Drawing.Size(125, 20)
-        Me.num3.TabIndex = 20
+        Me.num3.TabIndex = 8
         '
         'phoneDrop3
         '
@@ -217,7 +217,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
         Me.phoneDrop3.Size = New System.Drawing.Size(121, 21)
-        Me.phoneDrop3.TabIndex = 19
+        Me.phoneDrop3.TabIndex = 9
         '
         'Label4
         '
@@ -234,7 +234,7 @@ Partial Class Customer_SignUp
         Me.limited.Location = New System.Drawing.Point(21, 403)
         Me.limited.Name = "limited"
         Me.limited.Size = New System.Drawing.Size(58, 17)
-        Me.limited.TabIndex = 22
+        Me.limited.TabIndex = 17
         Me.limited.TabStop = True
         Me.limited.Text = "Limited"
         Me.limited.UseVisualStyleBackColor = True
@@ -245,7 +245,7 @@ Partial Class Customer_SignUp
         Me.unlim1.Location = New System.Drawing.Point(101, 403)
         Me.unlim1.Name = "unlim1"
         Me.unlim1.Size = New System.Drawing.Size(77, 17)
-        Me.unlim1.TabIndex = 23
+        Me.unlim1.TabIndex = 18
         Me.unlim1.TabStop = True
         Me.unlim1.Text = "Unlimited 1"
         Me.unlim1.UseVisualStyleBackColor = True
@@ -256,7 +256,7 @@ Partial Class Customer_SignUp
         Me.unlim2.Location = New System.Drawing.Point(197, 403)
         Me.unlim2.Name = "unlim2"
         Me.unlim2.Size = New System.Drawing.Size(77, 17)
-        Me.unlim2.TabIndex = 24
+        Me.unlim2.TabIndex = 19
         Me.unlim2.TabStop = True
         Me.unlim2.Text = "Unlimited 2"
         Me.unlim2.UseVisualStyleBackColor = True
@@ -267,7 +267,7 @@ Partial Class Customer_SignUp
         Me.unlim3.Location = New System.Drawing.Point(295, 403)
         Me.unlim3.Name = "unlim3"
         Me.unlim3.Size = New System.Drawing.Size(77, 17)
-        Me.unlim3.TabIndex = 25
+        Me.unlim3.TabIndex = 20
         Me.unlim3.TabStop = True
         Me.unlim3.Text = "Unlimited 3"
         Me.unlim3.UseVisualStyleBackColor = True
@@ -278,7 +278,7 @@ Partial Class Customer_SignUp
         Me.createAccount.Location = New System.Drawing.Point(217, 524)
         Me.createAccount.Name = "createAccount"
         Me.createAccount.Size = New System.Drawing.Size(118, 23)
-        Me.createAccount.TabIndex = 26
+        Me.createAccount.TabIndex = 23
         Me.createAccount.Text = "Create Account"
         Me.createAccount.UseVisualStyleBackColor = True
         '
@@ -404,7 +404,7 @@ Partial Class Customer_SignUp
         Me.txtUser.Location = New System.Drawing.Point(83, 437)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(207, 20)
-        Me.txtUser.TabIndex = 41
+        Me.txtUser.TabIndex = 21
         '
         'txtPass
         '
@@ -412,7 +412,7 @@ Partial Class Customer_SignUp
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(207, 20)
-        Me.txtPass.TabIndex = 43
+        Me.txtPass.TabIndex = 22
         '
         'Label18
         '

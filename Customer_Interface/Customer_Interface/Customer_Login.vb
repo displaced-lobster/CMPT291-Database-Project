@@ -1,4 +1,7 @@
-﻿Public Class Customer_Login
+﻿Imports System.Linq
+
+
+Public Class Customer_Login
     Private SQL As New SQLControl
     Public ValidUser As String ' global to pass user credentials to other classes
 
@@ -16,14 +19,29 @@
             SQL.SQLTable.Clear()
         End If
 
+        ' check against SQL injection attacks
+        Dim invalid As String = " ,./<>?;'\:[]{}+_)(*&^%$#@!~=-`"""
+        While username.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
+            MsgBox("There can be no non-alphanumeric characters in the username")
+            username.Clear()
+            passwd.Clear()
+            Return False
+        End While
+        Dim otherInvalid As String = " '"
+        While passwd.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
+            MsgBox("There can be no spaces or ""'"" in the password")
+            passwd.Clear()
+            Return False
+        End While
+
         SQL.ExecuteQuery("SELECT * " &
                          "FROM Customer_Passwords " &
-                         "WHERE username='" & username.Text & "' " &
-                         "AND password='" & passwd.Text & "' " &
-                         "COLLATE SQL_Latin1_General_CP1_CS_AS") ' force case sensitive nature **** this does not work, find solution
+                         "WHERE username='" & username.Text & "' COLLATE Latin1_General_CS_AS " & ' force case sensitivity
+                         "AND password='" & passwd.Text & "' COLLATE Latin1_General_CS_AS;")
 
         If SQL.SQLTable.Rows.Count() <= 0 Then
             MsgBox("Invalid Credentials", MsgBoxStyle.Critical, "LOGIN FAILED")
+            ' ideally a log would be made at this point for an invalid authentication
             username.Clear()
             passwd.Clear()
             Return False
