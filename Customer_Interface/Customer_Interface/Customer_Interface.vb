@@ -175,11 +175,105 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub txtInfo_TextChanged(sender As Object, e As EventArgs) Handles txtInfo.TextChanged
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
+        Dim movieList As String = ""
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        ' reset fields
+        movieSelect.Items.Clear() ' clear entries in table
+        movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
+        txtRes.Text = ""
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
 
+        ' run the query
+        If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or Trim(txtSearch.Text.ToLower) = "drama" Or Trim(txtSearch.Text.ToLower) = "foreign" Then
+            ' clear table
+
+            SQL.ExecuteQuery("SELECT movie_name AS Movies " &
+                             "FROM Movie_Data " &
+                             "WHERE movie_type LIKE '" + Trim(txtSearch.Text.ToLower) + "';")
+            ttlMovies = SQL.SQLTable.Rows.Count()
+
+            For i As Integer = 0 To (ttlMovies - 1)
+                movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+            Next
+            txtRes.Text = movieList ' display movies
+
+            For i As Integer = 0 To (ttlMovies - 1)
+                movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+            Next
+
+        Else
+            ' search first based on movie titles then based on actors
+            ' check against sql attack
+            Dim words() As String = txtSearch.Text.Split(" "c) ' split based on the space character
+            Dim queryString As String = "SELECT DISTINCT(movie_name) AS Movies "
+            Dim ttl As Integer = words.Length
+
+            If rbTitle.Checked = True Then
+                queryString += "FROM Movie_Data WHERE "
+                For Each word As String In words
+                    If word = words(ttl - 1) Then ' if at the end 
+                        queryString += "movie_name LIKE '%" + word + "%';"
+                    Else
+                        queryString += "movie_name LIKE '%" + word + "%' OR " ' could be OR?
+                    End If
+                Next
+
+                MsgBox(queryString)
+
+            ElseIf rbActor.Checked = True Then
+                MsgBox("Actor name")
+            End If
+
+            ' how to deal with with if a search returns nothing
+            SQL.ExecuteQuery(queryString)
+            'DataGridView1.DataSource = SQL.SQLTable
+
+            ' error here depending on the situation *************************************************************
+            If Not IsNothing(SQL.SQLTable) AndAlso SQL.SQLTable.Rows.Count > 0 Then
+                For i As Integer = 0 To (ttlMovies - 2)
+                    movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+                Next
+                txtRes.Text = movieList ' display movies
+
+                For i As Integer = 0 To (ttlMovies - 2)
+                    movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+                Next
+                MsgBox("Done")
+            End If
+
+        End If
+
+
+    End Sub
+
+    Private Sub search_param_CheckedChanged(sender As Object, e As EventArgs) Handles rbTitle.CheckedChanged, rbActor.CheckedChanged
+        If rbTitle.Checked = True Or rbTitle.Checked = True Then
+            btnSearch.Enabled = True
+        End If
     End Sub
 End Class
 
 
 ' if queue changes or if customer updates info, reload the customer data and movie data
 ' need to check if movie is already in customers queue
+
+
+'ElseIf Trim(txtSearch.Text.ToLower) = "comedy" Then
+'SQL.ExecuteQuery("SELECT movie_name AS Movies " &
+'                             "FROM Movie_Data " &
+'                             "WHERE movie_type LIKE 'Comedy';")
+'ElseIf Trim(txtSearch.Text.ToLower) = "drama" Then
+'SQL.ExecuteQuery("SELECT movie_name AS Movies " &
+'                             "FROM Movie_Data " &
+'                             "WHERE movie_type LIKE 'Drama';")
+'ElseIf Trim(txtSearch.Text.ToLower) = "foreign" Then
+'SQL.ExecuteQuery("SELECT movie_name AS Movies " &
+'                             "FROM Movie_Data " &
+'                             "WHERE movie_type LIKE 'Foreign';")

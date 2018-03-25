@@ -39,6 +39,9 @@ Partial Class Customer_Interface
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbActor = New System.Windows.Forms.RadioButton()
+        Me.rbTitle = New System.Windows.Forms.RadioButton()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtRes = New System.Windows.Forms.TextBox()
         Me.btnPersonal = New System.Windows.Forms.Button()
@@ -207,7 +210,7 @@ Partial Class Customer_Interface
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(606, 179)
+        Me.Button3.Location = New System.Drawing.Point(606, 213)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(116, 23)
         Me.Button3.TabIndex = 10
@@ -216,7 +219,7 @@ Partial Class Customer_Interface
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(606, 121)
+        Me.Button1.Location = New System.Drawing.Point(606, 155)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(116, 23)
         Me.Button1.TabIndex = 9
@@ -225,6 +228,9 @@ Partial Class Customer_Interface
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rbActor)
+        Me.GroupBox3.Controls.Add(Me.rbTitle)
+        Me.GroupBox3.Controls.Add(Me.btnSearch)
         Me.GroupBox3.Controls.Add(Me.GroupBox4)
         Me.GroupBox3.Controls.Add(Me.btnPersonal)
         Me.GroupBox3.Controls.Add(Me.btnBest)
@@ -238,6 +244,38 @@ Partial Class Customer_Interface
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Movie Search"
+        '
+        'rbActor
+        '
+        Me.rbActor.AutoSize = True
+        Me.rbActor.Location = New System.Drawing.Point(317, 99)
+        Me.rbActor.Name = "rbActor"
+        Me.rbActor.Size = New System.Drawing.Size(106, 17)
+        Me.rbActor.TabIndex = 10
+        Me.rbActor.TabStop = True
+        Me.rbActor.Text = "Search by Actors"
+        Me.rbActor.UseVisualStyleBackColor = True
+        '
+        'rbTitle
+        '
+        Me.rbTitle.AutoSize = True
+        Me.rbTitle.Location = New System.Drawing.Point(317, 76)
+        Me.rbTitle.Name = "rbTitle"
+        Me.rbTitle.Size = New System.Drawing.Size(96, 17)
+        Me.rbTitle.TabIndex = 9
+        Me.rbTitle.TabStop = True
+        Me.rbTitle.Text = "Search by Title"
+        Me.rbTitle.UseVisualStyleBackColor = True
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Enabled = False
+        Me.btnSearch.Location = New System.Drawing.Point(199, 99)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(89, 23)
+        Me.btnSearch.TabIndex = 8
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -316,7 +354,7 @@ Partial Class Customer_Interface
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(606, 150)
+        Me.Button4.Location = New System.Drawing.Point(606, 184)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(116, 23)
         Me.Button4.TabIndex = 0
@@ -384,4 +422,7 @@ Partial Class Customer_Interface
     Friend WithEvents btnBest As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents txtRes As TextBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents rbActor As RadioButton
+    Friend WithEvents rbTitle As RadioButton
 End Class
