@@ -39,20 +39,17 @@ Partial Class Customer_Interface
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnAddQueue = New System.Windows.Forms.Button()
         Me.movieSelect = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.Rpersonal = New System.Windows.Forms.RadioButton()
-        Me.RbestSellers = New System.Windows.Forms.RadioButton()
-        Me.Rmovies = New System.Windows.Forms.RadioButton()
-        Me.Ractors = New System.Windows.Forms.RadioButton()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Rtitles = New System.Windows.Forms.RadioButton()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.Label()
+        Me.btnBest = New System.Windows.Forms.Button()
+        Me.btnPersonal = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.txtRes = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -230,12 +227,13 @@ Partial Class Customer_Interface
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.GroupBox4)
-        Me.GroupBox3.Controls.Add(Me.Rpersonal)
-        Me.GroupBox3.Controls.Add(Me.RbestSellers)
-        Me.GroupBox3.Controls.Add(Me.Rmovies)
-        Me.GroupBox3.Controls.Add(Me.Ractors)
-        Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Controls.Add(Me.Rtitles)
+        Me.GroupBox3.Controls.Add(Me.btnPersonal)
+        Me.GroupBox3.Controls.Add(Me.btnBest)
+        Me.GroupBox3.Controls.Add(Me.btnAddQueue)
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Controls.Add(Me.movieSelect)
+        Me.GroupBox3.Controls.Add(Me.txtSearch)
+        Me.GroupBox3.Controls.Add(Me.btnSearch)
         Me.GroupBox3.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(460, 408)
@@ -243,24 +241,10 @@ Partial Class Customer_Interface
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Movie Search"
         '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Controls.Add(Me.btnAddQueue)
-        Me.GroupBox4.Controls.Add(Me.movieSelect)
-        Me.GroupBox4.Controls.Add(Me.txtSearch)
-        Me.GroupBox4.Controls.Add(Me.btnSearch)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 70)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(448, 332)
-        Me.GroupBox4.TabIndex = 8
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Search Results"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(7, 34)
+        Me.Label5.Location = New System.Drawing.Point(207, 16)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(247, 13)
         Me.Label5.TabIndex = 4
@@ -268,7 +252,7 @@ Partial Class Customer_Interface
         '
         'btnAddQueue
         '
-        Me.btnAddQueue.Location = New System.Drawing.Point(198, 116)
+        Me.btnAddQueue.Location = New System.Drawing.Point(199, 379)
         Me.btnAddQueue.Name = "btnAddQueue"
         Me.btnAddQueue.Size = New System.Drawing.Size(88, 23)
         Me.btnAddQueue.TabIndex = 3
@@ -280,92 +264,28 @@ Partial Class Customer_Interface
         Me.movieSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.movieSelect.FormattingEnabled = True
         Me.movieSelect.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.movieSelect.Location = New System.Drawing.Point(6, 118)
+        Me.movieSelect.Location = New System.Drawing.Point(6, 381)
         Me.movieSelect.MaxDropDownItems = 50
         Me.movieSelect.Name = "movieSelect"
         Me.movieSelect.Size = New System.Drawing.Size(186, 21)
+        Me.movieSelect.Sorted = True
         Me.movieSelect.TabIndex = 2
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(6, 76)
+        Me.txtSearch.Location = New System.Drawing.Point(6, 101)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(186, 20)
         Me.txtSearch.TabIndex = 0
         '
         'btnSearch
         '
-        Me.btnSearch.Enabled = False
-        Me.btnSearch.Location = New System.Drawing.Point(198, 74)
+        Me.btnSearch.Location = New System.Drawing.Point(198, 99)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(89, 23)
         Me.btnSearch.TabIndex = 1
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'Rpersonal
-        '
-        Me.Rpersonal.AutoSize = True
-        Me.Rpersonal.Location = New System.Drawing.Point(328, 38)
-        Me.Rpersonal.Name = "Rpersonal"
-        Me.Rpersonal.Size = New System.Drawing.Size(127, 17)
-        Me.Rpersonal.TabIndex = 7
-        Me.Rpersonal.TabStop = True
-        Me.Rpersonal.Text = "Personal Suggestions"
-        Me.Rpersonal.UseVisualStyleBackColor = True
-        '
-        'RbestSellers
-        '
-        Me.RbestSellers.AutoSize = True
-        Me.RbestSellers.Location = New System.Drawing.Point(242, 38)
-        Me.RbestSellers.Name = "RbestSellers"
-        Me.RbestSellers.Size = New System.Drawing.Size(80, 17)
-        Me.RbestSellers.TabIndex = 6
-        Me.RbestSellers.TabStop = True
-        Me.RbestSellers.Text = "Best Sellers"
-        Me.RbestSellers.UseVisualStyleBackColor = True
-        '
-        'Rmovies
-        '
-        Me.Rmovies.AutoSize = True
-        Me.Rmovies.Location = New System.Drawing.Point(155, 38)
-        Me.Rmovies.Name = "Rmovies"
-        Me.Rmovies.Size = New System.Drawing.Size(81, 17)
-        Me.Rmovies.TabIndex = 5
-        Me.Rmovies.TabStop = True
-        Me.Rmovies.Text = "Movie Type"
-        Me.Rmovies.UseVisualStyleBackColor = True
-        '
-        'Ractors
-        '
-        Me.Ractors.AutoSize = True
-        Me.Ractors.Location = New System.Drawing.Point(94, 38)
-        Me.Ractors.Name = "Ractors"
-        Me.Ractors.Size = New System.Drawing.Size(55, 17)
-        Me.Ractors.TabIndex = 4
-        Me.Ractors.TabStop = True
-        Me.Ractors.Text = "Actors"
-        Me.Ractors.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 20)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Search by"
-        '
-        'Rtitles
-        '
-        Me.Rtitles.AutoSize = True
-        Me.Rtitles.Location = New System.Drawing.Point(6, 38)
-        Me.Rtitles.Name = "Rtitles"
-        Me.Rtitles.Size = New System.Drawing.Size(82, 17)
-        Me.Rtitles.TabIndex = 2
-        Me.Rtitles.TabStop = True
-        Me.Rtitles.Text = "Movie Titles"
-        Me.Rtitles.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -384,6 +304,44 @@ Partial Class Customer_Interface
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
+        '
+        'btnBest
+        '
+        Me.btnBest.Location = New System.Drawing.Point(6, 59)
+        Me.btnBest.Name = "btnBest"
+        Me.btnBest.Size = New System.Drawing.Size(89, 23)
+        Me.btnBest.TabIndex = 5
+        Me.btnBest.Text = "Best Sellers"
+        Me.btnBest.UseVisualStyleBackColor = True
+        '
+        'btnPersonal
+        '
+        Me.btnPersonal.Location = New System.Drawing.Point(103, 59)
+        Me.btnPersonal.Name = "btnPersonal"
+        Me.btnPersonal.Size = New System.Drawing.Size(89, 23)
+        Me.btnPersonal.TabIndex = 6
+        Me.btnPersonal.Text = "Recommended"
+        Me.btnPersonal.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.txtRes)
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 128)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(447, 245)
+        Me.GroupBox4.TabIndex = 7
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Results"
+        '
+        'txtRes
+        '
+        Me.txtRes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtRes.Location = New System.Drawing.Point(7, 20)
+        Me.txtRes.Multiline = True
+        Me.txtRes.Name = "txtRes"
+        Me.txtRes.ReadOnly = True
+        Me.txtRes.Size = New System.Drawing.Size(434, 219)
+        Me.txtRes.TabIndex = 0
         '
         'Customer_Interface
         '
@@ -425,20 +383,17 @@ Partial Class Customer_Interface
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents RbestSellers As RadioButton
-    Friend WithEvents Rmovies As RadioButton
-    Friend WithEvents Ractors As RadioButton
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Rtitles As RadioButton
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Button4 As Button
-    Friend WithEvents Rpersonal As RadioButton
-    Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents btnAddQueue As Button
     Friend WithEvents movieSelect As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents cbxPrev As ComboBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents btnPersonal As Button
+    Friend WithEvents btnBest As Button
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents txtRes As TextBox
 End Class

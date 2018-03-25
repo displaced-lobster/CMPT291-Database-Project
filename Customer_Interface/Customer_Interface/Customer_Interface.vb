@@ -6,16 +6,14 @@ Public Class Customer_Interface
     Private SQL As New SQLControl
 
     Private Function GetAccount() As Integer
-        Return CInt(Customer_Login.UserAccount()) ' convert string to integer
+        Return CInt(Customer_Login.UserAccount()) ' convert string to integer 
     End Function
 
 
     Private Sub Customer_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
-
         LoadData()
         LoadMovies()
-
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
@@ -32,6 +30,7 @@ Public Class Customer_Interface
 
     End Sub
 
+    ' load the past, current and queue fields for the customers account info with movies
     Private Sub LoadMovies()
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
                          "FROM Order_Data as OD, Movie_Data as MD " &
@@ -61,6 +60,7 @@ Public Class Customer_Interface
         Next
     End Sub
 
+    ' load the account information fields
     Private Sub LoadData()
         Dim user As String = GetAccount()
 
@@ -68,7 +68,6 @@ Public Class Customer_Interface
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
-        MsgBox(GetAccount())
 
         SQL.ExecuteQuery("SELECT * FROM Customer_Data as CD INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number WHERE CPN.account_number = " + user + ";")
 
@@ -109,23 +108,78 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub Radials_CheckedChanged(sender As Object, e As EventArgs) Handles Rtitles.CheckedChanged, Ractors.CheckedChanged,
-            Rmovies.CheckedChanged, RbestSellers.CheckedChanged, Rpersonal.CheckedChanged
-        btnSearch.Enabled = True
-
-        If Rtitles.Checked Then
-            ' search by title string(s)
-        ElseIf Ractors.Checked Then
-            ' search by actor string(s)
-        ElseIf Rmovies.Checked Then
-            ' search by type
-
-        ElseIf RbestSellers.Checked Then
-            ' search by top rating
-        ElseIf Rpersonal.Checked Then
-            ' filter to find most rented type of movies and then search based on that rating
+    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click
+        Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
+        Dim movieList As String = ""
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
         End If
+        movieSelect.Items.Clear() ' clear entries in table
+
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) AS Movies " &
+                         "FROM Movie_Data " &
+                         "WHERE rating >= 4; ")
+
+        ttlMovies = SQL.SQLTable.Rows.Count()
+
+        For i As Integer = 0 To (ttlMovies - 1)
+            movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+        Next
+        txtRes.Text = movieList ' display movies
+
+        For i As Integer = 0 To (ttlMovies - 1)
+            movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
 
     End Sub
 
+    Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click
+        Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
+        Dim movieList As String = ""
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        ' reset fields
+        movieSelect.Items.Clear() ' clear entries in table
+        movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
+        txtRes.Text = ""
+
+        ' need to get the type most watched by the user and use that the get movies with same type
+        SQL.ExecuteQuery("SELECT movie_name as Movies " &
+                         "FROM Movie_Data " &
+                         "WHERE movie_type = (Select T1.movie_type " &
+                                             "FROM (SELECT movie_type, COUNT(movie_type) As ttl " &
+                                                   "FROM Movie_Data AS MD INNER JOIN Order_Data AS OD ON OD.movie_id=MD.movie_id " &
+                                                   "GROUP BY movie_type, account_number " &
+                                                   "HAVING account_number = 1001) as T1, " &
+                                                  "(SELECT movie_type, COUNT(movie_type) as ttl " &
+                                                   "FROM Movie_Data AS MD INNER JOIN Order_Data AS OD ON OD.movie_id=MD.movie_id " &
+                                                   "GROUP BY movie_type, account_number " &
+                                                   "HAVING account_number = 1001) as T2 " &
+                                             "WHERE T1.ttl > T2.ttl);")
+        ttlMovies = SQL.SQLTable.Rows.Count()
+
+        For i As Integer = 0 To (ttlMovies - 1)
+            movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+        Next
+        txtRes.Text = movieList ' display movies
+
+        For i As Integer = 0 To (ttlMovies - 1)
+            movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
+
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        ' if searching, go through and check key words of movies names, actors names, and movie types
+        ' check against sql injection attacks
+
+
+    End Sub
 End Class
+
+
+' if queue changes or if customer updates info, reload the customer data and movie data
+' need to check if movie is already in customers queue

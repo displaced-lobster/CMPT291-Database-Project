@@ -105,11 +105,27 @@ Public Class Customer_SignUp
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
+
+        ' check against SQL injection attacks
+        Dim invalid As String = " ,./<>?;'\:[]{}+_)(*&^%$#@!~=-`"""
+        While txtUser.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
+            MsgBox("There can be no non-alphanumeric characters in the username")
+            txtUser.Clear()
+            txtPass.Clear()
+            Return False
+        End While
+        Dim otherInvalid As String = " '"
+        While txtPass.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
+            MsgBox("There can be no spaces or ""'"" in the password")
+            txtPass.Clear()
+            Return False
+        End While
+
         ' check to see if username exists
         SQL.ExecuteQuery("SELECT * " &
                          "FROM Customer_Passwords " &
-                         "WHERE username='" & txtUser.Text & "' " &
-                         "COLLATE Latin1_General_CS_AS") ' force case sensitive nature
+                         "WHERE username='" & txtUser.Text & "' COLLATE Latin1_General_CS_AS") ' force case sensitive nature
+
         ' if so clear values in form
         If SQL.SQLTable.Rows.Count() > 0 Then
             MsgBox("Username Already Exists", MsgBoxStyle.Critical, "LOGIN FAILED")
