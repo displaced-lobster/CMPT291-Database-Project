@@ -172,6 +172,27 @@
 
     End Sub
 
+    Private Sub FindCustToDel()
+        If delAcctNum.TextLength > 0 Then
+            SQL.AddParam("@acctnum", delAcctNum.Text)
+            SQL.ExecuteQuery("SELECT * FROM customer_data WHERE account_number = @acctnum")
+
+            delData.DataSource = SQL.SQLTable
+
+            del_cust.Enabled = True
+        End If
+    End Sub
+
+    Private Sub DelCust()
+        SQL.AddParam("@acctnum", delAcctNum.Text)
+        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum")
+
+        If SQL.HasException(True) Then Exit Sub
+
+        MsgBox("Customer deleted.")
+        del_cust.Enabled = False
+    End Sub
+
     Private Sub Find_Click(sender As Object, e As EventArgs) Handles Find.Click
         FindCust()
     End Sub
@@ -186,5 +207,13 @@
 
     Private Sub edit_cust_Click(sender As Object, e As EventArgs) Handles edit_cust.Click
         UpdateCustomer()
+    End Sub
+
+    Private Sub delSearch_Click(sender As Object, e As EventArgs) Handles delSearch.Click
+        FindCustToDel()
+    End Sub
+
+    Private Sub del_cust_Click(sender As Object, e As EventArgs) Handles del_cust.Click
+        DelCust()
     End Sub
 End Class

@@ -58,7 +58,6 @@ Partial Class Customer_Rep
         Me.Cell1 = New System.Windows.Forms.RadioButton()
         Me.Work1 = New System.Windows.Forms.RadioButton()
         Me.Home1 = New System.Windows.Forms.RadioButton()
-        Me.del_cust = New System.Windows.Forms.Button()
         Me.addNum2 = New System.Windows.Forms.TextBox()
         Me.addNum1 = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -137,6 +136,11 @@ Partial Class Customer_Rep
         Me.Label36 = New System.Windows.Forms.Label()
         Me.editSearch = New System.Windows.Forms.Button()
         Me.Label23 = New System.Windows.Forms.Label()
+        Me.del_cust = New System.Windows.Forms.Button()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.delSearch = New System.Windows.Forms.Button()
+        Me.delData = New System.Windows.Forms.DataGridView()
+        Me.delAcctNum = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -146,11 +150,13 @@ Partial Class Customer_Rep
         Me.Num2.SuspendLayout()
         Me.Num1.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.delData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -388,7 +394,6 @@ Partial Class Customer_Rep
         Me.TabPage4.Controls.Add(Me.AcctType)
         Me.TabPage4.Controls.Add(Me.Num2)
         Me.TabPage4.Controls.Add(Me.Num1)
-        Me.TabPage4.Controls.Add(Me.del_cust)
         Me.TabPage4.Controls.Add(Me.addNum2)
         Me.TabPage4.Controls.Add(Me.addNum1)
         Me.TabPage4.Controls.Add(Me.Label19)
@@ -584,16 +589,6 @@ Partial Class Customer_Rep
         Me.Home1.TabStop = True
         Me.Home1.Text = "Home"
         Me.Home1.UseVisualStyleBackColor = True
-        '
-        'del_cust
-        '
-        Me.del_cust.Location = New System.Drawing.Point(920, 168)
-        Me.del_cust.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.del_cust.Name = "del_cust"
-        Me.del_cust.Size = New System.Drawing.Size(56, 30)
-        Me.del_cust.TabIndex = 88
-        Me.del_cust.Text = "Delete"
-        Me.del_cust.UseVisualStyleBackColor = True
         '
         'addNum2
         '
@@ -876,6 +871,11 @@ Partial Class Customer_Rep
         '
         'TabPage6
         '
+        Me.TabPage6.Controls.Add(Me.delAcctNum)
+        Me.TabPage6.Controls.Add(Me.delData)
+        Me.TabPage6.Controls.Add(Me.delSearch)
+        Me.TabPage6.Controls.Add(Me.Label37)
+        Me.TabPage6.Controls.Add(Me.del_cust)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TabPage6.Name = "TabPage6"
@@ -1375,6 +1375,56 @@ Partial Class Customer_Rep
         Me.Label23.TabIndex = 123
         Me.Label23.Text = "Account Number"
         '
+        'del_cust
+        '
+        Me.del_cust.Enabled = False
+        Me.del_cust.Location = New System.Drawing.Point(486, 294)
+        Me.del_cust.Margin = New System.Windows.Forms.Padding(1)
+        Me.del_cust.Name = "del_cust"
+        Me.del_cust.Size = New System.Drawing.Size(56, 30)
+        Me.del_cust.TabIndex = 89
+        Me.del_cust.Text = "Delete"
+        Me.del_cust.UseVisualStyleBackColor = True
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(309, 38)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(87, 13)
+        Me.Label37.TabIndex = 90
+        Me.Label37.Text = "Account Number"
+        '
+        'delSearch
+        '
+        Me.delSearch.Location = New System.Drawing.Point(579, 29)
+        Me.delSearch.Margin = New System.Windows.Forms.Padding(1)
+        Me.delSearch.Name = "delSearch"
+        Me.delSearch.Size = New System.Drawing.Size(56, 30)
+        Me.delSearch.TabIndex = 91
+        Me.delSearch.Text = "Search"
+        Me.delSearch.UseVisualStyleBackColor = True
+        '
+        'delData
+        '
+        Me.delData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.delData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.delData.Location = New System.Drawing.Point(25, 81)
+        Me.delData.Margin = New System.Windows.Forms.Padding(1)
+        Me.delData.Name = "delData"
+        Me.delData.RowTemplate.Height = 40
+        Me.delData.Size = New System.Drawing.Size(1128, 125)
+        Me.delData.TabIndex = 92
+        '
+        'delAcctNum
+        '
+        Me.delAcctNum.Location = New System.Drawing.Point(433, 35)
+        Me.delAcctNum.Name = "delAcctNum"
+        Me.delAcctNum.Size = New System.Drawing.Size(100, 20)
+        Me.delAcctNum.TabIndex = 93
+        '
         'Customer_Rep
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1404,6 +1454,8 @@ Partial Class Customer_Rep
         Me.Num1.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -1412,6 +1464,7 @@ Partial Class Customer_Rep
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.delData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1442,7 +1495,6 @@ Partial Class Customer_Rep
     Friend WithEvents AcctNum As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents del_cust As Button
     Friend WithEvents Cell1 As RadioButton
     Friend WithEvents Work1 As RadioButton
     Friend WithEvents Home1 As RadioButton
@@ -1530,4 +1582,9 @@ Partial Class Customer_Rep
     Friend WithEvents edit_cust As Button
     Friend WithEvents Label23 As Label
     Friend WithEvents editSearch As Button
+    Friend WithEvents delAcctNum As TextBox
+    Friend WithEvents delData As DataGridView
+    Friend WithEvents delSearch As Button
+    Friend WithEvents Label37 As Label
+    Friend WithEvents del_cust As Button
 End Class
