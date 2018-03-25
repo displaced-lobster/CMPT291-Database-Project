@@ -17,11 +17,12 @@ Public Class Customer_Login
             SQL.SQLTable.Clear()
         End If
 
+        ' add checking to avoid sql injection attack
+
         SQL.ExecuteQuery("SELECT * " &
                          "FROM Customer_Passwords " &
-                         "WHERE username='" & username.Text & "' " &
-                         "AND password='" & passwd.Text & "' " &
-                         "COLLATE SQL_Latin1_General_CP1_CS_AS") ' force case sensitive nature **** this does not work, find solution
+                         "WHERE username='" & username.Text & "' COLLATE Latin1_General_CS_AS" & ' force case sensitivity
+                         "AND password='" & passwd.Text & "' " & "COLLATE Latin1_General_CS_AS")
 
         If SQL.SQLTable.Rows.Count() <= 0 Then
             MsgBox("Invalid Credentials", MsgBoxStyle.Critical, "LOGIN FAILED")

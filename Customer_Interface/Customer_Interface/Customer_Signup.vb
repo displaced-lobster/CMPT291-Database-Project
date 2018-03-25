@@ -109,7 +109,7 @@ Public Class Customer_SignUp
         SQL.ExecuteQuery("SELECT * " &
                          "FROM Customer_Passwords " &
                          "WHERE username='" & txtUser.Text & "' " &
-                         "COLLATE SQL_Latin1_General_CP1_CS_AS") ' force case sensitive nature
+                         "COLLATE Latin1_General_CS_AS") ' force case sensitive nature
         ' if so clear values in form
         If SQL.SQLTable.Rows.Count() > 0 Then
             MsgBox("Username Already Exists", MsgBoxStyle.Critical, "LOGIN FAILED")

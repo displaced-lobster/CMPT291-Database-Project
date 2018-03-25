@@ -1,4 +1,7 @@
 ﻿
+
+' "COLLATE Latin1_General_CS_AS" used for case sensitivity
+
 Public Class Customer_Interface
     Private SQL As New SQLControl
 
