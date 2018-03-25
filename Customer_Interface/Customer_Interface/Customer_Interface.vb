@@ -32,6 +32,9 @@ Public Class Customer_Interface
 
     ' load the past, current and queue fields for the customers account info with movies
     Private Sub LoadMovies()
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
                          "FROM Order_Data as OD, Movie_Data as MD " &
                          "WHERE OD.movie_id = MD.movie_id AND return_flag = 1 AND account_number = " & CInt(GetAccount()) & ";")
@@ -43,6 +46,9 @@ Public Class Customer_Interface
         Next
 
         ' load pull down current movies
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
                          "FROM Order_Data as OD, Movie_Data as MD " &
                          "WHERE OD.movie_id = MD.movie_id AND return_flag = 0 AND account_number = " & CInt(GetAccount()) & ";")
@@ -54,15 +60,19 @@ Public Class Customer_Interface
         Next
 
         ' load pull down for order queue
-        SQL.SQLTable.Clear()
-        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies, date " &
                          "FROM Order_Queue as OQ, Movie_Data as MD " &
-                         "WHERE OQ.movie_id = MD.movie_id AND account_number = " & CInt(GetAccount()) & ";")
+                         "WHERE OQ.movie_id = MD.movie_id AND account_number = " & CInt(GetAccount()) &
+                         "ORDER BY date ASC;")
         If SQL.HasException(True) Then Exit Sub
 
         ttlRows = SQL.SQLTable.Rows.Count()
         For i As Integer = 0 To (ttlRows - 1)
             cbxQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+            cbEditQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
         Next
     End Sub
 
@@ -212,6 +222,8 @@ Public Class Customer_Interface
         txtRes.Clear() ' clear the text field
         txtRes.Text = ""
 
+        If txtSearch.Text = "" Then Exit Sub
+
         ' run the query
         If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or Trim(txtSearch.Text.ToLower) = "drama" Or Trim(txtSearch.Text.ToLower) = "foreign" Then
             SQL.ExecuteQuery("SELECT movie_name AS Movies " &
@@ -289,7 +301,8 @@ Public Class Customer_Interface
         ' add to the queue based on what is in the combo box
         ' need account number, movie id and data
         ' add to order queue
-        MsgBox(movieSelect.Text)
+        'MsgBox(movieSelect.Text) ' for test purposes
+
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
@@ -300,7 +313,14 @@ Public Class Customer_Interface
                          "WHERE movie_name LIKE '" + movieSelect.Text + "';")
         'Dim movie_ID As String = SQL.SQLTable.Rows(0).Item("movie_id")
         Dim user As String = GetAccount().ToString
-        Dim movie_ID As String = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+        'Dim movie_ID As String = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+        Dim movie_ID As String
+        If SQL.SQLTable.Rows.Count > 0 Then
+            movie_ID = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+        Else
+            MsgBox("You must add a movie from the search results to add to your queue")
+            Exit Sub
+        End If
 
         ' check to make sure its not already in the queue
         SQL.ExecuteQuery("SELECT movie_id " &
@@ -326,13 +346,138 @@ Public Class Customer_Interface
                          "VALUES (@user_ID, @movie_ID, @date)")
         If SQL.HasException(True) Then Exit Sub
 
-        MsgBox("The movie: " + movieSelect.Text + " has been added to your queue")
+        MsgBox("The movie """ + movieSelect.Text + """ has been added to your queue")
         ' update movie queue in account
+        cbxQueue.Items.Clear()
+        cbEditQueue.Items.Clear()
+        LoadMovies()
+
+    End Sub
+
+    Private Sub btnEditQueue_Click(sender As Object, e As EventArgs) Handles btnEditQueue.Click
+        ' need to order the queue by date
+        ' clear table
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        SQL.ExecuteQuery("SELECT movie_id " &
+                         "FROM Movie_Data " &
+                         "WHERE movie_name LIKE '" + cbEditQueue.Text + "';")
+
+        Dim user As String = GetAccount().ToString
+        Dim movie_ID As String
+        If SQL.SQLTable.Rows.Count > 0 Then
+            movie_ID = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+        Else
+            MsgBox("You must add a movie from your queue to remove")
+            Exit Sub
+        End If
+
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        ' remove from queue
+        SQL.AddParam("@user_ID", user)
+        SQL.AddParam("@movie_ID", movie_ID)
+
+        SQL.ExecuteQuery("DELETE FROM Order_Queue " &
+                         "WHERE account_number=@user_ID AND movie_id=@movie_ID;")
+        If SQL.HasException(True) Then Exit Sub
+
+        MsgBox("The movie """ + movieSelect.Text + """ has been removed from your queue")
+        cbEditQueue.Items.Clear()
         cbxQueue.Items.Clear()
         LoadMovies()
     End Sub
+
+    Private Sub btnRatingSearch_Click(sender As Object, e As EventArgs) Handles btnRatingSearch.Click
+        Dim ttl As Integer
+        Dim movieList As String = ""
+        Dim actorList As String = ""
+
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        ' reset fields
+        cbRateRes.Items.Clear() ' clear the text field
+        cbRateRes.Refresh()
+
+        If txtRatingSearch.Text = "" Then Exit Sub
+        ' run the query
+        If rbRateMovie.Checked = True Then
+            SQL.ExecuteQuery("SELECT DISTINCT(movie_name) AS Movies " &
+                             "FROM Movie_Data " &
+                             "WHERE movie_name LIKE '%" + txtRatingSearch.Text + "%';")
+            If SQL.HasException(True) Then Exit Sub
+            ttl = SQL.SQLTable.Rows.Count()
+
+            If SQL.SQLTable.Rows.Count > 0 Then
+                For i As Integer = 0 To (ttl - 1)
+                    cbRateRes.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+                Next
+            End If
+
+        ElseIf rbRateActor.Checked = True Then
+            SQL.ExecuteQuery("SELECT first_name, last_name " &
+                             "FROM Actor_Data " &
+                             "WHERE first_name LIKE '%" + txtRatingSearch.Text + "%' OR last_name LIKE '%" + txtRatingSearch.Text + "%'")
+            If SQL.HasException(True) Then Exit Sub
+            ttl = SQL.SQLTable.Rows.Count()
+
+            If SQL.SQLTable.Rows.Count > 0 Then
+                For i As Integer = 0 To (ttl - 1)
+                    cbRateRes.Items.Add(SQL.SQLTable.Rows(i).Item("first_name").ToString + " " + SQL.SQLTable.Rows(i).Item("last_name").ToString)
+                Next
+            End If
+        Else
+            ' if nothing was selected
+            MsgBox("Please choose to search by either title or actor")
+            Exit Sub
+        End If
+
+        txtRatingSearch.Clear()
+    End Sub
+
+    Private Sub btnRate_Click(sender As Object, e As EventArgs) Handles btnRate.Click
+        'cbRateRes.Text
+        Dim rating As String
+        If rb1.Checked Then
+            rating = "1"
+        ElseIf rb2.Checked Then
+            rating = "2"
+        ElseIf rb3.Checked Then
+            rating = "3"
+        ElseIf rb4.Checked Then
+            rating = "4"
+        ElseIf rb5.Checked Then
+            rating = "5"
+        Else
+            MsgBox("Please choose a rating")
+            Exit Sub
+        End If
+
+        ' calculate rating
+        If cbRateRes.Text = "" Then ' check to make sure something has been selected
+            MsgBox("Please select a choice to rate")
+            Exit Sub
+        End If
+
+        ' if based on rb actor or title
+        If rbRateMovie.Checked Then
+            ' get the rating and adjust before updating
+            ' need a way of keeping track of the number of ratings for average **********************************************************************
+            'SQL.ExecuteQuery("")
+            ' update the entry
+        ElseIf rbRateMovie.Checked Then
+            ' get the rating and adjust before updating
+            ' need a way of keeping track of the number of ratings for average **********************************************************************
+            'SQL.ExecuteQuery("")
+            ' update the entry
+        End If
+
+    End Sub
 End Class
 
-
-' if queue changes or if customer updates info, reload the customer data and movie data
-' need to check if movie is already in customers queue
