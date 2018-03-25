@@ -39,17 +39,16 @@ Partial Class Customer_Interface
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnAddQueue = New System.Windows.Forms.Button()
-        Me.movieSelect = New System.Windows.Forms.ComboBox()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.txtUserName = New System.Windows.Forms.Label()
-        Me.btnBest = New System.Windows.Forms.Button()
-        Me.btnPersonal = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtRes = New System.Windows.Forms.TextBox()
+        Me.btnPersonal = New System.Windows.Forms.Button()
+        Me.btnBest = New System.Windows.Forms.Button()
+        Me.btnAddQueue = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.movieSelect = New System.Windows.Forms.ComboBox()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.txtUserName = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -233,95 +232,12 @@ Partial Class Customer_Interface
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.movieSelect)
         Me.GroupBox3.Controls.Add(Me.txtSearch)
-        Me.GroupBox3.Controls.Add(Me.btnSearch)
         Me.GroupBox3.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(460, 408)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Movie Search"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(207, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(247, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Movie Categories: Comedy, Drama, Action, Foreign"
-        '
-        'btnAddQueue
-        '
-        Me.btnAddQueue.Location = New System.Drawing.Point(199, 379)
-        Me.btnAddQueue.Name = "btnAddQueue"
-        Me.btnAddQueue.Size = New System.Drawing.Size(88, 23)
-        Me.btnAddQueue.TabIndex = 3
-        Me.btnAddQueue.Text = "Add To Queue"
-        Me.btnAddQueue.UseVisualStyleBackColor = True
-        '
-        'movieSelect
-        '
-        Me.movieSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.movieSelect.FormattingEnabled = True
-        Me.movieSelect.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.movieSelect.Location = New System.Drawing.Point(6, 381)
-        Me.movieSelect.MaxDropDownItems = 50
-        Me.movieSelect.Name = "movieSelect"
-        Me.movieSelect.Size = New System.Drawing.Size(186, 21)
-        Me.movieSelect.Sorted = True
-        Me.movieSelect.TabIndex = 2
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(6, 101)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(186, 20)
-        Me.txtSearch.TabIndex = 0
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Location = New System.Drawing.Point(198, 99)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(89, 23)
-        Me.btnSearch.TabIndex = 1
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(606, 150)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(116, 23)
-        Me.Button4.TabIndex = 0
-        Me.Button4.Text = "Rate A Movie"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'txtUserName
-        '
-        Me.txtUserName.AutoSize = True
-        Me.txtUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.txtUserName.Location = New System.Drawing.Point(13, 7)
-        Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Size = New System.Drawing.Size(0, 24)
-        Me.txtUserName.TabIndex = 5
-        '
-        'btnBest
-        '
-        Me.btnBest.Location = New System.Drawing.Point(6, 59)
-        Me.btnBest.Name = "btnBest"
-        Me.btnBest.Size = New System.Drawing.Size(89, 23)
-        Me.btnBest.TabIndex = 5
-        Me.btnBest.Text = "Best Sellers"
-        Me.btnBest.UseVisualStyleBackColor = True
-        '
-        'btnPersonal
-        '
-        Me.btnPersonal.Location = New System.Drawing.Point(103, 59)
-        Me.btnPersonal.Name = "btnPersonal"
-        Me.btnPersonal.Size = New System.Drawing.Size(89, 23)
-        Me.btnPersonal.TabIndex = 6
-        Me.btnPersonal.Text = "Recommended"
-        Me.btnPersonal.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -342,6 +258,79 @@ Partial Class Customer_Interface
         Me.txtRes.ReadOnly = True
         Me.txtRes.Size = New System.Drawing.Size(434, 219)
         Me.txtRes.TabIndex = 0
+        '
+        'btnPersonal
+        '
+        Me.btnPersonal.Location = New System.Drawing.Point(103, 59)
+        Me.btnPersonal.Name = "btnPersonal"
+        Me.btnPersonal.Size = New System.Drawing.Size(89, 23)
+        Me.btnPersonal.TabIndex = 6
+        Me.btnPersonal.Text = "Recommended"
+        Me.btnPersonal.UseVisualStyleBackColor = True
+        '
+        'btnBest
+        '
+        Me.btnBest.Location = New System.Drawing.Point(6, 59)
+        Me.btnBest.Name = "btnBest"
+        Me.btnBest.Size = New System.Drawing.Size(89, 23)
+        Me.btnBest.TabIndex = 5
+        Me.btnBest.Text = "Best Sellers"
+        Me.btnBest.UseVisualStyleBackColor = True
+        '
+        'btnAddQueue
+        '
+        Me.btnAddQueue.Location = New System.Drawing.Point(199, 379)
+        Me.btnAddQueue.Name = "btnAddQueue"
+        Me.btnAddQueue.Size = New System.Drawing.Size(88, 23)
+        Me.btnAddQueue.TabIndex = 3
+        Me.btnAddQueue.Text = "Add To Queue"
+        Me.btnAddQueue.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(207, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(247, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Movie Categories: Comedy, Drama, Action, Foreign"
+        '
+        'movieSelect
+        '
+        Me.movieSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.movieSelect.FormattingEnabled = True
+        Me.movieSelect.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.movieSelect.Location = New System.Drawing.Point(6, 381)
+        Me.movieSelect.MaxDropDownItems = 50
+        Me.movieSelect.Name = "movieSelect"
+        Me.movieSelect.Size = New System.Drawing.Size(186, 21)
+        Me.movieSelect.Sorted = True
+        Me.movieSelect.TabIndex = 2
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(6, 101)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(186, 20)
+        Me.txtSearch.TabIndex = 0
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(606, 150)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(116, 23)
+        Me.Button4.TabIndex = 0
+        Me.Button4.Text = "Rate A Movie"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'txtUserName
+        '
+        Me.txtUserName.AutoSize = True
+        Me.txtUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtUserName.Location = New System.Drawing.Point(13, 7)
+        Me.txtUserName.Name = "txtUserName"
+        Me.txtUserName.Size = New System.Drawing.Size(0, 24)
+        Me.txtUserName.TabIndex = 5
         '
         'Customer_Interface
         '
@@ -383,7 +372,6 @@ Partial Class Customer_Interface
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Button4 As Button
     Friend WithEvents btnAddQueue As Button

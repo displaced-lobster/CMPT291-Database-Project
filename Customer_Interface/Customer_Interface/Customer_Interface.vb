@@ -116,7 +116,10 @@ Public Class Customer_Interface
             SQL.SQLTable.Clear()
         End If
         movieSelect.Items.Clear() ' clear entries in table
+        movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
+        txtRes.Text = ""
 
+        ' run the query
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) AS Movies " &
                          "FROM Movie_Data " &
                          "WHERE rating >= 4; ")
@@ -146,7 +149,7 @@ Public Class Customer_Interface
         movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
         txtRes.Text = ""
 
-        ' need to get the type most watched by the user and use that the get movies with same type
+        ' run the query
         SQL.ExecuteQuery("SELECT movie_name as Movies " &
                          "FROM Movie_Data " &
                          "WHERE movie_type = (Select T1.movie_type " &
@@ -172,10 +175,7 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        ' if searching, go through and check key words of movies names, actors names, and movie types
-        ' check against sql injection attacks
-
+    Private Sub txtInfo_TextChanged(sender As Object, e As EventArgs) Handles txtInfo.TextChanged
 
     End Sub
 End Class
