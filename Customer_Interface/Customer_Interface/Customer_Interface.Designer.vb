@@ -39,6 +39,7 @@ Partial Class Customer_Interface
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbCategory = New System.Windows.Forms.RadioButton()
         Me.rbActor = New System.Windows.Forms.RadioButton()
         Me.rbTitle = New System.Windows.Forms.RadioButton()
         Me.btnSearch = New System.Windows.Forms.Button()
@@ -52,7 +53,7 @@ Partial Class Customer_Interface
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtUserName = New System.Windows.Forms.Label()
-        Me.rbCategory = New System.Windows.Forms.RadioButton()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -60,6 +61,7 @@ Partial Class Customer_Interface
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnExit
@@ -247,6 +249,17 @@ Partial Class Customer_Interface
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Movie Search"
         '
+        'rbCategory
+        '
+        Me.rbCategory.AutoSize = True
+        Me.rbCategory.Location = New System.Drawing.Point(317, 53)
+        Me.rbCategory.Name = "rbCategory"
+        Me.rbCategory.Size = New System.Drawing.Size(118, 17)
+        Me.rbCategory.TabIndex = 11
+        Me.rbCategory.TabStop = True
+        Me.rbCategory.Text = "Search by Category"
+        Me.rbCategory.UseVisualStyleBackColor = True
+        '
         'rbActor
         '
         Me.rbActor.AutoSize = True
@@ -281,6 +294,7 @@ Partial Class Customer_Interface
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
         Me.GroupBox4.Controls.Add(Me.txtRes)
         Me.GroupBox4.Location = New System.Drawing.Point(7, 128)
         Me.GroupBox4.Name = "GroupBox4"
@@ -372,16 +386,13 @@ Partial Class Customer_Interface
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
         '
-        'rbCategory
+        'DataGridView1
         '
-        Me.rbCategory.AutoSize = True
-        Me.rbCategory.Location = New System.Drawing.Point(317, 53)
-        Me.rbCategory.Name = "rbCategory"
-        Me.rbCategory.Size = New System.Drawing.Size(118, 17)
-        Me.rbCategory.TabIndex = 11
-        Me.rbCategory.TabStop = True
-        Me.rbCategory.Text = "Search by Category"
-        Me.rbCategory.UseVisualStyleBackColor = True
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(192, 78)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 6
         '
         'Customer_Interface
         '
@@ -404,6 +415,7 @@ Partial Class Customer_Interface
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -439,4 +451,5 @@ Partial Class Customer_Interface
     Friend WithEvents rbActor As RadioButton
     Friend WithEvents rbTitle As RadioButton
     Friend WithEvents rbCategory As RadioButton
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

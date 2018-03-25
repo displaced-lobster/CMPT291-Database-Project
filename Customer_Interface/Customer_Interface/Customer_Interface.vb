@@ -35,6 +35,8 @@ Public Class Customer_Interface
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
                          "FROM Order_Data as OD, Movie_Data as MD " &
                          "WHERE OD.movie_id = MD.movie_id AND return_flag = 1 AND account_number = " & CInt(GetAccount()) & ";")
+        If SQL.HasException(True) Then Exit Sub
+
         Dim ttlRows As Integer = SQL.SQLTable.Rows.Count()
         For i As Integer = 0 To (ttlRows - 1)
             cbxPrev.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
@@ -44,6 +46,8 @@ Public Class Customer_Interface
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
                          "FROM Order_Data as OD, Movie_Data as MD " &
                          "WHERE OD.movie_id = MD.movie_id AND return_flag = 0 AND account_number = " & CInt(GetAccount()) & ";")
+        If SQL.HasException(True) Then Exit Sub
+
         ttlRows = SQL.SQLTable.Rows.Count()
         For i As Integer = 0 To (ttlRows - 1)
             cbxCur.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
@@ -54,6 +58,8 @@ Public Class Customer_Interface
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies " &
                          "FROM Order_Queue as OQ, Movie_Data as MD " &
                          "WHERE OQ.movie_id = MD.movie_id AND account_number = " & CInt(GetAccount()) & ";")
+        If SQL.HasException(True) Then Exit Sub
+
         ttlRows = SQL.SQLTable.Rows.Count()
         For i As Integer = 0 To (ttlRows - 1)
             cbxQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
@@ -117,27 +123,34 @@ Public Class Customer_Interface
         End If
         movieSelect.Items.Clear() ' clear entries in table
         movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
+        txtRes.Clear() ' clear the text field
         txtRes.Text = ""
 
         ' run the query
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) AS Movies " &
                          "FROM Movie_Data " &
                          "WHERE rating >= 4; ")
+        If SQL.HasException(True) Then Exit Sub
 
         ttlMovies = SQL.SQLTable.Rows.Count()
 
-        For i As Integer = 0 To (ttlMovies - 1)
-            movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
-        Next
-        txtRes.Text = movieList ' display movies
+        If SQL.SQLTable.Rows.Count > 0 Then
+            For i As Integer = 0 To (ttlMovies - 1)
+                movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+            Next
+            txtRes.Text = movieList ' display movies
 
-        For i As Integer = 0 To (ttlMovies - 1)
-            movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-        Next
+            For i As Integer = 0 To (ttlMovies - 1)
+                movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+            Next
+        End If
 
     End Sub
 
     Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click
+
+        ' recomemended does not work ***************************
+
         Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
         Dim movieList As String = ""
         ' clear table
@@ -147,31 +160,41 @@ Public Class Customer_Interface
         ' reset fields
         movieSelect.Items.Clear() ' clear entries in table
         movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
+        txtRes.Clear() ' clear the text field
         txtRes.Text = ""
 
+        ' MsgBox(GetAccount()) ' for test purposes
         ' run the query
+
+        ' the problem is with the query ********************************************************************************************************************************
         SQL.ExecuteQuery("SELECT movie_name as Movies " &
                          "FROM Movie_Data " &
                          "WHERE movie_type = (Select T1.movie_type " &
                                              "FROM (SELECT movie_type, COUNT(movie_type) As ttl " &
                                                    "FROM Movie_Data AS MD INNER JOIN Order_Data AS OD ON OD.movie_id=MD.movie_id " &
                                                    "GROUP BY movie_type, account_number " &
-                                                   "HAVING account_number = 1001) as T1, " &
+                                                   "HAVING account_number=" + GetAccount().ToString + ") as T1, " &
                                                   "(SELECT movie_type, COUNT(movie_type) as ttl " &
                                                    "FROM Movie_Data AS MD INNER JOIN Order_Data AS OD ON OD.movie_id=MD.movie_id " &
                                                    "GROUP BY movie_type, account_number " &
-                                                   "HAVING account_number = 1001) as T2 " &
+                                                   "HAVING account_number=" + GetAccount().ToString + ") as T2 " &
                                              "WHERE T1.ttl > T2.ttl);")
+        '*****************************************************************************************************************************************************************
+        If SQL.HasException(True) Then Exit Sub
+
         ttlMovies = SQL.SQLTable.Rows.Count()
+        'DataGridView1.DataSource = SQL.SQLTable
 
-        For i As Integer = 0 To (ttlMovies - 1)
-            movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
-        Next
-        txtRes.Text = movieList ' display movies
+        If SQL.SQLTable.Rows.Count > 0 Then
+            For i As Integer = 0 To (ttlMovies - 1)
+                movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+            Next
+            txtRes.Text = movieList ' display movies
 
-        For i As Integer = 0 To (ttlMovies - 1)
-            movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-        Next
+            For i As Integer = 0 To (ttlMovies - 1)
+                movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+            Next
+        End If
 
     End Sub
 
@@ -187,16 +210,15 @@ Public Class Customer_Interface
         movieSelect.Items.Clear() ' clear entries in table
         movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
         txtRes.Clear() ' clear the text field
-
-        ' does not clear the text box if the search is the same but the radio button is changed ******************* bug to fix
+        txtRes.Text = ""
 
         ' run the query
         If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or Trim(txtSearch.Text.ToLower) = "drama" Or Trim(txtSearch.Text.ToLower) = "foreign" Then
-            ' clear table
-
             SQL.ExecuteQuery("SELECT movie_name AS Movies " &
                              "FROM Movie_Data " &
                              "WHERE movie_type LIKE '" + Trim(txtSearch.Text.ToLower) + "';")
+            If SQL.HasException(True) Then Exit Sub
+
             ttlMovies = SQL.SQLTable.Rows.Count()
 
             For i As Integer = 0 To (ttlMovies - 1)
@@ -209,12 +231,10 @@ Public Class Customer_Interface
             Next
 
         Else
-            ' search first based on movie titles then based on actors
-            ' check against sql attack
             Dim words() As String = txtSearch.Text.Split(" "c) ' split based on the space character
             Dim queryString As String = "SELECT DISTINCT(movie_name) AS Movies "
-            Dim ttl As Integer = words.Count ' or .length
-
+            Dim ttl As Integer = words.Length ' or count
+            ' how to prevent SQL injection attack?
             If rbTitle.Checked = True Then
                 queryString += "FROM Movie_Data WHERE "
                 For Each word As String In words
@@ -224,30 +244,34 @@ Public Class Customer_Interface
                         queryString += "movie_name LIKE '%" + word + "%' AND " ' could be OR?
                     End If
                 Next
-
             ElseIf rbActor.Checked = True Then
-                MsgBox("Actor name")
+                ' works for one name but not two at a time ***************************************************************************************************************
+                queryString += "FROM Movie_Data AS MD FULL JOIN Acts_In AS AI ON MD.movie_id=AI.movie_id FULL JOIN Actor_Data as AD ON AI.actor_id=AD.actor_id WHERE "
+                For Each word As String In words
+                    If word = words(ttl - 1) Then ' if at the end 
+                        queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%')"
+                    Else
+                        queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%') AND " ' could be OR?
+                    End If
+                Next
             End If
-            MsgBox(queryString)
-            ' how to deal with with if a search returns nothing
+            'MsgBox(queryString) 'for test purposes
+
+            ' print out query
             SQL.ExecuteQuery(queryString)
+            If SQL.HasException(True) Then Exit Sub
+
             ttlMovies = SQL.SQLTable.Rows.Count()
 
-
-            ' error here depending on the situation *************************************************************
-            MsgBox(SQL.SQLTable.Rows.Count)
             If SQL.SQLTable.Rows.Count > 0 Then
-
                 For i As Integer = 0 To (ttlMovies - 1)
                     movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
                 Next
-                MsgBox("after")
                 txtRes.Text = movieList ' display movies
 
                 For i As Integer = 0 To (ttlMovies - 1)
                     movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
                 Next
-                MsgBox("Done")
             End If
 
         End If
@@ -256,9 +280,56 @@ Public Class Customer_Interface
     End Sub
 
     Private Sub search_param_CheckedChanged(sender As Object, e As EventArgs) Handles rbCategory.CheckedChanged, rbTitle.CheckedChanged, rbActor.CheckedChanged
-        If rbTitle.Checked = True Or rbTitle.Checked = True Or rbCategory.Checked = True Then
+        If rbTitle.Checked = True Or rbActor.Checked = True Or rbCategory.Checked = True Then
             btnSearch.Enabled = True
         End If
+    End Sub
+
+    Private Sub btnAddQueue_Click(sender As Object, e As EventArgs) Handles btnAddQueue.Click
+        ' add to the queue based on what is in the combo box
+        ' need account number, movie id and data
+        ' add to order queue
+        MsgBox(movieSelect.Text)
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+
+        SQL.ExecuteQuery("SELECT movie_id " &
+                         "FROM Movie_Data " &
+                         "WHERE movie_name LIKE '" + movieSelect.Text + "';")
+        'Dim movie_ID As String = SQL.SQLTable.Rows(0).Item("movie_id")
+        Dim user As String = GetAccount().ToString
+        Dim movie_ID As String = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+
+        ' check to make sure its not already in the queue
+        SQL.ExecuteQuery("SELECT movie_id " &
+                         "FROM Order_Queue " &
+                         "WHERE account_number=" + user + " AND movie_id=" + movie_ID + ";")
+        If SQL.SQLTable.Rows.Count > 0 Then
+            If SQL.SQLTable.Rows(0).Item("movie_id") Then
+                MsgBox("The movie you have selected is already in your queue")
+                ' maybe clear the combo box text field? 
+                Exit Sub
+            End If
+        End If
+
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+
+        SQL.AddParam("@user_ID", user)
+        SQL.AddParam("@movie_ID", movie_ID)
+        SQL.AddParam("@date", Date.Now)
+        SQL.ExecuteQuery("INSERT INTO Order_Queue (account_number, movie_id, date) " &
+                         "VALUES (@user_ID, @movie_ID, @date)")
+        If SQL.HasException(True) Then Exit Sub
+
+        MsgBox("The movie: " + movieSelect.Text + " has been added to your queue")
+        ' update movie queue in account
+        cbxQueue.Items.Clear()
+        LoadMovies()
     End Sub
 End Class
 
