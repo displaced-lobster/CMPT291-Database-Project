@@ -39,17 +39,21 @@ Partial Class Customer_Interface
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnAddQueue = New System.Windows.Forms.Button()
-        Me.movieSelect = New System.Windows.Forms.ComboBox()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.rbCategory = New System.Windows.Forms.RadioButton()
+        Me.rbActor = New System.Windows.Forms.RadioButton()
+        Me.rbTitle = New System.Windows.Forms.RadioButton()
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.txtUserName = New System.Windows.Forms.Label()
-        Me.btnBest = New System.Windows.Forms.Button()
-        Me.btnPersonal = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtRes = New System.Windows.Forms.TextBox()
+        Me.btnPersonal = New System.Windows.Forms.Button()
+        Me.btnBest = New System.Windows.Forms.Button()
+        Me.btnAddQueue = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.movieSelect = New System.Windows.Forms.ComboBox()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.txtUserName = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -57,6 +61,7 @@ Partial Class Customer_Interface
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnExit
@@ -208,7 +213,7 @@ Partial Class Customer_Interface
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(606, 179)
+        Me.Button3.Location = New System.Drawing.Point(606, 213)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(116, 23)
         Me.Button3.TabIndex = 10
@@ -217,7 +222,7 @@ Partial Class Customer_Interface
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(606, 121)
+        Me.Button1.Location = New System.Drawing.Point(606, 155)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(116, 23)
         Me.Button1.TabIndex = 9
@@ -226,6 +231,10 @@ Partial Class Customer_Interface
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rbCategory)
+        Me.GroupBox3.Controls.Add(Me.rbActor)
+        Me.GroupBox3.Controls.Add(Me.rbTitle)
+        Me.GroupBox3.Controls.Add(Me.btnSearch)
         Me.GroupBox3.Controls.Add(Me.GroupBox4)
         Me.GroupBox3.Controls.Add(Me.btnPersonal)
         Me.GroupBox3.Controls.Add(Me.btnBest)
@@ -233,7 +242,6 @@ Partial Class Customer_Interface
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.movieSelect)
         Me.GroupBox3.Controls.Add(Me.txtSearch)
-        Me.GroupBox3.Controls.Add(Me.btnSearch)
         Me.GroupBox3.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(460, 408)
@@ -241,14 +249,87 @@ Partial Class Customer_Interface
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Movie Search"
         '
-        'Label5
+        'rbCategory
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(207, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(247, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Movie Categories: Comedy, Drama, Action, Foreign"
+        Me.rbCategory.AutoSize = True
+        Me.rbCategory.Location = New System.Drawing.Point(317, 53)
+        Me.rbCategory.Name = "rbCategory"
+        Me.rbCategory.Size = New System.Drawing.Size(118, 17)
+        Me.rbCategory.TabIndex = 11
+        Me.rbCategory.TabStop = True
+        Me.rbCategory.Text = "Search by Category"
+        Me.rbCategory.UseVisualStyleBackColor = True
+        '
+        'rbActor
+        '
+        Me.rbActor.AutoSize = True
+        Me.rbActor.Location = New System.Drawing.Point(317, 99)
+        Me.rbActor.Name = "rbActor"
+        Me.rbActor.Size = New System.Drawing.Size(106, 17)
+        Me.rbActor.TabIndex = 10
+        Me.rbActor.TabStop = True
+        Me.rbActor.Text = "Search by Actors"
+        Me.rbActor.UseVisualStyleBackColor = True
+        '
+        'rbTitle
+        '
+        Me.rbTitle.AutoSize = True
+        Me.rbTitle.Location = New System.Drawing.Point(317, 76)
+        Me.rbTitle.Name = "rbTitle"
+        Me.rbTitle.Size = New System.Drawing.Size(96, 17)
+        Me.rbTitle.TabIndex = 9
+        Me.rbTitle.TabStop = True
+        Me.rbTitle.Text = "Search by Title"
+        Me.rbTitle.UseVisualStyleBackColor = True
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Enabled = False
+        Me.btnSearch.Location = New System.Drawing.Point(199, 99)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(89, 23)
+        Me.btnSearch.TabIndex = 8
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Controls.Add(Me.txtRes)
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 128)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(447, 245)
+        Me.GroupBox4.TabIndex = 7
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Results"
+        '
+        'txtRes
+        '
+        Me.txtRes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtRes.Location = New System.Drawing.Point(7, 20)
+        Me.txtRes.Multiline = True
+        Me.txtRes.Name = "txtRes"
+        Me.txtRes.ReadOnly = True
+        Me.txtRes.Size = New System.Drawing.Size(434, 219)
+        Me.txtRes.TabIndex = 0
+        '
+        'btnPersonal
+        '
+        Me.btnPersonal.Location = New System.Drawing.Point(103, 59)
+        Me.btnPersonal.Name = "btnPersonal"
+        Me.btnPersonal.Size = New System.Drawing.Size(89, 23)
+        Me.btnPersonal.TabIndex = 6
+        Me.btnPersonal.Text = "Recommended"
+        Me.btnPersonal.UseVisualStyleBackColor = True
+        '
+        'btnBest
+        '
+        Me.btnBest.Location = New System.Drawing.Point(6, 59)
+        Me.btnBest.Name = "btnBest"
+        Me.btnBest.Size = New System.Drawing.Size(89, 23)
+        Me.btnBest.TabIndex = 5
+        Me.btnBest.Text = "Best Sellers"
+        Me.btnBest.UseVisualStyleBackColor = True
         '
         'btnAddQueue
         '
@@ -258,6 +339,15 @@ Partial Class Customer_Interface
         Me.btnAddQueue.TabIndex = 3
         Me.btnAddQueue.Text = "Add To Queue"
         Me.btnAddQueue.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(207, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(247, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Movie Categories: Comedy, Drama, Action, Foreign"
         '
         'movieSelect
         '
@@ -278,18 +368,9 @@ Partial Class Customer_Interface
         Me.txtSearch.Size = New System.Drawing.Size(186, 20)
         Me.txtSearch.TabIndex = 0
         '
-        'btnSearch
-        '
-        Me.btnSearch.Location = New System.Drawing.Point(198, 99)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(89, 23)
-        Me.btnSearch.TabIndex = 1
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(606, 150)
+        Me.Button4.Location = New System.Drawing.Point(606, 184)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(116, 23)
         Me.Button4.TabIndex = 0
@@ -305,43 +386,13 @@ Partial Class Customer_Interface
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
         '
-        'btnBest
+        'DataGridView1
         '
-        Me.btnBest.Location = New System.Drawing.Point(6, 59)
-        Me.btnBest.Name = "btnBest"
-        Me.btnBest.Size = New System.Drawing.Size(89, 23)
-        Me.btnBest.TabIndex = 5
-        Me.btnBest.Text = "Best Sellers"
-        Me.btnBest.UseVisualStyleBackColor = True
-        '
-        'btnPersonal
-        '
-        Me.btnPersonal.Location = New System.Drawing.Point(103, 59)
-        Me.btnPersonal.Name = "btnPersonal"
-        Me.btnPersonal.Size = New System.Drawing.Size(89, 23)
-        Me.btnPersonal.TabIndex = 6
-        Me.btnPersonal.Text = "Recommended"
-        Me.btnPersonal.UseVisualStyleBackColor = True
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.txtRes)
-        Me.GroupBox4.Location = New System.Drawing.Point(7, 128)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(447, 245)
-        Me.GroupBox4.TabIndex = 7
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Results"
-        '
-        'txtRes
-        '
-        Me.txtRes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.txtRes.Location = New System.Drawing.Point(7, 20)
-        Me.txtRes.Multiline = True
-        Me.txtRes.Name = "txtRes"
-        Me.txtRes.ReadOnly = True
-        Me.txtRes.Size = New System.Drawing.Size(434, 219)
-        Me.txtRes.TabIndex = 0
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(192, 78)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 6
         '
         'Customer_Interface
         '
@@ -364,6 +415,7 @@ Partial Class Customer_Interface
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -383,7 +435,6 @@ Partial Class Customer_Interface
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Button4 As Button
     Friend WithEvents btnAddQueue As Button
@@ -396,4 +447,9 @@ Partial Class Customer_Interface
     Friend WithEvents btnBest As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents txtRes As TextBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents rbActor As RadioButton
+    Friend WithEvents rbTitle As RadioButton
+    Friend WithEvents rbCategory As RadioButton
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

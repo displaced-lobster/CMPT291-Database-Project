@@ -85,7 +85,6 @@ Partial Class Customer_Rep
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.add_cust = New System.Windows.Forms.Button()
-        Me.edit_cust = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -95,6 +94,49 @@ Partial Class Customer_Rep
         Me.Label18 = New System.Windows.Forms.Label()
         Me.recOrderID = New System.Windows.Forms.Label()
         Me.addAcctNum = New System.Windows.Forms.Label()
+        Me.edit_cust = New System.Windows.Forms.Button()
+        Me.editFilter = New System.Windows.Forms.TextBox()
+        Me.editAcctNum = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.editUnlim3 = New System.Windows.Forms.RadioButton()
+        Me.editUnlim2 = New System.Windows.Forms.RadioButton()
+        Me.editUnlim1 = New System.Windows.Forms.RadioButton()
+        Me.editLim = New System.Windows.Forms.RadioButton()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.editCC = New System.Windows.Forms.TextBox()
+        Me.editEmail = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.editZip = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.editState = New System.Windows.Forms.TextBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.editCity = New System.Windows.Forms.TextBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.editAPTNum = New System.Windows.Forms.TextBox()
+        Me.editStreetName = New System.Windows.Forms.TextBox()
+        Me.editStreetNum = New System.Windows.Forms.TextBox()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.editLName = New System.Windows.Forms.TextBox()
+        Me.editFName = New System.Windows.Forms.TextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.editSearch = New System.Windows.Forms.Button()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -103,8 +145,12 @@ Partial Class Customer_Rep
         Me.AcctType.SuspendLayout()
         Me.Num2.SuspendLayout()
         Me.Num1.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -152,7 +198,7 @@ Partial Class Customer_Rep
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.TabPage1.Size = New System.Drawing.Size(1207, 546)
+        Me.TabPage1.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Create Order"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -254,7 +300,7 @@ Partial Class Customer_Rep
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.TabPage2.Size = New System.Drawing.Size(1207, 546)
+        Me.TabPage2.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Find Customer"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -323,7 +369,7 @@ Partial Class Customer_Rep
         Me.CustData.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.CustData.Name = "CustData"
         Me.CustData.RowTemplate.Height = 40
-        Me.CustData.Size = New System.Drawing.Size(1169, 469)
+        Me.CustData.Size = New System.Drawing.Size(1738, 610)
         Me.CustData.TabIndex = 46
         '
         'Find
@@ -369,7 +415,6 @@ Partial Class Customer_Rep
         Me.TabPage4.Controls.Add(Me.Label7)
         Me.TabPage4.Controls.Add(Me.Label5)
         Me.TabPage4.Controls.Add(Me.add_cust)
-        Me.TabPage4.Controls.Add(Me.edit_cust)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TabPage4.Name = "TabPage4"
@@ -786,24 +831,47 @@ Partial Class Customer_Rep
         Me.add_cust.Text = "Add"
         Me.add_cust.UseVisualStyleBackColor = True
         '
-        'edit_cust
-        '
-        Me.edit_cust.Location = New System.Drawing.Point(1009, 168)
-        Me.edit_cust.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.edit_cust.Name = "edit_cust"
-        Me.edit_cust.Size = New System.Drawing.Size(56, 30)
-        Me.edit_cust.TabIndex = 46
-        Me.edit_cust.Text = "Edit"
-        Me.edit_cust.UseVisualStyleBackColor = True
-        '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.Label23)
+        Me.TabPage5.Controls.Add(Me.editSearch)
+        Me.TabPage5.Controls.Add(Me.editAcctNum)
+        Me.TabPage5.Controls.Add(Me.GroupBox1)
+        Me.TabPage5.Controls.Add(Me.GroupBox2)
+        Me.TabPage5.Controls.Add(Me.GroupBox3)
+        Me.TabPage5.Controls.Add(Me.TextBox1)
+        Me.TabPage5.Controls.Add(Me.TextBox2)
+        Me.TabPage5.Controls.Add(Me.Label24)
+        Me.TabPage5.Controls.Add(Me.editCC)
+        Me.TabPage5.Controls.Add(Me.editEmail)
+        Me.TabPage5.Controls.Add(Me.Label25)
+        Me.TabPage5.Controls.Add(Me.Label26)
+        Me.TabPage5.Controls.Add(Me.Label27)
+        Me.TabPage5.Controls.Add(Me.editZip)
+        Me.TabPage5.Controls.Add(Me.Label28)
+        Me.TabPage5.Controls.Add(Me.editState)
+        Me.TabPage5.Controls.Add(Me.Label29)
+        Me.TabPage5.Controls.Add(Me.editCity)
+        Me.TabPage5.Controls.Add(Me.Label30)
+        Me.TabPage5.Controls.Add(Me.Label31)
+        Me.TabPage5.Controls.Add(Me.Label32)
+        Me.TabPage5.Controls.Add(Me.editAPTNum)
+        Me.TabPage5.Controls.Add(Me.editStreetName)
+        Me.TabPage5.Controls.Add(Me.editStreetNum)
+        Me.TabPage5.Controls.Add(Me.Label33)
+        Me.TabPage5.Controls.Add(Me.editLName)
+        Me.TabPage5.Controls.Add(Me.editFName)
+        Me.TabPage5.Controls.Add(Me.Label34)
+        Me.TabPage5.Controls.Add(Me.Label35)
+        Me.TabPage5.Controls.Add(Me.Label36)
+        Me.TabPage5.Controls.Add(Me.editFilter)
+        Me.TabPage5.Controls.Add(Me.edit_cust)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1207, 546)
+        Me.TabPage5.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage5.TabIndex = 6
-        Me.TabPage5.Text = "Edit Customer"
+        Me.TabPage5.Text = " Edit Customer"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'TabPage6
@@ -811,7 +879,7 @@ Partial Class Customer_Rep
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1207, 546)
+        Me.TabPage6.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Delete Customer"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -824,7 +892,7 @@ Partial Class Customer_Rep
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.TabPage3.Size = New System.Drawing.Size(1207, 546)
+        Me.TabPage3.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tools"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -874,6 +942,439 @@ Partial Class Customer_Rep
         Me.addAcctNum.Size = New System.Drawing.Size(0, 13)
         Me.addAcctNum.TabIndex = 92
         '
+        'edit_cust
+        '
+        Me.edit_cust.Enabled = False
+        Me.edit_cust.Location = New System.Drawing.Point(517, 478)
+        Me.edit_cust.Margin = New System.Windows.Forms.Padding(1)
+        Me.edit_cust.Name = "edit_cust"
+        Me.edit_cust.Size = New System.Drawing.Size(56, 30)
+        Me.edit_cust.TabIndex = 47
+        Me.edit_cust.Text = "Save"
+        Me.edit_cust.UseVisualStyleBackColor = True
+        '
+        'editFilter
+        '
+        Me.editFilter.Location = New System.Drawing.Point(136, 31)
+        Me.editFilter.Name = "editFilter"
+        Me.editFilter.Size = New System.Drawing.Size(159, 20)
+        Me.editFilter.TabIndex = 48
+        '
+        'editAcctNum
+        '
+        Me.editAcctNum.AutoSize = True
+        Me.editAcctNum.Location = New System.Drawing.Point(529, 30)
+        Me.editAcctNum.Name = "editAcctNum"
+        Me.editAcctNum.Size = New System.Drawing.Size(0, 13)
+        Me.editAcctNum.TabIndex = 121
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.editUnlim3)
+        Me.GroupBox1.Controls.Add(Me.editUnlim2)
+        Me.GroupBox1.Controls.Add(Me.editUnlim1)
+        Me.GroupBox1.Controls.Add(Me.editLim)
+        Me.GroupBox1.Location = New System.Drawing.Point(393, 410)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox1.Size = New System.Drawing.Size(309, 49)
+        Me.GroupBox1.TabIndex = 120
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Account Type"
+        '
+        'editUnlim3
+        '
+        Me.editUnlim3.AutoSize = True
+        Me.editUnlim3.Location = New System.Drawing.Point(214, 22)
+        Me.editUnlim3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editUnlim3.Name = "editUnlim3"
+        Me.editUnlim3.Size = New System.Drawing.Size(74, 17)
+        Me.editUnlim3.TabIndex = 74
+        Me.editUnlim3.TabStop = True
+        Me.editUnlim3.Text = "Unlimited3"
+        Me.editUnlim3.UseVisualStyleBackColor = True
+        '
+        'editUnlim2
+        '
+        Me.editUnlim2.AutoSize = True
+        Me.editUnlim2.Location = New System.Drawing.Point(141, 22)
+        Me.editUnlim2.Margin = New System.Windows.Forms.Padding(1)
+        Me.editUnlim2.Name = "editUnlim2"
+        Me.editUnlim2.Size = New System.Drawing.Size(74, 17)
+        Me.editUnlim2.TabIndex = 73
+        Me.editUnlim2.TabStop = True
+        Me.editUnlim2.Text = "Unlimited2"
+        Me.editUnlim2.UseVisualStyleBackColor = True
+        '
+        'editUnlim1
+        '
+        Me.editUnlim1.AutoSize = True
+        Me.editUnlim1.Location = New System.Drawing.Point(66, 22)
+        Me.editUnlim1.Margin = New System.Windows.Forms.Padding(1)
+        Me.editUnlim1.Name = "editUnlim1"
+        Me.editUnlim1.Size = New System.Drawing.Size(74, 17)
+        Me.editUnlim1.TabIndex = 72
+        Me.editUnlim1.TabStop = True
+        Me.editUnlim1.Text = "Unlimited1"
+        Me.editUnlim1.UseVisualStyleBackColor = True
+        '
+        'editLim
+        '
+        Me.editLim.AutoSize = True
+        Me.editLim.Location = New System.Drawing.Point(9, 22)
+        Me.editLim.Margin = New System.Windows.Forms.Padding(1)
+        Me.editLim.Name = "editLim"
+        Me.editLim.Size = New System.Drawing.Size(58, 17)
+        Me.editLim.TabIndex = 71
+        Me.editLim.TabStop = True
+        Me.editLim.Text = "Limited"
+        Me.editLim.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.RadioButton5)
+        Me.GroupBox2.Controls.Add(Me.RadioButton6)
+        Me.GroupBox2.Controls.Add(Me.RadioButton7)
+        Me.GroupBox2.Location = New System.Drawing.Point(562, 353)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox2.Size = New System.Drawing.Size(171, 19)
+        Me.GroupBox2.TabIndex = 119
+        Me.GroupBox2.TabStop = False
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(126, 3)
+        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(1)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(42, 17)
+        Me.RadioButton5.TabIndex = 81
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "Cell"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Location = New System.Drawing.Point(70, 3)
+        Me.RadioButton6.Margin = New System.Windows.Forms.Padding(1)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(51, 17)
+        Me.RadioButton6.TabIndex = 80
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Text = "Work"
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
+        'RadioButton7
+        '
+        Me.RadioButton7.AutoSize = True
+        Me.RadioButton7.Location = New System.Drawing.Point(6, 3)
+        Me.RadioButton7.Margin = New System.Windows.Forms.Padding(1)
+        Me.RadioButton7.Name = "RadioButton7"
+        Me.RadioButton7.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButton7.TabIndex = 79
+        Me.RadioButton7.TabStop = True
+        Me.RadioButton7.Text = "Home"
+        Me.RadioButton7.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.RadioButton8)
+        Me.GroupBox3.Controls.Add(Me.RadioButton9)
+        Me.GroupBox3.Controls.Add(Me.RadioButton10)
+        Me.GroupBox3.Location = New System.Drawing.Point(562, 321)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(1)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox3.Size = New System.Drawing.Size(171, 19)
+        Me.GroupBox3.TabIndex = 118
+        Me.GroupBox3.TabStop = False
+        '
+        'RadioButton8
+        '
+        Me.RadioButton8.AutoSize = True
+        Me.RadioButton8.Location = New System.Drawing.Point(126, 3)
+        Me.RadioButton8.Margin = New System.Windows.Forms.Padding(1)
+        Me.RadioButton8.Name = "RadioButton8"
+        Me.RadioButton8.Size = New System.Drawing.Size(42, 17)
+        Me.RadioButton8.TabIndex = 81
+        Me.RadioButton8.TabStop = True
+        Me.RadioButton8.Text = "Cell"
+        Me.RadioButton8.UseVisualStyleBackColor = True
+        '
+        'RadioButton9
+        '
+        Me.RadioButton9.AutoSize = True
+        Me.RadioButton9.Location = New System.Drawing.Point(70, 3)
+        Me.RadioButton9.Margin = New System.Windows.Forms.Padding(1)
+        Me.RadioButton9.Name = "RadioButton9"
+        Me.RadioButton9.Size = New System.Drawing.Size(51, 17)
+        Me.RadioButton9.TabIndex = 80
+        Me.RadioButton9.TabStop = True
+        Me.RadioButton9.Text = "Work"
+        Me.RadioButton9.UseVisualStyleBackColor = True
+        '
+        'RadioButton10
+        '
+        Me.RadioButton10.AutoSize = True
+        Me.RadioButton10.Location = New System.Drawing.Point(6, 3)
+        Me.RadioButton10.Margin = New System.Windows.Forms.Padding(1)
+        Me.RadioButton10.Name = "RadioButton10"
+        Me.RadioButton10.Size = New System.Drawing.Size(53, 17)
+        Me.RadioButton10.TabIndex = 79
+        Me.RadioButton10.TabStop = True
+        Me.RadioButton10.Text = "Home"
+        Me.RadioButton10.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(403, 353)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(1)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(138, 20)
+        Me.TextBox1.TabIndex = 117
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(403, 324)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(1)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(138, 20)
+        Me.TextBox2.TabIndex = 116
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(401, 301)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(89, 13)
+        Me.Label24.TabIndex = 115
+        Me.Label24.Text = "Phone Number(s)"
+        '
+        'editCC
+        '
+        Me.editCC.Location = New System.Drawing.Point(529, 144)
+        Me.editCC.Margin = New System.Windows.Forms.Padding(1)
+        Me.editCC.Name = "editCC"
+        Me.editCC.Size = New System.Drawing.Size(138, 20)
+        Me.editCC.TabIndex = 114
+        '
+        'editEmail
+        '
+        Me.editEmail.Location = New System.Drawing.Point(529, 114)
+        Me.editEmail.Margin = New System.Windows.Forms.Padding(1)
+        Me.editEmail.Name = "editEmail"
+        Me.editEmail.Size = New System.Drawing.Size(138, 20)
+        Me.editEmail.TabIndex = 113
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(401, 139)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(59, 13)
+        Me.Label25.TabIndex = 112
+        Me.Label25.Text = "Credit Card"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(401, 114)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(32, 13)
+        Me.Label26.TabIndex = 111
+        Me.Label26.Text = "Email"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(676, 266)
+        Me.Label27.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(22, 13)
+        Me.Label27.TabIndex = 110
+        Me.Label27.Text = "Zip"
+        '
+        'editZip
+        '
+        Me.editZip.Location = New System.Drawing.Point(678, 239)
+        Me.editZip.Margin = New System.Windows.Forms.Padding(1)
+        Me.editZip.Name = "editZip"
+        Me.editZip.Size = New System.Drawing.Size(67, 20)
+        Me.editZip.TabIndex = 109
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(514, 266)
+        Me.Label28.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(32, 13)
+        Me.Label28.TabIndex = 108
+        Me.Label28.Text = "State"
+        '
+        'editState
+        '
+        Me.editState.Location = New System.Drawing.Point(517, 239)
+        Me.editState.Margin = New System.Windows.Forms.Padding(1)
+        Me.editState.Name = "editState"
+        Me.editState.Size = New System.Drawing.Size(120, 20)
+        Me.editState.TabIndex = 107
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(401, 266)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(24, 13)
+        Me.Label29.TabIndex = 106
+        Me.Label29.Text = "City"
+        '
+        'editCity
+        '
+        Me.editCity.Location = New System.Drawing.Point(403, 239)
+        Me.editCity.Margin = New System.Windows.Forms.Padding(1)
+        Me.editCity.Name = "editCity"
+        Me.editCity.Size = New System.Drawing.Size(89, 20)
+        Me.editCity.TabIndex = 105
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(664, 219)
+        Me.Label30.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(71, 13)
+        Me.Label30.TabIndex = 104
+        Me.Label30.Text = "APT. Number"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(480, 219)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(66, 13)
+        Me.Label31.TabIndex = 103
+        Me.Label31.Text = "Street Name"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(401, 219)
+        Me.Label32.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(45, 13)
+        Me.Label32.TabIndex = 102
+        Me.Label32.Text = "Street #"
+        '
+        'editAPTNum
+        '
+        Me.editAPTNum.Location = New System.Drawing.Point(666, 197)
+        Me.editAPTNum.Margin = New System.Windows.Forms.Padding(1)
+        Me.editAPTNum.Name = "editAPTNum"
+        Me.editAPTNum.Size = New System.Drawing.Size(79, 20)
+        Me.editAPTNum.TabIndex = 101
+        '
+        'editStreetName
+        '
+        Me.editStreetName.Location = New System.Drawing.Point(482, 197)
+        Me.editStreetName.Margin = New System.Windows.Forms.Padding(1)
+        Me.editStreetName.Name = "editStreetName"
+        Me.editStreetName.Size = New System.Drawing.Size(154, 20)
+        Me.editStreetName.TabIndex = 100
+        '
+        'editStreetNum
+        '
+        Me.editStreetNum.Location = New System.Drawing.Point(403, 197)
+        Me.editStreetNum.Margin = New System.Windows.Forms.Padding(1)
+        Me.editStreetNum.Name = "editStreetNum"
+        Me.editStreetNum.Size = New System.Drawing.Size(43, 20)
+        Me.editStreetNum.TabIndex = 99
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(401, 175)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(45, 13)
+        Me.Label33.TabIndex = 98
+        Me.Label33.Text = "Address"
+        '
+        'editLName
+        '
+        Me.editLName.Location = New System.Drawing.Point(529, 88)
+        Me.editLName.Margin = New System.Windows.Forms.Padding(1)
+        Me.editLName.Name = "editLName"
+        Me.editLName.Size = New System.Drawing.Size(138, 20)
+        Me.editLName.TabIndex = 97
+        '
+        'editFName
+        '
+        Me.editFName.Location = New System.Drawing.Point(529, 59)
+        Me.editFName.Margin = New System.Windows.Forms.Padding(1)
+        Me.editFName.Name = "editFName"
+        Me.editFName.Size = New System.Drawing.Size(138, 20)
+        Me.editFName.TabIndex = 96
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(401, 88)
+        Me.Label34.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(58, 13)
+        Me.Label34.TabIndex = 95
+        Me.Label34.Text = "Last Name"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(401, 59)
+        Me.Label35.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(57, 13)
+        Me.Label35.TabIndex = 94
+        Me.Label35.Text = "First Name"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(401, 30)
+        Me.Label36.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(87, 13)
+        Me.Label36.TabIndex = 93
+        Me.Label36.Text = "Account Number"
+        '
+        'editSearch
+        '
+        Me.editSearch.Location = New System.Drawing.Point(314, 25)
+        Me.editSearch.Margin = New System.Windows.Forms.Padding(1)
+        Me.editSearch.Name = "editSearch"
+        Me.editSearch.Size = New System.Drawing.Size(56, 30)
+        Me.editSearch.TabIndex = 122
+        Me.editSearch.Text = "Search"
+        Me.editSearch.UseVisualStyleBackColor = True
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(33, 34)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(87, 13)
+        Me.Label23.TabIndex = 123
+        Me.Label23.Text = "Account Number"
+        '
         'Customer_Rep
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -901,8 +1402,16 @@ Partial Class Customer_Rep
         Me.Num2.PerformLayout()
         Me.Num1.ResumeLayout(False)
         Me.Num1.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -967,7 +1476,6 @@ Partial Class Customer_Rep
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents add_cust As Button
-    Friend WithEvents edit_cust As Button
     Friend WithEvents TabPage6 As TabPage
     Friend WithEvents Num1 As GroupBox
     Friend WithEvents Num2 As GroupBox
@@ -979,4 +1487,47 @@ Partial Class Customer_Rep
     Friend WithEvents recOrderID As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents addAcctNum As Label
+    Friend WithEvents editAcctNum As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents editUnlim3 As RadioButton
+    Friend WithEvents editUnlim2 As RadioButton
+    Friend WithEvents editUnlim1 As RadioButton
+    Friend WithEvents editLim As RadioButton
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents RadioButton6 As RadioButton
+    Friend WithEvents RadioButton7 As RadioButton
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents RadioButton8 As RadioButton
+    Friend WithEvents RadioButton9 As RadioButton
+    Friend WithEvents RadioButton10 As RadioButton
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents editCC As TextBox
+    Friend WithEvents editEmail As TextBox
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents editZip As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents editState As TextBox
+    Friend WithEvents Label29 As Label
+    Friend WithEvents editCity As TextBox
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents editAPTNum As TextBox
+    Friend WithEvents editStreetName As TextBox
+    Friend WithEvents editStreetNum As TextBox
+    Friend WithEvents Label33 As Label
+    Friend WithEvents editLName As TextBox
+    Friend WithEvents editFName As TextBox
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents editFilter As TextBox
+    Friend WithEvents edit_cust As Button
+    Friend WithEvents Label23 As Label
+    Friend WithEvents editSearch As Button
 End Class
