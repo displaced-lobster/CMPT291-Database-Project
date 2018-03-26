@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Random
 
+'test
+
 Public Class Customer_SignUp
     Private SQL As New SQLControl
 
