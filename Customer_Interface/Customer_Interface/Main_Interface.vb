@@ -23,4 +23,8 @@
     Private Sub Main_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub ManagerServicesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManagerServicesToolStripMenuItem.Click
+        Main_Manager_Interface.Show()
+    End Sub
 End Class
