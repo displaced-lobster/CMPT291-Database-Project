@@ -551,7 +551,7 @@ Public Class Customer_Interface
             End If
             MsgBox("You may rent a movie") ' for test purposes
         End If
-        ' if user reaches this point, they are allowed to rent the movie
+        ' if user reaches this point, they are allowed to rent the movie, now check if there are enough movies to rent
 
 
         ' check to see if their account type will allow the rental and if there are any copies to rent

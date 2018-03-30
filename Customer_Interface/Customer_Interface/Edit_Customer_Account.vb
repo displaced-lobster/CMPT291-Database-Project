@@ -124,7 +124,7 @@ Public Class Edit_Customer_Account
         If cardNum.Text <> i.Item("credit_card_num") And cardNum.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET credit_card_num='" + cardNum.Text + "' WHERE account_number=" +
                                                                                                   accountNumber.ToString + ";")
         updateNumbers(table, rowNumbers)
-        ' account type ' not working yet
+        ' account type
         If limited.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='limited' WHERE account_number=" + accountNumber.ToString + ";")
         If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim1' WHERE account_number=" + accountNumber.ToString + ";")
         If unlim2.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim2' WHERE account_number=" + accountNumber.ToString + ";")
