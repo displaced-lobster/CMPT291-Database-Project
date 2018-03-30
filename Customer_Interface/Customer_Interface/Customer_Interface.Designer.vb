@@ -54,7 +54,7 @@ Partial Class Customer_Interface
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.rentMovie = New System.Windows.Forms.Button()
         Me.rbCategory = New System.Windows.Forms.RadioButton()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbCurrentRentals = New System.Windows.Forms.ComboBox()
         Me.btnEditQueue = New System.Windows.Forms.Button()
         Me.rbActor = New System.Windows.Forms.RadioButton()
         Me.cbEditQueue = New System.Windows.Forms.ComboBox()
@@ -395,7 +395,7 @@ Partial Class Customer_Interface
         '
         Me.GroupBox3.Controls.Add(Me.rentMovie)
         Me.GroupBox3.Controls.Add(Me.rbCategory)
-        Me.GroupBox3.Controls.Add(Me.ComboBox1)
+        Me.GroupBox3.Controls.Add(Me.cbCurrentRentals)
         Me.GroupBox3.Controls.Add(Me.btnEditQueue)
         Me.GroupBox3.Controls.Add(Me.rbActor)
         Me.GroupBox3.Controls.Add(Me.cbEditQueue)
@@ -436,16 +436,16 @@ Partial Class Customer_Interface
         Me.rbCategory.Text = "Search by Category"
         Me.rbCategory.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'cbCurrentRentals
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ComboBox1.Location = New System.Drawing.Point(75, 322)
-        Me.ComboBox1.MaxDropDownItems = 50
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(186, 21)
-        Me.ComboBox1.TabIndex = 13
+        Me.cbCurrentRentals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCurrentRentals.FormattingEnabled = True
+        Me.cbCurrentRentals.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.cbCurrentRentals.Location = New System.Drawing.Point(75, 322)
+        Me.cbCurrentRentals.MaxDropDownItems = 50
+        Me.cbCurrentRentals.Name = "cbCurrentRentals"
+        Me.cbCurrentRentals.Size = New System.Drawing.Size(186, 21)
+        Me.cbCurrentRentals.TabIndex = 13
         '
         'btnEditQueue
         '
@@ -668,7 +668,7 @@ Partial Class Customer_Interface
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnEditQueue As Button
     Friend WithEvents cbEditQueue As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbCurrentRentals As ComboBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents rbRateActor As RadioButton
     Friend WithEvents btnRatingSearch As Button
