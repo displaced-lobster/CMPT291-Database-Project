@@ -52,6 +52,7 @@ Partial Class Customer_Interface
         Me.rbRateMovie = New System.Windows.Forms.RadioButton()
         Me.txtRatingSearch = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rentMovie = New System.Windows.Forms.Button()
         Me.rbCategory = New System.Windows.Forms.RadioButton()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.btnEditQueue = New System.Windows.Forms.Button()
@@ -70,7 +71,6 @@ Partial Class Customer_Interface
         Me.movieSelect = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.txtUserName = New System.Windows.Forms.Label()
-        Me.rentMovie = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -241,7 +241,7 @@ Partial Class Customer_Interface
         Me.GroupBox5.Size = New System.Drawing.Size(364, 408)
         Me.GroupBox5.TabIndex = 14
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Ratings"
+        Me.GroupBox5.Text = "Rate a Past Rental"
         '
         'GroupBox7
         '
@@ -415,6 +415,15 @@ Partial Class Customer_Interface
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Movie Search"
+        '
+        'rentMovie
+        '
+        Me.rentMovie.Location = New System.Drawing.Point(267, 376)
+        Me.rentMovie.Name = "rentMovie"
+        Me.rentMovie.Size = New System.Drawing.Size(116, 23)
+        Me.rentMovie.TabIndex = 14
+        Me.rentMovie.Text = "Rent a Movie"
+        Me.rentMovie.UseVisualStyleBackColor = True
         '
         'rbCategory
         '
@@ -590,15 +599,6 @@ Partial Class Customer_Interface
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
-        '
-        'rentMovie
-        '
-        Me.rentMovie.Location = New System.Drawing.Point(267, 376)
-        Me.rentMovie.Name = "rentMovie"
-        Me.rentMovie.Size = New System.Drawing.Size(116, 23)
-        Me.rentMovie.TabIndex = 14
-        Me.rentMovie.Text = "Rent a Movie"
-        Me.rentMovie.UseVisualStyleBackColor = True
         '
         'Customer_Interface
         '

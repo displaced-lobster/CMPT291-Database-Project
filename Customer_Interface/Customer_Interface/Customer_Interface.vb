@@ -70,10 +70,8 @@ Public Class Customer_Interface
         Next
     End Sub
 
-    ' load the account information fields *************************************************************************** add username to the things to print out
     Public Sub LoadData()
         Dim user As String = GetAccount()
-
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
@@ -81,14 +79,13 @@ Public Class Customer_Interface
 
         SQL.ExecuteQuery("SELECT * FROM Customer_Data as CD INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number=CPN.account_number " &
                          "INNER JOIN Customer_Passwords as CP ON CP.account_number=CPN.account_number WHERE CPN.account_number = " + user + ";")
-
-        txtUserName.Text = SQL.SQLTable.Rows(0).Item("first_name") & " " & SQL.SQLTable.Rows(0).Item("last_name") ' print User name
-
+        If SQL.HasException(True) Then Exit Sub
         Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
 
         Dim i As Object = SQL.SQLTable.Rows(0)
         Dim accountNumber As String = i.Item("account_number").ToString
         Dim fullName As String = i.Item("first_name") + " " + i.Item("last_name")
+        txtUserName.Text = fullName
         Dim email As String = i.Item("email")
         Dim address As String = "#" & i.Item("apartment_num") & " " & i.Item("street_num") & " " & i.Item("street") & vbCrLf &
                                "    " & i.Item("city") & ", " & i.Item("state") & ", " & i.Item("zip_code")
@@ -107,11 +104,10 @@ Public Class Customer_Interface
             Dim phone3 As String = SQL.SQLTable.Rows(2).Item("phone_type") + ": " + SQL.SQLTable.Rows(2).Item("telephone_num")
             phone1 = phone1 + vbCrLf + "    " + phone2 + vbCrLf + "    " + phone3
         End If
-
         'Print out current account information
         txtInfo.Text = "Account Number: " + accountNumber + vbCrLf +
-                       "Name: " + fullName + vbCrLf +
                        "Username: " + username + vbCrLf +
+                       "Name: " + fullName + vbCrLf +
                        "Email: " + email + vbCrLf +
                        "Phone Number: " + vbCrLf + "    " + phone1 + vbCrLf + vbCrLf +
                        "Address: " + address + vbCrLf + vbCrLf +
@@ -154,7 +150,7 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click
+    Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click '**************************************************************** This needs work
 
         ' recomemended does not work ***************************
 
@@ -239,17 +235,18 @@ Public Class Customer_Interface
                     If word = words(ttl - 1) Then ' if at the end 
                         queryString += "movie_name LIKE '%" + word + "%';"
                     Else
-                        queryString += "movie_name LIKE '%" + word + "%' AND " ' could be OR?
+                        queryString += "movie_name LIKE '%" + word + "%' OR " ' changed from and to or
                     End If
                 Next
             ElseIf rbActor.Checked = True Then
-                ' works for one name but not two at a time ***************************************************************************************************************
+                ' works for one name but not two at a time *************************************************************************************************************** needs to be incomparison to a movie
+
                 queryString += "FROM Movie_Data AS MD FULL JOIN Acts_In AS AI ON MD.movie_id=AI.movie_id FULL JOIN Actor_Data as AD ON AI.actor_id=AD.actor_id WHERE "
                 For Each word As String In words
                     If word = words(ttl - 1) Then ' if at the end 
                         queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%')"
                     Else
-                        queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%') AND " ' could be OR?
+                        queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%') OR " ' changed from and to or
                     End If
                 Next
             End If
@@ -341,8 +338,6 @@ Public Class Customer_Interface
     End Sub
 
     Private Sub btnEditQueue_Click(sender As Object, e As EventArgs) Handles btnEditQueue.Click
-        ' need to order the queue by date
-        ' clear table
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
@@ -468,6 +463,112 @@ Public Class Customer_Interface
 
     Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click
         ' for allowing a movie rental
+        ' need to check if the movie is available by counting the number of already rented versus the number that can be rented
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        ' rent a movie from the queue
+        SQL.ExecuteQuery("SELECT movie_id " &
+                         "FROM Movie_Data " &
+                         "WHERE movie_name LIKE '" + cbEditQueue.Text + "';")
+        Dim user As String = GetAccount().ToString
+        MsgBox(user)
+        Dim movie_ID As String
+        If SQL.SQLTable.Rows.Count > 0 Then
+            movie_ID = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+        Else
+            MsgBox("You must pick a movie to rent from your queue")
+            Exit Sub
+        End If
+
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        ' obtain their account information
+        Dim account_type As String
+        Dim ttlAllowedRentals As Integer
+        SQL.ExecuteQuery("SELECT type, num_of_movies FROM Account as A INNER JOIN Customer_Data as CD ON A.type=CD.account_type WHERE account_number='" + user + "';")
+        If SQL.SQLTable.Rows.Count > 0 Then
+            account_type = SQL.SQLTable.Rows(0).Item("type")
+            ttlAllowedRentals = SQL.SQLTable.Rows(0).Item("num_of_movies")
+        Else
+            MsgBox("error")
+            Exit Sub
+        End If
+        MsgBox(account_type + " " + ttlAllowedRentals.ToString) ' for test
+        ' check to see if they already have a rental
+        ' clear table
+        If SQL.SQLTable IsNot Nothing Then
+            SQL.SQLTable.Clear()
+        End If
+        Dim rentCount As Integer
+        SQL.ExecuteQuery("SELECT count(return_flag) as ttl FROM Order_Data WHERE account_number='" + user + "' AND return_flag = 0;")
+        If SQL.SQLTable.Rows.Count > 0 Then
+            rentCount = SQL.SQLTable.Rows(0).Item("ttl")
+            MsgBox(rentCount.ToString)
+        End If
+
+        ' break up into sub routines **************************************************************************************************************************
+        ' need to check if they have rented this month
+        If account_type = "limited" Then ' if they have already rented this month than they are not allowed to rent again
+            If rentCount > 0 Then ' if they still have a rental out, exit the sub
+                MsgBox("You must first return a movie before you can rent another")
+                Exit Sub
+            End If
+            ' clear table
+            If SQL.SQLTable IsNot Nothing Then
+                SQL.SQLTable.Clear()
+            End If
+            SQL.ExecuteQuery("SELECT date FROM Order_Data WHERE account_number='" + user + "' AND return_flag = 1;") '
+            If SQL.SQLTable.Rows.Count > 0 Then
+                Dim today As Date = Date.Now
+                Dim displacement As Day = today.Subtract(Convert.ToDateTime(SQL.SQLTable.Rows(0).Item("date"))).Days
+                'MsgBox("inner if for days") ' for test
+                If displacement < 30 Then ' find out how many days it has been since you rented a movie
+                    MsgBox("You may only rent one movie per month, please check back in " + (30 - displacement).ToString + "days")
+                    Exit Sub
+                End If
+            End If
+            MsgBox("You may rent a movie") ' for test purposes
+
+        Else ' if account is an unlimited one, no need to check dates
+            If account_type = "unlimited1" Then
+                If rentCount > 0 Then
+                    MsgBox("You are only allowed one rental at a time. Please return a movie first")
+                    Exit Sub
+                End If
+            ElseIf account_type = "unlimited2" Then
+                If rentCount > 1 Then
+                    MsgBox("You are only allowed two rentals at a time. Please return a movie first")
+                    Exit Sub
+                End If
+            ElseIf account_type = "unlimited3" Then
+                If rentCount > 2 Then
+                    MsgBox("You are only allowed three rentals at a time. Please return a movie first")
+                    Exit Sub
+                End If
+            End If
+            MsgBox("You may rent a movie") ' for test purposes
+        End If
+        ' if user reaches this point, they are allowed to rent the movie
+
+
+        ' check to see if their account type will allow the rental and if there are any copies to rent
+
+        ' add move to rental list
+        'SQL.AddParam("@user_ID", user)
+        'SQL.AddParam("@movie_ID", movie_ID)
+
+
+        'SQL.ExecuteQuery("DELETE FROM Order_Queue " &
+        '                 "WHERE account_number=@user_ID AND movie_id=@movie_ID;")
+        If SQL.HasException(True) Then Exit Sub
+
+        'MsgBox("The movie """ + movieSelect.Text + """ has been removed from your queue")
+        'cbEditQueue.Items.Clear()
+        'cbxQueue.Items.Clear()
+        'LoadMovies()
     End Sub
 End Class
 
