@@ -14,6 +14,44 @@
 
     End Sub
 
+    Private Sub DelCust()
+        SQL.AddParam("@acctnum", delAcctNum.Text)
+        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum")
+
+        If SQL.HasException(True) Then Exit Sub
+
+        MsgBox("Customer deleted.")
+        del_cust.Enabled = False
+    End Sub
+
+    Private Sub makeMailingList()
+        AddressList.Items.Clear()
+        SQL.ExecuteQuery("SELECT first_name, last_name, city, state, zip_code, street, street_num, apartment_num FROM customer_data;")
+
+        For Each r As DataRow In SQL.SQLTable.Rows
+            Dim mailee As String = r("first_name") + " " + r("last_name") + ", "
+            mailee += r("street_num").ToString() + " " + r("street") + " "
+
+            If Not IsDBNull(r("apartment_num")) And Not r("apartment_num").ToString() = "0" Then
+                mailee += "APT " + r("apartment_num").ToString() + " "
+            End If
+
+            mailee += r("city") + ", " + r("state") + " " + r("zip_code").ToString()
+
+            AddressList.Items.Add(mailee)
+
+        Next
+    End Sub
+
+    Private Sub makeEmailList()
+        Emails.Items.Clear()
+        SQL.ExecuteQuery("SELECT email FROM customer_data;")
+
+        For Each r As DataRow In SQL.SQLTable.Rows
+            Emails.Items.Add(r("email"))
+        Next
+    End Sub
+
     Private Sub GetCustomer()
         SQL.AddParam("@acctnum", editFilter.Text)
         SQL.ExecuteQuery("SELECT TOP 1 * FROM customer_data WHERE account_number = @acctnum;")
@@ -183,16 +221,6 @@
         End If
     End Sub
 
-    Private Sub DelCust()
-        SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum")
-
-        If SQL.HasException(True) Then Exit Sub
-
-        MsgBox("Customer deleted.")
-        del_cust.Enabled = False
-    End Sub
-
     Private Sub Find_Click(sender As Object, e As EventArgs) Handles Find.Click
         FindCust()
     End Sub
@@ -215,5 +243,13 @@
 
     Private Sub del_cust_Click(sender As Object, e As EventArgs) Handles del_cust.Click
         DelCust()
+    End Sub
+
+    Private Sub mailingList_Click(sender As Object, e As EventArgs) Handles mailingList.Click
+        makeMailingList()
+    End Sub
+
+    Private Sub EmailList_Click(sender As Object, e As EventArgs) Handles EmailList.Click
+        makeEmailList()
     End Sub
 End Class
