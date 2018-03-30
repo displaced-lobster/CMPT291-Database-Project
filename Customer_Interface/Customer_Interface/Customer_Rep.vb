@@ -219,6 +219,8 @@
         SQL.ExecuteQuery("INSERT INTO customer_data (account_number, first_name, last_name, city, state, zip_code, street, street_num, apartment_num, email, creation_date, credit_card_num, account_type) " &
             "VALUES (@acctnum, @fname, @lname, @city, @state, @zip, @strname, @strnum, @aptnum, @email, GETDATE(), @cc, @type);")
 
+        If SQL.HasException(True) Then Exit Sub
+
         If addNum1.TextLength > 0 Then
             SQL.AddParam("@acctnum", addAcctNum.Text)
             SQL.AddParam("@num1", addNum1.Text)
@@ -229,8 +231,58 @@
             Else
                 SQL.AddParam("@type1", "cell")
             End If
-            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, type) VALUES (@acctnum, @num1, @type1);")
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num1, @type1);")
         End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        If addNum2.TextLength > 0 Then
+            SQL.AddParam("@acctnum", addAcctNum.Text)
+            SQL.AddParam("@num2", addNum2.Text)
+            If Home2.Checked Then
+                SQL.AddParam("@type2", "home")
+            ElseIf Work2.Checked Then
+                SQL.AddParam("@type2", "work")
+            Else
+                SQL.AddParam("@type2", "cell")
+            End If
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num2, @type2);")
+        End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        If addNum3.TextLength > 0 Then
+            SQL.AddParam("@acctnum", addAcctNum.Text)
+            SQL.AddParam("@num3", addNum3.Text)
+            If Home3.Checked Then
+                SQL.AddParam("@type3", "home")
+            ElseIf Work3.Checked Then
+                SQL.AddParam("@type3", "work")
+            Else
+                SQL.AddParam("@type3", "cell")
+            End If
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num3, @type3);")
+        End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        SQL.ExecuteQuery("SELECT max(account_number) FROM customer_data")
+        addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        addFName.Clear()
+        addLName.Clear()
+        addEmail.Clear()
+        addCC.Clear()
+        addStreetName.Clear()
+        addStreetNum.Clear()
+        addCity.Clear()
+        addState.Clear()
+        addZip.Clear()
+        addAPTNum.Clear()
+        addNum1.Clear()
+        addNum2.Clear()
+        addNum3.Clear()
+
+        MsgBox("Customer successfully added.")
 
     End Sub
 
