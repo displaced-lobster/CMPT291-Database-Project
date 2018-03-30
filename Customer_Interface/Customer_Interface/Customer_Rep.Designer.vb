@@ -31,10 +31,8 @@ Partial Class Customer_Rep
         Me.Label6 = New System.Windows.Forms.Label()
         Me.recDate = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.recMovieID = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.recAcctNum = New System.Windows.Forms.TextBox()
         Me.recOrder = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.LName = New System.Windows.Forms.TextBox()
@@ -145,6 +143,14 @@ Partial Class Customer_Rep
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.recSIN = New System.Windows.Forms.Label()
+        Me.orderAcctNum = New System.Windows.Forms.TextBox()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.orderSearch = New System.Windows.Forms.Button()
+        Me.orderList = New System.Windows.Forms.ListBox()
+        Me.recAcctNum = New System.Windows.Forms.Label()
+        Me.recMovieId = New System.Windows.Forms.ComboBox()
+        Me.findEmail = New System.Windows.Forms.TextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -195,16 +201,20 @@ Partial Class Customer_Rep
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.recMovieId)
+        Me.TabPage1.Controls.Add(Me.recAcctNum)
+        Me.TabPage1.Controls.Add(Me.orderList)
+        Me.TabPage1.Controls.Add(Me.orderSearch)
+        Me.TabPage1.Controls.Add(Me.Label38)
+        Me.TabPage1.Controls.Add(Me.orderAcctNum)
         Me.TabPage1.Controls.Add(Me.recSIN)
         Me.TabPage1.Controls.Add(Me.recOrderID)
         Me.TabPage1.Controls.Add(Me.Label18)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Controls.Add(Me.recDate)
         Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Controls.Add(Me.recMovieID)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.recAcctNum)
         Me.TabPage1.Controls.Add(Me.recOrder)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(1)
@@ -218,7 +228,7 @@ Partial Class Customer_Rep
         'recOrderID
         '
         Me.recOrderID.AutoSize = True
-        Me.recOrderID.Location = New System.Drawing.Point(175, 60)
+        Me.recOrderID.Location = New System.Drawing.Point(179, 341)
         Me.recOrderID.Name = "recOrderID"
         Me.recOrderID.Size = New System.Drawing.Size(0, 13)
         Me.recOrderID.TabIndex = 10
@@ -226,7 +236,7 @@ Partial Class Customer_Rep
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(19, 60)
+        Me.Label18.Location = New System.Drawing.Point(23, 341)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(47, 13)
         Me.Label18.TabIndex = 9
@@ -235,7 +245,7 @@ Partial Class Customer_Rep
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(19, 162)
+        Me.Label6.Location = New System.Drawing.Point(23, 443)
         Me.Label6.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
@@ -244,7 +254,7 @@ Partial Class Customer_Rep
         '
         'recDate
         '
-        Me.recDate.Location = New System.Drawing.Point(178, 134)
+        Me.recDate.Location = New System.Drawing.Point(182, 415)
         Me.recDate.Margin = New System.Windows.Forms.Padding(1)
         Me.recDate.Name = "recDate"
         Me.recDate.Size = New System.Drawing.Size(121, 20)
@@ -253,25 +263,17 @@ Partial Class Customer_Rep
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 105)
+        Me.Label4.Location = New System.Drawing.Point(23, 386)
         Me.Label4.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 13)
+        Me.Label4.Size = New System.Drawing.Size(50, 13)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Move ID"
-        '
-        'recMovieID
-        '
-        Me.recMovieID.Location = New System.Drawing.Point(178, 105)
-        Me.recMovieID.Margin = New System.Windows.Forms.Padding(1)
-        Me.recMovieID.Name = "recMovieID"
-        Me.recMovieID.Size = New System.Drawing.Size(121, 20)
-        Me.recMovieID.TabIndex = 4
+        Me.Label4.Text = "Movie ID"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 134)
+        Me.Label3.Location = New System.Drawing.Point(23, 415)
         Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(30, 13)
@@ -281,27 +283,19 @@ Partial Class Customer_Rep
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 79)
+        Me.Label2.Location = New System.Drawing.Point(23, 360)
         Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(134, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Customer Account Number"
         '
-        'recAcctNum
-        '
-        Me.recAcctNum.Location = New System.Drawing.Point(178, 79)
-        Me.recAcctNum.Margin = New System.Windows.Forms.Padding(1)
-        Me.recAcctNum.Name = "recAcctNum"
-        Me.recAcctNum.Size = New System.Drawing.Size(121, 20)
-        Me.recAcctNum.TabIndex = 1
-        '
         'recOrder
         '
-        Me.recOrder.Location = New System.Drawing.Point(429, 89)
+        Me.recOrder.Location = New System.Drawing.Point(346, 384)
         Me.recOrder.Margin = New System.Windows.Forms.Padding(1)
         Me.recOrder.Name = "recOrder"
-        Me.recOrder.Size = New System.Drawing.Size(94, 50)
+        Me.recOrder.Size = New System.Drawing.Size(63, 51)
         Me.recOrder.TabIndex = 0
         Me.recOrder.Text = "Record Order"
         Me.recOrder.UseVisualStyleBackColor = True
@@ -309,6 +303,8 @@ Partial Class Customer_Rep
         'TabPage2
         '
         Me.TabPage2.AllowDrop = True
+        Me.TabPage2.Controls.Add(Me.findEmail)
+        Me.TabPage2.Controls.Add(Me.Label39)
         Me.TabPage2.Controls.Add(Me.LName)
         Me.TabPage2.Controls.Add(Me.Label22)
         Me.TabPage2.Controls.Add(Me.Label21)
@@ -328,7 +324,7 @@ Partial Class Customer_Rep
         '
         'LName
         '
-        Me.LName.Location = New System.Drawing.Point(638, 27)
+        Me.LName.Location = New System.Drawing.Point(617, 27)
         Me.LName.Margin = New System.Windows.Forms.Padding(1)
         Me.LName.Name = "LName"
         Me.LName.Size = New System.Drawing.Size(171, 20)
@@ -337,7 +333,7 @@ Partial Class Customer_Rep
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(562, 30)
+        Me.Label22.Location = New System.Drawing.Point(557, 30)
         Me.Label22.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(58, 13)
@@ -347,7 +343,7 @@ Partial Class Customer_Rep
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(303, 30)
+        Me.Label21.Location = New System.Drawing.Point(299, 30)
         Me.Label21.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(57, 13)
@@ -366,7 +362,7 @@ Partial Class Customer_Rep
         '
         'AcctNum
         '
-        Me.AcctNum.Location = New System.Drawing.Point(103, 30)
+        Me.AcctNum.Location = New System.Drawing.Point(105, 27)
         Me.AcctNum.Margin = New System.Windows.Forms.Padding(1)
         Me.AcctNum.Name = "AcctNum"
         Me.AcctNum.Size = New System.Drawing.Size(171, 20)
@@ -374,7 +370,7 @@ Partial Class Customer_Rep
         '
         'FName
         '
-        Me.FName.Location = New System.Drawing.Point(362, 27)
+        Me.FName.Location = New System.Drawing.Point(358, 27)
         Me.FName.Margin = New System.Windows.Forms.Padding(1)
         Me.FName.Name = "FName"
         Me.FName.Size = New System.Drawing.Size(171, 20)
@@ -395,7 +391,7 @@ Partial Class Customer_Rep
         '
         'Find
         '
-        Me.Find.Location = New System.Drawing.Point(868, 22)
+        Me.Find.Location = New System.Drawing.Point(1077, 27)
         Me.Find.Margin = New System.Windows.Forms.Padding(1)
         Me.Find.Name = "Find"
         Me.Find.Size = New System.Drawing.Size(56, 30)
@@ -1464,10 +1460,80 @@ Partial Class Customer_Rep
         'recSIN
         '
         Me.recSIN.AutoSize = True
-        Me.recSIN.Location = New System.Drawing.Point(175, 162)
+        Me.recSIN.Location = New System.Drawing.Point(179, 443)
         Me.recSIN.Name = "recSIN"
         Me.recSIN.Size = New System.Drawing.Size(0, 13)
         Me.recSIN.TabIndex = 11
+        '
+        'orderAcctNum
+        '
+        Me.orderAcctNum.Location = New System.Drawing.Point(182, 43)
+        Me.orderAcctNum.Margin = New System.Windows.Forms.Padding(1)
+        Me.orderAcctNum.Name = "orderAcctNum"
+        Me.orderAcctNum.Size = New System.Drawing.Size(121, 20)
+        Me.orderAcctNum.TabIndex = 12
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(23, 46)
+        Me.Label38.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(134, 13)
+        Me.Label38.TabIndex = 13
+        Me.Label38.Text = "Customer Account Number"
+        '
+        'orderSearch
+        '
+        Me.orderSearch.Location = New System.Drawing.Point(346, 36)
+        Me.orderSearch.Margin = New System.Windows.Forms.Padding(1)
+        Me.orderSearch.Name = "orderSearch"
+        Me.orderSearch.Size = New System.Drawing.Size(63, 32)
+        Me.orderSearch.TabIndex = 14
+        Me.orderSearch.Text = "Search"
+        Me.orderSearch.UseVisualStyleBackColor = True
+        '
+        'orderList
+        '
+        Me.orderList.FormattingEnabled = True
+        Me.orderList.Location = New System.Drawing.Point(26, 78)
+        Me.orderList.Name = "orderList"
+        Me.orderList.Size = New System.Drawing.Size(277, 238)
+        Me.orderList.TabIndex = 15
+        '
+        'recAcctNum
+        '
+        Me.recAcctNum.AutoSize = True
+        Me.recAcctNum.Location = New System.Drawing.Point(179, 360)
+        Me.recAcctNum.Name = "recAcctNum"
+        Me.recAcctNum.Size = New System.Drawing.Size(0, 13)
+        Me.recAcctNum.TabIndex = 16
+        '
+        'recMovieId
+        '
+        Me.recMovieId.FormattingEnabled = True
+        Me.recMovieId.Location = New System.Drawing.Point(182, 383)
+        Me.recMovieId.Name = "recMovieId"
+        Me.recMovieId.Size = New System.Drawing.Size(121, 21)
+        Me.recMovieId.TabIndex = 17
+        '
+        'findEmail
+        '
+        Me.findEmail.Location = New System.Drawing.Point(851, 30)
+        Me.findEmail.Margin = New System.Windows.Forms.Padding(1)
+        Me.findEmail.Name = "findEmail"
+        Me.findEmail.Size = New System.Drawing.Size(171, 20)
+        Me.findEmail.TabIndex = 54
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(817, 33)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(32, 13)
+        Me.Label39.TabIndex = 53
+        Me.Label39.Text = "Email"
         '
         'Customer_Rep
         '
@@ -1523,11 +1589,9 @@ Partial Class Customer_Rep
     Friend WithEvents recOrder As Button
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents recAcctNum As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents recDate As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents recMovieID As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Find As Button
     Friend WithEvents Label6 As Label
@@ -1639,4 +1703,12 @@ Partial Class Customer_Rep
     Friend WithEvents Emails As ListBox
     Friend WithEvents EmailList As Button
     Friend WithEvents recSIN As Label
+    Friend WithEvents orderList As ListBox
+    Friend WithEvents orderSearch As Button
+    Friend WithEvents Label38 As Label
+    Friend WithEvents orderAcctNum As TextBox
+    Friend WithEvents recAcctNum As Label
+    Friend WithEvents recMovieId As ComboBox
+    Friend WithEvents findEmail As TextBox
+    Friend WithEvents Label39 As Label
 End Class
