@@ -179,8 +179,6 @@ Public Class Customer_Interface
 
     Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click '**************************************************************** This needs work
 
-        ' recomemended does not work ***************************
-
         Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
         Dim movieList As String = ""
         ' clear table
@@ -266,7 +264,7 @@ Public Class Customer_Interface
                     End If
                 Next
             ElseIf rbActor.Checked = True Then
-                ' works for one name but not two at a time *************************************************************************************************************** needs to be incomparison to a movie
+                ' works for one name but not two at a time *********************************************************************************************** needs to be in comparison to a movie
 
                 queryString += "FROM Movie_Data AS MD FULL JOIN Acts_In AS AI ON MD.movie_id=AI.movie_id FULL JOIN Actor_Data as AD ON AI.actor_id=AD.actor_id WHERE "
                 For Each word As String In words
@@ -604,7 +602,7 @@ Public Class Customer_Interface
         ' remove from current rentals
         SQL.ExecuteQuery("UPDATE Order_Data " &
                          "SET return_flag=1 " &
-                         "WHERE account_number=@user_ID AND movie_id=@movie_ID AND order_id=@order_ID;") ' might need to check based on order_id as well *********************************************
+                         "WHERE account_number=@user_ID AND movie_id=@movie_ID AND order_id=@order_ID;") ' might need to check based on order_id as well **********************************
         If SQL.HasException(True) Then Exit Sub
         ' update Rental_History
         SQL.AddParam("@user_ID", user)
@@ -616,7 +614,7 @@ Public Class Customer_Interface
         MsgBox("The movie """ + cbCurrentRentals.Text + """ has been returned")
         'cbCurrentRentals.Items.Clear()
         'cbxCur.Items.Clear()
-        LoadMovies() ' this seems to double the list so need to deal with that *****************************************************************************************************************
+        LoadMovies()
     End Sub
 End Class
 
