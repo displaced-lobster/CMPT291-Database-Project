@@ -94,15 +94,15 @@ Partial Class Customer_Rep
         Me.editUnlim1 = New System.Windows.Forms.RadioButton()
         Me.editLim = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
+        Me.editCell2 = New System.Windows.Forms.RadioButton()
+        Me.editWork2 = New System.Windows.Forms.RadioButton()
+        Me.editHome2 = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.editCell1 = New System.Windows.Forms.RadioButton()
+        Me.editWork1 = New System.Windows.Forms.RadioButton()
+        Me.editHome1 = New System.Windows.Forms.RadioButton()
+        Me.editNum2 = New System.Windows.Forms.TextBox()
+        Me.editNum1 = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.editCC = New System.Windows.Forms.TextBox()
         Me.editEmail = New System.Windows.Forms.TextBox()
@@ -156,6 +156,11 @@ Partial Class Customer_Rep
         Me.Work3 = New System.Windows.Forms.RadioButton()
         Me.Home3 = New System.Windows.Forms.RadioButton()
         Me.addNum3 = New System.Windows.Forms.TextBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.editCell3 = New System.Windows.Forms.RadioButton()
+        Me.editWork3 = New System.Windows.Forms.RadioButton()
+        Me.editHome3 = New System.Windows.Forms.RadioButton()
+        Me.editNum3 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -174,6 +179,7 @@ Partial Class Customer_Rep
         Me.TabPage3.SuspendLayout()
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -855,14 +861,16 @@ Partial Class Customer_Rep
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.GroupBox5)
+        Me.TabPage5.Controls.Add(Me.editNum3)
         Me.TabPage5.Controls.Add(Me.Label23)
         Me.TabPage5.Controls.Add(Me.editSearch)
         Me.TabPage5.Controls.Add(Me.editAcctNum)
         Me.TabPage5.Controls.Add(Me.GroupBox1)
         Me.TabPage5.Controls.Add(Me.GroupBox2)
         Me.TabPage5.Controls.Add(Me.GroupBox3)
-        Me.TabPage5.Controls.Add(Me.TextBox1)
-        Me.TabPage5.Controls.Add(Me.TextBox2)
+        Me.TabPage5.Controls.Add(Me.editNum2)
+        Me.TabPage5.Controls.Add(Me.editNum1)
         Me.TabPage5.Controls.Add(Me.Label24)
         Me.TabPage5.Controls.Add(Me.editCC)
         Me.TabPage5.Controls.Add(Me.editEmail)
@@ -930,7 +938,7 @@ Partial Class Customer_Rep
         Me.GroupBox1.Controls.Add(Me.editUnlim2)
         Me.GroupBox1.Controls.Add(Me.editUnlim1)
         Me.GroupBox1.Controls.Add(Me.editLim)
-        Me.GroupBox1.Location = New System.Drawing.Point(25, 458)
+        Me.GroupBox1.Location = New System.Drawing.Point(21, 486)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1)
@@ -989,9 +997,9 @@ Partial Class Customer_Rep
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.RadioButton5)
-        Me.GroupBox2.Controls.Add(Me.RadioButton6)
-        Me.GroupBox2.Controls.Add(Me.RadioButton7)
+        Me.GroupBox2.Controls.Add(Me.editCell2)
+        Me.GroupBox2.Controls.Add(Me.editWork2)
+        Me.GroupBox2.Controls.Add(Me.editHome2)
         Me.GroupBox2.Location = New System.Drawing.Point(194, 401)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox2.Name = "GroupBox2"
@@ -1000,47 +1008,47 @@ Partial Class Customer_Rep
         Me.GroupBox2.TabIndex = 119
         Me.GroupBox2.TabStop = False
         '
-        'RadioButton5
+        'editCell2
         '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(126, 3)
-        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(1)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(42, 17)
-        Me.RadioButton5.TabIndex = 81
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "Cell"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.editCell2.AutoSize = True
+        Me.editCell2.Location = New System.Drawing.Point(126, 3)
+        Me.editCell2.Margin = New System.Windows.Forms.Padding(1)
+        Me.editCell2.Name = "editCell2"
+        Me.editCell2.Size = New System.Drawing.Size(42, 17)
+        Me.editCell2.TabIndex = 81
+        Me.editCell2.TabStop = True
+        Me.editCell2.Text = "Cell"
+        Me.editCell2.UseVisualStyleBackColor = True
         '
-        'RadioButton6
+        'editWork2
         '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Location = New System.Drawing.Point(70, 3)
-        Me.RadioButton6.Margin = New System.Windows.Forms.Padding(1)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(51, 17)
-        Me.RadioButton6.TabIndex = 80
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "Work"
-        Me.RadioButton6.UseVisualStyleBackColor = True
+        Me.editWork2.AutoSize = True
+        Me.editWork2.Location = New System.Drawing.Point(70, 3)
+        Me.editWork2.Margin = New System.Windows.Forms.Padding(1)
+        Me.editWork2.Name = "editWork2"
+        Me.editWork2.Size = New System.Drawing.Size(51, 17)
+        Me.editWork2.TabIndex = 80
+        Me.editWork2.TabStop = True
+        Me.editWork2.Text = "Work"
+        Me.editWork2.UseVisualStyleBackColor = True
         '
-        'RadioButton7
+        'editHome2
         '
-        Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Location = New System.Drawing.Point(6, 3)
-        Me.RadioButton7.Margin = New System.Windows.Forms.Padding(1)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton7.TabIndex = 79
-        Me.RadioButton7.TabStop = True
-        Me.RadioButton7.Text = "Home"
-        Me.RadioButton7.UseVisualStyleBackColor = True
+        Me.editHome2.AutoSize = True
+        Me.editHome2.Location = New System.Drawing.Point(6, 3)
+        Me.editHome2.Margin = New System.Windows.Forms.Padding(1)
+        Me.editHome2.Name = "editHome2"
+        Me.editHome2.Size = New System.Drawing.Size(53, 17)
+        Me.editHome2.TabIndex = 79
+        Me.editHome2.TabStop = True
+        Me.editHome2.Text = "Home"
+        Me.editHome2.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.RadioButton8)
-        Me.GroupBox3.Controls.Add(Me.RadioButton9)
-        Me.GroupBox3.Controls.Add(Me.RadioButton10)
+        Me.GroupBox3.Controls.Add(Me.editCell1)
+        Me.GroupBox3.Controls.Add(Me.editWork1)
+        Me.GroupBox3.Controls.Add(Me.editHome1)
         Me.GroupBox3.Location = New System.Drawing.Point(194, 369)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox3.Name = "GroupBox3"
@@ -1049,57 +1057,57 @@ Partial Class Customer_Rep
         Me.GroupBox3.TabIndex = 118
         Me.GroupBox3.TabStop = False
         '
-        'RadioButton8
+        'editCell1
         '
-        Me.RadioButton8.AutoSize = True
-        Me.RadioButton8.Location = New System.Drawing.Point(126, 3)
-        Me.RadioButton8.Margin = New System.Windows.Forms.Padding(1)
-        Me.RadioButton8.Name = "RadioButton8"
-        Me.RadioButton8.Size = New System.Drawing.Size(42, 17)
-        Me.RadioButton8.TabIndex = 81
-        Me.RadioButton8.TabStop = True
-        Me.RadioButton8.Text = "Cell"
-        Me.RadioButton8.UseVisualStyleBackColor = True
+        Me.editCell1.AutoSize = True
+        Me.editCell1.Location = New System.Drawing.Point(126, 3)
+        Me.editCell1.Margin = New System.Windows.Forms.Padding(1)
+        Me.editCell1.Name = "editCell1"
+        Me.editCell1.Size = New System.Drawing.Size(42, 17)
+        Me.editCell1.TabIndex = 81
+        Me.editCell1.TabStop = True
+        Me.editCell1.Text = "Cell"
+        Me.editCell1.UseVisualStyleBackColor = True
         '
-        'RadioButton9
+        'editWork1
         '
-        Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Location = New System.Drawing.Point(70, 3)
-        Me.RadioButton9.Margin = New System.Windows.Forms.Padding(1)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(51, 17)
-        Me.RadioButton9.TabIndex = 80
-        Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "Work"
-        Me.RadioButton9.UseVisualStyleBackColor = True
+        Me.editWork1.AutoSize = True
+        Me.editWork1.Location = New System.Drawing.Point(70, 3)
+        Me.editWork1.Margin = New System.Windows.Forms.Padding(1)
+        Me.editWork1.Name = "editWork1"
+        Me.editWork1.Size = New System.Drawing.Size(51, 17)
+        Me.editWork1.TabIndex = 80
+        Me.editWork1.TabStop = True
+        Me.editWork1.Text = "Work"
+        Me.editWork1.UseVisualStyleBackColor = True
         '
-        'RadioButton10
+        'editHome1
         '
-        Me.RadioButton10.AutoSize = True
-        Me.RadioButton10.Location = New System.Drawing.Point(6, 3)
-        Me.RadioButton10.Margin = New System.Windows.Forms.Padding(1)
-        Me.RadioButton10.Name = "RadioButton10"
-        Me.RadioButton10.Size = New System.Drawing.Size(53, 17)
-        Me.RadioButton10.TabIndex = 79
-        Me.RadioButton10.TabStop = True
-        Me.RadioButton10.Text = "Home"
-        Me.RadioButton10.UseVisualStyleBackColor = True
+        Me.editHome1.AutoSize = True
+        Me.editHome1.Location = New System.Drawing.Point(6, 3)
+        Me.editHome1.Margin = New System.Windows.Forms.Padding(1)
+        Me.editHome1.Name = "editHome1"
+        Me.editHome1.Size = New System.Drawing.Size(53, 17)
+        Me.editHome1.TabIndex = 79
+        Me.editHome1.TabStop = True
+        Me.editHome1.Text = "Home"
+        Me.editHome1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'editNum2
         '
-        Me.TextBox1.Location = New System.Drawing.Point(35, 401)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(1)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox1.TabIndex = 117
+        Me.editNum2.Location = New System.Drawing.Point(35, 401)
+        Me.editNum2.Margin = New System.Windows.Forms.Padding(1)
+        Me.editNum2.Name = "editNum2"
+        Me.editNum2.Size = New System.Drawing.Size(138, 20)
+        Me.editNum2.TabIndex = 117
         '
-        'TextBox2
+        'editNum1
         '
-        Me.TextBox2.Location = New System.Drawing.Point(35, 372)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(1)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox2.TabIndex = 116
+        Me.editNum1.Location = New System.Drawing.Point(35, 372)
+        Me.editNum1.Margin = New System.Windows.Forms.Padding(1)
+        Me.editNum1.Name = "editNum1"
+        Me.editNum1.Size = New System.Drawing.Size(138, 20)
+        Me.editNum1.TabIndex = 116
         '
         'Label24
         '
@@ -1321,7 +1329,7 @@ Partial Class Customer_Rep
         'edit_cust
         '
         Me.edit_cust.Enabled = False
-        Me.edit_cust.Location = New System.Drawing.Point(149, 526)
+        Me.edit_cust.Location = New System.Drawing.Point(145, 554)
         Me.edit_cust.Margin = New System.Windows.Forms.Padding(1)
         Me.edit_cust.Name = "edit_cust"
         Me.edit_cust.Size = New System.Drawing.Size(56, 30)
@@ -1600,6 +1608,63 @@ Partial Class Customer_Rep
         Me.addNum3.Size = New System.Drawing.Size(138, 20)
         Me.addNum3.TabIndex = 63
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.editCell3)
+        Me.GroupBox5.Controls.Add(Me.editWork3)
+        Me.GroupBox5.Controls.Add(Me.editHome3)
+        Me.GroupBox5.Location = New System.Drawing.Point(194, 433)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(1)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox5.Size = New System.Drawing.Size(171, 19)
+        Me.GroupBox5.TabIndex = 125
+        Me.GroupBox5.TabStop = False
+        '
+        'editCell3
+        '
+        Me.editCell3.AutoSize = True
+        Me.editCell3.Location = New System.Drawing.Point(126, 3)
+        Me.editCell3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editCell3.Name = "editCell3"
+        Me.editCell3.Size = New System.Drawing.Size(42, 17)
+        Me.editCell3.TabIndex = 81
+        Me.editCell3.TabStop = True
+        Me.editCell3.Text = "Cell"
+        Me.editCell3.UseVisualStyleBackColor = True
+        '
+        'editWork3
+        '
+        Me.editWork3.AutoSize = True
+        Me.editWork3.Location = New System.Drawing.Point(70, 3)
+        Me.editWork3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editWork3.Name = "editWork3"
+        Me.editWork3.Size = New System.Drawing.Size(51, 17)
+        Me.editWork3.TabIndex = 80
+        Me.editWork3.TabStop = True
+        Me.editWork3.Text = "Work"
+        Me.editWork3.UseVisualStyleBackColor = True
+        '
+        'editHome3
+        '
+        Me.editHome3.AutoSize = True
+        Me.editHome3.Location = New System.Drawing.Point(6, 3)
+        Me.editHome3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editHome3.Name = "editHome3"
+        Me.editHome3.Size = New System.Drawing.Size(53, 17)
+        Me.editHome3.TabIndex = 79
+        Me.editHome3.TabStop = True
+        Me.editHome3.Text = "Home"
+        Me.editHome3.UseVisualStyleBackColor = True
+        '
+        'editNum3
+        '
+        Me.editNum3.Location = New System.Drawing.Point(35, 433)
+        Me.editNum3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editNum3.Name = "editNum3"
+        Me.editNum3.Size = New System.Drawing.Size(138, 20)
+        Me.editNum3.TabIndex = 124
+        '
         'Customer_Rep
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1646,6 +1711,8 @@ Partial Class Customer_Rep
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1723,15 +1790,15 @@ Partial Class Customer_Rep
     Friend WithEvents editUnlim1 As RadioButton
     Friend WithEvents editLim As RadioButton
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RadioButton5 As RadioButton
-    Friend WithEvents RadioButton6 As RadioButton
-    Friend WithEvents RadioButton7 As RadioButton
+    Friend WithEvents editCell2 As RadioButton
+    Friend WithEvents editWork2 As RadioButton
+    Friend WithEvents editHome2 As RadioButton
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents RadioButton8 As RadioButton
-    Friend WithEvents RadioButton9 As RadioButton
-    Friend WithEvents RadioButton10 As RadioButton
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents editCell1 As RadioButton
+    Friend WithEvents editWork1 As RadioButton
+    Friend WithEvents editHome1 As RadioButton
+    Friend WithEvents editNum2 As TextBox
+    Friend WithEvents editNum1 As TextBox
     Friend WithEvents Label24 As Label
     Friend WithEvents editCC As TextBox
     Friend WithEvents editEmail As TextBox
@@ -1783,4 +1850,9 @@ Partial Class Customer_Rep
     Friend WithEvents Work3 As RadioButton
     Friend WithEvents Home3 As RadioButton
     Friend WithEvents addNum3 As TextBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents editCell3 As RadioButton
+    Friend WithEvents editWork3 As RadioButton
+    Friend WithEvents editHome3 As RadioButton
+    Friend WithEvents editNum3 As TextBox
 End Class
