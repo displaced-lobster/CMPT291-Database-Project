@@ -28,11 +28,16 @@
 
     Private Sub DelCust()
         SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum")
+        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
+        If SQL.HasException(True) Then Exit Sub
 
+        SQL.AddParam("@acctnum", delAcctNum.Text)
+        SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
         If SQL.HasException(True) Then Exit Sub
 
         MsgBox("Customer deleted.")
+        delAcctNum.Clear()
+        delData.ClearSelection()
         del_cust.Enabled = False
     End Sub
 
@@ -418,7 +423,10 @@
     End Sub
 
     Private Sub del_cust_Click(sender As Object, e As EventArgs) Handles del_cust.Click
-        DelCust()
+        Dim result As Integer = MessageBox.Show("Are you sure you want to delete customer?", "WARNING", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            DelCust()
+        End If
     End Sub
 
     Private Sub mailingList_Click(sender As Object, e As EventArgs) Handles mailingList.Click

@@ -1354,9 +1354,9 @@ Partial Class Customer_Rep
         '
         'delAcctNum
         '
-        Me.delAcctNum.Location = New System.Drawing.Point(433, 35)
+        Me.delAcctNum.Location = New System.Drawing.Point(125, 46)
         Me.delAcctNum.Name = "delAcctNum"
-        Me.delAcctNum.Size = New System.Drawing.Size(100, 20)
+        Me.delAcctNum.Size = New System.Drawing.Size(123, 20)
         Me.delAcctNum.TabIndex = 93
         '
         'delData
@@ -1374,7 +1374,7 @@ Partial Class Customer_Rep
         '
         'delSearch
         '
-        Me.delSearch.Location = New System.Drawing.Point(579, 29)
+        Me.delSearch.Location = New System.Drawing.Point(252, 40)
         Me.delSearch.Margin = New System.Windows.Forms.Padding(1)
         Me.delSearch.Name = "delSearch"
         Me.delSearch.Size = New System.Drawing.Size(56, 30)
@@ -1385,7 +1385,7 @@ Partial Class Customer_Rep
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(309, 38)
+        Me.Label37.Location = New System.Drawing.Point(32, 49)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(87, 13)
         Me.Label37.TabIndex = 90
@@ -1394,7 +1394,7 @@ Partial Class Customer_Rep
         'del_cust
         '
         Me.del_cust.Enabled = False
-        Me.del_cust.Location = New System.Drawing.Point(486, 294)
+        Me.del_cust.Location = New System.Drawing.Point(356, 40)
         Me.del_cust.Margin = New System.Windows.Forms.Padding(1)
         Me.del_cust.Name = "del_cust"
         Me.del_cust.Size = New System.Drawing.Size(56, 30)
