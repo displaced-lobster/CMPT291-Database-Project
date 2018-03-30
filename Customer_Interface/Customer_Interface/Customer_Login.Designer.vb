@@ -29,11 +29,12 @@ Partial Class Customer_Login
         Me.passwd = New System.Windows.Forms.TextBox()
         Me.username = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnCancel
         '
-        Me.BtnCancel.Location = New System.Drawing.Point(341, 285)
+        Me.BtnCancel.Location = New System.Drawing.Point(341, 256)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(123, 23)
         Me.BtnCancel.TabIndex = 18
@@ -94,12 +95,22 @@ Partial Class Customer_Login
         Me.Label3.TabIndex = 20
         Me.Label3.Text = "LOGIN"
         '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(341, 285)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(123, 23)
+        Me.btnExit.TabIndex = 21
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
+        '
         'Customer_Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1184, 711)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.Label2)
@@ -123,4 +134,5 @@ Partial Class Customer_Login
     Friend WithEvents passwd As TextBox
     Friend WithEvents username As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents btnExit As Button
 End Class
