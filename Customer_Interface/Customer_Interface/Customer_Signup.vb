@@ -11,8 +11,11 @@ Public Class Customer_SignUp
     End Sub
 
     Public Function CreateAccountNum() As Integer
-        SQL.ExecuteQuery("SELECT COUNT(account_number) as cnt FROM Customer_Data")
-        Return SQL.SQLTable.Rows(0).Item("cnt") + 1001
+        SQL.ExecuteQuery("SELECT max(account_number) as cnt FROM Customer_Data") ' changed count() to max()
+        If IsDBNull(SQL.SQLTable.Rows(0).Item("cnt")) Then
+            Return 1
+        End If
+        Return SQL.SQLTable.Rows(0).Item("cnt") + 1 ' changed from 1001 to 1
     End Function
 
     Private Sub AddUser() ' method for inserting new user
@@ -28,6 +31,11 @@ Public Class Customer_SignUp
         ' address and payment info
         SQL.AddParam("@streetNum", streetNum.Text)
         SQL.AddParam("@street", street.Text)
+        ' need to figure out how to have aptNum put in null if not filled and not have it complain about it not being an int ********************************************************************** change
+        'If aptNum.Text = "" Then
+        'SQL.AddParam("@aptNum", "NULL")
+        'Else SQL.AddParam("@aptNum", aptNum.Text)
+        'End If
         SQL.AddParam("@aptNum", aptNum.Text)
         SQL.AddParam("@city", city.Text)
         SQL.AddParam("@state", state.Text)
@@ -74,8 +82,49 @@ Public Class Customer_SignUp
         MsgBox("User Created") ' for test
     End Sub
 
+    Private Function checkFields() As Boolean
+        If IsNumeric(num1.Text) AndAlso IsNumeric(num2.Text) AndAlso IsNumeric(num3.Text) AndAlso IsNumeric(streetNum.Text) AndAlso
+            IsNumeric(aptNum.Text) Or aptNum.Text = "" AndAlso IsNumeric(zip.Text) AndAlso IsNumeric(cardNum.Text) Then
+            Return True
+        End If
+        ' reset fields
+        If Not IsNumeric(num1.Text) Then
+            num1.Clear()
+            num1.BackColor = Color.Yellow
+        End If
+        If Not IsNumeric(num2.Text) And num2.Text <> "" Then
+            num2.Clear()
+            num2.BackColor = Color.Yellow
+        End If
+        If Not IsNumeric(num3.Text) And num3.Text <> "" Then
+            num3.Clear()
+            num3.BackColor = Color.Yellow
+        End If
+        If Not IsNumeric(streetNum.Text) Then
+            streetNum.Clear()
+            streetNum.BackColor = Color.Yellow
+        End If
+        If Not IsNumeric(aptNum.Text) And aptNum.Text <> "" Then
+            aptNum.Clear()
+            aptNum.BackColor = Color.Yellow
+        End If
+        If Not IsNumeric(zip.Text) Then
+            zip.Clear()
+            zip.BackColor = Color.Yellow
+        End If
+        If Not IsNumeric(cardNum.Text) Then
+            cardNum.Clear()
+            cardNum.BackColor = Color.Yellow
+        End If
+        MsgBox("Fields requiring numbers must be numeric")
+        Return False
+    End Function
+
     Private Sub createAccount_Click(sender As Object, e As EventArgs) Handles createAccount.Click
         ' create user
+        If pwdCheck() = False Then Exit Sub
+        ' check parameters
+        If checkFields() = False Then Exit Sub
         AddUser()
         ' exit page
         Me.Close()
@@ -83,17 +132,17 @@ Public Class Customer_SignUp
 
     ' Apartment number should be able to be null so perhaps we need to change it
     Private Sub txtFields_TextChanged(sender As Object, e As EventArgs) Handles firstName.TextChanged, lastName.TextChanged,
-            email.TextChanged, streetNum.TextChanged, street.TextChanged, aptNum.TextChanged, city.TextChanged, state.TextChanged,
-            zip.TextChanged, cardNum.TextChanged, txtUser.TextChanged, txtPass.TextChanged, limited.CheckedChanged, unlim1.CheckedChanged,
-            unlim2.CheckedChanged, unlim3.CheckedChanged, num1.TextChanged, phoneDrop1.TextChanged
+            email.TextChanged, streetNum.TextChanged, street.TextChanged, city.TextChanged, state.TextChanged, zip.TextChanged,
+            cardNum.TextChanged, txtUser.TextChanged, txtPass.TextChanged, limited.CheckedChanged, unlim1.CheckedChanged,
+            unlim2.CheckedChanged, unlim3.CheckedChanged, num1.TextChanged, phoneDrop1.TextChanged, txtPassCheck.TextChanged
 
         If Not String.IsNullOrWhiteSpace(firstName.Text) AndAlso Not String.IsNullOrWhiteSpace(lastName.Text) AndAlso
                 Not String.IsNullOrWhiteSpace(email.Text) AndAlso Not String.IsNullOrWhiteSpace(streetNum.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(street.Text) AndAlso Not String.IsNullOrWhiteSpace(aptNum.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(city.Text) AndAlso Not String.IsNullOrWhiteSpace(state.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(zip.Text) AndAlso Not String.IsNullOrWhiteSpace(cardNum.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(txtUser.Text) AndAlso Not String.IsNullOrWhiteSpace(txtPass.Text) AndAlso
-                Not String.IsNullOrWhiteSpace(phoneDrop1.Text) AndAlso Not String.IsNullOrWhiteSpace(num1.Text) AndAlso
+                Not String.IsNullOrWhiteSpace(street.Text) AndAlso Not String.IsNullOrWhiteSpace(city.Text) AndAlso
+                Not String.IsNullOrWhiteSpace(state.Text) AndAlso Not String.IsNullOrWhiteSpace(zip.Text) AndAlso
+                Not String.IsNullOrWhiteSpace(cardNum.Text) AndAlso Not String.IsNullOrWhiteSpace(txtUser.Text) AndAlso
+                Not String.IsNullOrWhiteSpace(txtPass.Text) AndAlso Not String.IsNullOrWhiteSpace(phoneDrop1.Text) AndAlso
+                Not String.IsNullOrWhiteSpace(num1.Text) AndAlso Not String.IsNullOrWhiteSpace(txtPassCheck.Text) AndAlso
                 (limited.Checked = True Or unlim1.Checked = True Or unlim2.Checked = True Or unlim3.Checked = True) AndAlso
                 IsUnique() = True Then
 
@@ -133,6 +182,16 @@ Public Class Customer_SignUp
             MsgBox("Username Already Exists", MsgBoxStyle.Critical, "LOGIN FAILED")
             txtPass.Clear()
             txtUser.Clear()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function pwdCheck() As Boolean
+        If txtPass.Text <> txtPassCheck.Text Then
+            txtPass.Clear()
+            txtPassCheck.Clear()
+            MsgBox("Password must match in both fields")
             Return False
         End If
         Return True
