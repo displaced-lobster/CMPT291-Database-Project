@@ -130,6 +130,12 @@
     <Compile Include="Edit_Customer_Account.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Employee_Login.Designer.vb">
+      <DependentUpon>Employee_Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="List_All_Movies.Designer.vb">
       <DependentUpon>List_All_Movies.vb</DependentUpon>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Customer_Account.resx">
       <DependentUpon>Edit_Customer_Account.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_Login.resx">
+      <DependentUpon>Employee_Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List_All_Movies.resx">
       <DependentUpon>List_All_Movies.vb</DependentUpon>

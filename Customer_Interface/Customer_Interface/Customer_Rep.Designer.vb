@@ -28,7 +28,6 @@ Partial Class Customer_Rep
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.recOrderID = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.recSIN = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.recDate = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -137,14 +136,15 @@ Partial Class Customer_Rep
         Me.delSearch = New System.Windows.Forms.Button()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.del_cust = New System.Windows.Forms.Button()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.Emails = New System.Windows.Forms.ListBox()
+        Me.EmailList = New System.Windows.Forms.Button()
+        Me.AddressList = New System.Windows.Forms.ListBox()
+        Me.mailingList = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.mailingList = New System.Windows.Forms.Button()
-        Me.AddressList = New System.Windows.Forms.ListBox()
-        Me.EmailList = New System.Windows.Forms.Button()
-        Me.Emails = New System.Windows.Forms.ListBox()
+        Me.recSIN = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -159,9 +159,9 @@ Partial Class Customer_Rep
         Me.GroupBox3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         CType(Me.delData, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage7.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage7.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -195,9 +195,9 @@ Partial Class Customer_Rep
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.recSIN)
         Me.TabPage1.Controls.Add(Me.recOrderID)
         Me.TabPage1.Controls.Add(Me.Label18)
-        Me.TabPage1.Controls.Add(Me.recSIN)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Controls.Add(Me.recDate)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -231,14 +231,6 @@ Partial Class Customer_Rep
         Me.Label18.Size = New System.Drawing.Size(47, 13)
         Me.Label18.TabIndex = 9
         Me.Label18.Text = "Order ID"
-        '
-        'recSIN
-        '
-        Me.recSIN.Location = New System.Drawing.Point(178, 162)
-        Me.recSIN.Margin = New System.Windows.Forms.Padding(1)
-        Me.recSIN.Name = "recSIN"
-        Me.recSIN.Size = New System.Drawing.Size(121, 20)
-        Me.recSIN.TabIndex = 8
         '
         'Label6
         '
@@ -1398,6 +1390,55 @@ Partial Class Customer_Rep
         Me.del_cust.Text = "Delete"
         Me.del_cust.UseVisualStyleBackColor = True
         '
+        'TabPage7
+        '
+        Me.TabPage7.Controls.Add(Me.Emails)
+        Me.TabPage7.Controls.Add(Me.EmailList)
+        Me.TabPage7.Controls.Add(Me.AddressList)
+        Me.TabPage7.Controls.Add(Me.mailingList)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Size = New System.Drawing.Size(1669, 812)
+        Me.TabPage7.TabIndex = 7
+        Me.TabPage7.Text = "Mailing List"
+        Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'Emails
+        '
+        Me.Emails.FormattingEnabled = True
+        Me.Emails.Location = New System.Drawing.Point(574, 81)
+        Me.Emails.Name = "Emails"
+        Me.Emails.Size = New System.Drawing.Size(234, 420)
+        Me.Emails.TabIndex = 4
+        '
+        'EmailList
+        '
+        Me.EmailList.Location = New System.Drawing.Point(574, 26)
+        Me.EmailList.Margin = New System.Windows.Forms.Padding(1)
+        Me.EmailList.Name = "EmailList"
+        Me.EmailList.Size = New System.Drawing.Size(178, 34)
+        Me.EmailList.TabIndex = 3
+        Me.EmailList.Text = "Generate Email List"
+        Me.EmailList.UseVisualStyleBackColor = True
+        '
+        'AddressList
+        '
+        Me.AddressList.FormattingEnabled = True
+        Me.AddressList.Location = New System.Drawing.Point(34, 81)
+        Me.AddressList.Name = "AddressList"
+        Me.AddressList.Size = New System.Drawing.Size(512, 420)
+        Me.AddressList.TabIndex = 2
+        '
+        'mailingList
+        '
+        Me.mailingList.Location = New System.Drawing.Point(34, 26)
+        Me.mailingList.Margin = New System.Windows.Forms.Padding(1)
+        Me.mailingList.Name = "mailingList"
+        Me.mailingList.Size = New System.Drawing.Size(178, 34)
+        Me.mailingList.TabIndex = 1
+        Me.mailingList.Text = "Generate Mailing List"
+        Me.mailingList.UseVisualStyleBackColor = True
+        '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.Button2)
@@ -1420,54 +1461,13 @@ Partial Class Customer_Rep
         Me.Button2.Text = "Movie Recommendations"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'TabPage7
+        'recSIN
         '
-        Me.TabPage7.Controls.Add(Me.Emails)
-        Me.TabPage7.Controls.Add(Me.EmailList)
-        Me.TabPage7.Controls.Add(Me.AddressList)
-        Me.TabPage7.Controls.Add(Me.mailingList)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1669, 812)
-        Me.TabPage7.TabIndex = 7
-        Me.TabPage7.Text = "Mailing List"
-        Me.TabPage7.UseVisualStyleBackColor = True
-        '
-        'mailingList
-        '
-        Me.mailingList.Location = New System.Drawing.Point(34, 26)
-        Me.mailingList.Margin = New System.Windows.Forms.Padding(1)
-        Me.mailingList.Name = "mailingList"
-        Me.mailingList.Size = New System.Drawing.Size(178, 34)
-        Me.mailingList.TabIndex = 1
-        Me.mailingList.Text = "Generate Mailing List"
-        Me.mailingList.UseVisualStyleBackColor = True
-        '
-        'AddressList
-        '
-        Me.AddressList.FormattingEnabled = True
-        Me.AddressList.Location = New System.Drawing.Point(34, 81)
-        Me.AddressList.Name = "AddressList"
-        Me.AddressList.Size = New System.Drawing.Size(512, 420)
-        Me.AddressList.TabIndex = 2
-        '
-        'EmailList
-        '
-        Me.EmailList.Location = New System.Drawing.Point(574, 26)
-        Me.EmailList.Margin = New System.Windows.Forms.Padding(1)
-        Me.EmailList.Name = "EmailList"
-        Me.EmailList.Size = New System.Drawing.Size(178, 34)
-        Me.EmailList.TabIndex = 3
-        Me.EmailList.Text = "Generate Email List"
-        Me.EmailList.UseVisualStyleBackColor = True
-        '
-        'Emails
-        '
-        Me.Emails.FormattingEnabled = True
-        Me.Emails.Location = New System.Drawing.Point(574, 81)
-        Me.Emails.Name = "Emails"
-        Me.Emails.Size = New System.Drawing.Size(234, 420)
-        Me.Emails.TabIndex = 4
+        Me.recSIN.AutoSize = True
+        Me.recSIN.Location = New System.Drawing.Point(175, 162)
+        Me.recSIN.Name = "recSIN"
+        Me.recSIN.Size = New System.Drawing.Size(0, 13)
+        Me.recSIN.TabIndex = 11
         '
         'Customer_Rep
         '
@@ -1510,9 +1510,9 @@ Partial Class Customer_Rep
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
         CType(Me.delData, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage7.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage7.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1530,7 +1530,6 @@ Partial Class Customer_Rep
     Friend WithEvents recMovieID As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Find As Button
-    Friend WithEvents recSIN As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents CMPT291ProjectDataSetBindingSource As BindingSource
     Friend WithEvents CustData As DataGridView
@@ -1639,4 +1638,5 @@ Partial Class Customer_Rep
     Friend WithEvents AddressList As ListBox
     Friend WithEvents Emails As ListBox
     Friend WithEvents EmailList As Button
+    Friend WithEvents recSIN As Label
 End Class

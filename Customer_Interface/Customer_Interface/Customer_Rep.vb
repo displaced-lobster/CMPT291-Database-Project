@@ -7,10 +7,22 @@
     Private Sub Customer_Rep_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
         SQL.ExecuteQuery("SELECT max(account_number) FROM customer_data")
-        addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+
+        If Not IsDBNull(SQL.SQLTable.Rows(0).ItemArray(0)) Then
+            addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        Else
+            addAcctNum.Text = "1"
+        End If
         recDate.Text = Today()
         SQL.ExecuteQuery("SELECT max(order_id) FROM order_data")
-        recOrderID.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+
+        If Not IsDBNull(SQL.SQLTable.Rows(0).ItemArray(0)) Then
+            recOrderID.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        Else
+            recOrderID.Text = "1"
+        End If
+
+        recSIN.Text = Employee_Login.UserAccount()
 
     End Sub
 
