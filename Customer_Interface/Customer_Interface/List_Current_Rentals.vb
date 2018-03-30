@@ -1,4 +1,8 @@
 ﻿Public Class List_Current_Rentals
+    Private Sub List_Current_Rentals_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Main_Interface
+    End Sub
+
     Private Sub current_rentals_close_btn_Click(sender As Object, e As EventArgs) Handles current_rentals_close_btn.Click
         Me.Close()
     End Sub

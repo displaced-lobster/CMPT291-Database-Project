@@ -1,4 +1,8 @@
 ﻿Public Class Main_Manager_Interface
+    Private Sub Main_Manager_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Main_Interface
+    End Sub
+
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles MI_EmpTab.Click
 
     End Sub
