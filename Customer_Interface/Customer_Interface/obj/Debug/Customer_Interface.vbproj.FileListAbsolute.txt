@@ -75,3 +75,8 @@ C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Custome
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.pdb
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.xml
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Sales_Report_Generator.resources
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Check_Most_Active.resources
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.List_All_Movies.resources
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.List_Current_Rentals.resources
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Manager_Interface.resources
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Sales_Report_Generator.resources
