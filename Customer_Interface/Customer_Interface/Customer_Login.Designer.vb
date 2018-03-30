@@ -98,7 +98,8 @@ Partial Class Customer_Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.Label2)
@@ -106,8 +107,11 @@ Partial Class Customer_Login
         Me.Controls.Add(Me.AccessAccount)
         Me.Controls.Add(Me.passwd)
         Me.Controls.Add(Me.username)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Customer_Login"
         Me.Text = "Customer Home Page"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

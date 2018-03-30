@@ -604,12 +604,16 @@ Partial Class Customer_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(877, 495)
+        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txtUserName)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.TabControl1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Customer_Interface"
         Me.Text = "Customer Interface"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)

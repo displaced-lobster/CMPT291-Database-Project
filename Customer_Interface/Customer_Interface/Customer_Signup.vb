@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Random
 
-'test
+' fix cutsomer name capitalization after entered
 
 Public Class Customer_SignUp
     Private SQL As New SQLControl
@@ -22,8 +22,8 @@ Public Class Customer_SignUp
         ' create account number
         Dim accountNum = CreateAccountNum()
         ' create SQL parameters to add
-        SQL.AddParam("@first", firstName.Text)
-        SQL.AddParam("@last", lastName.Text)
+        SQL.AddParam("@first", StrConv(firstName.Text, VbStrConv.ProperCase)) ' capitalize the first letter if it is not already
+        SQL.AddParam("@last", StrConv(lastName.Text, VbStrConv.ProperCase))
         SQL.AddParam("@email", email.Text)
         ' Mandatory phone number 1
         SQL.AddParam("@phoneType1", phoneDrop1.Text)
@@ -197,4 +197,7 @@ Public Class Customer_SignUp
         Return True
     End Function
 
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+    End Sub
 End Class

@@ -65,6 +65,7 @@ Partial Class Customer_SignUp
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtPassCheck = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -458,11 +459,22 @@ Partial Class Customer_SignUp
         Me.Label19.TabIndex = 44
         Me.Label19.Text = "Password again"
         '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(217, 553)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(118, 23)
+        Me.btnCancel.TabIndex = 45
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
         'Customer_SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(557, 559)
+        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.txtPassCheck)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.txtPass)
@@ -506,8 +518,11 @@ Partial Class Customer_SignUp
         Me.Controls.Add(Me.lastName)
         Me.Controls.Add(Me.firstName)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Customer_SignUp"
         Me.Text = "New Customer Form"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -556,4 +571,5 @@ Partial Class Customer_SignUp
     Private WithEvents phoneDrop1 As ComboBox
     Friend WithEvents txtPassCheck As TextBox
     Friend WithEvents Label19 As Label
+    Friend WithEvents btnCancel As Button
 End Class

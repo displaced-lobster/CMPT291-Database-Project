@@ -1,16 +1,10 @@
 ﻿
-' "COLLATE Latin1_General_CS_AS" used for case sensitivity
-
-' need to find out if a movie is unavailable based on rentals ***********************************************************
-' check the returned flags to see if 1 or 0 for this
-
 Public Class Customer_Interface
     Private SQL As New SQLControl
 
     Private Function GetAccount() As Integer
         Return CInt(Customer_Login.UserAccount()) ' convert string to integer 
     End Function
-
 
     Private Sub Customer_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
@@ -25,6 +19,7 @@ Public Class Customer_Interface
     End Sub
 
     Private Sub btnChangeInfo_Click(sender As Object, e As EventArgs) Handles btnChangeInfo.Click
+        Me.Hide() ' have it reapear after done
         Edit_Customer_Account.Show()
     End Sub
 
