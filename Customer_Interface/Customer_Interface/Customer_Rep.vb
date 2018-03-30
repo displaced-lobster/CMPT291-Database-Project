@@ -7,10 +7,22 @@
     Private Sub Customer_Rep_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
         SQL.ExecuteQuery("SELECT max(account_number) FROM customer_data")
-        addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+
+        If Not IsDBNull(SQL.SQLTable.Rows(0).ItemArray(0)) Then
+            addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        Else
+            addAcctNum.Text = "1"
+        End If
         recDate.Text = Today()
         SQL.ExecuteQuery("SELECT max(order_id) FROM order_data")
-        recOrderID.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString() ' there is an error if the database has no orders at all, Can't load the customer rep page
+
+        If Not IsDBNull(SQL.SQLTable.Rows(0).ItemArray(0)) Then
+            recOrderID.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        Else
+            recOrderID.Text = "1"
+        End If
+
+        recSIN.Text = Employee_Login.UserAccount()
 
     End Sub
 
@@ -121,6 +133,7 @@
     End Sub
 
     Private Sub LoadData(Optional Query As String = "")
+        CustData.ClearSelection()
         If Query = "" Then
             SQL.ExecuteQuery("SELECT * FROM customer_data;")
         Else
@@ -141,26 +154,37 @@
         SQL.AddParam("@sin", recSIN.Text)
 
         SQL.ExecuteQuery("INSERT INTO order_data (order_id, date, return_flag, account_number, movie_id, SIN) VALUES (@orderid, @date, 0, @acctnum, @movieid, @sin);")
+
+        If SQL.HasException(False) Then Exit Sub
+
+        SQL.ExecuteQuery("SELECT max(order_id) FROM order_data")
+        recOrderID.Text = SQL.SQLTable.Rows(0).ItemArray(0)
+        recAcctNum.Text = ""
+        orderAcctNum.Clear()
+        orderList.Items.Clear()
+        recMovieId.Items.Clear()
+        MsgBox("Order successfully created.")
     End Sub
 
     Private Sub FindCust()
-        If AcctNum.TextLength = 0 And FName.TextLength = 0 And LName.TextLength = 0 Then
+        If AcctNum.TextLength = 0 And FName.TextLength = 0 And LName.TextLength = 0 And findEmail.TextLength = 0 Then
             LoadData()
         Else
             Dim Query As String = "SELECT * FROM customer_data WHERE"
             If AcctNum.TextLength > 0 Then
                 SQL.AddParam("@acctnum", AcctNum.Text)
                 Query += " account_number = @acctnum"
-            ElseIf FName.TextLength > 0 And LName.TextLength > 0 Then
-                SQL.AddParam("@fname", "%" & FName.Text & "%")
-                SQL.AddParam("@lname", "%" & LName.Text & "%")
-                Query += " first_name Like @fname and last_name LIKE @lname"
-            ElseIf FName.TextLength > 0 Then
-                SQL.AddParam("@fname", "%" & FName.Text & "%")
-                Query += " first_name LIKE @fname"
-            ElseIf LName.TextLength > 0 Then
-                SQL.AddParam("@lname", "%" & LName.Text & "%")
-                Query += " last_name LIKE @lname"
+            Else
+                If FName.TextLength > 0 Then
+                    SQL.AddParam("@fname", "%" & FName.Text & "%")
+                    Query += " first_name LIKE @fname"
+                ElseIf LName.TextLength > 0 Then
+                    SQL.AddParam("@lname", "%" & LName.Text & "%")
+                    Query += " last_name LIKE @lname"
+                ElseIf findEmail.TextLength > 0 Then
+                    SQL.AddParam("@email", "%" & findEmail.Text & "%")
+                    Query += " email LIKE @email"
+                End If
             End If
             Query += ";"
             LoadData(Query)
@@ -195,6 +219,8 @@
         SQL.ExecuteQuery("INSERT INTO customer_data (account_number, first_name, last_name, city, state, zip_code, street, street_num, apartment_num, email, creation_date, credit_card_num, account_type) " &
             "VALUES (@acctnum, @fname, @lname, @city, @state, @zip, @strname, @strnum, @aptnum, @email, GETDATE(), @cc, @type);")
 
+        If SQL.HasException(True) Then Exit Sub
+
         If addNum1.TextLength > 0 Then
             SQL.AddParam("@acctnum", addAcctNum.Text)
             SQL.AddParam("@num1", addNum1.Text)
@@ -205,8 +231,58 @@
             Else
                 SQL.AddParam("@type1", "cell")
             End If
-            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, type) VALUES (@acctnum, @num1, @type1);")
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num1, @type1);")
         End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        If addNum2.TextLength > 0 Then
+            SQL.AddParam("@acctnum", addAcctNum.Text)
+            SQL.AddParam("@num2", addNum2.Text)
+            If Home2.Checked Then
+                SQL.AddParam("@type2", "home")
+            ElseIf Work2.Checked Then
+                SQL.AddParam("@type2", "work")
+            Else
+                SQL.AddParam("@type2", "cell")
+            End If
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num2, @type2);")
+        End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        If addNum3.TextLength > 0 Then
+            SQL.AddParam("@acctnum", addAcctNum.Text)
+            SQL.AddParam("@num3", addNum3.Text)
+            If Home3.Checked Then
+                SQL.AddParam("@type3", "home")
+            ElseIf Work3.Checked Then
+                SQL.AddParam("@type3", "work")
+            Else
+                SQL.AddParam("@type3", "cell")
+            End If
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num3, @type3);")
+        End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        SQL.ExecuteQuery("SELECT max(account_number) FROM customer_data")
+        addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        addFName.Clear()
+        addLName.Clear()
+        addEmail.Clear()
+        addCC.Clear()
+        addStreetName.Clear()
+        addStreetNum.Clear()
+        addCity.Clear()
+        addState.Clear()
+        addZip.Clear()
+        addAPTNum.Clear()
+        addNum1.Clear()
+        addNum2.Clear()
+        addNum3.Clear()
+
+        MsgBox("Customer successfully added.")
 
     End Sub
 
@@ -251,5 +327,22 @@
 
     Private Sub EmailList_Click(sender As Object, e As EventArgs) Handles EmailList.Click
         makeEmailList()
+    End Sub
+
+    Private Sub FindOrderQueue()
+        orderList.Items.Clear()
+        SQL.AddParam("@acct", orderAcctNum.Text)
+        SQL.ExecuteQuery("SELECT movie_data.movie_id, movie_data.movie_name FROM order_queue, movie_data WHERE account_number = @acct AND order_queue.movie_id = movie_data.movie_id;")
+
+        For Each r As DataRow In SQL.SQLTable.Rows
+            Dim movie As String = r("movie_id").ToString() + vbTab + r("movie_name")
+            orderList.Items.Add(movie)
+            recMovieId.Items.Add(r("movie_id"))
+        Next
+    End Sub
+
+    Private Sub orderSearch_Click(sender As Object, e As EventArgs) Handles orderSearch.Click
+        FindOrderQueue()
+        recAcctNum.Text = orderAcctNum.Text
     End Sub
 End Class
