@@ -10,4 +10,8 @@
     Private Sub data_grid_most_active_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data_grid_most_active.CellContentClick
 
     End Sub
+
+    Private Sub List_Current_Rentals_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Main_Interface
+    End Sub
 End Class

@@ -608,11 +608,15 @@ Partial Class Main_Manager_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(724, 343)
+        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ControlBox = False
         Me.Controls.Add(Me.ManagerTab1)
         Me.Controls.Add(Me.ManagerLabel)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Main_Manager_Interface"
         Me.Text = "Form1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ManagerTab1.ResumeLayout(False)
         Me.MI_MoiveTab.ResumeLayout(False)
         Me.MI_MoiveTab.PerformLayout()
