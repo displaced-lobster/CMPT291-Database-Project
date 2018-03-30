@@ -74,7 +74,7 @@ Public Class Customer_Interface
     End Sub
 
     ' load the account information fields
-    Private Sub LoadData()
+    Public Sub LoadData()
         Dim user As String = GetAccount()
 
         ' clear table

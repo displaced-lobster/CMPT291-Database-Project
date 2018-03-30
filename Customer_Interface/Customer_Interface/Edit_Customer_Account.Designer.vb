@@ -22,7 +22,7 @@ Partial Class Edit_Customer_Account
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button11 = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.txtPassCheck = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txtPass = New System.Windows.Forms.TextBox()
@@ -41,7 +41,7 @@ Partial Class Edit_Customer_Account
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.createAccount = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.unlim3 = New System.Windows.Forms.RadioButton()
         Me.unlim2 = New System.Windows.Forms.RadioButton()
         Me.unlim1 = New System.Windows.Forms.RadioButton()
@@ -68,14 +68,14 @@ Partial Class Edit_Customer_Account
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button11
+        'btnExit
         '
-        Me.Button11.Location = New System.Drawing.Point(218, 543)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(118, 23)
-        Me.Button11.TabIndex = 96
-        Me.Button11.Text = "Exit"
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.btnExit.Location = New System.Drawing.Point(218, 543)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(118, 23)
+        Me.btnExit.TabIndex = 96
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'txtPassCheck
         '
@@ -238,14 +238,14 @@ Partial Class Edit_Customer_Account
         Me.Label5.TabIndex = 125
         Me.Label5.Text = "First Name"
         '
-        'createAccount
+        'btnSave
         '
-        Me.createAccount.Location = New System.Drawing.Point(218, 514)
-        Me.createAccount.Name = "createAccount"
-        Me.createAccount.Size = New System.Drawing.Size(118, 23)
-        Me.createAccount.TabIndex = 124
-        Me.createAccount.Text = "Create Account"
-        Me.createAccount.UseVisualStyleBackColor = True
+        Me.btnSave.Location = New System.Drawing.Point(218, 514)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(118, 23)
+        Me.btnSave.TabIndex = 124
+        Me.btnSave.Text = "Save Changes"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'unlim3
         '
@@ -472,6 +472,7 @@ Partial Class Edit_Customer_Account
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txtPassCheck)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.txtPass)
@@ -490,7 +491,7 @@ Partial Class Edit_Customer_Account
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.createAccount)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.unlim3)
         Me.Controls.Add(Me.unlim2)
         Me.Controls.Add(Me.unlim1)
@@ -515,7 +516,9 @@ Partial Class Edit_Customer_Account
         Me.Controls.Add(Me.lastName)
         Me.Controls.Add(Me.firstName)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button11)
+        Me.Controls.Add(Me.btnExit)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Edit_Customer_Account"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit_Customer_Account"
@@ -524,7 +527,7 @@ Partial Class Edit_Customer_Account
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button11 As Button
+    Friend WithEvents btnExit As Button
     Friend WithEvents txtPassCheck As TextBox
     Friend WithEvents Label19 As Label
     Friend WithEvents txtPass As TextBox
@@ -543,7 +546,7 @@ Partial Class Edit_Customer_Account
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents createAccount As Button
+    Friend WithEvents btnSave As Button
     Friend WithEvents unlim3 As RadioButton
     Friend WithEvents unlim2 As RadioButton
     Friend WithEvents unlim1 As RadioButton
