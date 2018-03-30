@@ -73,7 +73,7 @@ Public Class Customer_Interface
         Next
     End Sub
 
-    ' load the account information fields
+    ' load the account information fields *************************************************************************** add username to the things to print out
     Public Sub LoadData()
         Dim user As String = GetAccount()
 

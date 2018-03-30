@@ -79,47 +79,49 @@ Public Class Edit_Customer_Account
         Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
         Dim i As Object = SQL.SQLTable.Rows(0)
         ' create SQL parameters to add
-        ' the updates don't work
-        If firstName.Text <> i.Item("first_name") And firstName.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET first_name=" + StrConv(firstName.Text, VbStrConv.ProperCase) +
-                                                                                                 " WHERE account_number=" + accountNumber.ToString + ";")
-        If lastName.Text <> i.Item("last_name") And lastName.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET last_name=" + StrConv(lastName.Text, VbStrConv.ProperCase) +
-                                                                                              " WHERE account_number=" + accountNumber.ToString + ";")
-        If email.Text <> i.Item("email") And email.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET email=" + email.Text + " WHERE account_number=" + accountNumber.ToString + ";")
+        ' the updates don't work ***************************************************************************************************************************************************************
+        If firstName.Text <> i.Item("first_name") And firstName.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET first_name='" + StrConv(firstName.Text, VbStrConv.ProperCase) +
+                                                                                                 "' WHERE account_number=" + accountNumber.ToString + ";")
+        If lastName.Text <> i.Item("last_name") And lastName.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET last_name='" + StrConv(lastName.Text, VbStrConv.ProperCase) +
+                                                                                              "' WHERE account_number=" + accountNumber.ToString + ";")
+        If email.Text <> i.Item("email") And email.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET email='" + email.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
         If streetNum.Text <> i.Item("street_num") And streetNum.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street_num=" + streetNum.Text + " WHERE account_number=" +
                                                                                                  accountNumber.ToString + ";")
-        If street.Text <> i.Item("street") And street.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street=" + streetNum.Text + " WHERE account_number=" + accountNumber.ToString + ";")
-        If aptNum.Text <> i.Item("apartment_num") Then SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num=" + aptNum.Text + " WHERE account_number=" + accountNumber.ToString + ";")
-        If city.Text <> i.Item("city") And city.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET city=" + city.Text + " WHERE account_number=" + accountNumber.ToString + ";")
-        If state.Text <> i.Item("state") And state.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET state=" + state.Text + " WHERE account_number=" + accountNumber.ToString + ";")
-        If zip.Text <> i.Item("zip_code") And zip.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET zip_code=" + zip.Text + " WHERE account_number=" + accountNumber.ToString + ";")
-        If cardNum.Text <> i.Item("credit_card_num") And cardNum.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET credit_card_num=" + cardNum.Text + " WHERE account_number=" +
+        If street.Text <> i.Item("street") And street.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street='" + streetNum.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+        ' error with apartment, need to deal with when it goes back to null **********************************************************************************************************************
+        If aptNum.Text <> i.Item("apartment_num") Then SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num='" + aptNum.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+
+        If city.Text <> i.Item("city") And city.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET city='" + city.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+        If state.Text <> i.Item("state") And state.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET state='" + state.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+        If zip.Text <> i.Item("zip_code") And zip.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET zip_code='" + zip.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+        If cardNum.Text <> i.Item("credit_card_num") And cardNum.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET credit_card_num='" + cardNum.Text + "' WHERE account_number=" +
                                                                                                   accountNumber.ToString + ";")
         ' phone numbers
-        If phoneDrop1.Text <> i.Item("phone_type") And phoneDrop1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type=" + phoneDrop1.Text + " WHERE account_number=" +
+        If phoneDrop1.Text <> i.Item("phone_type") And phoneDrop1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop1.Text + "' WHERE account_number=" +
                                                                          accountNumber.ToString + " AND telephone_num=" + i.Item("telephone_num") + ";")
-        If num1.Text <> i.Item("telephone_num") And num1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num=" + num1.Text + " WHERE account_number=" +
+        If num1.Text <> i.Item("telephone_num") And num1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num1.Text + "' WHERE account_number=" +
                                                                       accountNumber.ToString + " AND telephone_num=" + i.Item("telephone_num") + ";")
         If rowNumbers = 2 Then
-            If phoneDrop2.Text <> SQL.SQLTable.Rows(1).Item("phone_type") And phoneDrop2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type=" + phoneDrop2.Text +
-                                                                      " WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(1).Item("telephone_num") + ";")
-            If num2.Text <> SQL.SQLTable.Rows(1).Item("telephone_num") And num2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num=" + num2.Text +
-                                                                      " WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(1).Item("telephone_num") + ";")
+            If phoneDrop2.Text <> SQL.SQLTable.Rows(1).Item("phone_type") And phoneDrop2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop2.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(1).Item("telephone_num") + ";")
+            If num2.Text <> SQL.SQLTable.Rows(1).Item("telephone_num") And num2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num2.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(1).Item("telephone_num") + ";")
         End If
         If rowNumbers = 2 Then
-            If phoneDrop3.Text <> SQL.SQLTable.Rows(2).Item("phone_type") And phoneDrop3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type=" + phoneDrop3.Text +
-                                                                      " WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(2).Item("telephone_num") + ";")
-            If num3.Text <> SQL.SQLTable.Rows(2).Item("telephone_num") And num3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num=" + num3.Text +
-                                                                      " WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(2).Item("telephone_num") + ";")
+            If phoneDrop3.Text <> SQL.SQLTable.Rows(2).Item("phone_type") And phoneDrop3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop3.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(2).Item("telephone_num") + ";")
+            If num3.Text <> SQL.SQLTable.Rows(2).Item("telephone_num") And num3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num3.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(2).Item("telephone_num") + ";")
         End If
         ' account type ' not working yet
-        'If limited.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type=limited WHERE account_number=" + accountNumber.ToString + ";")
-        'If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type=unlim1 WHERE account_number=" + accountNumber.ToString + ";")
-        'If unlim2.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type=unlim2 WHERE account_number=" + accountNumber.ToString + ";")
-        'If unlim3.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type=unlim3 WHERE account_number=" + accountNumber.ToString + ";")
+        If limited.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='limited' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim1' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim2.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim2' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim3.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim3' WHERE account_number=" + accountNumber.ToString + ";")
         ' username and password
-        If txtUser.Text <> i.Item("username") And txtUser.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Passwords SET username=" + txtUser.Text + " WHERE account_number=" +
+        If txtUser.Text <> i.Item("username") And txtUser.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Passwords SET username='" + txtUser.Text + "' WHERE account_number=" +
                                                                                            accountNumber.ToString + ";")
-        If txtPass.Text <> i.Item("password") And txtPass.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Passwords SET password=" + txtPass.Text + " WHERE account_number=" +
+        If txtPass.Text <> i.Item("password") And txtPass.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Passwords SET password='" + txtPass.Text + "' WHERE account_number=" +
                                                                                            accountNumber.ToString + ";")
 
         MsgBox("User has been updated") 'CreateObject("WScript.Shell").Popup("Welcome", 1, "Title") to have popup box that disappears
