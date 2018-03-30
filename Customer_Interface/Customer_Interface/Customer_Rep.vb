@@ -28,11 +28,16 @@
 
     Private Sub DelCust()
         SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum")
+        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
+        If SQL.HasException(True) Then Exit Sub
 
+        SQL.AddParam("@acctnum", delAcctNum.Text)
+        SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
         If SQL.HasException(True) Then Exit Sub
 
         MsgBox("Customer deleted.")
+        delAcctNum.Clear()
+        delData.ClearSelection()
         del_cust.Enabled = False
     End Sub
 
@@ -95,8 +100,44 @@
                 editUnlim3.Checked = True
             End If
         Next
+
+        SQL.AddParam("@acctnum", editAcctNum.Text)
+        SQL.ExecuteQuery("SELECT telephone_num, phone_type FROM customer_phone_numbers WHERE account_number = @acctnum;")
+
+        If SQL.RecordCount > 0 Then
+            editNum1.Text = SQL.SQLTable.Rows(0).ItemArray(0)
+            If SQL.SQLTable.Rows(0).ItemArray(1) = "home" Then
+                editHome1.Checked = True
+            ElseIf SQL.SQLTable.Rows(0).ItemArray(1) = "work" Then
+                editWork1.Checked = True
+            Else
+                editCell1.Checked = True
+            End If
+        End If
+
+        If SQL.RecordCount > 1 Then
+            editNum2.Text = SQL.SQLTable.Rows(1).ItemArray(0)
+            If SQL.SQLTable.Rows(1).ItemArray(1) = "home" Then
+                editHome2.Checked = True
+            ElseIf SQL.SQLTable.Rows(1).ItemArray(1) = "work" Then
+                editWork2.Checked = True
+            Else
+                editCell2.Checked = True
+            End If
+        End If
+
+        If SQL.RecordCount > 2 Then
+            editNum3.Text = SQL.SQLTable.Rows(2).ItemArray(0)
+            If SQL.SQLTable.Rows(2).ItemArray(1) = "home" Then
+                editHome3.Checked = True
+            ElseIf SQL.SQLTable.Rows(2).ItemArray(1) = "work" Then
+                editWork3.Checked = True
+            Else
+                editCell3.Checked = True
+            End If
+        End If
+
         edit_cust.Enabled = True
-        'SQL.AddParam("@acctnum", editAcctNum.Text)
     End Sub
 
     Private Sub UpdateCustomer()
@@ -124,9 +165,73 @@
             SQL.AddParam("@type", "NULL")
         End If
 
-        SQL.ExecuteQuery("UPDATE customer_data SET first_name=@fname, last_name=@lname, email=@email, credit_card_num=@cc, street_num=@strnum, street=@strname, apartment_num=@aptnum, city=@city, state=@state, zip_code=@zip, account_type=@type WHERE account_number = @acctnum")
+        SQL.ExecuteQuery("UPDATE customer_data SET first_name=@fname, last_name=@lname, email=@email, credit_card_num=@cc, street_num=@strnum, street=@strname, apartment_num=@aptnum, city=@city, state=@state, zip_code=@zip, account_type=@type WHERE account_number = @acctnum;")
+        If SQL.HasException(True) Then Exit Sub
+
+        SQL.AddParam("@acct", editAcctNum.Text)
+        SQL.ExecuteQuery("DELETE FROM customer_phone_numbers WHERE account_number = @acct;")
+        If SQL.HasException(True) Then Exit Sub
+
+        If editNum1.TextLength > 0 Then
+            SQL.AddParam("@acctnum", editAcctNum.Text)
+            SQL.AddParam("@num1", editNum1.Text)
+            If editHome1.Checked Then
+                SQL.AddParam("@type1", "home")
+            ElseIf editWork1.Checked Then
+                SQL.AddParam("@type1", "work")
+            Else
+                SQL.AddParam("@type1", "cell")
+            End If
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num1, @type1);")
+        End If
 
         If SQL.HasException(True) Then Exit Sub
+
+        If editNum2.TextLength > 0 Then
+            SQL.AddParam("@acctnum", editAcctNum.Text)
+            SQL.AddParam("@num2", editNum2.Text)
+            If editHome2.Checked Then
+                SQL.AddParam("@type2", "home")
+            ElseIf editWork2.Checked Then
+                SQL.AddParam("@type2", "work")
+            Else
+                SQL.AddParam("@type2", "cell")
+            End If
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num2, @type2);")
+        End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        If editNum3.TextLength > 0 Then
+            SQL.AddParam("@acctnum", editAcctNum.Text)
+            SQL.AddParam("@num3", editNum3.Text)
+            If editHome3.Checked Then
+                SQL.AddParam("@type3", "home")
+            ElseIf editWork3.Checked Then
+                SQL.AddParam("@type3", "work")
+            Else
+                SQL.AddParam("@type3", "cell")
+            End If
+            SQL.ExecuteQuery("INSERT INTO customer_phone_numbers (account_number, telephone_num, phone_type) VALUES (@acctnum, @num3, @type3);")
+        End If
+
+        If SQL.HasException(True) Then Exit Sub
+
+        editFilter.Clear()
+        editAcctNum.Text = ""
+        editFName.Clear()
+        editLName.Clear()
+        editEmail.Clear()
+        editCC.Clear()
+        editStreetName.Clear()
+        editStreetNum.Clear()
+        editAPTNum.Clear()
+        editCity.Clear()
+        editState.Clear()
+        editZip.Clear()
+        editNum1.Clear()
+        editNum2.Clear()
+        editNum3.Clear()
 
         edit_cust.Enabled = False
         MsgBox("User has been updated.")
@@ -318,7 +423,10 @@
     End Sub
 
     Private Sub del_cust_Click(sender As Object, e As EventArgs) Handles del_cust.Click
-        DelCust()
+        Dim result As Integer = MessageBox.Show("Are you sure you want to delete customer?", "WARNING", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            DelCust()
+        End If
     End Sub
 
     Private Sub mailingList_Click(sender As Object, e As EventArgs) Handles mailingList.Click
