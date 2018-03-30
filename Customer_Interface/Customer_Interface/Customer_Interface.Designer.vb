@@ -70,6 +70,7 @@ Partial Class Customer_Interface
         Me.movieSelect = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.txtUserName = New System.Windows.Forms.Label()
+        Me.rentMovie = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -392,6 +393,7 @@ Partial Class Customer_Interface
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rentMovie)
         Me.GroupBox3.Controls.Add(Me.rbCategory)
         Me.GroupBox3.Controls.Add(Me.ComboBox1)
         Me.GroupBox3.Controls.Add(Me.btnEditQueue)
@@ -430,7 +432,7 @@ Partial Class Customer_Interface
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ComboBox1.Location = New System.Drawing.Point(8, 353)
+        Me.ComboBox1.Location = New System.Drawing.Point(75, 322)
         Me.ComboBox1.MaxDropDownItems = 50
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(186, 21)
@@ -438,7 +440,7 @@ Partial Class Customer_Interface
         '
         'btnEditQueue
         '
-        Me.btnEditQueue.Location = New System.Drawing.Point(200, 378)
+        Me.btnEditQueue.Location = New System.Drawing.Point(267, 347)
         Me.btnEditQueue.Name = "btnEditQueue"
         Me.btnEditQueue.Size = New System.Drawing.Size(116, 23)
         Me.btnEditQueue.TabIndex = 11
@@ -461,7 +463,7 @@ Partial Class Customer_Interface
         Me.cbEditQueue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbEditQueue.FormattingEnabled = True
         Me.cbEditQueue.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.cbEditQueue.Location = New System.Drawing.Point(8, 380)
+        Me.cbEditQueue.Location = New System.Drawing.Point(75, 349)
         Me.cbEditQueue.MaxDropDownItems = 50
         Me.cbEditQueue.Name = "cbEditQueue"
         Me.cbEditQueue.Size = New System.Drawing.Size(186, 21)
@@ -480,7 +482,7 @@ Partial Class Customer_Interface
         '
         'btnReturnMovie
         '
-        Me.btnReturnMovie.Location = New System.Drawing.Point(200, 351)
+        Me.btnReturnMovie.Location = New System.Drawing.Point(267, 320)
         Me.btnReturnMovie.Name = "btnReturnMovie"
         Me.btnReturnMovie.Size = New System.Drawing.Size(116, 23)
         Me.btnReturnMovie.TabIndex = 9
@@ -503,7 +505,7 @@ Partial Class Customer_Interface
         Me.GroupBox4.Controls.Add(Me.txtRes)
         Me.GroupBox4.Location = New System.Drawing.Point(7, 128)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(447, 192)
+        Me.GroupBox4.Size = New System.Drawing.Size(447, 161)
         Me.GroupBox4.TabIndex = 7
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Results"
@@ -513,7 +515,7 @@ Partial Class Customer_Interface
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(302, 20)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(139, 163)
+        Me.DataGridView1.Size = New System.Drawing.Size(139, 134)
         Me.DataGridView1.TabIndex = 6
         '
         'txtRes
@@ -523,7 +525,7 @@ Partial Class Customer_Interface
         Me.txtRes.Multiline = True
         Me.txtRes.Name = "txtRes"
         Me.txtRes.ReadOnly = True
-        Me.txtRes.Size = New System.Drawing.Size(434, 163)
+        Me.txtRes.Size = New System.Drawing.Size(434, 134)
         Me.txtRes.TabIndex = 0
         '
         'btnPersonal
@@ -546,7 +548,7 @@ Partial Class Customer_Interface
         '
         'btnAddQueue
         '
-        Me.btnAddQueue.Location = New System.Drawing.Point(200, 324)
+        Me.btnAddQueue.Location = New System.Drawing.Point(267, 293)
         Me.btnAddQueue.Name = "btnAddQueue"
         Me.btnAddQueue.Size = New System.Drawing.Size(116, 23)
         Me.btnAddQueue.TabIndex = 3
@@ -567,7 +569,7 @@ Partial Class Customer_Interface
         Me.movieSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.movieSelect.FormattingEnabled = True
         Me.movieSelect.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.movieSelect.Location = New System.Drawing.Point(7, 326)
+        Me.movieSelect.Location = New System.Drawing.Point(74, 295)
         Me.movieSelect.MaxDropDownItems = 50
         Me.movieSelect.Name = "movieSelect"
         Me.movieSelect.Size = New System.Drawing.Size(186, 21)
@@ -589,16 +591,29 @@ Partial Class Customer_Interface
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
         '
+        'rentMovie
+        '
+        Me.rentMovie.Location = New System.Drawing.Point(267, 376)
+        Me.rentMovie.Name = "rentMovie"
+        Me.rentMovie.Size = New System.Drawing.Size(116, 23)
+        Me.rentMovie.TabIndex = 14
+        Me.rentMovie.Text = "Rent a Movie"
+        Me.rentMovie.UseVisualStyleBackColor = True
+        '
         'Customer_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(877, 495)
+        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txtUserName)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.TabControl1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Customer_Interface"
         Me.Text = "Customer Interface"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
@@ -669,4 +684,5 @@ Partial Class Customer_Interface
     Friend WithEvents rb3 As RadioButton
     Friend WithEvents rb1 As RadioButton
     Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents rentMovie As Button
 End Class

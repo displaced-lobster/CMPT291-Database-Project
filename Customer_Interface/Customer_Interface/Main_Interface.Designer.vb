@@ -28,11 +28,11 @@ Partial Class Main_Interface
         Me.CustomersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManagerServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
         Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManagerServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,8 +42,7 @@ Partial Class Main_Interface
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.File, Me.WindowToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(9, 3, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1804, 35)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1184, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -51,73 +50,72 @@ Partial Class Main_Interface
         '
         Me.File.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Open, Me.Close, Me.TestToolStripMenuItem})
         Me.File.Name = "File"
-        Me.File.Size = New System.Drawing.Size(50, 29)
+        Me.File.Size = New System.Drawing.Size(37, 20)
         Me.File.Text = "File"
         '
         'Open
         '
         Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1, Me.ManagerServicesToolStripMenuItem})
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(252, 30)
+        Me.Open.Size = New System.Drawing.Size(124, 22)
         Me.Open.Text = "Accounts"
         '
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(252, 30)
+        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.CustomersToolStripMenuItem.Text = "New User Signup"
         '
         'EmployeeServicesToolStripMenuItem
         '
         Me.EmployeeServicesToolStripMenuItem.Name = "EmployeeServicesToolStripMenuItem"
-        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(252, 30)
+        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.EmployeeServicesToolStripMenuItem.Text = "Customer Services"
         '
         'EmployeeServicesToolStripMenuItem1
         '
         Me.EmployeeServicesToolStripMenuItem1.Name = "EmployeeServicesToolStripMenuItem1"
-        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(252, 30)
+        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(171, 22)
         Me.EmployeeServicesToolStripMenuItem1.Text = "Employee Services"
+        '
+        'ManagerServicesToolStripMenuItem
+        '
+        Me.ManagerServicesToolStripMenuItem.Name = "ManagerServicesToolStripMenuItem"
+        Me.ManagerServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ManagerServicesToolStripMenuItem.Text = "Manager Services"
         '
         'Close
         '
         Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(252, 30)
+        Me.Close.Size = New System.Drawing.Size(124, 22)
         Me.Close.Text = "Close"
         '
         'TestToolStripMenuItem
         '
         Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(252, 30)
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.TestToolStripMenuItem.Text = "Test"
         '
         'WindowToolStripMenuItem
         '
         Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(74, 29)
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
         Me.WindowToolStripMenuItem.Text = "About"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(61, 29)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'ManagerServicesToolStripMenuItem
-        '
-        Me.ManagerServicesToolStripMenuItem.Name = "ManagerServicesToolStripMenuItem"
-        Me.ManagerServicesToolStripMenuItem.Size = New System.Drawing.Size(252, 30)
-        Me.ManagerServicesToolStripMenuItem.Text = "Manager Services"
         '
         'Main_Interface
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1804, 1050)
+        Me.ClientSize = New System.Drawing.Size(1184, 711)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Main_Interface"
         Me.Text = "Main Interface"
         Me.MenuStrip1.ResumeLayout(False)

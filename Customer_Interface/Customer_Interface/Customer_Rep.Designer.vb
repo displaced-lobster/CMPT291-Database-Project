@@ -26,6 +26,8 @@ Partial Class Customer_Rep
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.recOrderID = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.recSIN = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.recDate = New System.Windows.Forms.TextBox()
@@ -45,6 +47,7 @@ Partial Class Customer_Rep
         Me.CustData = New System.Windows.Forms.DataGridView()
         Me.Find = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.addAcctNum = New System.Windows.Forms.Label()
         Me.AcctType = New System.Windows.Forms.GroupBox()
         Me.Unlim3 = New System.Windows.Forms.RadioButton()
         Me.Unlim2 = New System.Windows.Forms.RadioButton()
@@ -85,16 +88,8 @@ Partial Class Customer_Rep
         Me.Label5 = New System.Windows.Forms.Label()
         Me.add_cust = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.recOrderID = New System.Windows.Forms.Label()
-        Me.addAcctNum = New System.Windows.Forms.Label()
-        Me.edit_cust = New System.Windows.Forms.Button()
-        Me.editFilter = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.editSearch = New System.Windows.Forms.Button()
         Me.editAcctNum = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.editUnlim3 = New System.Windows.Forms.RadioButton()
@@ -134,13 +129,18 @@ Partial Class Customer_Rep
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.editSearch = New System.Windows.Forms.Button()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.del_cust = New System.Windows.Forms.Button()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.delSearch = New System.Windows.Forms.Button()
-        Me.delData = New System.Windows.Forms.DataGridView()
+        Me.editFilter = New System.Windows.Forms.TextBox()
+        Me.edit_cust = New System.Windows.Forms.Button()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.delAcctNum = New System.Windows.Forms.TextBox()
+        Me.delData = New System.Windows.Forms.DataGridView()
+        Me.delSearch = New System.Windows.Forms.Button()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.del_cust = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -150,13 +150,13 @@ Partial Class Customer_Rep
         Me.Num2.SuspendLayout()
         Me.Num1.SuspendLayout()
         Me.TabPage5.SuspendLayout()
-        Me.TabPage6.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         CType(Me.delData, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -181,10 +181,10 @@ Partial Class Customer_Rep
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(12, 31)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1784, 713)
+        Me.TabControl1.Size = New System.Drawing.Size(1677, 838)
         Me.TabControl1.TabIndex = 3
         '
         'TabPage1
@@ -201,18 +201,35 @@ Partial Class Customer_Rep
         Me.TabPage1.Controls.Add(Me.recAcctNum)
         Me.TabPage1.Controls.Add(Me.recOrder)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.TabPage1.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(1)
+        Me.TabPage1.Size = New System.Drawing.Size(1669, 812)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Create Order"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'recOrderID
+        '
+        Me.recOrderID.AutoSize = True
+        Me.recOrderID.Location = New System.Drawing.Point(175, 60)
+        Me.recOrderID.Name = "recOrderID"
+        Me.recOrderID.Size = New System.Drawing.Size(0, 13)
+        Me.recOrderID.TabIndex = 10
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(19, 60)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(47, 13)
+        Me.Label18.TabIndex = 9
+        Me.Label18.Text = "Order ID"
+        '
         'recSIN
         '
         Me.recSIN.Location = New System.Drawing.Point(178, 162)
-        Me.recSIN.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.recSIN.Margin = New System.Windows.Forms.Padding(1)
         Me.recSIN.Name = "recSIN"
         Me.recSIN.Size = New System.Drawing.Size(121, 20)
         Me.recSIN.TabIndex = 8
@@ -230,7 +247,7 @@ Partial Class Customer_Rep
         'recDate
         '
         Me.recDate.Location = New System.Drawing.Point(178, 134)
-        Me.recDate.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.recDate.Margin = New System.Windows.Forms.Padding(1)
         Me.recDate.Name = "recDate"
         Me.recDate.Size = New System.Drawing.Size(121, 20)
         Me.recDate.TabIndex = 6
@@ -248,7 +265,7 @@ Partial Class Customer_Rep
         'recMovieID
         '
         Me.recMovieID.Location = New System.Drawing.Point(178, 105)
-        Me.recMovieID.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.recMovieID.Margin = New System.Windows.Forms.Padding(1)
         Me.recMovieID.Name = "recMovieID"
         Me.recMovieID.Size = New System.Drawing.Size(121, 20)
         Me.recMovieID.TabIndex = 4
@@ -276,7 +293,7 @@ Partial Class Customer_Rep
         'recAcctNum
         '
         Me.recAcctNum.Location = New System.Drawing.Point(178, 79)
-        Me.recAcctNum.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.recAcctNum.Margin = New System.Windows.Forms.Padding(1)
         Me.recAcctNum.Name = "recAcctNum"
         Me.recAcctNum.Size = New System.Drawing.Size(121, 20)
         Me.recAcctNum.TabIndex = 1
@@ -284,7 +301,7 @@ Partial Class Customer_Rep
         'recOrder
         '
         Me.recOrder.Location = New System.Drawing.Point(429, 89)
-        Me.recOrder.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.recOrder.Margin = New System.Windows.Forms.Padding(1)
         Me.recOrder.Name = "recOrder"
         Me.recOrder.Size = New System.Drawing.Size(94, 50)
         Me.recOrder.TabIndex = 0
@@ -303,9 +320,9 @@ Partial Class Customer_Rep
         Me.TabPage2.Controls.Add(Me.CustData)
         Me.TabPage2.Controls.Add(Me.Find)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(1)
         Me.TabPage2.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Find Customer"
@@ -314,7 +331,7 @@ Partial Class Customer_Rep
         'LName
         '
         Me.LName.Location = New System.Drawing.Point(638, 27)
-        Me.LName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.LName.Margin = New System.Windows.Forms.Padding(1)
         Me.LName.Name = "LName"
         Me.LName.Size = New System.Drawing.Size(171, 20)
         Me.LName.TabIndex = 52
@@ -352,7 +369,7 @@ Partial Class Customer_Rep
         'AcctNum
         '
         Me.AcctNum.Location = New System.Drawing.Point(103, 30)
-        Me.AcctNum.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.AcctNum.Margin = New System.Windows.Forms.Padding(1)
         Me.AcctNum.Name = "AcctNum"
         Me.AcctNum.Size = New System.Drawing.Size(171, 20)
         Me.AcctNum.TabIndex = 48
@@ -360,7 +377,7 @@ Partial Class Customer_Rep
         'FName
         '
         Me.FName.Location = New System.Drawing.Point(362, 27)
-        Me.FName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.FName.Margin = New System.Windows.Forms.Padding(1)
         Me.FName.Name = "FName"
         Me.FName.Size = New System.Drawing.Size(171, 20)
         Me.FName.TabIndex = 47
@@ -372,7 +389,7 @@ Partial Class Customer_Rep
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CustData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CustData.Location = New System.Drawing.Point(18, 65)
-        Me.CustData.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.CustData.Margin = New System.Windows.Forms.Padding(1)
         Me.CustData.Name = "CustData"
         Me.CustData.RowTemplate.Height = 40
         Me.CustData.Size = New System.Drawing.Size(1738, 610)
@@ -381,7 +398,7 @@ Partial Class Customer_Rep
         'Find
         '
         Me.Find.Location = New System.Drawing.Point(868, 22)
-        Me.Find.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Find.Margin = New System.Windows.Forms.Padding(1)
         Me.Find.Name = "Find"
         Me.Find.Size = New System.Drawing.Size(56, 30)
         Me.Find.TabIndex = 3
@@ -421,13 +438,21 @@ Partial Class Customer_Rep
         Me.TabPage4.Controls.Add(Me.Label5)
         Me.TabPage4.Controls.Add(Me.add_cust)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(1)
         Me.TabPage4.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Add Customer"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'addAcctNum
+        '
+        Me.addAcctNum.AutoSize = True
+        Me.addAcctNum.Location = New System.Drawing.Point(561, 36)
+        Me.addAcctNum.Name = "addAcctNum"
+        Me.addAcctNum.Size = New System.Drawing.Size(0, 13)
+        Me.addAcctNum.TabIndex = 92
         '
         'AcctType
         '
@@ -436,9 +461,9 @@ Partial Class Customer_Rep
         Me.AcctType.Controls.Add(Me.Unlim1)
         Me.AcctType.Controls.Add(Me.Lim1)
         Me.AcctType.Location = New System.Drawing.Point(425, 416)
-        Me.AcctType.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.AcctType.Margin = New System.Windows.Forms.Padding(1)
         Me.AcctType.Name = "AcctType"
-        Me.AcctType.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.AcctType.Padding = New System.Windows.Forms.Padding(1)
         Me.AcctType.Size = New System.Drawing.Size(309, 49)
         Me.AcctType.TabIndex = 91
         Me.AcctType.TabStop = False
@@ -448,7 +473,7 @@ Partial Class Customer_Rep
         '
         Me.Unlim3.AutoSize = True
         Me.Unlim3.Location = New System.Drawing.Point(214, 22)
-        Me.Unlim3.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Unlim3.Margin = New System.Windows.Forms.Padding(1)
         Me.Unlim3.Name = "Unlim3"
         Me.Unlim3.Size = New System.Drawing.Size(74, 17)
         Me.Unlim3.TabIndex = 74
@@ -460,7 +485,7 @@ Partial Class Customer_Rep
         '
         Me.Unlim2.AutoSize = True
         Me.Unlim2.Location = New System.Drawing.Point(141, 22)
-        Me.Unlim2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Unlim2.Margin = New System.Windows.Forms.Padding(1)
         Me.Unlim2.Name = "Unlim2"
         Me.Unlim2.Size = New System.Drawing.Size(74, 17)
         Me.Unlim2.TabIndex = 73
@@ -472,7 +497,7 @@ Partial Class Customer_Rep
         '
         Me.Unlim1.AutoSize = True
         Me.Unlim1.Location = New System.Drawing.Point(66, 22)
-        Me.Unlim1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Unlim1.Margin = New System.Windows.Forms.Padding(1)
         Me.Unlim1.Name = "Unlim1"
         Me.Unlim1.Size = New System.Drawing.Size(74, 17)
         Me.Unlim1.TabIndex = 72
@@ -484,7 +509,7 @@ Partial Class Customer_Rep
         '
         Me.Lim1.AutoSize = True
         Me.Lim1.Location = New System.Drawing.Point(9, 22)
-        Me.Lim1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Lim1.Margin = New System.Windows.Forms.Padding(1)
         Me.Lim1.Name = "Lim1"
         Me.Lim1.Size = New System.Drawing.Size(58, 17)
         Me.Lim1.TabIndex = 71
@@ -498,9 +523,9 @@ Partial Class Customer_Rep
         Me.Num2.Controls.Add(Me.Work2)
         Me.Num2.Controls.Add(Me.Home2)
         Me.Num2.Location = New System.Drawing.Point(594, 359)
-        Me.Num2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Num2.Margin = New System.Windows.Forms.Padding(1)
         Me.Num2.Name = "Num2"
-        Me.Num2.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Num2.Padding = New System.Windows.Forms.Padding(1)
         Me.Num2.Size = New System.Drawing.Size(171, 19)
         Me.Num2.TabIndex = 90
         Me.Num2.TabStop = False
@@ -509,7 +534,7 @@ Partial Class Customer_Rep
         '
         Me.Cell2.AutoSize = True
         Me.Cell2.Location = New System.Drawing.Point(126, 3)
-        Me.Cell2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Cell2.Margin = New System.Windows.Forms.Padding(1)
         Me.Cell2.Name = "Cell2"
         Me.Cell2.Size = New System.Drawing.Size(42, 17)
         Me.Cell2.TabIndex = 81
@@ -521,7 +546,7 @@ Partial Class Customer_Rep
         '
         Me.Work2.AutoSize = True
         Me.Work2.Location = New System.Drawing.Point(70, 3)
-        Me.Work2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Work2.Margin = New System.Windows.Forms.Padding(1)
         Me.Work2.Name = "Work2"
         Me.Work2.Size = New System.Drawing.Size(51, 17)
         Me.Work2.TabIndex = 80
@@ -533,7 +558,7 @@ Partial Class Customer_Rep
         '
         Me.Home2.AutoSize = True
         Me.Home2.Location = New System.Drawing.Point(6, 3)
-        Me.Home2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Home2.Margin = New System.Windows.Forms.Padding(1)
         Me.Home2.Name = "Home2"
         Me.Home2.Size = New System.Drawing.Size(53, 17)
         Me.Home2.TabIndex = 79
@@ -547,9 +572,9 @@ Partial Class Customer_Rep
         Me.Num1.Controls.Add(Me.Work1)
         Me.Num1.Controls.Add(Me.Home1)
         Me.Num1.Location = New System.Drawing.Point(594, 327)
-        Me.Num1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Num1.Margin = New System.Windows.Forms.Padding(1)
         Me.Num1.Name = "Num1"
-        Me.Num1.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Num1.Padding = New System.Windows.Forms.Padding(1)
         Me.Num1.Size = New System.Drawing.Size(171, 19)
         Me.Num1.TabIndex = 89
         Me.Num1.TabStop = False
@@ -558,7 +583,7 @@ Partial Class Customer_Rep
         '
         Me.Cell1.AutoSize = True
         Me.Cell1.Location = New System.Drawing.Point(126, 3)
-        Me.Cell1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Cell1.Margin = New System.Windows.Forms.Padding(1)
         Me.Cell1.Name = "Cell1"
         Me.Cell1.Size = New System.Drawing.Size(42, 17)
         Me.Cell1.TabIndex = 81
@@ -570,7 +595,7 @@ Partial Class Customer_Rep
         '
         Me.Work1.AutoSize = True
         Me.Work1.Location = New System.Drawing.Point(70, 3)
-        Me.Work1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Work1.Margin = New System.Windows.Forms.Padding(1)
         Me.Work1.Name = "Work1"
         Me.Work1.Size = New System.Drawing.Size(51, 17)
         Me.Work1.TabIndex = 80
@@ -582,7 +607,7 @@ Partial Class Customer_Rep
         '
         Me.Home1.AutoSize = True
         Me.Home1.Location = New System.Drawing.Point(6, 3)
-        Me.Home1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Home1.Margin = New System.Windows.Forms.Padding(1)
         Me.Home1.Name = "Home1"
         Me.Home1.Size = New System.Drawing.Size(53, 17)
         Me.Home1.TabIndex = 79
@@ -593,7 +618,7 @@ Partial Class Customer_Rep
         'addNum2
         '
         Me.addNum2.Location = New System.Drawing.Point(435, 359)
-        Me.addNum2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addNum2.Margin = New System.Windows.Forms.Padding(1)
         Me.addNum2.Name = "addNum2"
         Me.addNum2.Size = New System.Drawing.Size(138, 20)
         Me.addNum2.TabIndex = 77
@@ -601,7 +626,7 @@ Partial Class Customer_Rep
         'addNum1
         '
         Me.addNum1.Location = New System.Drawing.Point(435, 330)
-        Me.addNum1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addNum1.Margin = New System.Windows.Forms.Padding(1)
         Me.addNum1.Name = "addNum1"
         Me.addNum1.Size = New System.Drawing.Size(138, 20)
         Me.addNum1.TabIndex = 76
@@ -619,7 +644,7 @@ Partial Class Customer_Rep
         'addCC
         '
         Me.addCC.Location = New System.Drawing.Point(561, 150)
-        Me.addCC.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addCC.Margin = New System.Windows.Forms.Padding(1)
         Me.addCC.Name = "addCC"
         Me.addCC.Size = New System.Drawing.Size(138, 20)
         Me.addCC.TabIndex = 69
@@ -627,7 +652,7 @@ Partial Class Customer_Rep
         'addEmail
         '
         Me.addEmail.Location = New System.Drawing.Point(561, 120)
-        Me.addEmail.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addEmail.Margin = New System.Windows.Forms.Padding(1)
         Me.addEmail.Name = "addEmail"
         Me.addEmail.Size = New System.Drawing.Size(138, 20)
         Me.addEmail.TabIndex = 68
@@ -665,7 +690,7 @@ Partial Class Customer_Rep
         'addZip
         '
         Me.addZip.Location = New System.Drawing.Point(710, 245)
-        Me.addZip.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addZip.Margin = New System.Windows.Forms.Padding(1)
         Me.addZip.Name = "addZip"
         Me.addZip.Size = New System.Drawing.Size(67, 20)
         Me.addZip.TabIndex = 64
@@ -683,7 +708,7 @@ Partial Class Customer_Rep
         'addState
         '
         Me.addState.Location = New System.Drawing.Point(549, 245)
-        Me.addState.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addState.Margin = New System.Windows.Forms.Padding(1)
         Me.addState.Name = "addState"
         Me.addState.Size = New System.Drawing.Size(120, 20)
         Me.addState.TabIndex = 62
@@ -701,7 +726,7 @@ Partial Class Customer_Rep
         'addCity
         '
         Me.addCity.Location = New System.Drawing.Point(435, 245)
-        Me.addCity.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addCity.Margin = New System.Windows.Forms.Padding(1)
         Me.addCity.Name = "addCity"
         Me.addCity.Size = New System.Drawing.Size(89, 20)
         Me.addCity.TabIndex = 60
@@ -739,7 +764,7 @@ Partial Class Customer_Rep
         'addAPTNum
         '
         Me.addAPTNum.Location = New System.Drawing.Point(698, 203)
-        Me.addAPTNum.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addAPTNum.Margin = New System.Windows.Forms.Padding(1)
         Me.addAPTNum.Name = "addAPTNum"
         Me.addAPTNum.Size = New System.Drawing.Size(79, 20)
         Me.addAPTNum.TabIndex = 56
@@ -747,7 +772,7 @@ Partial Class Customer_Rep
         'addStreetName
         '
         Me.addStreetName.Location = New System.Drawing.Point(514, 203)
-        Me.addStreetName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addStreetName.Margin = New System.Windows.Forms.Padding(1)
         Me.addStreetName.Name = "addStreetName"
         Me.addStreetName.Size = New System.Drawing.Size(154, 20)
         Me.addStreetName.TabIndex = 55
@@ -755,7 +780,7 @@ Partial Class Customer_Rep
         'addStreetNum
         '
         Me.addStreetNum.Location = New System.Drawing.Point(435, 203)
-        Me.addStreetNum.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addStreetNum.Margin = New System.Windows.Forms.Padding(1)
         Me.addStreetNum.Name = "addStreetNum"
         Me.addStreetNum.Size = New System.Drawing.Size(43, 20)
         Me.addStreetNum.TabIndex = 54
@@ -773,7 +798,7 @@ Partial Class Customer_Rep
         'addLName
         '
         Me.addLName.Location = New System.Drawing.Point(561, 94)
-        Me.addLName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addLName.Margin = New System.Windows.Forms.Padding(1)
         Me.addLName.Name = "addLName"
         Me.addLName.Size = New System.Drawing.Size(138, 20)
         Me.addLName.TabIndex = 52
@@ -781,7 +806,7 @@ Partial Class Customer_Rep
         'addFName
         '
         Me.addFName.Location = New System.Drawing.Point(561, 65)
-        Me.addFName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.addFName.Margin = New System.Windows.Forms.Padding(1)
         Me.addFName.Name = "addFName"
         Me.addFName.Size = New System.Drawing.Size(138, 20)
         Me.addFName.TabIndex = 51
@@ -819,7 +844,7 @@ Partial Class Customer_Rep
         'add_cust
         '
         Me.add_cust.Location = New System.Drawing.Point(599, 486)
-        Me.add_cust.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.add_cust.Margin = New System.Windows.Forms.Padding(1)
         Me.add_cust.Name = "add_cust"
         Me.add_cust.Size = New System.Drawing.Size(56, 30)
         Me.add_cust.TabIndex = 45
@@ -862,103 +887,32 @@ Partial Class Customer_Rep
         Me.TabPage5.Controls.Add(Me.editFilter)
         Me.TabPage5.Controls.Add(Me.edit_cust)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage5.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.TabPage5.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Size = New System.Drawing.Size(1776, 687)
         Me.TabPage5.TabIndex = 6
         Me.TabPage5.Text = " Edit Customer"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
-        'TabPage6
+        'Label23
         '
-        Me.TabPage6.Controls.Add(Me.delAcctNum)
-        Me.TabPage6.Controls.Add(Me.delData)
-        Me.TabPage6.Controls.Add(Me.delSearch)
-        Me.TabPage6.Controls.Add(Me.Label37)
-        Me.TabPage6.Controls.Add(Me.del_cust)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage6.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1776, 687)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "Delete Customer"
-        Me.TabPage6.UseVisualStyleBackColor = True
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(33, 34)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(87, 13)
+        Me.Label23.TabIndex = 123
+        Me.Label23.Text = "Account Number"
         '
-        'TabPage3
+        'editSearch
         '
-        Me.TabPage3.Controls.Add(Me.Button2)
-        Me.TabPage3.Controls.Add(Me.Button1)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.TabPage3.Size = New System.Drawing.Size(1776, 687)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Tools"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(534, 258)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(139, 30)
-        Me.Button2.TabIndex = 46
-        Me.Button2.Text = "Movie Recommendations"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(262, 26)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(178, 34)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Generate Mailing List"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(19, 60)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(47, 13)
-        Me.Label18.TabIndex = 9
-        Me.Label18.Text = "Order ID"
-        '
-        'recOrderID
-        '
-        Me.recOrderID.AutoSize = True
-        Me.recOrderID.Location = New System.Drawing.Point(175, 60)
-        Me.recOrderID.Name = "recOrderID"
-        Me.recOrderID.Size = New System.Drawing.Size(0, 13)
-        Me.recOrderID.TabIndex = 10
-        '
-        'addAcctNum
-        '
-        Me.addAcctNum.AutoSize = True
-        Me.addAcctNum.Location = New System.Drawing.Point(561, 36)
-        Me.addAcctNum.Name = "addAcctNum"
-        Me.addAcctNum.Size = New System.Drawing.Size(0, 13)
-        Me.addAcctNum.TabIndex = 92
-        '
-        'edit_cust
-        '
-        Me.edit_cust.Enabled = False
-        Me.edit_cust.Location = New System.Drawing.Point(517, 478)
-        Me.edit_cust.Margin = New System.Windows.Forms.Padding(1)
-        Me.edit_cust.Name = "edit_cust"
-        Me.edit_cust.Size = New System.Drawing.Size(56, 30)
-        Me.edit_cust.TabIndex = 47
-        Me.edit_cust.Text = "Save"
-        Me.edit_cust.UseVisualStyleBackColor = True
-        '
-        'editFilter
-        '
-        Me.editFilter.Location = New System.Drawing.Point(136, 31)
-        Me.editFilter.Name = "editFilter"
-        Me.editFilter.Size = New System.Drawing.Size(159, 20)
-        Me.editFilter.TabIndex = 48
+        Me.editSearch.Location = New System.Drawing.Point(314, 25)
+        Me.editSearch.Margin = New System.Windows.Forms.Padding(1)
+        Me.editSearch.Name = "editSearch"
+        Me.editSearch.Size = New System.Drawing.Size(56, 30)
+        Me.editSearch.TabIndex = 122
+        Me.editSearch.Text = "Search"
+        Me.editSearch.UseVisualStyleBackColor = True
         '
         'editAcctNum
         '
@@ -1355,55 +1309,45 @@ Partial Class Customer_Rep
         Me.Label36.TabIndex = 93
         Me.Label36.Text = "Account Number"
         '
-        'editSearch
+        'editFilter
         '
-        Me.editSearch.Location = New System.Drawing.Point(314, 25)
-        Me.editSearch.Margin = New System.Windows.Forms.Padding(1)
-        Me.editSearch.Name = "editSearch"
-        Me.editSearch.Size = New System.Drawing.Size(56, 30)
-        Me.editSearch.TabIndex = 122
-        Me.editSearch.Text = "Search"
-        Me.editSearch.UseVisualStyleBackColor = True
+        Me.editFilter.Location = New System.Drawing.Point(136, 31)
+        Me.editFilter.Name = "editFilter"
+        Me.editFilter.Size = New System.Drawing.Size(159, 20)
+        Me.editFilter.TabIndex = 48
         '
-        'Label23
+        'edit_cust
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(33, 34)
-        Me.Label23.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(87, 13)
-        Me.Label23.TabIndex = 123
-        Me.Label23.Text = "Account Number"
+        Me.edit_cust.Enabled = False
+        Me.edit_cust.Location = New System.Drawing.Point(517, 478)
+        Me.edit_cust.Margin = New System.Windows.Forms.Padding(1)
+        Me.edit_cust.Name = "edit_cust"
+        Me.edit_cust.Size = New System.Drawing.Size(56, 30)
+        Me.edit_cust.TabIndex = 47
+        Me.edit_cust.Text = "Save"
+        Me.edit_cust.UseVisualStyleBackColor = True
         '
-        'del_cust
+        'TabPage6
         '
-        Me.del_cust.Enabled = False
-        Me.del_cust.Location = New System.Drawing.Point(486, 294)
-        Me.del_cust.Margin = New System.Windows.Forms.Padding(1)
-        Me.del_cust.Name = "del_cust"
-        Me.del_cust.Size = New System.Drawing.Size(56, 30)
-        Me.del_cust.TabIndex = 89
-        Me.del_cust.Text = "Delete"
-        Me.del_cust.UseVisualStyleBackColor = True
+        Me.TabPage6.Controls.Add(Me.delAcctNum)
+        Me.TabPage6.Controls.Add(Me.delData)
+        Me.TabPage6.Controls.Add(Me.delSearch)
+        Me.TabPage6.Controls.Add(Me.Label37)
+        Me.TabPage6.Controls.Add(Me.del_cust)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Margin = New System.Windows.Forms.Padding(1)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "Delete Customer"
+        Me.TabPage6.UseVisualStyleBackColor = True
         '
-        'Label37
+        'delAcctNum
         '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(309, 38)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(87, 13)
-        Me.Label37.TabIndex = 90
-        Me.Label37.Text = "Account Number"
-        '
-        'delSearch
-        '
-        Me.delSearch.Location = New System.Drawing.Point(579, 29)
-        Me.delSearch.Margin = New System.Windows.Forms.Padding(1)
-        Me.delSearch.Name = "delSearch"
-        Me.delSearch.Size = New System.Drawing.Size(56, 30)
-        Me.delSearch.TabIndex = 91
-        Me.delSearch.Text = "Search"
-        Me.delSearch.UseVisualStyleBackColor = True
+        Me.delAcctNum.Location = New System.Drawing.Point(433, 35)
+        Me.delAcctNum.Name = "delAcctNum"
+        Me.delAcctNum.Size = New System.Drawing.Size(100, 20)
+        Me.delAcctNum.TabIndex = 93
         '
         'delData
         '
@@ -1418,12 +1362,68 @@ Partial Class Customer_Rep
         Me.delData.Size = New System.Drawing.Size(1128, 125)
         Me.delData.TabIndex = 92
         '
-        'delAcctNum
+        'delSearch
         '
-        Me.delAcctNum.Location = New System.Drawing.Point(433, 35)
-        Me.delAcctNum.Name = "delAcctNum"
-        Me.delAcctNum.Size = New System.Drawing.Size(100, 20)
-        Me.delAcctNum.TabIndex = 93
+        Me.delSearch.Location = New System.Drawing.Point(579, 29)
+        Me.delSearch.Margin = New System.Windows.Forms.Padding(1)
+        Me.delSearch.Name = "delSearch"
+        Me.delSearch.Size = New System.Drawing.Size(56, 30)
+        Me.delSearch.TabIndex = 91
+        Me.delSearch.Text = "Search"
+        Me.delSearch.UseVisualStyleBackColor = True
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(309, 38)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(87, 13)
+        Me.Label37.TabIndex = 90
+        Me.Label37.Text = "Account Number"
+        '
+        'del_cust
+        '
+        Me.del_cust.Enabled = False
+        Me.del_cust.Location = New System.Drawing.Point(486, 294)
+        Me.del_cust.Margin = New System.Windows.Forms.Padding(1)
+        Me.del_cust.Name = "del_cust"
+        Me.del_cust.Size = New System.Drawing.Size(56, 30)
+        Me.del_cust.TabIndex = 89
+        Me.del_cust.Text = "Delete"
+        Me.del_cust.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.Button2)
+        Me.TabPage3.Controls.Add(Me.Button1)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(1)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(1)
+        Me.TabPage3.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Tools"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(534, 258)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(1)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(139, 30)
+        Me.Button2.TabIndex = 46
+        Me.Button2.Text = "Movie Recommendations"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(262, 26)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(1)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(178, 34)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Generate Mailing List"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Customer_Rep
         '
@@ -1431,10 +1431,13 @@ Partial Class Customer_Rep
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1291, 586)
+        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Customer_Rep"
         Me.Text = "Customer Representative"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -1454,17 +1457,17 @@ Partial Class Customer_Rep
         Me.Num1.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
-        Me.TabPage6.ResumeLayout(False)
-        Me.TabPage6.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
-        CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
         CType(Me.delData, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

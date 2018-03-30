@@ -78,4 +78,8 @@
     Private Sub MI_active_custs_btn_Click(sender As Object, e As EventArgs) Handles MI_active_custs_btn.Click
         Check_Most_Active.Show()
     End Sub
+
+    Private Sub Main_Manager_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Main_Interface
+    End Sub
 End Class

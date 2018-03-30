@@ -1,17 +1,10 @@
 ﻿
-
-' "COLLATE Latin1_General_CS_AS" used for case sensitivity
-
-' need to find out if a movie is unavailable based on rentals ***********************************************************
-' check the returned flags to see if 1 or 0 for this
-
 Public Class Customer_Interface
     Private SQL As New SQLControl
 
     Private Function GetAccount() As Integer
         Return CInt(Customer_Login.UserAccount()) ' convert string to integer 
     End Function
-
 
     Private Sub Customer_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
@@ -26,6 +19,7 @@ Public Class Customer_Interface
     End Sub
 
     Private Sub btnChangeInfo_Click(sender As Object, e As EventArgs) Handles btnChangeInfo.Click
+        Me.Hide() ' have it reapear after done
         Edit_Customer_Account.Show()
     End Sub
 
@@ -79,8 +73,8 @@ Public Class Customer_Interface
         Next
     End Sub
 
-    ' load the account information fields
-    Private Sub LoadData()
+    ' load the account information fields *************************************************************************** add username to the things to print out
+    Public Sub LoadData()
         Dim user As String = GetAccount()
 
         ' clear table
@@ -177,22 +171,11 @@ Public Class Customer_Interface
         txtRes.Text = ""
 
         ' MsgBox(GetAccount()) ' for test purposes
-        ' run the query
 
-        ' the problem is with the query ********************************************************************************************************************************
-        SQL.ExecuteQuery("SELECT movie_name as Movies " &
-                         "FROM Movie_Data " &
-                         "WHERE movie_type = (Select T1.movie_type " &
-                                             "FROM (SELECT movie_type, COUNT(movie_type) As ttl " &
-                                                   "FROM Movie_Data AS MD INNER JOIN Order_Data AS OD ON OD.movie_id=MD.movie_id " &
-                                                   "GROUP BY movie_type, account_number " &
-                                                   "HAVING account_number=" + GetAccount().ToString + ") as T1, " &
-                                                  "(SELECT movie_type, COUNT(movie_type) as ttl " &
-                                                   "FROM Movie_Data AS MD INNER JOIN Order_Data AS OD ON OD.movie_id=MD.movie_id " &
-                                                   "GROUP BY movie_type, account_number " &
-                                                   "HAVING account_number=" + GetAccount().ToString + ") as T2 " &
-                                             "WHERE T1.ttl > T2.ttl);")
-        '*****************************************************************************************************************************************************************
+        ' run the query for recommended
+        Dim Query As New Recommend
+        SQL = Query.Recommended(GetAccount().ToString)
+
         If SQL.HasException(True) Then Exit Sub
 
         ttlMovies = SQL.SQLTable.Rows.Count()
@@ -481,6 +464,10 @@ Public Class Customer_Interface
             ' update the entry
         End If
 
+    End Sub
+
+    Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click
+        ' for allowing a movie rental
     End Sub
 End Class
 
