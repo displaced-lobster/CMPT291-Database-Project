@@ -107,8 +107,7 @@ Public Class Edit_Customer_Account
         If streetNum.Text <> i.Item("street_num") And streetNum.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street_num=" + streetNum.Text + " WHERE account_number=" +
                                                                                                  accountNumber.ToString + ";")
         If street.Text <> i.Item("street") And street.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street='" + street.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
-
-        ' error with apartment, need to deal with when it goes back to null **********************************************************************************************************************
+        ' check to see if apt number need to be null or not
         If aptNum.Text <> i.Item("apartment_num").ToString And aptNum.Text = "" Then
             MsgBox("changing to null")
             SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num=NULL WHERE account_number=" + accountNumber.ToString + ";")

@@ -10,7 +10,7 @@
         addAcctNum.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
         recDate.Text = Today()
         SQL.ExecuteQuery("SELECT max(order_id) FROM order_data")
-        recOrderID.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString()
+        recOrderID.Text = (SQL.SQLTable.Rows(0).ItemArray(0) + 1).ToString() ' there is an error if the database has no orders at all, Can't load the customer rep page
 
     End Sub
 
