@@ -139,8 +139,12 @@ Partial Class Customer_Rep
         Me.del_cust = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.mailingList = New System.Windows.Forms.Button()
+        Me.AddressList = New System.Windows.Forms.ListBox()
+        Me.EmailList = New System.Windows.Forms.Button()
+        Me.Emails = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -157,6 +161,7 @@ Partial Class Customer_Rep
         CType(Me.delData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage7.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -179,6 +184,7 @@ Partial Class Customer_Rep
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
+        Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(12, 31)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(1)
@@ -323,7 +329,7 @@ Partial Class Customer_Rep
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage2.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage2.Size = New System.Drawing.Size(1669, 812)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Find Customer"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -441,7 +447,7 @@ Partial Class Customer_Rep
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage4.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage4.Size = New System.Drawing.Size(1669, 812)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Add Customer"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -889,7 +895,7 @@ Partial Class Customer_Rep
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage5.Size = New System.Drawing.Size(1669, 812)
         Me.TabPage5.TabIndex = 6
         Me.TabPage5.Text = " Edit Customer"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -906,7 +912,7 @@ Partial Class Customer_Rep
         '
         'editSearch
         '
-        Me.editSearch.Location = New System.Drawing.Point(314, 25)
+        Me.editSearch.Location = New System.Drawing.Point(321, 25)
         Me.editSearch.Margin = New System.Windows.Forms.Padding(1)
         Me.editSearch.Name = "editSearch"
         Me.editSearch.Size = New System.Drawing.Size(56, 30)
@@ -917,7 +923,7 @@ Partial Class Customer_Rep
         'editAcctNum
         '
         Me.editAcctNum.AutoSize = True
-        Me.editAcctNum.Location = New System.Drawing.Point(529, 30)
+        Me.editAcctNum.Location = New System.Drawing.Point(161, 78)
         Me.editAcctNum.Name = "editAcctNum"
         Me.editAcctNum.Size = New System.Drawing.Size(0, 13)
         Me.editAcctNum.TabIndex = 121
@@ -928,7 +934,7 @@ Partial Class Customer_Rep
         Me.GroupBox1.Controls.Add(Me.editUnlim2)
         Me.GroupBox1.Controls.Add(Me.editUnlim1)
         Me.GroupBox1.Controls.Add(Me.editLim)
-        Me.GroupBox1.Location = New System.Drawing.Point(393, 410)
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 458)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1)
@@ -990,7 +996,7 @@ Partial Class Customer_Rep
         Me.GroupBox2.Controls.Add(Me.RadioButton5)
         Me.GroupBox2.Controls.Add(Me.RadioButton6)
         Me.GroupBox2.Controls.Add(Me.RadioButton7)
-        Me.GroupBox2.Location = New System.Drawing.Point(562, 353)
+        Me.GroupBox2.Location = New System.Drawing.Point(194, 401)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1)
@@ -1039,7 +1045,7 @@ Partial Class Customer_Rep
         Me.GroupBox3.Controls.Add(Me.RadioButton8)
         Me.GroupBox3.Controls.Add(Me.RadioButton9)
         Me.GroupBox3.Controls.Add(Me.RadioButton10)
-        Me.GroupBox3.Location = New System.Drawing.Point(562, 321)
+        Me.GroupBox3.Location = New System.Drawing.Point(194, 369)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(1)
@@ -1085,7 +1091,7 @@ Partial Class Customer_Rep
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(403, 353)
+        Me.TextBox1.Location = New System.Drawing.Point(35, 401)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(1)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(138, 20)
@@ -1093,7 +1099,7 @@ Partial Class Customer_Rep
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(403, 324)
+        Me.TextBox2.Location = New System.Drawing.Point(35, 372)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(1)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(138, 20)
@@ -1102,7 +1108,7 @@ Partial Class Customer_Rep
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(401, 301)
+        Me.Label24.Location = New System.Drawing.Point(33, 349)
         Me.Label24.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(89, 13)
@@ -1111,7 +1117,7 @@ Partial Class Customer_Rep
         '
         'editCC
         '
-        Me.editCC.Location = New System.Drawing.Point(529, 144)
+        Me.editCC.Location = New System.Drawing.Point(161, 192)
         Me.editCC.Margin = New System.Windows.Forms.Padding(1)
         Me.editCC.Name = "editCC"
         Me.editCC.Size = New System.Drawing.Size(138, 20)
@@ -1119,7 +1125,7 @@ Partial Class Customer_Rep
         '
         'editEmail
         '
-        Me.editEmail.Location = New System.Drawing.Point(529, 114)
+        Me.editEmail.Location = New System.Drawing.Point(161, 162)
         Me.editEmail.Margin = New System.Windows.Forms.Padding(1)
         Me.editEmail.Name = "editEmail"
         Me.editEmail.Size = New System.Drawing.Size(138, 20)
@@ -1128,7 +1134,7 @@ Partial Class Customer_Rep
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(401, 139)
+        Me.Label25.Location = New System.Drawing.Point(33, 187)
         Me.Label25.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(59, 13)
@@ -1138,7 +1144,7 @@ Partial Class Customer_Rep
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(401, 114)
+        Me.Label26.Location = New System.Drawing.Point(33, 162)
         Me.Label26.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(32, 13)
@@ -1148,7 +1154,7 @@ Partial Class Customer_Rep
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(676, 266)
+        Me.Label27.Location = New System.Drawing.Point(308, 314)
         Me.Label27.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(22, 13)
@@ -1157,7 +1163,7 @@ Partial Class Customer_Rep
         '
         'editZip
         '
-        Me.editZip.Location = New System.Drawing.Point(678, 239)
+        Me.editZip.Location = New System.Drawing.Point(310, 287)
         Me.editZip.Margin = New System.Windows.Forms.Padding(1)
         Me.editZip.Name = "editZip"
         Me.editZip.Size = New System.Drawing.Size(67, 20)
@@ -1166,7 +1172,7 @@ Partial Class Customer_Rep
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(514, 266)
+        Me.Label28.Location = New System.Drawing.Point(146, 314)
         Me.Label28.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(32, 13)
@@ -1175,7 +1181,7 @@ Partial Class Customer_Rep
         '
         'editState
         '
-        Me.editState.Location = New System.Drawing.Point(517, 239)
+        Me.editState.Location = New System.Drawing.Point(149, 287)
         Me.editState.Margin = New System.Windows.Forms.Padding(1)
         Me.editState.Name = "editState"
         Me.editState.Size = New System.Drawing.Size(120, 20)
@@ -1184,7 +1190,7 @@ Partial Class Customer_Rep
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(401, 266)
+        Me.Label29.Location = New System.Drawing.Point(33, 314)
         Me.Label29.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(24, 13)
@@ -1193,7 +1199,7 @@ Partial Class Customer_Rep
         '
         'editCity
         '
-        Me.editCity.Location = New System.Drawing.Point(403, 239)
+        Me.editCity.Location = New System.Drawing.Point(35, 287)
         Me.editCity.Margin = New System.Windows.Forms.Padding(1)
         Me.editCity.Name = "editCity"
         Me.editCity.Size = New System.Drawing.Size(89, 20)
@@ -1202,7 +1208,7 @@ Partial Class Customer_Rep
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(664, 219)
+        Me.Label30.Location = New System.Drawing.Point(296, 267)
         Me.Label30.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(71, 13)
@@ -1212,7 +1218,7 @@ Partial Class Customer_Rep
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(480, 219)
+        Me.Label31.Location = New System.Drawing.Point(112, 267)
         Me.Label31.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(66, 13)
@@ -1222,7 +1228,7 @@ Partial Class Customer_Rep
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(401, 219)
+        Me.Label32.Location = New System.Drawing.Point(33, 267)
         Me.Label32.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(45, 13)
@@ -1231,7 +1237,7 @@ Partial Class Customer_Rep
         '
         'editAPTNum
         '
-        Me.editAPTNum.Location = New System.Drawing.Point(666, 197)
+        Me.editAPTNum.Location = New System.Drawing.Point(298, 245)
         Me.editAPTNum.Margin = New System.Windows.Forms.Padding(1)
         Me.editAPTNum.Name = "editAPTNum"
         Me.editAPTNum.Size = New System.Drawing.Size(79, 20)
@@ -1239,7 +1245,7 @@ Partial Class Customer_Rep
         '
         'editStreetName
         '
-        Me.editStreetName.Location = New System.Drawing.Point(482, 197)
+        Me.editStreetName.Location = New System.Drawing.Point(114, 245)
         Me.editStreetName.Margin = New System.Windows.Forms.Padding(1)
         Me.editStreetName.Name = "editStreetName"
         Me.editStreetName.Size = New System.Drawing.Size(154, 20)
@@ -1247,7 +1253,7 @@ Partial Class Customer_Rep
         '
         'editStreetNum
         '
-        Me.editStreetNum.Location = New System.Drawing.Point(403, 197)
+        Me.editStreetNum.Location = New System.Drawing.Point(35, 245)
         Me.editStreetNum.Margin = New System.Windows.Forms.Padding(1)
         Me.editStreetNum.Name = "editStreetNum"
         Me.editStreetNum.Size = New System.Drawing.Size(43, 20)
@@ -1256,7 +1262,7 @@ Partial Class Customer_Rep
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(401, 175)
+        Me.Label33.Location = New System.Drawing.Point(33, 223)
         Me.Label33.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(45, 13)
@@ -1265,7 +1271,7 @@ Partial Class Customer_Rep
         '
         'editLName
         '
-        Me.editLName.Location = New System.Drawing.Point(529, 88)
+        Me.editLName.Location = New System.Drawing.Point(161, 136)
         Me.editLName.Margin = New System.Windows.Forms.Padding(1)
         Me.editLName.Name = "editLName"
         Me.editLName.Size = New System.Drawing.Size(138, 20)
@@ -1273,7 +1279,7 @@ Partial Class Customer_Rep
         '
         'editFName
         '
-        Me.editFName.Location = New System.Drawing.Point(529, 59)
+        Me.editFName.Location = New System.Drawing.Point(161, 107)
         Me.editFName.Margin = New System.Windows.Forms.Padding(1)
         Me.editFName.Name = "editFName"
         Me.editFName.Size = New System.Drawing.Size(138, 20)
@@ -1282,7 +1288,7 @@ Partial Class Customer_Rep
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(401, 88)
+        Me.Label34.Location = New System.Drawing.Point(33, 136)
         Me.Label34.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(58, 13)
@@ -1292,7 +1298,7 @@ Partial Class Customer_Rep
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(401, 59)
+        Me.Label35.Location = New System.Drawing.Point(33, 107)
         Me.Label35.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(57, 13)
@@ -1302,7 +1308,7 @@ Partial Class Customer_Rep
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(401, 30)
+        Me.Label36.Location = New System.Drawing.Point(33, 78)
         Me.Label36.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(87, 13)
@@ -1311,7 +1317,7 @@ Partial Class Customer_Rep
         '
         'editFilter
         '
-        Me.editFilter.Location = New System.Drawing.Point(136, 31)
+        Me.editFilter.Location = New System.Drawing.Point(149, 31)
         Me.editFilter.Name = "editFilter"
         Me.editFilter.Size = New System.Drawing.Size(159, 20)
         Me.editFilter.TabIndex = 48
@@ -1319,7 +1325,7 @@ Partial Class Customer_Rep
         'edit_cust
         '
         Me.edit_cust.Enabled = False
-        Me.edit_cust.Location = New System.Drawing.Point(517, 478)
+        Me.edit_cust.Location = New System.Drawing.Point(149, 526)
         Me.edit_cust.Margin = New System.Windows.Forms.Padding(1)
         Me.edit_cust.Name = "edit_cust"
         Me.edit_cust.Size = New System.Drawing.Size(56, 30)
@@ -1337,7 +1343,7 @@ Partial Class Customer_Rep
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage6.Size = New System.Drawing.Size(1669, 812)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Delete Customer"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -1395,12 +1401,11 @@ Partial Class Customer_Rep
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.Button2)
-        Me.TabPage3.Controls.Add(Me.Button1)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage3.Size = New System.Drawing.Size(1776, 687)
+        Me.TabPage3.Size = New System.Drawing.Size(1669, 812)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tools"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1415,15 +1420,54 @@ Partial Class Customer_Rep
         Me.Button2.Text = "Movie Recommendations"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button1
+        'TabPage7
         '
-        Me.Button1.Location = New System.Drawing.Point(262, 26)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(178, 34)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Generate Mailing List"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TabPage7.Controls.Add(Me.Emails)
+        Me.TabPage7.Controls.Add(Me.EmailList)
+        Me.TabPage7.Controls.Add(Me.AddressList)
+        Me.TabPage7.Controls.Add(Me.mailingList)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Size = New System.Drawing.Size(1669, 812)
+        Me.TabPage7.TabIndex = 7
+        Me.TabPage7.Text = "Mailing List"
+        Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'mailingList
+        '
+        Me.mailingList.Location = New System.Drawing.Point(34, 26)
+        Me.mailingList.Margin = New System.Windows.Forms.Padding(1)
+        Me.mailingList.Name = "mailingList"
+        Me.mailingList.Size = New System.Drawing.Size(178, 34)
+        Me.mailingList.TabIndex = 1
+        Me.mailingList.Text = "Generate Mailing List"
+        Me.mailingList.UseVisualStyleBackColor = True
+        '
+        'AddressList
+        '
+        Me.AddressList.FormattingEnabled = True
+        Me.AddressList.Location = New System.Drawing.Point(34, 81)
+        Me.AddressList.Name = "AddressList"
+        Me.AddressList.Size = New System.Drawing.Size(512, 420)
+        Me.AddressList.TabIndex = 2
+        '
+        'EmailList
+        '
+        Me.EmailList.Location = New System.Drawing.Point(574, 26)
+        Me.EmailList.Margin = New System.Windows.Forms.Padding(1)
+        Me.EmailList.Name = "EmailList"
+        Me.EmailList.Size = New System.Drawing.Size(178, 34)
+        Me.EmailList.TabIndex = 3
+        Me.EmailList.Text = "Generate Email List"
+        Me.EmailList.UseVisualStyleBackColor = True
+        '
+        'Emails
+        '
+        Me.Emails.FormattingEnabled = True
+        Me.Emails.Location = New System.Drawing.Point(574, 81)
+        Me.Emails.Name = "Emails"
+        Me.Emails.Size = New System.Drawing.Size(234, 420)
+        Me.Emails.TabIndex = 4
         '
         'Customer_Rep
         '
@@ -1468,6 +1512,7 @@ Partial Class Customer_Rep
         CType(Me.delData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage7.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1487,7 +1532,6 @@ Partial Class Customer_Rep
     Friend WithEvents Find As Button
     Friend WithEvents recSIN As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents CMPT291ProjectDataSetBindingSource As BindingSource
     Friend WithEvents CustData As DataGridView
     Friend WithEvents FName As TextBox
@@ -1590,4 +1634,9 @@ Partial Class Customer_Rep
     Friend WithEvents delSearch As Button
     Friend WithEvents Label37 As Label
     Friend WithEvents del_cust As Button
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents mailingList As Button
+    Friend WithEvents AddressList As ListBox
+    Friend WithEvents Emails As ListBox
+    Friend WithEvents EmailList As Button
 End Class
