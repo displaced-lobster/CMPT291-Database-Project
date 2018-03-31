@@ -94,6 +94,7 @@
     <Compile Include="Check_Most_Active.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Recommendation.vb" />
     <Compile Include="CMPT291_ProjectDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
