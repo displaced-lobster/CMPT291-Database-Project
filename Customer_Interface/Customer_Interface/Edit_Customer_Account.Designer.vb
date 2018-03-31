@@ -66,6 +66,8 @@ Partial Class Edit_Customer_Account
         Me.lastName = New System.Windows.Forms.TextBox()
         Me.firstName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnRem2 = New System.Windows.Forms.Button()
+        Me.btnRem3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnExit
@@ -302,7 +304,7 @@ Partial Class Edit_Customer_Account
         '
         'num3
         '
-        Me.num3.Location = New System.Drawing.Point(21, 175)
+        Me.num3.Location = New System.Drawing.Point(22, 179)
         Me.num3.MaxLength = 11
         Me.num3.Name = "num3"
         Me.num3.Size = New System.Drawing.Size(125, 20)
@@ -313,8 +315,8 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop3.AllowDrop = True
         Me.phoneDrop3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop3.FormattingEnabled = True
-        Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
-        Me.phoneDrop3.Location = New System.Drawing.Point(152, 176)
+        Me.phoneDrop3.Items.AddRange(New Object() {"", "Home", "Work", "Mobile"})
+        Me.phoneDrop3.Location = New System.Drawing.Point(152, 178)
         Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
         Me.phoneDrop3.Size = New System.Drawing.Size(121, 21)
@@ -322,7 +324,7 @@ Partial Class Edit_Customer_Account
         '
         'num2
         '
-        Me.num2.Location = New System.Drawing.Point(21, 148)
+        Me.num2.Location = New System.Drawing.Point(21, 151)
         Me.num2.MaxLength = 11
         Me.num2.Name = "num2"
         Me.num2.Size = New System.Drawing.Size(125, 20)
@@ -333,8 +335,8 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop2.AllowDrop = True
         Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop2.FormattingEnabled = True
-        Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
-        Me.phoneDrop2.Location = New System.Drawing.Point(152, 147)
+        Me.phoneDrop2.Items.AddRange(New Object() {"", "Home", "Work", "Mobile"})
+        Me.phoneDrop2.Location = New System.Drawing.Point(152, 149)
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
         Me.phoneDrop2.Size = New System.Drawing.Size(121, 21)
@@ -467,12 +469,32 @@ Partial Class Edit_Customer_Account
         Me.Label1.TabIndex = 97
         Me.Label1.Text = "Personal Information"
         '
+        'btnRem2
+        '
+        Me.btnRem2.Location = New System.Drawing.Point(281, 149)
+        Me.btnRem2.Name = "btnRem2"
+        Me.btnRem2.Size = New System.Drawing.Size(102, 23)
+        Me.btnRem2.TabIndex = 141
+        Me.btnRem2.Text = "Remove Number"
+        Me.btnRem2.UseVisualStyleBackColor = True
+        '
+        'btnRem3
+        '
+        Me.btnRem3.Location = New System.Drawing.Point(281, 178)
+        Me.btnRem3.Name = "btnRem3"
+        Me.btnRem3.Size = New System.Drawing.Size(102, 23)
+        Me.btnRem3.TabIndex = 142
+        Me.btnRem3.Text = "Remove Number"
+        Me.btnRem3.UseVisualStyleBackColor = True
+        '
         'Edit_Customer_Account
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1184, 711)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnRem3)
+        Me.Controls.Add(Me.btnRem2)
         Me.Controls.Add(Me.txtPassCheck)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.txtPass)
@@ -571,4 +593,6 @@ Partial Class Edit_Customer_Account
     Friend WithEvents lastName As TextBox
     Friend WithEvents firstName As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnRem2 As Button
+    Friend WithEvents btnRem3 As Button
 End Class

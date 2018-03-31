@@ -31,12 +31,6 @@ Public Class Customer_SignUp
         ' address and payment info
         SQL.AddParam("@streetNum", streetNum.Text)
         SQL.AddParam("@street", street.Text)
-        ' need to figure out how to have aptNum put in null if not filled and not have it complain about it not being an int ********************************************************************** change
-        'If aptNum.Text = "" Then
-        'SQL.AddParam("@aptNum", "NULL")
-        'Else SQL.AddParam("@aptNum", aptNum.Text)
-        'End If
-        SQL.AddParam("@aptNum", aptNum.Text)
         SQL.AddParam("@city", city.Text)
         SQL.AddParam("@state", state.Text)
         SQL.AddParam("@zip", zip.Text)
@@ -46,13 +40,24 @@ Public Class Customer_SignUp
         ' create password account vitals
         SQL.AddParam("@username", txtUser.Text)
         SQL.AddParam("@password", txtPass.Text) '.GetHashCode() could hash if needed
-        ' set which ever membership
+        ' set whichever membership
         If limited.Checked = True Then SQL.AddParam("@membership", "limited")
         If unlim1.Checked = True Then SQL.AddParam("@membership", "unlimited1")
         If unlim2.Checked = True Then SQL.AddParam("@membership", "unlimited2")
         If unlim3.Checked = True Then SQL.AddParam("@membership", "unlimited3")
         ' add values to table
-        SQL.ExecuteQuery("INSERT INTO Customer_Data (account_number, first_name, last_name, city, " &
+        If aptNum.Text = "" Then
+            SQL.ExecuteQuery("INSERT INTO Customer_Data (account_number, first_name, last_name, city, " &
+                         "state, zip_code, street, street_num, apartment_num, email, creation_date, " &
+                         "credit_card_num, account_type) VALUES (@accNum, @first, @last, @city, @state, " &
+                         "@zip, @street, @streetNum, NULL, @email, @date, @cardNum, @membership); " &
+                         "INSERT INTO Customer_Passwords (account_number, username, password) " &
+                         "VALUES (@accNum, @username, @password); " &
+                         "INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, phone_type) " &
+                         "VALUES (@accNum, @phoneNum1, @phoneType1);")
+        Else
+            SQL.AddParam("@aptNum", aptNum.Text)
+            SQL.ExecuteQuery("INSERT INTO Customer_Data (account_number, first_name, last_name, city, " &
                          "state, zip_code, street, street_num, apartment_num, email, creation_date, " &
                          "credit_card_num, account_type) VALUES (@accNum, @first, @last, @city, @state, " &
                          "@zip, @street, @streetNum, @aptNum, @email, @date, @cardNum, @membership); " &
@@ -60,9 +65,14 @@ Public Class Customer_SignUp
                          "VALUES (@accNum, @username, @password); " &
                          "INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, phone_type) " &
                          "VALUES (@accNum, @phoneNum1, @phoneType1);")
+        End If
         If SQL.HasException(True) Then Exit Sub
+        addNumbers(accountNum)
+        MsgBox("User Created") ' inform user of account creation
+    End Sub
+    Private Sub addNumbers(accountNum As String) ' fill in the phone number fields
         ' check if phone number field is filled and add additional numbers
-        If phoneDrop2.Text <> "" Then
+        If phoneDrop2.Text <> "" And num2.Text <> "" Then
             SQL.AddParam("@phoneType2", phoneDrop2.Text)
             SQL.AddParam("@phoneNum2", num2.Text)
             SQL.AddParam("@accNum", accountNum)
@@ -70,7 +80,7 @@ Public Class Customer_SignUp
                              "VALUES (@accNum, @phoneNum2, @phoneType2);")
         End If
         If SQL.HasException(True) Then Exit Sub
-        If phoneDrop3.Text <> "" Then
+        If phoneDrop3.Text <> "" And num3.Text <> "" Then
             SQL.AddParam("@phoneType3", phoneDrop3.Text)
             SQL.AddParam("@phoneNum3", num3.Text)
             SQL.AddParam("@accNum", accountNum)
@@ -78,13 +88,10 @@ Public Class Customer_SignUp
                              "VALUES (@accNum, @phoneNum3, @phoneType3);")
         End If
         If SQL.HasException(True) Then Exit Sub
-        ' inform user of account creation
-        MsgBox("User Created") ' for test
     End Sub
-
     Private Function checkFields() As Boolean
-        If IsNumeric(num1.Text) AndAlso IsNumeric(num2.Text) AndAlso IsNumeric(num3.Text) AndAlso IsNumeric(streetNum.Text) AndAlso
-            IsNumeric(aptNum.Text) Or aptNum.Text = "" AndAlso IsNumeric(zip.Text) AndAlso IsNumeric(cardNum.Text) Then
+        If IsNumeric(num1.Text) AndAlso (IsNumeric(num2.Text) Or num2.Text = "") AndAlso (IsNumeric(num3.Text) Or num3.Text = "") AndAlso
+            IsNumeric(streetNum.Text) AndAlso (IsNumeric(aptNum.Text) Or aptNum.Text = "") AndAlso IsNumeric(zip.Text) AndAlso IsNumeric(cardNum.Text) Then
             Return True
         End If
         ' reset fields
@@ -105,6 +112,7 @@ Public Class Customer_SignUp
             streetNum.BackColor = Color.Yellow
         End If
         If Not IsNumeric(aptNum.Text) And aptNum.Text <> "" Then
+            'MsgBox(aptNum.Text)
             aptNum.Clear()
             aptNum.BackColor = Color.Yellow
         End If
@@ -158,7 +166,7 @@ Public Class Customer_SignUp
         End If
 
         ' check against SQL injection attacks
-        Dim invalid As String = " ,./<>?;'\:[]{}+_)(*&^%$#@!~=-`"""
+        Dim invalid As String = " ,./<>?;'\:[]{}+_)(*&^%$#@!~=`"""
         While txtUser.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
             MsgBox("There can be no non-alphanumeric characters in the username")
             txtUser.Clear()
@@ -187,7 +195,7 @@ Public Class Customer_SignUp
         Return True
     End Function
 
-    Private Function pwdCheck() As Boolean
+    Private Function pwdCheck() As Boolean ' check to make sure that the password fields match
         If txtPass.Text <> txtPassCheck.Text Then
             txtPass.Clear()
             txtPassCheck.Clear()

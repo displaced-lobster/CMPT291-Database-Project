@@ -23,22 +23,21 @@ Public Class Edit_Customer_Account
         'check for more rows after
         streetNum.Text = i.item("street_num")
         street.Text = i.item("street")
-        If i.item("apartment_num") <> "0" Then aptNum.Text = i.item("apartment_num") ' will be hopefully changed to null 
+        If i.item("apartment_num").ToString <> "NULL" Then aptNum.Text = i.item("apartment_num").ToString ' deals with null and not null values
         city.Text = i.item("city")
         state.Text = i.item("state")
         zip.Text = i.item("zip_code")
         cardNum.Text = i.item("credit_card_num")
         If i.item("account_type") = "limited" Then
             limited.Checked = True
-        ElseIf i.item("account_type") = "unlim1" Then
+        ElseIf i.item("account_type") = "unlimited1" Then
             unlim1.Checked = True
-        ElseIf i.item("account_type") = "unlim2" Then
+        ElseIf i.item("account_type") = "unlimited2" Then
             unlim2.Checked = True
-        ElseIf i.item("account_type") = "unlim3" Then
+        ElseIf i.item("account_type") = "unlimited3" Then
             unlim3.Checked = True
         End If
-        'txtUser.Text = i.item("username")
-
+        txtUser.Text = i.item("username")
         If rowNumbers = 2 Then
             i = SQL.SQLTable.Rows(1)
             phoneDrop2.Text = (i).Item("phone_type")
@@ -60,9 +59,29 @@ Public Class Edit_Customer_Account
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        ' maybe start turning these into a function
+        SQL.ExecuteQuery("SELECT * " &
+                         "FROM Customer_Data as CD INNER JOIN Customer_Passwords as CP ON CD.account_number = CP.account_number " &
+                         "    INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number;")
+        If SQL.HasException(True) Then Exit Sub
+        Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
+        Dim i As Object = SQL.SQLTable.Rows(0)
         ' check username and password
-        If IsUnique() = False Then Exit Sub
+        If txtUser.Text <> i.Item("username") Then
+            If IsUnique() = False Then Exit Sub ' add check to make sure that if they put in theyre old username that it does nothing
+        End If
         If pwdCheck() = False Then Exit Sub
+        ' check the numbers
+        If num2.Text = "" Xor phoneDrop2.Text = "" Then
+            num2.BackColor = Color.Yellow
+            MsgBox("Both fields must be filled in for phone number 2")
+            Exit Sub
+        End If
+        If num3.Text = "" Xor phoneDrop3.Text = "" Then
+            num3.BackColor = Color.Yellow
+            MsgBox("Both fields must be filled in for phone number 3")
+            Exit Sub
+        End If
         EditUser()
         ' exit page
         Me.Close()
@@ -78,8 +97,8 @@ Public Class Edit_Customer_Account
         If SQL.HasException(True) Then Exit Sub
         Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
         Dim i As Object = SQL.SQLTable.Rows(0)
+        Dim table As Object = SQL.SQLTable
         ' create SQL parameters to add
-        ' the updates don't work ***************************************************************************************************************************************************************
         If firstName.Text <> i.Item("first_name") And firstName.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET first_name='" + StrConv(firstName.Text, VbStrConv.ProperCase) +
                                                                                                  "' WHERE account_number=" + accountNumber.ToString + ";")
         If lastName.Text <> i.Item("last_name") And lastName.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET last_name='" + StrConv(lastName.Text, VbStrConv.ProperCase) +
@@ -87,32 +106,22 @@ Public Class Edit_Customer_Account
         If email.Text <> i.Item("email") And email.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET email='" + email.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
         If streetNum.Text <> i.Item("street_num") And streetNum.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street_num=" + streetNum.Text + " WHERE account_number=" +
                                                                                                  accountNumber.ToString + ";")
-        If street.Text <> i.Item("street") And street.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street='" + streetNum.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+        If street.Text <> i.Item("street") And street.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street='" + street.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+
         ' error with apartment, need to deal with when it goes back to null **********************************************************************************************************************
-        If aptNum.Text <> i.Item("apartment_num") Then SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num='" + aptNum.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+        If aptNum.Text <> i.Item("apartment_num").ToString And aptNum.Text = "" Then
+            MsgBox("changing to null")
+            SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num=NULL WHERE account_number=" + accountNumber.ToString + ";")
+        ElseIf aptNum.Text <> i.Item("apartment_num").ToString Then
+            SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num='" + aptNum.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
+        End If
 
         If city.Text <> i.Item("city") And city.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET city='" + city.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
         If state.Text <> i.Item("state") And state.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET state='" + state.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
         If zip.Text <> i.Item("zip_code") And zip.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET zip_code='" + zip.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
         If cardNum.Text <> i.Item("credit_card_num") And cardNum.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET credit_card_num='" + cardNum.Text + "' WHERE account_number=" +
                                                                                                   accountNumber.ToString + ";")
-        ' phone numbers
-        If phoneDrop1.Text <> i.Item("phone_type") And phoneDrop1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop1.Text + "' WHERE account_number=" +
-                                                                         accountNumber.ToString + " AND telephone_num=" + i.Item("telephone_num") + ";")
-        If num1.Text <> i.Item("telephone_num") And num1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num1.Text + "' WHERE account_number=" +
-                                                                      accountNumber.ToString + " AND telephone_num=" + i.Item("telephone_num") + ";")
-        If rowNumbers = 2 Then
-            If phoneDrop2.Text <> SQL.SQLTable.Rows(1).Item("phone_type") And phoneDrop2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop2.Text +
-                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(1).Item("telephone_num") + ";")
-            If num2.Text <> SQL.SQLTable.Rows(1).Item("telephone_num") And num2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num2.Text +
-                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(1).Item("telephone_num") + ";")
-        End If
-        If rowNumbers = 2 Then
-            If phoneDrop3.Text <> SQL.SQLTable.Rows(2).Item("phone_type") And phoneDrop3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop3.Text +
-                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(2).Item("telephone_num") + ";")
-            If num3.Text <> SQL.SQLTable.Rows(2).Item("telephone_num") And num3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num3.Text +
-                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + SQL.SQLTable.Rows(2).Item("telephone_num") + ";")
-        End If
+        updateNumbers(table, rowNumbers)
         ' account type ' not working yet
         If limited.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='limited' WHERE account_number=" + accountNumber.ToString + ";")
         If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim1' WHERE account_number=" + accountNumber.ToString + ";")
@@ -126,7 +135,44 @@ Public Class Edit_Customer_Account
 
         MsgBox("User has been updated") 'CreateObject("WScript.Shell").Popup("Welcome", 1, "Title") to have popup box that disappears
     End Sub
-
+    Private Sub updateNumbers(table As Object, rows As Integer) ' update, remove and add phone numbers as needed
+        ' update or remove a number from the table
+        If phoneDrop1.Text <> table.Rows(0).Item("phone_type") And phoneDrop1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop1.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(0).Item("telephone_num") + ";")
+        If num1.Text <> table.Rows(0).Item("telephone_num") And num1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num1.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(0).Item("telephone_num") + ";")
+        If rows = 2 Then
+            If phoneDrop2.Text <> table.Rows(1).Item("phone_type") And phoneDrop2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop2.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(1).Item("telephone_num") + ";")
+            If num2.Text <> table.Rows(1).Item("telephone_num") And num2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num2.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(1).Item("telephone_num") + ";")
+            If phoneDrop2.Text = "" And num2.Text = "" Then SQL.ExecuteQuery("DELETE FROM Customer_Phone_Numbers WHERE account_number='" + accountNumber.ToString + "' AND telephone_num='" +
+                                                                             table.Rows(1).Item("telephone_num") + "';")
+        End If
+        If rows = 3 Then
+            If phoneDrop3.Text <> table.Rows(2).Item("phone_type") And phoneDrop3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop3.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(2).Item("telephone_num") + ";")
+            If num3.Text <> table.Rows(1).Item("telephone_num") And num3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num3.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(2).Item("telephone_num") + ";")
+            If phoneDrop3.Text = "" And num3.Text = "" Then SQL.ExecuteQuery("DELETE FROM Customer_Phone_Numbers WHERE account_number='" + accountNumber.ToString + "' AND telephone_num='" +
+                                                                             table.Rows(2).Item("telephone_num") + "';")
+        End If
+        ' add new phone number entries
+        If phoneDrop2.Text <> "" And num2.Text <> "" Then
+            SQL.AddParam("@phoneType2", phoneDrop2.Text)
+            SQL.AddParam("@phoneNum2", num2.Text)
+            SQL.AddParam("@accNum", accountNumber)
+            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, phone_type) " &
+                                 "VALUES (@accNum, @phoneNum2, @phoneType2);")
+        End If
+        If phoneDrop3.Text <> "" And num3.Text <> "" Then
+            SQL.AddParam("@phoneType3", phoneDrop3.Text)
+            SQL.AddParam("@phoneNum3", num3.Text)
+            SQL.AddParam("@accNum", accountNumber)
+            SQL.ExecuteQuery("INSERT INTO Customer_Phone_Numbers (account_number, telephone_num, phone_type) " &
+                                 "VALUES (@accNum, @phoneNum3, @phoneType3);")
+        End If
+    End Sub
     Private Function IsUnique() As Boolean
         ' Clear Existing records
         If SQL.SQLTable IsNot Nothing Then
@@ -134,7 +180,7 @@ Public Class Edit_Customer_Account
         End If
 
         ' check against SQL injection attacks
-        Dim invalid As String = " ,./<>?;'\:[]{}+_)(*&^%$#@!~=-`"""
+        Dim invalid As String = " ,./<>?;'\:[]{}+_)(*&^%$#@!~=`"""
         While txtUser.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
             MsgBox("There can be no non-alphanumeric characters in the username")
             txtUser.Clear()
@@ -173,4 +219,13 @@ Public Class Edit_Customer_Account
         Return True
     End Function
 
+    Private Sub btnRem2_Click(sender As Object, e As EventArgs) Handles btnRem2.Click
+        num2.Clear()
+        phoneDrop2.Text = ""
+    End Sub
+
+    Private Sub btnRem3_Click(sender As Object, e As EventArgs) Handles btnRem3.Click
+        num3.Clear()
+        phoneDrop3.Text = ""
+    End Sub
 End Class
