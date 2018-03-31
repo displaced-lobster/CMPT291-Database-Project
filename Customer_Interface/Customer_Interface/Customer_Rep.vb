@@ -453,4 +453,18 @@
         FindOrderQueue()
         recAcctNum.Text = orderAcctNum.Text
     End Sub
+
+    Private Sub MovieRec_Click(sender As Object, e As EventArgs) Handles MovieRec.Click
+        Dim acct As String = FindMovieAcctNum.Text
+        RecMovies.Items.Clear()
+        If acct.Length > 0 Then
+            Dim movie_ids = Recommendation.GetRecommendations(Convert.ToInt32(acct))
+
+            For Each movie_id As Integer In movie_ids
+                SQL.AddParam("@movie", movie_id)
+                SQL.ExecuteQuery("SELECT movie_name FROM movie_data WHERE movie_id = @movie")
+                RecMovies.Items.Add(SQL.SQLTable.Rows(0).ItemArray(0))
+            Next
+        End If
+    End Sub
 End Class

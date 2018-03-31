@@ -26,6 +26,13 @@ Partial Class Customer_Rep
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.recMovieId = New System.Windows.Forms.ComboBox()
+        Me.recAcctNum = New System.Windows.Forms.Label()
+        Me.orderList = New System.Windows.Forms.ListBox()
+        Me.orderSearch = New System.Windows.Forms.Button()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.orderAcctNum = New System.Windows.Forms.TextBox()
+        Me.recSIN = New System.Windows.Forms.Label()
         Me.recOrderID = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -35,6 +42,8 @@ Partial Class Customer_Rep
         Me.Label2 = New System.Windows.Forms.Label()
         Me.recOrder = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.findEmail = New System.Windows.Forms.TextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.LName = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -44,6 +53,11 @@ Partial Class Customer_Rep
         Me.CustData = New System.Windows.Forms.DataGridView()
         Me.Find = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Cell3 = New System.Windows.Forms.RadioButton()
+        Me.Work3 = New System.Windows.Forms.RadioButton()
+        Me.Home3 = New System.Windows.Forms.RadioButton()
+        Me.addNum3 = New System.Windows.Forms.TextBox()
         Me.addAcctNum = New System.Windows.Forms.Label()
         Me.AcctType = New System.Windows.Forms.GroupBox()
         Me.Unlim3 = New System.Windows.Forms.RadioButton()
@@ -85,6 +99,11 @@ Partial Class Customer_Rep
         Me.Label5 = New System.Windows.Forms.Label()
         Me.add_cust = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.editCell3 = New System.Windows.Forms.RadioButton()
+        Me.editWork3 = New System.Windows.Forms.RadioButton()
+        Me.editHome3 = New System.Windows.Forms.RadioButton()
+        Me.editNum3 = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.editSearch = New System.Windows.Forms.Button()
         Me.editAcctNum = New System.Windows.Forms.Label()
@@ -140,36 +159,22 @@ Partial Class Customer_Rep
         Me.AddressList = New System.Windows.Forms.ListBox()
         Me.mailingList = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.MovieRec = New System.Windows.Forms.Button()
         Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.recSIN = New System.Windows.Forms.Label()
-        Me.orderAcctNum = New System.Windows.Forms.TextBox()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.orderSearch = New System.Windows.Forms.Button()
-        Me.orderList = New System.Windows.Forms.ListBox()
-        Me.recAcctNum = New System.Windows.Forms.Label()
-        Me.recMovieId = New System.Windows.Forms.ComboBox()
-        Me.findEmail = New System.Windows.Forms.TextBox()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Cell3 = New System.Windows.Forms.RadioButton()
-        Me.Work3 = New System.Windows.Forms.RadioButton()
-        Me.Home3 = New System.Windows.Forms.RadioButton()
-        Me.addNum3 = New System.Windows.Forms.TextBox()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.editCell3 = New System.Windows.Forms.RadioButton()
-        Me.editWork3 = New System.Windows.Forms.RadioButton()
-        Me.editHome3 = New System.Windows.Forms.RadioButton()
-        Me.editNum3 = New System.Windows.Forms.TextBox()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.FindMovieAcctNum = New System.Windows.Forms.TextBox()
+        Me.RecMovies = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.CustData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.AcctType.SuspendLayout()
         Me.Num2.SuspendLayout()
         Me.Num1.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -178,8 +183,6 @@ Partial Class Customer_Rep
         Me.TabPage7.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -236,6 +239,66 @@ Partial Class Customer_Rep
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Create Order"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'recMovieId
+        '
+        Me.recMovieId.FormattingEnabled = True
+        Me.recMovieId.Location = New System.Drawing.Point(182, 383)
+        Me.recMovieId.Name = "recMovieId"
+        Me.recMovieId.Size = New System.Drawing.Size(121, 21)
+        Me.recMovieId.TabIndex = 17
+        '
+        'recAcctNum
+        '
+        Me.recAcctNum.AutoSize = True
+        Me.recAcctNum.Location = New System.Drawing.Point(179, 360)
+        Me.recAcctNum.Name = "recAcctNum"
+        Me.recAcctNum.Size = New System.Drawing.Size(0, 13)
+        Me.recAcctNum.TabIndex = 16
+        '
+        'orderList
+        '
+        Me.orderList.FormattingEnabled = True
+        Me.orderList.Location = New System.Drawing.Point(26, 78)
+        Me.orderList.Name = "orderList"
+        Me.orderList.Size = New System.Drawing.Size(277, 238)
+        Me.orderList.TabIndex = 15
+        '
+        'orderSearch
+        '
+        Me.orderSearch.Location = New System.Drawing.Point(346, 36)
+        Me.orderSearch.Margin = New System.Windows.Forms.Padding(1)
+        Me.orderSearch.Name = "orderSearch"
+        Me.orderSearch.Size = New System.Drawing.Size(63, 32)
+        Me.orderSearch.TabIndex = 14
+        Me.orderSearch.Text = "Search"
+        Me.orderSearch.UseVisualStyleBackColor = True
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(23, 46)
+        Me.Label38.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(134, 13)
+        Me.Label38.TabIndex = 13
+        Me.Label38.Text = "Customer Account Number"
+        '
+        'orderAcctNum
+        '
+        Me.orderAcctNum.Location = New System.Drawing.Point(182, 43)
+        Me.orderAcctNum.Margin = New System.Windows.Forms.Padding(1)
+        Me.orderAcctNum.Name = "orderAcctNum"
+        Me.orderAcctNum.Size = New System.Drawing.Size(121, 20)
+        Me.orderAcctNum.TabIndex = 12
+        '
+        'recSIN
+        '
+        Me.recSIN.AutoSize = True
+        Me.recSIN.Location = New System.Drawing.Point(179, 443)
+        Me.recSIN.Name = "recSIN"
+        Me.recSIN.Size = New System.Drawing.Size(0, 13)
+        Me.recSIN.TabIndex = 11
         '
         'recOrderID
         '
@@ -333,6 +396,24 @@ Partial Class Customer_Rep
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Find Customer"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'findEmail
+        '
+        Me.findEmail.Location = New System.Drawing.Point(851, 30)
+        Me.findEmail.Margin = New System.Windows.Forms.Padding(1)
+        Me.findEmail.Name = "findEmail"
+        Me.findEmail.Size = New System.Drawing.Size(171, 20)
+        Me.findEmail.TabIndex = 54
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(817, 33)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(32, 13)
+        Me.Label39.TabIndex = 53
+        Me.Label39.Text = "Email"
         '
         'LName
         '
@@ -453,6 +534,63 @@ Partial Class Customer_Rep
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Add Customer"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.Cell3)
+        Me.GroupBox4.Controls.Add(Me.Work3)
+        Me.GroupBox4.Controls.Add(Me.Home3)
+        Me.GroupBox4.Location = New System.Drawing.Point(192, 391)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(1)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox4.Size = New System.Drawing.Size(171, 19)
+        Me.GroupBox4.TabIndex = 94
+        Me.GroupBox4.TabStop = False
+        '
+        'Cell3
+        '
+        Me.Cell3.AutoSize = True
+        Me.Cell3.Location = New System.Drawing.Point(126, 3)
+        Me.Cell3.Margin = New System.Windows.Forms.Padding(1)
+        Me.Cell3.Name = "Cell3"
+        Me.Cell3.Size = New System.Drawing.Size(42, 17)
+        Me.Cell3.TabIndex = 81
+        Me.Cell3.TabStop = True
+        Me.Cell3.Text = "Cell"
+        Me.Cell3.UseVisualStyleBackColor = True
+        '
+        'Work3
+        '
+        Me.Work3.AutoSize = True
+        Me.Work3.Location = New System.Drawing.Point(70, 3)
+        Me.Work3.Margin = New System.Windows.Forms.Padding(1)
+        Me.Work3.Name = "Work3"
+        Me.Work3.Size = New System.Drawing.Size(51, 17)
+        Me.Work3.TabIndex = 80
+        Me.Work3.TabStop = True
+        Me.Work3.Text = "Work"
+        Me.Work3.UseVisualStyleBackColor = True
+        '
+        'Home3
+        '
+        Me.Home3.AutoSize = True
+        Me.Home3.Location = New System.Drawing.Point(6, 3)
+        Me.Home3.Margin = New System.Windows.Forms.Padding(1)
+        Me.Home3.Name = "Home3"
+        Me.Home3.Size = New System.Drawing.Size(53, 17)
+        Me.Home3.TabIndex = 79
+        Me.Home3.TabStop = True
+        Me.Home3.Text = "Home"
+        Me.Home3.UseVisualStyleBackColor = True
+        '
+        'addNum3
+        '
+        Me.addNum3.Location = New System.Drawing.Point(33, 394)
+        Me.addNum3.Margin = New System.Windows.Forms.Padding(1)
+        Me.addNum3.Name = "addNum3"
+        Me.addNum3.Size = New System.Drawing.Size(138, 20)
+        Me.addNum3.TabIndex = 63
         '
         'addAcctNum
         '
@@ -903,6 +1041,63 @@ Partial Class Customer_Rep
         Me.TabPage5.TabIndex = 6
         Me.TabPage5.Text = " Edit Customer"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.editCell3)
+        Me.GroupBox5.Controls.Add(Me.editWork3)
+        Me.GroupBox5.Controls.Add(Me.editHome3)
+        Me.GroupBox5.Location = New System.Drawing.Point(194, 433)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(1)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox5.Size = New System.Drawing.Size(171, 19)
+        Me.GroupBox5.TabIndex = 125
+        Me.GroupBox5.TabStop = False
+        '
+        'editCell3
+        '
+        Me.editCell3.AutoSize = True
+        Me.editCell3.Location = New System.Drawing.Point(126, 3)
+        Me.editCell3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editCell3.Name = "editCell3"
+        Me.editCell3.Size = New System.Drawing.Size(42, 17)
+        Me.editCell3.TabIndex = 81
+        Me.editCell3.TabStop = True
+        Me.editCell3.Text = "Cell"
+        Me.editCell3.UseVisualStyleBackColor = True
+        '
+        'editWork3
+        '
+        Me.editWork3.AutoSize = True
+        Me.editWork3.Location = New System.Drawing.Point(70, 3)
+        Me.editWork3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editWork3.Name = "editWork3"
+        Me.editWork3.Size = New System.Drawing.Size(51, 17)
+        Me.editWork3.TabIndex = 80
+        Me.editWork3.TabStop = True
+        Me.editWork3.Text = "Work"
+        Me.editWork3.UseVisualStyleBackColor = True
+        '
+        'editHome3
+        '
+        Me.editHome3.AutoSize = True
+        Me.editHome3.Location = New System.Drawing.Point(6, 3)
+        Me.editHome3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editHome3.Name = "editHome3"
+        Me.editHome3.Size = New System.Drawing.Size(53, 17)
+        Me.editHome3.TabIndex = 79
+        Me.editHome3.TabStop = True
+        Me.editHome3.Text = "Home"
+        Me.editHome3.UseVisualStyleBackColor = True
+        '
+        'editNum3
+        '
+        Me.editNum3.Location = New System.Drawing.Point(35, 433)
+        Me.editNum3.Margin = New System.Windows.Forms.Padding(1)
+        Me.editNum3.Name = "editNum3"
+        Me.editNum3.Size = New System.Drawing.Size(138, 20)
+        Me.editNum3.TabIndex = 124
         '
         'Label23
         '
@@ -1453,217 +1648,52 @@ Partial Class Customer_Rep
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.Button2)
+        Me.TabPage3.Controls.Add(Me.RecMovies)
+        Me.TabPage3.Controls.Add(Me.FindMovieAcctNum)
+        Me.TabPage3.Controls.Add(Me.Label40)
+        Me.TabPage3.Controls.Add(Me.MovieRec)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(1)
         Me.TabPage3.Size = New System.Drawing.Size(1669, 812)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Tools"
+        Me.TabPage3.Text = "Movie Recommendations"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'Button2
+        'MovieRec
         '
-        Me.Button2.Location = New System.Drawing.Point(534, 258)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(139, 30)
-        Me.Button2.TabIndex = 46
-        Me.Button2.Text = "Movie Recommendations"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.MovieRec.Location = New System.Drawing.Point(316, 25)
+        Me.MovieRec.Margin = New System.Windows.Forms.Padding(1)
+        Me.MovieRec.Name = "MovieRec"
+        Me.MovieRec.Size = New System.Drawing.Size(139, 30)
+        Me.MovieRec.TabIndex = 46
+        Me.MovieRec.Text = "Movie Recommendations"
+        Me.MovieRec.UseVisualStyleBackColor = True
         '
-        'recSIN
+        'Label40
         '
-        Me.recSIN.AutoSize = True
-        Me.recSIN.Location = New System.Drawing.Point(179, 443)
-        Me.recSIN.Name = "recSIN"
-        Me.recSIN.Size = New System.Drawing.Size(0, 13)
-        Me.recSIN.TabIndex = 11
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(30, 34)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(87, 13)
+        Me.Label40.TabIndex = 47
+        Me.Label40.Text = "Account Number"
         '
-        'orderAcctNum
+        'FindMovieAcctNum
         '
-        Me.orderAcctNum.Location = New System.Drawing.Point(182, 43)
-        Me.orderAcctNum.Margin = New System.Windows.Forms.Padding(1)
-        Me.orderAcctNum.Name = "orderAcctNum"
-        Me.orderAcctNum.Size = New System.Drawing.Size(121, 20)
-        Me.orderAcctNum.TabIndex = 12
+        Me.FindMovieAcctNum.Location = New System.Drawing.Point(132, 31)
+        Me.FindMovieAcctNum.Name = "FindMovieAcctNum"
+        Me.FindMovieAcctNum.Size = New System.Drawing.Size(133, 20)
+        Me.FindMovieAcctNum.TabIndex = 48
         '
-        'Label38
+        'RecMovies
         '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(23, 46)
-        Me.Label38.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(134, 13)
-        Me.Label38.TabIndex = 13
-        Me.Label38.Text = "Customer Account Number"
-        '
-        'orderSearch
-        '
-        Me.orderSearch.Location = New System.Drawing.Point(346, 36)
-        Me.orderSearch.Margin = New System.Windows.Forms.Padding(1)
-        Me.orderSearch.Name = "orderSearch"
-        Me.orderSearch.Size = New System.Drawing.Size(63, 32)
-        Me.orderSearch.TabIndex = 14
-        Me.orderSearch.Text = "Search"
-        Me.orderSearch.UseVisualStyleBackColor = True
-        '
-        'orderList
-        '
-        Me.orderList.FormattingEnabled = True
-        Me.orderList.Location = New System.Drawing.Point(26, 78)
-        Me.orderList.Name = "orderList"
-        Me.orderList.Size = New System.Drawing.Size(277, 238)
-        Me.orderList.TabIndex = 15
-        '
-        'recAcctNum
-        '
-        Me.recAcctNum.AutoSize = True
-        Me.recAcctNum.Location = New System.Drawing.Point(179, 360)
-        Me.recAcctNum.Name = "recAcctNum"
-        Me.recAcctNum.Size = New System.Drawing.Size(0, 13)
-        Me.recAcctNum.TabIndex = 16
-        '
-        'recMovieId
-        '
-        Me.recMovieId.FormattingEnabled = True
-        Me.recMovieId.Location = New System.Drawing.Point(182, 383)
-        Me.recMovieId.Name = "recMovieId"
-        Me.recMovieId.Size = New System.Drawing.Size(121, 21)
-        Me.recMovieId.TabIndex = 17
-        '
-        'findEmail
-        '
-        Me.findEmail.Location = New System.Drawing.Point(851, 30)
-        Me.findEmail.Margin = New System.Windows.Forms.Padding(1)
-        Me.findEmail.Name = "findEmail"
-        Me.findEmail.Size = New System.Drawing.Size(171, 20)
-        Me.findEmail.TabIndex = 54
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(817, 33)
-        Me.Label39.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(32, 13)
-        Me.Label39.TabIndex = 53
-        Me.Label39.Text = "Email"
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.Cell3)
-        Me.GroupBox4.Controls.Add(Me.Work3)
-        Me.GroupBox4.Controls.Add(Me.Home3)
-        Me.GroupBox4.Location = New System.Drawing.Point(192, 391)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox4.Size = New System.Drawing.Size(171, 19)
-        Me.GroupBox4.TabIndex = 94
-        Me.GroupBox4.TabStop = False
-        '
-        'Cell3
-        '
-        Me.Cell3.AutoSize = True
-        Me.Cell3.Location = New System.Drawing.Point(126, 3)
-        Me.Cell3.Margin = New System.Windows.Forms.Padding(1)
-        Me.Cell3.Name = "Cell3"
-        Me.Cell3.Size = New System.Drawing.Size(42, 17)
-        Me.Cell3.TabIndex = 81
-        Me.Cell3.TabStop = True
-        Me.Cell3.Text = "Cell"
-        Me.Cell3.UseVisualStyleBackColor = True
-        '
-        'Work3
-        '
-        Me.Work3.AutoSize = True
-        Me.Work3.Location = New System.Drawing.Point(70, 3)
-        Me.Work3.Margin = New System.Windows.Forms.Padding(1)
-        Me.Work3.Name = "Work3"
-        Me.Work3.Size = New System.Drawing.Size(51, 17)
-        Me.Work3.TabIndex = 80
-        Me.Work3.TabStop = True
-        Me.Work3.Text = "Work"
-        Me.Work3.UseVisualStyleBackColor = True
-        '
-        'Home3
-        '
-        Me.Home3.AutoSize = True
-        Me.Home3.Location = New System.Drawing.Point(6, 3)
-        Me.Home3.Margin = New System.Windows.Forms.Padding(1)
-        Me.Home3.Name = "Home3"
-        Me.Home3.Size = New System.Drawing.Size(53, 17)
-        Me.Home3.TabIndex = 79
-        Me.Home3.TabStop = True
-        Me.Home3.Text = "Home"
-        Me.Home3.UseVisualStyleBackColor = True
-        '
-        'addNum3
-        '
-        Me.addNum3.Location = New System.Drawing.Point(33, 394)
-        Me.addNum3.Margin = New System.Windows.Forms.Padding(1)
-        Me.addNum3.Name = "addNum3"
-        Me.addNum3.Size = New System.Drawing.Size(138, 20)
-        Me.addNum3.TabIndex = 63
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.editCell3)
-        Me.GroupBox5.Controls.Add(Me.editWork3)
-        Me.GroupBox5.Controls.Add(Me.editHome3)
-        Me.GroupBox5.Location = New System.Drawing.Point(194, 433)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox5.Size = New System.Drawing.Size(171, 19)
-        Me.GroupBox5.TabIndex = 125
-        Me.GroupBox5.TabStop = False
-        '
-        'editCell3
-        '
-        Me.editCell3.AutoSize = True
-        Me.editCell3.Location = New System.Drawing.Point(126, 3)
-        Me.editCell3.Margin = New System.Windows.Forms.Padding(1)
-        Me.editCell3.Name = "editCell3"
-        Me.editCell3.Size = New System.Drawing.Size(42, 17)
-        Me.editCell3.TabIndex = 81
-        Me.editCell3.TabStop = True
-        Me.editCell3.Text = "Cell"
-        Me.editCell3.UseVisualStyleBackColor = True
-        '
-        'editWork3
-        '
-        Me.editWork3.AutoSize = True
-        Me.editWork3.Location = New System.Drawing.Point(70, 3)
-        Me.editWork3.Margin = New System.Windows.Forms.Padding(1)
-        Me.editWork3.Name = "editWork3"
-        Me.editWork3.Size = New System.Drawing.Size(51, 17)
-        Me.editWork3.TabIndex = 80
-        Me.editWork3.TabStop = True
-        Me.editWork3.Text = "Work"
-        Me.editWork3.UseVisualStyleBackColor = True
-        '
-        'editHome3
-        '
-        Me.editHome3.AutoSize = True
-        Me.editHome3.Location = New System.Drawing.Point(6, 3)
-        Me.editHome3.Margin = New System.Windows.Forms.Padding(1)
-        Me.editHome3.Name = "editHome3"
-        Me.editHome3.Size = New System.Drawing.Size(53, 17)
-        Me.editHome3.TabIndex = 79
-        Me.editHome3.TabStop = True
-        Me.editHome3.Text = "Home"
-        Me.editHome3.UseVisualStyleBackColor = True
-        '
-        'editNum3
-        '
-        Me.editNum3.Location = New System.Drawing.Point(35, 433)
-        Me.editNum3.Margin = New System.Windows.Forms.Padding(1)
-        Me.editNum3.Name = "editNum3"
-        Me.editNum3.Size = New System.Drawing.Size(138, 20)
-        Me.editNum3.TabIndex = 124
+        Me.RecMovies.FormattingEnabled = True
+        Me.RecMovies.Location = New System.Drawing.Point(33, 82)
+        Me.RecMovies.Name = "RecMovies"
+        Me.RecMovies.Size = New System.Drawing.Size(232, 407)
+        Me.RecMovies.TabIndex = 49
         '
         'Customer_Rep
         '
@@ -1689,6 +1719,8 @@ Partial Class Customer_Rep
         CType(Me.CustData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.AcctType.ResumeLayout(False)
         Me.AcctType.PerformLayout()
         Me.Num2.ResumeLayout(False)
@@ -1697,6 +1729,8 @@ Partial Class Customer_Rep
         Me.Num1.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -1708,11 +1742,8 @@ Partial Class Customer_Rep
         CType(Me.delData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         CType(Me.CMPT291ProjectDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1737,7 +1768,7 @@ Partial Class Customer_Rep
     Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents AcctNum As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents MovieRec As Button
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents Cell1 As RadioButton
     Friend WithEvents Work1 As RadioButton
@@ -1855,4 +1886,7 @@ Partial Class Customer_Rep
     Friend WithEvents editWork3 As RadioButton
     Friend WithEvents editHome3 As RadioButton
     Friend WithEvents editNum3 As TextBox
+    Friend WithEvents RecMovies As ListBox
+    Friend WithEvents FindMovieAcctNum As TextBox
+    Friend WithEvents Label40 As Label
 End Class
