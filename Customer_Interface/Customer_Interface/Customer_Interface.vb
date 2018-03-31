@@ -19,12 +19,9 @@ Public Class Customer_Interface
     End Sub
 
     Private Sub btnChangeInfo_Click(sender As Object, e As EventArgs) Handles btnChangeInfo.Click
+        ' opens the page to edit customer info
         Me.Hide() ' have it reapear after done
         Edit_Customer_Account.Show()
-    End Sub
-
-    Private Sub btnChangePass_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     ' load the past, current and queue fields for the customers account info with movies
@@ -82,14 +79,15 @@ Public Class Customer_Interface
             SQL.SQLTable.Clear()
         End If
 
-        SQL.ExecuteQuery("SELECT * FROM Customer_Data as CD INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number WHERE CPN.account_number = " + user + ";")
+        SQL.ExecuteQuery("SELECT * FROM Customer_Data as CD INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number=CPN.account_number " &
+                         "INNER JOIN Customer_Passwords as CP ON CP.account_number=CPN.account_number WHERE CPN.account_number = " + user + ";")
 
         txtUserName.Text = SQL.SQLTable.Rows(0).Item("first_name") & " " & SQL.SQLTable.Rows(0).Item("last_name") ' print User name
 
         Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
 
         Dim i As Object = SQL.SQLTable.Rows(0)
-        Dim accountNumber As String = i.Item("account_number")
+        Dim accountNumber As String = i.Item("account_number").ToString
         Dim fullName As String = i.Item("first_name") + " " + i.Item("last_name")
         Dim email As String = i.Item("email")
         Dim address As String = "#" & i.Item("apartment_num") & " " & i.Item("street_num") & " " & i.Item("street") & vbCrLf &
@@ -97,7 +95,8 @@ Public Class Customer_Interface
         Dim cardNum As String = i.Item("credit_card_num")
         Dim type As String = i.Item("account_type")
         Dim creation As String = i.Item("creation_date")
-        Dim phone1 As String = i.item("phone_type") + ": " + i.Item("telephone_num")
+        Dim phone1 As String = i.Item("phone_type") + ": " + i.Item("telephone_num")
+        Dim username As String = i.Item("username")
 
         If rowNumbers = 2 Then ' I recognize that this is overkill but it made managing the numbers easier
             Dim phone2 As String = SQL.SQLTable.Rows(1).Item("phone_type") + ": " + SQL.SQLTable.Rows(1).Item("telephone_num")
@@ -112,6 +111,7 @@ Public Class Customer_Interface
         'Print out current account information
         txtInfo.Text = "Account Number: " + accountNumber + vbCrLf +
                        "Name: " + fullName + vbCrLf +
+                       "Username: " + username + vbCrLf +
                        "Email: " + email + vbCrLf +
                        "Phone Number: " + vbCrLf + "    " + phone1 + vbCrLf + vbCrLf +
                        "Address: " + address + vbCrLf + vbCrLf +

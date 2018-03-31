@@ -9,9 +9,12 @@ Public Class Edit_Customer_Account
     Private Sub Edit_Customer_Account_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
 
-        SQL.ExecuteQuery("SELECT * " &
-                         "FROM Customer_Data as CD INNER JOIN Customer_Passwords as CP ON CD.account_number = CP.account_number " &
-                         "    INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number;")
+        'SQL.ExecuteQuery("SELECT * " &
+        '                 "FROM Customer_Data as CD INNER JOIN Customer_Passwords as CP ON CD.account_number = CP.account_number " &
+        '                 "    INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number ;")
+        SQL.ExecuteQuery("SELECT * FROM Customer_Data as CD INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number=CPN.account_number " &
+                         "INNER JOIN Customer_Passwords as CP ON CP.account_number=CPN.account_number WHERE CD.account_number = " + accountNumber.ToString + ";")
+
         Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
         Dim i As Object = SQL.SQLTable.Rows(0)
         ' load all fields with current information
