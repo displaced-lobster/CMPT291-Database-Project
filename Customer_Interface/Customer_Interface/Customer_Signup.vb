@@ -112,7 +112,6 @@ Public Class Customer_SignUp
             streetNum.BackColor = Color.Yellow
         End If
         If Not IsNumeric(aptNum.Text) And aptNum.Text <> "" Then
-            'MsgBox(aptNum.Text)
             aptNum.Clear()
             aptNum.BackColor = Color.Yellow
         End If
