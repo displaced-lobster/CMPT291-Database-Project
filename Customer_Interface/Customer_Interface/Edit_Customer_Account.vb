@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
+' need to fix, my changes didn't stick from merging
 Public Class Edit_Customer_Account
 
     Public accountNumber As Integer = CInt(Customer_Login.UserAccount())
@@ -65,7 +66,7 @@ Public Class Edit_Customer_Account
         ' maybe start turning these into a function
         SQL.ExecuteQuery("SELECT * " &
                          "FROM Customer_Data as CD INNER JOIN Customer_Passwords as CP ON CD.account_number = CP.account_number " &
-                         "    INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number;")
+                         "INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number AND CPN.account_number='" + accountNumber.ToString + "';")
         If SQL.HasException(True) Then Exit Sub
         Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
         Dim i As Object = SQL.SQLTable.Rows(0)
@@ -96,7 +97,7 @@ Public Class Edit_Customer_Account
         ' get current information for comparison
         SQL.ExecuteQuery("SELECT * " &
                          "FROM Customer_Data as CD INNER JOIN Customer_Passwords as CP ON CD.account_number = CP.account_number " &
-                         "    INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number;")
+                         "INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number = CPN.account_number AND CPN.account_number='" + accountNumber.ToString + "';")
         If SQL.HasException(True) Then Exit Sub
         Dim rowNumbers As Integer = SQL.SQLTable.Rows.Count()
         Dim i As Object = SQL.SQLTable.Rows(0)
@@ -126,9 +127,9 @@ Public Class Edit_Customer_Account
         updateNumbers(table, rowNumbers)
         ' account type
         If limited.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='limited' WHERE account_number=" + accountNumber.ToString + ";")
-        If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim1' WHERE account_number=" + accountNumber.ToString + ";")
-        If unlim2.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim2' WHERE account_number=" + accountNumber.ToString + ";")
-        If unlim3.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim3' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlimited1' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim2.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlimited2' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim3.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlimited3' WHERE account_number=" + accountNumber.ToString + ";")
         ' username and password
         If txtUser.Text <> i.Item("username") And txtUser.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Passwords SET username='" + txtUser.Text + "' WHERE account_number=" +
                                                                                            accountNumber.ToString + ";")
@@ -144,6 +145,7 @@ Public Class Edit_Customer_Account
         If num1.Text <> table.Rows(0).Item("telephone_num") And num1.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num1.Text +
                                                                       "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(0).Item("telephone_num") + ";")
         If rows = 2 Then
+
             If phoneDrop2.Text <> table.Rows(1).Item("phone_type") And phoneDrop2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop2.Text +
                                                                       "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(1).Item("telephone_num") + ";")
             If num2.Text <> table.Rows(1).Item("telephone_num") And num2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num2.Text +
@@ -152,6 +154,15 @@ Public Class Edit_Customer_Account
                                                                              table.Rows(1).Item("telephone_num") + "';")
         End If
         If rows = 3 Then
+
+            ' phone number 2
+            If phoneDrop2.Text <> table.Rows(1).Item("phone_type") And phoneDrop2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop2.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(1).Item("telephone_num") + ";")
+            If num2.Text <> table.Rows(1).Item("telephone_num") And num2.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num2.Text +
+                                                                      "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(1).Item("telephone_num") + ";")
+            If phoneDrop2.Text = "" And num2.Text = "" Then SQL.ExecuteQuery("DELETE FROM Customer_Phone_Numbers WHERE account_number='" + accountNumber.ToString + "' AND telephone_num='" +
+                                                                             table.Rows(1).Item("telephone_num") + "';")
+            ' phone number 3
             If phoneDrop3.Text <> table.Rows(2).Item("phone_type") And phoneDrop3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET phone_type='" + phoneDrop3.Text +
                                                                       "' WHERE account_number=" + accountNumber.ToString + " AND telephone_num=" + table.Rows(2).Item("telephone_num") + ";")
             If num3.Text <> table.Rows(1).Item("telephone_num") And num3.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Phone_Numbers SET telephone_num='" + num3.Text +

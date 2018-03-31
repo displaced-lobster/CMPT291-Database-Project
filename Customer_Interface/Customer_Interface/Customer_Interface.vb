@@ -1,4 +1,6 @@
 ﻿
+' Need to fix, my changes did not stick when merging
+
 Public Class Customer_Interface
     Private SQL As New SQLControl
 

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Random
 
-' fix cutsomer name capitalization after entered
+' error with phone numbers, need to fix *******************************************************************************
 
 Public Class Customer_SignUp
     Private SQL As New SQLControl
