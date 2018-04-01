@@ -193,27 +193,20 @@ Public Class Customer_Interface
         txtRes.Clear() ' clear the text field
         txtRes.Text = ""
 
-        ' MsgBox(GetAccount()) ' for test purposes
+        Dim Recommends As List(Of Integer) = Recommendation.GetRecommendations(GetAccount())
 
-        ' run the query for recommended
-        Dim Query As New Recommend
-        SQL = Query.Recommended(GetAccount().ToString)
+        ttlMovies = Recommends.Count
 
-        If SQL.HasException(True) Then Exit Sub
-
-        ttlMovies = SQL.SQLTable.Rows.Count()
         'DataGridView1.DataSource = SQL.SQLTable
 
-        If SQL.SQLTable.Rows.Count > 0 Then
-            For i As Integer = 0 To (ttlMovies - 1)
-                movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
-            Next
-            txtRes.Text = movieList ' display movies
+        For i As Integer = 0 To (ttlMovies - 1)
+            movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+        Next
+        txtRes.Text = movieList ' display movies
 
-            For i As Integer = 0 To (ttlMovies - 1)
-                movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-            Next
-        End If
+        For i As Integer = 0 To (ttlMovies - 1)
+            movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+        Next
 
     End Sub
 
