@@ -537,17 +537,17 @@ Public Class Customer_Interface
             MsgBox("You may rent a movie") ' for test purposes
 
         Else ' if account is an unlimited one, no need to check dates
-            If account_type = "unlimited1" Then
+            If account_type = "unlim1" Then
                 If rentCount > 0 Then
                     MsgBox("You are only allowed one rental at a time. Please return a movie first")
                     Exit Sub
                 End If
-            ElseIf account_type = "unlimited2" Then
+            ElseIf account_type = "unlim2" Then
                 If rentCount > 1 Then
                     MsgBox("You are only allowed two rentals at a time. Please return a movie first")
                     Exit Sub
                 End If
-            ElseIf account_type = "unlimited3" Then
+            ElseIf account_type = "unlim3" Then
                 If rentCount > 2 Then
                     MsgBox("You are only allowed three rentals at a time. Please return a movie first")
                     Exit Sub
