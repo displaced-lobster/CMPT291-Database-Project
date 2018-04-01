@@ -1,8 +1,4 @@
 ﻿Public Class Main_Manager_Interface
-    Private Sub Main_Manager_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MdiParent = Main_Interface
-    End Sub
-
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles MI_EmpTab.Click
 
     End Sub
@@ -72,7 +68,7 @@
     End Sub
 
     Private Sub MI_list_rentals_btn_Click(sender As Object, e As EventArgs) Handles MI_list_rentals_btn.Click
-        List_Current_Rentals.Show()
+        Current_Rentals.Show()
     End Sub
 
     Private Sub MI_sr_btn_Click(sender As Object, e As EventArgs) Handles MI_sr_btn.Click
