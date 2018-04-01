@@ -1,6 +1,4 @@
 ﻿
-' Need to fix, my changes did not stick when merging
-
 Public Class Customer_Interface
     Private SQL As New SQLControl
 
@@ -145,7 +143,7 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click ' need to change the query criteria for this
+    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click
         Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
         Dim movieList As String = ""
         ' clear table
@@ -179,7 +177,7 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click '**************************************************************** This needs work
+    Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click ' Recommendation algorithm has issues with a user having rented the movie multiple times
 
         Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
         Dim movieList As String = ""
@@ -227,7 +225,8 @@ Public Class Customer_Interface
         If txtSearch.Text = "" Then Exit Sub
 
         ' run the query
-        If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or Trim(txtSearch.Text.ToLower) = "drama" Or Trim(txtSearch.Text.ToLower) = "foreign" Then
+        If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or
+           Trim(txtSearch.Text.ToLower) = "drama" Or Trim(txtSearch.Text.ToLower) = "foreign" Then
             SQL.ExecuteQuery("SELECT movie_name AS Movies " &
                              "FROM Movie_Data " &
                              "WHERE movie_type LIKE '" + Trim(txtSearch.Text.ToLower) + "';")
@@ -259,14 +258,12 @@ Public Class Customer_Interface
                     End If
                 Next
             ElseIf rbActor.Checked = True Then
-                ' works for one name but not two at a time *********************************************************************************************** needs to be in comparison to a movie
-
                 queryString += "FROM Movie_Data AS MD FULL JOIN Acts_In AS AI ON MD.movie_id=AI.movie_id FULL JOIN Actor_Data as AD ON AI.actor_id=AD.actor_id WHERE "
                 For Each word As String In words
                     If word = words(ttl - 1) Then ' if at the end 
                         queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%')"
                     Else
-                        queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%') OR " ' changed from and to or
+                        queryString += "(first_name LIKE '%" + word + "%' OR last_name LIKE '%" + word + "%') OR " ' changed from AND to OR
                     End If
                 Next
             End If
@@ -462,7 +459,7 @@ Public Class Customer_Interface
         LoadMovies()
     End Sub
 
-    Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click ' could change this just to spit out a message and send the order to be filled by a rep ***************
+    Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click ' could change this just to spit out a message and send the order to be filled by a rep ***
         ' for allowing a movie rental
         ' need to check if the movie is available by counting the number of already rented versus the number that can be rented
         If SQL.SQLTable IsNot Nothing Then
@@ -511,7 +508,6 @@ Public Class Customer_Interface
         End If
         ' check to see if customer is allowed to rent 
         checkRent(user, account_type, movie_ID, rentCount)
-        ' move these updates into other sub routine? *********************************************************************************************************************************************
         'cbEditQueue.Items.Clear()
         'cbxQueue.Items.Clear()
         LoadMovies()
@@ -565,7 +561,8 @@ Public Class Customer_Interface
             SQL.SQLTable.Clear()
         End If
         ' find out how many copies of this movie are out being rented right now
-        SQL.ExecuteQuery("SELECT count(return_flag) as copies FROM Order_Data as OD INNER JOIN Movie_Data as MD ON OD.movie_id=MD.movie_id WHERE movie_id='" + movie_ID + "' AND return_flag = 0;")
+        SQL.ExecuteQuery("SELECT count(return_flag) as copies FROM Order_Data as OD INNER JOIN Movie_Data as MD ON OD.movie_id=MD.movie_id WHERE movie_id='" +
+                         movie_ID + "' AND return_flag = 0;")
         Dim movieCopiesOut As Integer
         If SQL.SQLTable.Rows.Count > 0 Then
             movieCopiesOut = SQL.SQLTable.Rows(0).Item("copies")
@@ -580,8 +577,9 @@ Public Class Customer_Interface
                 MsgBox("Unfortunately the title you are trying to rent is not in stock right now." + vbCrLf + "Please check back at a later date")
                 Exit Sub
             Else
-                ' ********************************************************************************************************************************************** Need to finish the actual rental
+                ' ********************************************************************************************************************************* Need to finish the actual rental
                 ' there are copies and you can rent it so go ahead
+                ' make sure to also create the rental history for the order
                 ' assign random employee to fill the order
                 ' remove from queue and add to rental list
                 ' reload data
@@ -591,7 +589,7 @@ Public Class Customer_Interface
         End If
     End Sub
 
-    Private Sub btnReturnMovie_Click(sender As Object, e As EventArgs) Handles btnReturnMovie.Click
+    Private Sub btnReturnMovie_Click(sender As Object, e As EventArgs) Handles btnReturnMovie.Click ' There is an error if the rating history does not exist for that rental *********
         ' return from the current rentals list
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
@@ -615,11 +613,12 @@ Public Class Customer_Interface
             SQL.SQLTable.Clear()
         End If
         ' get the order id
-        SQL.ExecuteQuery("SELECT order_id FROM Order_Data WHERE account_number='" + user + "';")
+        SQL.ExecuteQuery("SELECT order_id FROM Order_Data WHERE account_number='" + user + "' AND movie_id=" + movie_ID + ";")
         Dim orderNum As Integer
         If SQL.SQLTable.Rows.Count > 0 Then
             orderNum = SQL.SQLTable.Rows(0).Item("order_id").ToString
         End If
+        'MsgBox(orderNum) ' for test purposes
         ' remove from queue
         SQL.AddParam("@order_ID", orderNum)
         SQL.AddParam("@user_ID", user)
@@ -627,14 +626,15 @@ Public Class Customer_Interface
         ' remove from current rentals
         SQL.ExecuteQuery("UPDATE Order_Data " &
                          "SET return_flag=1 " &
-                         "WHERE account_number=@user_ID AND movie_id=@movie_ID AND order_id=@order_ID;") ' might need to check based on order_id as well **********************************
+                         "WHERE account_number=@user_ID AND movie_id=@movie_ID AND order_id=@order_ID;")
         If SQL.HasException(True) Then Exit Sub
         ' update Rental_History
-        SQL.AddParam("@user_ID", user)
-        SQL.AddParam("@order_ID", orderNum)
-        SQL.ExecuteQuery("INSERT INTO Rental_History (account_number, order_id)" &
-                         "VALUES (@user_ID, @order_ID);")
-        If SQL.HasException(True) Then Exit Sub
+        ' this might not actually belong here, probably move to rent movie *****************************************************************************************************
+        'SQL.AddParam("@user_ID", user)
+        'SQL.AddParam("@order_ID", orderNum)
+        'SQL.ExecuteQuery("INSERT INTO Rental_History (account_number, order_id)" &
+        '                 "VALUES (@user_ID, @order_ID);")
+        'If SQL.HasException(True) Then Exit Sub
 
         MsgBox("The movie """ + cbCurrentRentals.Text + """ has been returned")
         'cbCurrentRentals.Items.Clear()
