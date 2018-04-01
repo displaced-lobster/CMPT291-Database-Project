@@ -157,10 +157,11 @@ Public Class Customer_Interface
         txtRes.Clear() ' clear the text field
         txtRes.Text = ""
 
-        ' run the query
-        SQL.ExecuteQuery("SELECT DISTINCT(movie_name) AS Movies " &
-                         "FROM Movie_Data " &
-                         "WHERE rating >= 4; ")
+        ' run the query takes the top three most rented movies as the best sellers
+        SQL.ExecuteQuery("SELECT TOP 3 MD.movie_name AS Movies, COUNT(OD.order_id) as count " &
+                         "FROM Movie_Data as MD, Order_Data as OD " &
+                         "WHERE MD.movie_id=OD.movie_id " &
+                         "GROUP BY MD.movie_name ")
         If SQL.HasException(True) Then Exit Sub
 
         ttlMovies = SQL.SQLTable.Rows.Count()
@@ -463,8 +464,8 @@ Public Class Customer_Interface
                          "SET rating=" + averageRating.ToString + " " &
                          "WHERE movie_id=" + movie_ID.ToString + ";")
         MsgBox("Your rating has been submitted")
-        cbRateRes.Items.Clear()
-        cbRateRes.Text = ""
+        'cbRateRes.Items.Clear()
+        'cbRateRes.Text = ""
         LoadMovies()
     End Sub
 
