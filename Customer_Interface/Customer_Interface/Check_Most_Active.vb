@@ -30,13 +30,14 @@
                              "ORDER BY total_rented desc;")
         ElseIf sale_rep_rbutton.Checked = True Then
             ' Checking for most active sales reps.
-            SQL.ExecuteQuery("Select Top " & top_x_tb.Text & " E.SIN, E.first_name, E.last_name, COUNT(*) as total_rented " &
+            SQL.ExecuteQuery("Select Top " & top_x_tb.Text & " E.SIN, E.first_name, E.last_name, COUNT(*) as orders_overlooked " &
                              "From Employee_Data as E, Order_Data as O " &
                              "Where O.SIN = E.SIN " &
                              "GROUP BY E.SIN, E.first_name, E.last_name " &
-                             "ORDER BY total_rented desc;")
+                             "ORDER BY orders_overlooked desc;")
         End If
 
+        If SQL.HasException(True) Then Exit Sub
         data_grid_most_active.DataSource = SQL.SQLTable
     End Sub
 End Class

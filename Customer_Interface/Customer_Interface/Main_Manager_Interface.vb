@@ -1,4 +1,6 @@
 ﻿Public Class Main_Manager_Interface
+    Public SQL As New SQLControl
+
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles MI_EmpTab.Click
 
     End Sub
@@ -81,5 +83,49 @@
 
     Private Sub Main_Manager_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Main_Interface
+    End Sub
+
+    Private Sub MI_most_active_Click(sender As Object, e As EventArgs) Handles MI_most_active.Click
+
+    End Sub
+
+    Private Sub search_btn_Click(sender As Object, e As EventArgs) Handles search_btn.Click
+        If (MI_movie_id_tb.Text.Length > 0) Then
+            SQL.ExecuteQuery("Select * From Movie_Data Where movie_id = " & MI_movie_id_tb.Text & ";")
+
+            If SQL.HasException(True) Then Exit Sub
+
+            Try
+                MI_movie_title_tb.Text = Convert.ToString(SQL.SQLTable.Rows(0).Item("movie_name"))
+                MI_movie_type_tb.Text = Convert.ToString(SQL.SQLTable.Rows(0).Item("movie_type"))
+                MI_dist_fee_tb.Text = Convert.ToString(SQL.SQLTable.Rows(0).Item("distribution_fee"))
+                MI_inventory_tb.Text = Convert.ToString(SQL.SQLTable.Rows(0).Item("inventory"))
+            Catch
+                Exit Sub
+            End Try
+        End If
+    End Sub
+
+    Private Sub MI_add_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_add_movie_btn.Click
+        SQL.ExecuteQuery("INSERT INTO Movie_Data (movie_id, movie_name, movie_type, distribution_fee, inventory, rating) " &
+                         "VALUES (" & MI_movie_id_tb.Text & ", '" & MI_movie_title_tb.Text & "', '" &
+                         MI_movie_type_tb.Text & "', " & MI_dist_fee_tb.Text & ", " & MI_inventory_tb.Text & ", 0);")
+    End Sub
+
+    Private Sub MI_edit_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_edit_movie_btn.Click
+        SQL.ExecuteQuery("UPDATE Movie_Data " &
+                         "SET movie_name = '" & MI_movie_title_tb.Text & "', movie_type = '" & MI_movie_type_tb.Text &
+                         "', distribution_fee = " & MI_dist_fee_tb.Text & ", inventory = " & MI_inventory_tb.Text &
+                         " Where movie_id = " & MI_movie_id_tb.Text & ";")
+    End Sub
+
+    Private Sub MI_rem_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_rem_movie_btn.Click
+        SQL.ExecuteQuery("DELETE FROM Movie_Data Where movie_id = " & MI_movie_id_tb.Text & ";")
+
+        MI_movie_id_tb.Text = ""
+        MI_movie_title_tb.Text = ""
+        MI_movie_type_tb.Text = ""
+        MI_dist_fee_tb.Text = ""
+        MI_inventory_tb.Text = ""
     End Sub
 End Class
