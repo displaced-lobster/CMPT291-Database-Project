@@ -88,10 +88,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Check_Most_Active.Designer.vb">
-      <DependentUpon>Check_Most_Active.vb</DependentUpon>
+    <Compile Include="Current_Rentals.Designer.vb">
+      <DependentUpon>Current_Rentals.vb</DependentUpon>
     </Compile>
-    <Compile Include="Check_Most_Active.vb">
+    <Compile Include="Current_Rentals.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Recommendation.vb" />
@@ -143,10 +143,10 @@
     <Compile Include="List_All_Movies.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="List_Current_Rentals.Designer.vb">
-      <DependentUpon>List_Current_Rentals.vb</DependentUpon>
+    <Compile Include="Check_Most_Active.Designer.vb">
+      <DependentUpon>Check_Most_Active.vb</DependentUpon>
     </Compile>
-    <Compile Include="List_Current_Rentals.vb">
+    <Compile Include="Check_Most_Active.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main_Manager_Interface.Designer.vb">
@@ -192,8 +192,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Check_Most_Active.resx">
-      <DependentUpon>Check_Most_Active.vb</DependentUpon>
+    <EmbeddedResource Include="Current_Rentals.resx">
+      <DependentUpon>Current_Rentals.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Login.resx">
       <DependentUpon>Customer_Login.vb</DependentUpon>
@@ -216,8 +216,8 @@
     <EmbeddedResource Include="List_All_Movies.resx">
       <DependentUpon>List_All_Movies.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="List_Current_Rentals.resx">
-      <DependentUpon>List_Current_Rentals.vb</DependentUpon>
+    <EmbeddedResource Include="Check_Most_Active.resx">
+      <DependentUpon>Check_Most_Active.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Manager_Interface.resx">
       <DependentUpon>Main_Manager_Interface.vb</DependentUpon>

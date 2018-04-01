@@ -68,7 +68,7 @@
     End Sub
 
     Private Sub MI_list_rentals_btn_Click(sender As Object, e As EventArgs) Handles MI_list_rentals_btn.Click
-        List_Current_Rentals.Show()
+        Current_Rentals.Show()
     End Sub
 
     Private Sub MI_sr_btn_Click(sender As Object, e As EventArgs) Handles MI_sr_btn.Click
