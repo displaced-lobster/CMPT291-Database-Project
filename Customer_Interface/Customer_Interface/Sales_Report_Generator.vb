@@ -24,6 +24,8 @@
                          "Where O.movie_id = M.movie_id and YEAR(O.date) = " & year_textbox.Text &
                          " and MONTH(O.date) = " & month_textbox.Text & ";")
 
+        If SQL.HasException(True) Then Exit Sub
+
         ' Converting float to a string making sure it only has two decimal places.
         income_label.Text = Convert.ToString(FormatNumber(SQL.SQLTable.Rows(0).Item("Sum"), 2))
     End Sub

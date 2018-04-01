@@ -26,7 +26,7 @@
             ' Customer Name
             Dim strArr() As String = textbox_input.Text.Split(" ") ' Split name into two pieces in a string array
             If (strArr.Length <> 2) Then
-                SQL.ExecuteQuery("")
+                Exit Sub
             Else
                 SQL.ExecuteQuery("Select C.first_name, C.last_name, O.date " &
                                  "From Movie_Data as M, Order_Data as O, Customer_Data as C, Rental_History as R " &
@@ -35,6 +35,7 @@
             End If
         End If
 
-            data_grid_rentals.DataSource = SQL.SQLTable
+        If SQL.HasException(True) Then Exit Sub
+        data_grid_rentals.DataSource = SQL.SQLTable
     End Sub
 End Class

@@ -37,6 +37,7 @@
                              "ORDER BY orders_overlooked desc;")
         End If
 
+        If SQL.HasException(True) Then Exit Sub
         data_grid_most_active.DataSource = SQL.SQLTable
     End Sub
 End Class
