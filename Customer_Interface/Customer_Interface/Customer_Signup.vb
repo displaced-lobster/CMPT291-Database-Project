@@ -206,6 +206,7 @@ Public Class Customer_SignUp
         If SQL.SQLTable.Rows.Count() > 0 Then
             MsgBox("Username Already Exists", MsgBoxStyle.Critical, "LOGIN FAILED")
             txtPass.Clear()
+            txtPassCheck.Clear()
             txtUser.Clear()
             Return False
         End If

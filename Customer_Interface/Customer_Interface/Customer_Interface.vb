@@ -80,19 +80,18 @@ Public Class Customer_Interface
             cbEditQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
         Next
 
-        ' load pull down for movies that need to be rented
+        ' load pull down for movies that need to be rated
         cbRateRes.Items.Clear()
         If SQL.SQLTable IsNot Nothing Then
-            SQL.SQLTable.Clear()              'movie_name as Movies 
-        End If ' error under here ********************************************************************************************************** OD.return_flag=1 AND RH.rating=NULL AND 
-        SQL.ExecuteQuery("SELECT * " &
+            SQL.SQLTable.Clear()
+        End If
+        SQL.ExecuteQuery("SELECT movie_rating, movie_name " &
                          "FROM Order_Data as OD INNER JOIN Movie_Data as MD ON OD.movie_id=MD.movie_id INNER JOIN Rental_History as RH ON OD.order_id=RH.order_id " &
-                         "WHERE return_flag=1 AND OD.account_number=" & GetAccount() & ";")
+                         "WHERE return_flag=1 AND movie_rating IS NULL AND OD.account_number=" & GetAccount().ToString & ";")
         If SQL.HasException(True) Then Exit Sub
 
         ttlRows = SQL.SQLTable.Rows.Count()
-        MsgBox(SQL.SQLTable.Rows(0).Item("rating").ToString)
-        DataGridView1.DataSource = SQL.SQLTable
+        'MsgBox(ttlRows)
         For i As Integer = 0 To (ttlRows - 1)
             cbRateRes.Items.Add(SQL.SQLTable.Rows(i).Item("movie_name").ToString)
         Next
@@ -146,7 +145,7 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click
+    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click ' need to change the query criteria for this
         Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
         Dim movieList As String = ""
         ' clear table
@@ -402,7 +401,7 @@ Public Class Customer_Interface
 
     Private Sub btnRate_Click(sender As Object, e As EventArgs) Handles btnRate.Click
         'cbRateRes.Text
-        Dim rating As String
+        Dim rating As Integer
         If rb1.Checked Then
             rating = "1"
         ElseIf rb2.Checked Then
@@ -424,19 +423,49 @@ Public Class Customer_Interface
             Exit Sub
         End If
 
-        ' if based on rb actor or title
-        'If rbRateMovie.Checked Then
-        ' get the rating and adjust before updating
-        ' need a way of keeping track of the number of ratings for average **********************************************************************
-        'SQL.ExecuteQuery("")
-        ' update the entry
-        'ElseIf rbRateMovie.Checked Then
-        ' get the rating and adjust before updating
-        ' need a way of keeping track of the number of ratings for average **********************************************************************
-        'SQL.ExecuteQuery("")
-        ' update the entry
-        'End If
+        Dim movie_ID As Integer
+        SQL.ExecuteQuery("SELECT movie_id FROM Movie_Data WHERE movie_name='" + cbRateRes.Text + "';")
+        If SQL.SQLTable.Rows.Count > 0 Then
+            movie_ID = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+        Else
+            MsgBox("Sorry for the inconvenience. There was an internal error")
+            Exit Sub
+        End If
 
+        ' if all fields are filled out, calculate the new rating for the movie and update
+        Dim order_ID As Integer
+        SQL.ExecuteQuery("SELECT RH.order_id " &
+                         "From Rental_History AS RH, Order_Data AS OD " &
+                         "Where RH.account_number = OD.account_number And OD.account_number=" + GetAccount.ToString + " AND movie_id=" + movie_ID.ToString + " AND movie_rating IS NULL " &
+                         "GROUP BY RH.order_id;")
+
+        If SQL.SQLTable.Rows.Count > 0 Then
+            order_ID = SQL.SQLTable.Rows(0).Item("order_id").ToString
+        Else
+            MsgBox("There was an error and your rating was not recorded")
+            Exit Sub
+        End If
+        ' update the users rating into the table
+        SQL.ExecuteQuery("UPDATE Rental_History " &
+                         "SET movie_rating=" + rating.ToString + " " &
+                         "WHERE account_number=" + GetAccount().ToString + " AND order_id=" + order_ID.ToString + ";")
+        ' update the movies overall rating
+        ' apparently an aggregate cannot be used in an update statement... so extract average first and then update.
+        SQL.ExecuteQuery("SELECT round(avg(movie_rating*1.0), 2) as rating " &
+                         "FROM Rental_History AS RH INNER JOIN Order_Data AS OD ON RH.account_number=OD.account_number " &
+                         "WHERE movie_id=" + movie_ID.ToString + ";")
+        Dim averageRating As Decimal = 0
+        If SQL.SQLTable.Rows.Count > 0 Then
+            averageRating = SQL.SQLTable.Rows(0).Item("rating").ToString
+        End If
+        MsgBox(averageRating)
+        SQL.ExecuteQuery("UPDATE Movie_Data " &
+                         "SET rating=" + averageRating.ToString + " " &
+                         "WHERE movie_id=" + movie_ID.ToString + ";")
+        MsgBox("Your rating has been submitted")
+        cbRateRes.Items.Clear()
+        cbRateRes.Text = ""
+        LoadMovies()
     End Sub
 
     Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click ' could change this just to spit out a message and send the order to be filled by a rep ***************
