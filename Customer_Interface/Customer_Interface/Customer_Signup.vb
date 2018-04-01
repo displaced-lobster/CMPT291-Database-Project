@@ -1,8 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Random
 
-' error with phone numbers, need to fix *******************************************************************************
-
 Public Class Customer_SignUp
     Private SQL As New SQLControl
 
@@ -73,6 +71,7 @@ Public Class Customer_SignUp
     Private Sub addNumbers(accountNum As String) ' fill in the phone number fields
         ' check if phone number field is filled and add additional numbers
         If phoneDrop2.Text <> "" And num2.Text <> "" Then
+            MsgBox("phone 2")
             SQL.AddParam("@phoneType2", phoneDrop2.Text)
             SQL.AddParam("@phoneNum2", num2.Text)
             SQL.AddParam("@accNum", accountNum)
@@ -81,6 +80,7 @@ Public Class Customer_SignUp
         End If
         If SQL.HasException(True) Then Exit Sub
         If phoneDrop3.Text <> "" And num3.Text <> "" Then
+            MsgBox("phone 3")
             SQL.AddParam("@phoneType3", phoneDrop3.Text)
             SQL.AddParam("@phoneNum3", num3.Text)
             SQL.AddParam("@accNum", accountNum)
@@ -90,11 +90,29 @@ Public Class Customer_SignUp
         If SQL.HasException(True) Then Exit Sub
     End Sub
     Private Function checkFields() As Boolean
-        If IsNumeric(num1.Text) AndAlso (IsNumeric(num2.Text) Or num2.Text = "") AndAlso (IsNumeric(num3.Text) Or num3.Text = "") AndAlso
+        If (IsNumeric(num1.Text) AndAlso phoneDrop1.Text <> "") AndAlso
+            ((IsNumeric(num2.Text) AndAlso phoneDrop2.Text <> "") Or (num2.Text = "" AndAlso phoneDrop2.Text = "")) AndAlso
+            ((IsNumeric(num3.Text) AndAlso phoneDrop3.Text <> "") Or (num3.Text = "" AndAlso phoneDrop3.Text = "")) AndAlso
             IsNumeric(streetNum.Text) AndAlso (IsNumeric(aptNum.Text) Or aptNum.Text = "") AndAlso IsNumeric(zip.Text) AndAlso IsNumeric(cardNum.Text) Then
             Return True
         End If
-        ' reset fields
+        ' check the phone number fields to make sure they are filled in
+        If num1.Text = "" Xor phoneDrop1.Text = "" Then
+            num1.BackColor = Color.Yellow
+            MsgBox("Please fill in both the phone number and type")
+            Return False
+        End If
+        If num2.Text = "" Xor phoneDrop2.Text = "" Then
+            num2.BackColor = Color.Yellow
+            MsgBox("Please fill in both the phone number and type")
+            Return False
+        End If
+        If num3.Text = "" Xor phoneDrop3.Text = "" Then
+            num3.BackColor = Color.Yellow
+            MsgBox("Please fill in both the phone number and type")
+            Return False
+        End If
+        ' check numeric fields
         If Not IsNumeric(num1.Text) Then
             num1.Clear()
             num1.BackColor = Color.Yellow
