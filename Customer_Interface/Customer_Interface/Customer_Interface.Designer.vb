@@ -37,7 +37,6 @@ Partial Class Customer_Interface
         Me.txtInfo = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.cbRateRes = New System.Windows.Forms.ComboBox()
         Me.btnRate = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -72,7 +71,6 @@ Partial Class Customer_Interface
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -225,7 +223,6 @@ Partial Class Customer_Interface
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.DataGridView1)
         Me.GroupBox5.Controls.Add(Me.cbRateRes)
         Me.GroupBox5.Controls.Add(Me.btnRate)
         Me.GroupBox5.Controls.Add(Me.Label4)
@@ -236,14 +233,6 @@ Partial Class Customer_Interface
         Me.GroupBox5.TabIndex = 14
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Rate a Past Rental"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(88, 223)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(139, 134)
-        Me.DataGridView1.TabIndex = 6
         '
         'cbRateRes
         '
@@ -373,7 +362,7 @@ Partial Class Customer_Interface
         Me.rentMovie.Name = "rentMovie"
         Me.rentMovie.Size = New System.Drawing.Size(116, 23)
         Me.rentMovie.TabIndex = 14
-        Me.rentMovie.Text = "Rent a Movie"
+        Me.rentMovie.Text = "Rent Next Movie"
         Me.rentMovie.UseVisualStyleBackColor = True
         '
         'rbCategory
@@ -565,7 +554,6 @@ Partial Class Customer_Interface
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -605,7 +593,6 @@ Partial Class Customer_Interface
     Friend WithEvents rbActor As RadioButton
     Friend WithEvents rbTitle As RadioButton
     Friend WithEvents rbCategory As RadioButton
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnEditQueue As Button
     Friend WithEvents cbEditQueue As ComboBox
     Friend WithEvents cbCurrentRentals As ComboBox
