@@ -34,11 +34,11 @@ Public Class Edit_Customer_Account
         cardNum.Text = i.item("credit_card_num")
         If i.item("account_type") = "limited" Then
             limited.Checked = True
-        ElseIf i.item("account_type") = "unlimited1" Then
+        ElseIf i.item("account_type") = "unlim1" Then
             unlim1.Checked = True
-        ElseIf i.item("account_type") = "unlimited2" Then
+        ElseIf i.item("account_type") = "unlim2" Then
             unlim2.Checked = True
-        ElseIf i.item("account_type") = "unlimited3" Then
+        ElseIf i.item("account_type") = "unlim3" Then
             unlim3.Checked = True
         End If
         txtUser.Text = i.item("username")
@@ -127,9 +127,9 @@ Public Class Edit_Customer_Account
         updateNumbers(table, rowNumbers)
         ' account type
         If limited.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='limited' WHERE account_number=" + accountNumber.ToString + ";")
-        If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlimited1' WHERE account_number=" + accountNumber.ToString + ";")
-        If unlim2.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlimited2' WHERE account_number=" + accountNumber.ToString + ";")
-        If unlim3.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlimited3' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim1.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim1' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim2.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim2' WHERE account_number=" + accountNumber.ToString + ";")
+        If unlim3.Checked = True Then SQL.ExecuteQuery("UPDATE Customer_Data SET account_type='unlim3' WHERE account_number=" + accountNumber.ToString + ";")
         ' username and password
         If txtUser.Text <> i.Item("username") And txtUser.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Passwords SET username='" + txtUser.Text + "' WHERE account_number=" +
                                                                                            accountNumber.ToString + ";")

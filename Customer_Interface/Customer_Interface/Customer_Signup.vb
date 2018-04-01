@@ -40,9 +40,9 @@ Public Class Customer_SignUp
         SQL.AddParam("@password", txtPass.Text) '.GetHashCode() could hash if needed
         ' set whichever membership
         If limited.Checked = True Then SQL.AddParam("@membership", "limited")
-        If unlim1.Checked = True Then SQL.AddParam("@membership", "unlimited1")
-        If unlim2.Checked = True Then SQL.AddParam("@membership", "unlimited2")
-        If unlim3.Checked = True Then SQL.AddParam("@membership", "unlimited3")
+        If unlim1.Checked = True Then SQL.AddParam("@membership", "unlim1")
+        If unlim2.Checked = True Then SQL.AddParam("@membership", "unlim2")
+        If unlim3.Checked = True Then SQL.AddParam("@membership", "unlim3")
         ' add values to table
         If aptNum.Text = "" Then
             SQL.ExecuteQuery("INSERT INTO Customer_Data (account_number, first_name, last_name, city, " &
