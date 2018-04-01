@@ -10,30 +10,12 @@ C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Cu
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.exe
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.xml
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.pdb
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.exe.config
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.exe
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.pdb
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.xml
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbprojResolveAssemblyReference.cache
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Resources.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbproj.GenerateResource.cache
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbproj.CoreCompileInputs.cache
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.exe
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.xml
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.pdb
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Signup.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Rep.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Interface.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Test_Query_Page.resources
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Home_Page.resources
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_SignUp.resources
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Login.resources
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Interactions.resources
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Test_Query_Page.resources
 C:\Users\Richard\Google Drive\School\CMPT291\project\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Interface.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Login.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Interface.resources
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Edit_Customer_Account.resources
 C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.exe.config
 C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.exe
 C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.pdb
@@ -60,6 +42,7 @@ C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Custome
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Interface.resources
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Edit_Customer_Account.resources
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.List_All_Movies.resources
+C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.List_Current_Rentals.resources
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Manager_Interface.resources
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Test_Query_Page.resources
 C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Interface.resources
@@ -79,4 +62,28 @@ C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer
 C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.List_Current_Rentals.resources
 C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Manager_Interface.resources
 C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Sales_Report_Generator.resources
-C:\Users\Darian\source\repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Current_Rentals.resources
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Employee_Login.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.exe.config
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.exe
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.pdb
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.xml
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Check_Most_Active.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Login.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Rep.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_SignUp.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Interface.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Edit_Customer_Account.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Employee_Login.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.List_All_Movies.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.List_Current_Rentals.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Manager_Interface.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Sales_Report_Generator.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Test_Query_Page.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Main_Interface.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Resources.resources
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbproj.GenerateResource.cache
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbproj.CoreCompileInputs.cache
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.exe
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.xml
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.pdb
+C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbprojResolveAssemblyReference.cache
