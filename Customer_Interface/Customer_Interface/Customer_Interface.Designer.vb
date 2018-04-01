@@ -37,6 +37,9 @@ Partial Class Customer_Interface
         Me.txtInfo = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.cbRateRes = New System.Windows.Forms.ComboBox()
+        Me.btnRate = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.rb5 = New System.Windows.Forms.RadioButton()
@@ -55,7 +58,6 @@ Partial Class Customer_Interface
         Me.btnReturnMovie = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtRes = New System.Windows.Forms.TextBox()
         Me.btnPersonal = New System.Windows.Forms.Button()
         Me.btnBest = New System.Windows.Forms.Button()
@@ -64,18 +66,16 @@ Partial Class Customer_Interface
         Me.movieSelect = New System.Windows.Forms.ComboBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.txtUserName = New System.Windows.Forms.Label()
-        Me.btnRate = New System.Windows.Forms.Button()
-        Me.cbRateRes = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnExit
@@ -225,6 +225,7 @@ Partial Class Customer_Interface
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.DataGridView1)
         Me.GroupBox5.Controls.Add(Me.cbRateRes)
         Me.GroupBox5.Controls.Add(Me.btnRate)
         Me.GroupBox5.Controls.Add(Me.Label4)
@@ -235,6 +236,34 @@ Partial Class Customer_Interface
         Me.GroupBox5.TabIndex = 14
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Rate a Past Rental"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(88, 223)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(139, 134)
+        Me.DataGridView1.TabIndex = 6
+        '
+        'cbRateRes
+        '
+        Me.cbRateRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbRateRes.FormattingEnabled = True
+        Me.cbRateRes.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.cbRateRes.Location = New System.Drawing.Point(41, 128)
+        Me.cbRateRes.MaxDropDownItems = 50
+        Me.cbRateRes.Name = "cbRateRes"
+        Me.cbRateRes.Size = New System.Drawing.Size(186, 21)
+        Me.cbRateRes.TabIndex = 16
+        '
+        'btnRate
+        '
+        Me.btnRate.Location = New System.Drawing.Point(234, 126)
+        Me.btnRate.Name = "btnRate"
+        Me.btnRate.Size = New System.Drawing.Size(89, 23)
+        Me.btnRate.TabIndex = 17
+        Me.btnRate.Text = "Rate"
+        Me.btnRate.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -375,7 +404,7 @@ Partial Class Customer_Interface
         Me.btnEditQueue.Name = "btnEditQueue"
         Me.btnEditQueue.Size = New System.Drawing.Size(116, 23)
         Me.btnEditQueue.TabIndex = 11
-        Me.btnEditQueue.Text = "Edit Movie Queue"
+        Me.btnEditQueue.Text = "Remove from Queue"
         Me.btnEditQueue.UseVisualStyleBackColor = True
         '
         'rbActor
@@ -432,7 +461,6 @@ Partial Class Customer_Interface
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.DataGridView1)
         Me.GroupBox4.Controls.Add(Me.txtRes)
         Me.GroupBox4.Location = New System.Drawing.Point(7, 128)
         Me.GroupBox4.Name = "GroupBox4"
@@ -440,14 +468,6 @@ Partial Class Customer_Interface
         Me.GroupBox4.TabIndex = 7
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Results"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(302, 20)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(139, 134)
-        Me.DataGridView1.TabIndex = 6
         '
         'txtRes
         '
@@ -522,26 +542,6 @@ Partial Class Customer_Interface
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
         '
-        'btnRate
-        '
-        Me.btnRate.Location = New System.Drawing.Point(234, 126)
-        Me.btnRate.Name = "btnRate"
-        Me.btnRate.Size = New System.Drawing.Size(89, 23)
-        Me.btnRate.TabIndex = 17
-        Me.btnRate.Text = "Rate"
-        Me.btnRate.UseVisualStyleBackColor = True
-        '
-        'cbRateRes
-        '
-        Me.cbRateRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbRateRes.FormattingEnabled = True
-        Me.cbRateRes.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.cbRateRes.Location = New System.Drawing.Point(41, 128)
-        Me.cbRateRes.MaxDropDownItems = 50
-        Me.cbRateRes.Name = "cbRateRes"
-        Me.cbRateRes.Size = New System.Drawing.Size(186, 21)
-        Me.cbRateRes.TabIndex = 16
-        '
         'Customer_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -565,13 +565,13 @@ Partial Class Customer_Interface
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -188,7 +188,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop1.AllowDrop = True
         Me.phoneDrop1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop1.FormattingEnabled = True
-        Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
+        Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Cell"})
         Me.phoneDrop1.Location = New System.Drawing.Point(151, 132)
         Me.phoneDrop1.MaxDropDownItems = 3
         Me.phoneDrop1.Name = "phoneDrop1"
@@ -200,7 +200,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop2.AllowDrop = True
         Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop2.FormattingEnabled = True
-        Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
+        Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Cell"})
         Me.phoneDrop2.Location = New System.Drawing.Point(151, 157)
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
@@ -228,7 +228,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop3.AllowDrop = True
         Me.phoneDrop3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop3.FormattingEnabled = True
-        Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Mobile"})
+        Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Cell"})
         Me.phoneDrop3.Location = New System.Drawing.Point(151, 186)
         Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
