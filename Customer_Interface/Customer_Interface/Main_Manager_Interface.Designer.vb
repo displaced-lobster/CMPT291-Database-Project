@@ -308,9 +308,9 @@ Partial Class Main_Manager_Interface
         '
         'emp_search_btn
         '
-        Me.emp_search_btn.Location = New System.Drawing.Point(186, 52)
+        Me.emp_search_btn.Location = New System.Drawing.Point(186, 47)
         Me.emp_search_btn.Name = "emp_search_btn"
-        Me.emp_search_btn.Size = New System.Drawing.Size(75, 26)
+        Me.emp_search_btn.Size = New System.Drawing.Size(75, 36)
         Me.emp_search_btn.TabIndex = 40
         Me.emp_search_btn.Text = "Search"
         Me.emp_search_btn.UseVisualStyleBackColor = True
