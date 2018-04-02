@@ -2,32 +2,33 @@
 Public Class Customer_Interface
     Private SQL As New SQLControl
 
-    Private Function GetAccount() As Integer
+    Private Function GetAccount() As Integer ' This works ************************************************************************************************************** DONE
         Return CInt(Customer_Login.UserAccount()) ' convert string to integer 
     End Function
 
-    Private Sub Customer_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Customer_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load ' This works ************************************************************** DONE
         MdiParent = Main_Interface
+        txtRes.ScrollBars = ScrollBars.Vertical ' enables the scroll bar for text box
         LoadData()
         LoadMovies()
     End Sub
 
-    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click ' This Works *********************************************************************** DONE
         Me.Close()
         Customer_Login.Close() ' terminate the session
         MsgBox("Current Session Closed")
     End Sub
 
-    Private Sub btnChangeInfo_Click(sender As Object, e As EventArgs) Handles btnChangeInfo.Click
-        ' opens the page to edit customer info
-        Me.Hide() ' have it reapear after done
+    Private Sub btnChangeInfo_Click(sender As Object, e As EventArgs) Handles btnChangeInfo.Click ' This works ************************************************************ DONE
+        ' opens the page to edit customer info and hides the current page
+        Me.Hide()
         Edit_Customer_Account.Show()
     End Sub
 
     ' load the past, current and queue fields for the customers account info with movies
     Private Sub LoadMovies()
-        cbxPrev.Items.Clear()
-
+        ' load pull down for past movies rented  ******************************************************************************************************* works how I expect DONE
+        cbxPrev.Items.Clear() ' refresh the list
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
@@ -35,16 +36,14 @@ Public Class Customer_Interface
                          "FROM Order_Data as OD, Movie_Data as MD " &
                          "WHERE OD.movie_id = MD.movie_id AND return_flag = 1 AND account_number = " & CInt(GetAccount()) & ";")
         If SQL.HasException(True) Then Exit Sub
-
         Dim ttlRows As Integer = SQL.SQLTable.Rows.Count()
         For i As Integer = 0 To (ttlRows - 1)
             cbxPrev.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
         Next
 
-        ' load pull down current movies
-        cbxCur.Items.Clear()
+        ' load pull down current movies ************************************************************************************************************* works how I expect, DONE
+        cbxCur.Items.Clear() ' refresh the list
         cbCurrentRentals.Items().Clear()
-
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
@@ -52,24 +51,22 @@ Public Class Customer_Interface
                          "FROM Order_Data as OD, Movie_Data as MD " &
                          "WHERE OD.movie_id = MD.movie_id AND return_flag = 0 AND account_number = " & GetAccount() & ";")
         If SQL.HasException(True) Then Exit Sub
-
         ttlRows = SQL.SQLTable.Rows.Count()
         For i As Integer = 0 To (ttlRows - 1)
             cbxCur.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
             cbCurrentRentals.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
         Next
 
-        ' load pull down for order queue
+        ' load pull down for order queue ***************************************************************************************************** Works how I expect it to, DONE
         cbxQueue.Items.Clear() ' refresh the list
         cbEditQueue.Items.Clear()
-
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
         SQL.ExecuteQuery("SELECT DISTINCT(movie_name) as Movies, date " &
                          "FROM Order_Queue as OQ, Movie_Data as MD " &
                          "WHERE OQ.movie_id = MD.movie_id AND account_number = " & GetAccount() &
-                         "ORDER BY date ASC;")
+                         "ORDER BY date ASC;") ' order from oldest in queue to most recent
         If SQL.HasException(True) Then Exit Sub
 
         ttlRows = SQL.SQLTable.Rows.Count()
@@ -78,8 +75,8 @@ Public Class Customer_Interface
             cbEditQueue.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
         Next
 
-        ' load pull down for movies that need to be rated
-        cbRateRes.Items.Clear()
+        ' load pull down for past movies that need to be rated ********************************************************************************* Works how I expect it to, DONE
+        cbRateRes.Items.Clear() ' refresh the list
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
@@ -87,22 +84,20 @@ Public Class Customer_Interface
                          "FROM Order_Data as OD INNER JOIN Movie_Data as MD ON OD.movie_id=MD.movie_id INNER JOIN Rental_History as RH ON OD.order_id=RH.order_id " &
                          "WHERE return_flag=1 AND movie_rating IS NULL AND OD.account_number=" & GetAccount().ToString & ";")
         If SQL.HasException(True) Then Exit Sub
-
         ttlRows = SQL.SQLTable.Rows.Count()
-        'MsgBox(ttlRows)
         For i As Integer = 0 To (ttlRows - 1)
             cbRateRes.Items.Add(SQL.SQLTable.Rows(i).Item("movie_name").ToString)
         Next
 
     End Sub
 
-    Public Sub LoadData()
+    Public Sub LoadData() ' Works how I expect ******************************************************************************************************************* DONE
         Dim user As String = GetAccount()
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
-
+        ' get the users information
         SQL.ExecuteQuery("SELECT * FROM Customer_Data as CD INNER JOIN Customer_Phone_Numbers as CPN ON CD.account_number=CPN.account_number " &
                          "INNER JOIN Customer_Passwords as CP ON CP.account_number=CPN.account_number WHERE CPN.account_number = " + user + ";")
         If SQL.HasException(True) Then Exit Sub
@@ -143,7 +138,7 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click
+    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click ' seems to work ******************************************************************* DONE
         Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
         Dim movieList As String = ""
         ' clear table
@@ -208,7 +203,7 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click ' seems to work how I expect it to ****************************************** DONE 
         Dim ttlMovies As Integer = SQL.SQLTable.Rows.Count()
         Dim movieList As String = ""
 
@@ -221,8 +216,7 @@ Public Class Customer_Interface
         movieSelect.Refresh() ' need to figure out how to get the list to shrink back down
         txtRes.Clear() ' clear the text field
         txtRes.Text = ""
-
-        If txtSearch.Text = "" Then Exit Sub
+        If txtSearch.Text = "" Then Exit Sub ' to take care of when the user has entered nothing at all
 
         ' run the query
         If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or
@@ -267,8 +261,6 @@ Public Class Customer_Interface
                     End If
                 Next
             End If
-            'MsgBox(queryString) 'for test purposes
-
             ' print out query
             SQL.ExecuteQuery(queryString)
             If SQL.HasException(True) Then Exit Sub
@@ -291,70 +283,58 @@ Public Class Customer_Interface
 
     End Sub
 
-    Private Sub search_param_CheckedChanged(sender As Object, e As EventArgs) Handles rbCategory.CheckedChanged, rbTitle.CheckedChanged, rbActor.CheckedChanged
+    Private Sub search_param_CheckedChanged(sender As Object, e As EventArgs) Handles rbCategory.CheckedChanged, rbTitle.CheckedChanged, rbActor.CheckedChanged ' ********DONE
         If rbTitle.Checked = True Or rbActor.Checked = True Or rbCategory.Checked = True Then
             btnSearch.Enabled = True
         End If
     End Sub
 
-    Private Sub btnAddQueue_Click(sender As Object, e As EventArgs) Handles btnAddQueue.Click
-        ' add to the queue based on what is in the combo box
-        ' need account number, movie id and data
-        ' add to order queue
-        'MsgBox(movieSelect.Text) ' for test purposes
-
+    Private Sub btnAddQueue_Click(sender As Object, e As EventArgs) Handles btnAddQueue.Click ' works how expected ******************************************************** DONE
+        ' is added to queue based on the date and time to create ordering
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
-
+        ' get the movie id for the selected movie
         SQL.ExecuteQuery("SELECT movie_id " &
                          "FROM Movie_Data " &
                          "WHERE movie_name LIKE '" + movieSelect.Text + "';")
-        'Dim movie_ID As String = SQL.SQLTable.Rows(0).Item("movie_id")
         Dim user As String = GetAccount().ToString
-        'Dim movie_ID As String = SQL.SQLTable.Rows(0).Item("movie_id").ToString
         Dim movie_ID As String
+        ' check to make sure that the user has actually added a movie to the queue
         If SQL.SQLTable.Rows.Count > 0 Then
             movie_ID = SQL.SQLTable.Rows(0).Item("movie_id").ToString
         Else
             MsgBox("You must add a movie from the search results to add to your queue")
             Exit Sub
         End If
-
         ' check to make sure its not already in the queue
         SQL.ExecuteQuery("SELECT movie_id " &
                          "FROM Order_Queue " &
                          "WHERE account_number=" + user + " AND movie_id=" + movie_ID + ";")
-        If SQL.SQLTable.Rows.Count > 0 Then
+        If SQL.SQLTable.Rows.Count > 0 Then ' if any results are returned than you can't add because it is already in your queue
             If SQL.SQLTable.Rows(0).Item("movie_id") Then
                 MsgBox("The movie you have selected is already in your queue")
-                ' maybe clear the combo box text field? 
                 Exit Sub
             End If
         End If
-
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
-
+        ' get query params and execute
         SQL.AddParam("@user_ID", user)
         SQL.AddParam("@movie_ID", movie_ID)
-        SQL.AddParam("@date", Date.Now)
+        SQL.AddParam("@date", DateTime.Now) ' changed to be date time for ordering in list
         SQL.ExecuteQuery("INSERT INTO Order_Queue (account_number, movie_id, date) " &
                          "VALUES (@user_ID, @movie_ID, @date)")
         If SQL.HasException(True) Then Exit Sub
-
         MsgBox("The movie """ + movieSelect.Text + """ has been added to your queue")
-        ' update movie queue in account
-        'cbxQueue.Items.Clear()
-        'cbEditQueue.Items.Clear()
         LoadMovies()
 
     End Sub
 
-    Private Sub btnEditQueue_Click(sender As Object, e As EventArgs) Handles btnEditQueue.Click
+    Private Sub btnEditQueue_Click(sender As Object, e As EventArgs) Handles btnEditQueue.Click ' Works how expected ******************************************************** DONE
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
@@ -379,18 +359,15 @@ Public Class Customer_Interface
         ' remove from queue
         SQL.AddParam("@user_ID", user)
         SQL.AddParam("@movie_ID", movie_ID)
-
         SQL.ExecuteQuery("DELETE FROM Order_Queue " &
                          "WHERE account_number=@user_ID AND movie_id=@movie_ID;")
         If SQL.HasException(True) Then Exit Sub
 
         MsgBox("The movie """ + movieSelect.Text + """ has been removed from your queue")
-        'cbEditQueue.Items.Clear()
-        'cbxQueue.Items.Clear()
         LoadMovies()
     End Sub
 
-    Private Sub btnRate_Click(sender As Object, e As EventArgs) Handles btnRate.Click
+    Private Sub btnRate_Click(sender As Object, e As EventArgs) Handles btnRate.Click ' Works how I expect *************************************************************** DONE
         'cbRateRes.Text
         Dim rating As Integer
         If rb1.Checked Then
@@ -407,7 +384,6 @@ Public Class Customer_Interface
             MsgBox("Please choose a rating")
             Exit Sub
         End If
-
         ' calculate rating
         If cbRateRes.Text = "" Then ' check to make sure something has been selected
             MsgBox("Please select a choice to rate")
@@ -454,29 +430,14 @@ Public Class Customer_Interface
                          "SET rating=" + averageRating.ToString + " " &
                          "WHERE movie_id=" + movie_ID.ToString + ";")
         MsgBox("Your rating has been submitted")
-        'cbRateRes.Items.Clear()
-        'cbRateRes.Text = ""
         LoadMovies()
     End Sub
 
-    Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click ' could change this just to spit out a message and send the order to be filled by a rep ***
+    Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click ' NEED TO MAKE SO THAT WHEN USER IS ABLE TO RENT, THE NEXT AVAILABLE MOVIE IS SENT OUT, AUTO ASSIGN AN EMPLOYEE?
         ' for allowing a movie rental
         ' need to check if the movie is available by counting the number of already rented versus the number that can be rented
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
-        End If
-        ' rent a movie from the queue
-        SQL.ExecuteQuery("SELECT movie_id " &
-                         "FROM Movie_Data " &
-                         "WHERE movie_name LIKE '" + cbEditQueue.Text + "';")
-        Dim user As String = GetAccount().ToString
-        MsgBox(user)
-        Dim movie_ID As String
-        If SQL.SQLTable.Rows.Count > 0 Then
-            movie_ID = SQL.SQLTable.Rows(0).Item("movie_id").ToString
-        Else
-            MsgBox("You must pick a movie to rent from your queue")
-            Exit Sub
         End If
 
         ' clear table
@@ -513,7 +474,7 @@ Public Class Customer_Interface
         LoadMovies()
     End Sub
 
-    Private Sub checkRent(user As String, account_type As String, movie_ID As String, rentCount As Integer)
+    Private Sub checkRent(user As String, account_type As String, movie_ID As String, rentCount As Integer) ' NEED TO FIX FOR THE LIMITED CONDITIONS
         ' need to check if they have rented this month
         If account_type = "limited" Then ' if they have already rented this month than they are not allowed to rent again
             If rentCount > 0 Then ' if they still have a rental out, exit the sub
@@ -589,7 +550,7 @@ Public Class Customer_Interface
         End If
     End Sub
 
-    Private Sub btnReturnMovie_Click(sender As Object, e As EventArgs) Handles btnReturnMovie.Click ' There is an error if the rating history does not exist for that rental *********
+    Private Sub btnReturnMovie_Click(sender As Object, e As EventArgs) Handles btnReturnMovie.Click ' This works how I expect it to ******************************************** DONE
         ' return from the current rentals list
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
@@ -628,18 +589,10 @@ Public Class Customer_Interface
                          "SET return_flag=1 " &
                          "WHERE account_number=@user_ID AND movie_id=@movie_ID AND order_id=@order_ID;")
         If SQL.HasException(True) Then Exit Sub
-        ' update Rental_History
-        ' this might not actually belong here, probably move to rent movie *****************************************************************************************************
-        'SQL.AddParam("@user_ID", user)
-        'SQL.AddParam("@order_ID", orderNum)
-        'SQL.ExecuteQuery("INSERT INTO Rental_History (account_number, order_id)" &
-        '                 "VALUES (@user_ID, @order_ID);")
-        'If SQL.HasException(True) Then Exit Sub
-
+        ' update Rental_History ' this needs to happen during the rent process
         MsgBox("The movie """ + cbCurrentRentals.Text + """ has been returned")
-        'cbCurrentRentals.Items.Clear()
-        'cbxCur.Items.Clear()
         LoadMovies()
     End Sub
+
 End Class
 
