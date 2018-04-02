@@ -433,13 +433,12 @@ Public Class Customer_Interface
         LoadMovies()
     End Sub
 
-    Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click ' NEED TO MAKE SO THAT WHEN USER IS ABLE TO RENT, THE NEXT AVAILABLE MOVIE IS SENT OUT, AUTO ASSIGN AN EMPLOYEE?
+    Private Sub rentMovie_Click(sender As Object, e As EventArgs) Handles rentMovie.Click ' Seems to work *********************************************************** POSSIBLY DONE
         ' for allowing a movie rental
         ' need to check if the movie is available by counting the number of already rented versus the number that can be rented
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
-
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
@@ -447,7 +446,8 @@ Public Class Customer_Interface
         ' obtain their account information
         Dim account_type As String
         Dim ttlAllowedRentals As Integer
-        SQL.ExecuteQuery("SELECT type, num_of_movies FROM Account as A INNER JOIN Customer_Data as CD ON A.type=CD.account_type WHERE account_number='" + user + "';")
+        ' get the users account type and number of movies they are allowed to rent
+        SQL.ExecuteQuery("SELECT type, num_of_movies FROM Account as A INNER JOIN Customer_Data as CD ON A.type=CD.account_type WHERE account_number='" + GetAccount().ToString + "';")
         If SQL.SQLTable.Rows.Count > 0 Then
             account_type = SQL.SQLTable.Rows(0).Item("type")
             ttlAllowedRentals = SQL.SQLTable.Rows(0).Item("num_of_movies")
@@ -455,100 +455,151 @@ Public Class Customer_Interface
             MsgBox("error")
             Exit Sub
         End If
-        MsgBox(account_type + " " + ttlAllowedRentals.ToString) ' for test
-        ' check to see if they already have a rental
+        'MsgBox(account_type + " " + ttlAllowedRentals.ToString) ' for test
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
         Dim rentCount As Integer
-        SQL.ExecuteQuery("SELECT count(return_flag) as ttl FROM Order_Data WHERE account_number='" + user + "' AND return_flag = 0;")
+        ' check to see if they already have a rental
+        SQL.ExecuteQuery("SELECT count(return_flag) as ttl FROM Order_Data WHERE account_number='" + GetAccount().ToString + "' AND return_flag = 0;")
         If SQL.SQLTable.Rows.Count > 0 Then
             rentCount = SQL.SQLTable.Rows(0).Item("ttl")
-            MsgBox(rentCount.ToString)
+            'MsgBox("rented=" + rentCount.ToString)
         End If
         ' check to see if customer is allowed to rent 
-        checkRent(user, account_type, movie_ID, rentCount)
-        'cbEditQueue.Items.Clear()
-        'cbxQueue.Items.Clear()
-        LoadMovies()
+        If checkRent(GetAccount().ToString, account_type, rentCount) = False Then
+            Exit Sub
+        End If
+        FindAvail()
+
     End Sub
 
-    Private Sub checkRent(user As String, account_type As String, movie_ID As String, rentCount As Integer) ' NEED TO FIX FOR THE LIMITED CONDITIONS
+    Private Function checkRent(user As String, account_type As String, rentCount As Integer) ' SEEMS TO WORK ************************************************************* DONE
         ' need to check if they have rented this month
-        If account_type = "limited" Then ' if they have already rented this month than they are not allowed to rent again
+        If account_type = "limited" Then ' if they have already rented twice this month than they are not allowed to rent again
             If rentCount > 0 Then ' if they still have a rental out, exit the sub
                 MsgBox("You must first return a movie before you can rent another")
-                Exit Sub
+                Return False
             End If
             ' clear table
             If SQL.SQLTable IsNot Nothing Then
                 SQL.SQLTable.Clear()
             End If
-            SQL.ExecuteQuery("SELECT date FROM Order_Data WHERE account_number='" + user + "' AND return_flag = 1;") '
+            Dim today As Date = DateTime.Now
+            ' get the rentals from the user in the past month
+            SQL.ExecuteQuery("SELECT date FROM Order_Data WHERE account_number='" + user + "' AND return_flag = 1 AND date>DATEADD(month, -1, '" + today + "')")
             If SQL.SQLTable.Rows.Count > 0 Then
-                Dim today As Date = Date.Now
-                Dim displacement As Day = today.Subtract(Convert.ToDateTime(SQL.SQLTable.Rows(0).Item("date"))).Days
-                'MsgBox("inner if for days") ' for test
-                If displacement < 30 Then ' find out how many days it has been since you rented a movie
-                    MsgBox("You may only rent one movie per month, please check back in " + (30 - displacement).ToString + "days")
-                    Exit Sub
+                If SQL.SQLTable.Rows.Count > 1 Then ' if they have already rented two this month then they cannot rent anymore
+                    MsgBox("Sorry, you have reached your limit for rentals this month." + vbCrLf + "Please check back at a later date") ' how to get it to center?
+                    Return False
                 End If
             End If
-            MsgBox("You may rent a movie") ' for test purposes
-
-        Else ' if account is an unlimited one, no need to check dates
+        Else ' if account is an unlimited, no need to check dates
             If account_type = "unlim1" Then
                 If rentCount > 0 Then
                     MsgBox("You are only allowed one rental at a time. Please return a movie first")
-                    Exit Sub
+                    Return False
                 End If
             ElseIf account_type = "unlim2" Then
                 If rentCount > 1 Then
                     MsgBox("You are only allowed two rentals at a time. Please return a movie first")
-                    Exit Sub
+                    Return False
                 End If
             ElseIf account_type = "unlim3" Then
                 If rentCount > 2 Then
                     MsgBox("You are only allowed three rentals at a time. Please return a movie first")
-                    Exit Sub
+                    Return False
                 End If
             End If
-            MsgBox("You may rent a movie") ' for test purposes
-        End If
-        ' if user reaches this point, they are allowed to rent the movie, now check if there are enough movies to rent
+        End If ' WORKS UP TO THIS POINT
+        MsgBox("You may rent a movie") ' for test purposes
+        Return True
+    End Function
+
+    Private Sub FindAvail() ' This seems to work ******************************************************************************************************************* DONE
+        ' if so rent the first available movie
         ' clear table
         If SQL.SQLTable IsNot Nothing Then
             SQL.SQLTable.Clear()
         End If
-        ' find out how many copies of this movie are out being rented right now
-        SQL.ExecuteQuery("SELECT count(return_flag) as copies FROM Order_Data as OD INNER JOIN Movie_Data as MD ON OD.movie_id=MD.movie_id WHERE movie_id='" +
-                         movie_ID + "' AND return_flag = 0;")
-        Dim movieCopiesOut As Integer
-        If SQL.SQLTable.Rows.Count > 0 Then
-            movieCopiesOut = SQL.SQLTable.Rows(0).Item("copies")
-        End If
-        ' clear table
-        If SQL.SQLTable IsNot Nothing Then
-            SQL.SQLTable.Clear()
-        End If
-        SQL.ExecuteQuery("SELECT inventory FROM Movie_Data WHERE movie_id='" + movie_ID + "';")
-        If SQL.SQLTable.Rows.Count > 0 Then
-            If movieCopiesOut = SQL.SQLTable.Rows(0).Item("inventory") Then ' if there are no copies left to rent
-                MsgBox("Unfortunately the title you are trying to rent is not in stock right now." + vbCrLf + "Please check back at a later date")
-                Exit Sub
-            Else
-                ' ********************************************************************************************************************************* Need to finish the actual rental
-                ' there are copies and you can rent it so go ahead
-                ' make sure to also create the rental history for the order
-                ' assign random employee to fill the order
-                ' remove from queue and add to rental list
-                ' reload data
-                'SQL.ExecuteQuery("INSERT INTO ")
-                MsgBox("Your rental has been placed")
+        'for loop of the rental queue
+        Dim movie As String = ""
+        For i As Integer = 0 To (cbxQueue.Items.Count() - 1) ' loop through all of the items in the combo box
+            movie = cbxQueue.Items(i) ' copy the movie title for the next available movie
+            SQL.ExecuteQuery("SELECT count(return_flag) as copies FROM Order_Data as OD INNER JOIN Movie_Data as MD ON OD.movie_id=MD.movie_id WHERE movie_name='" +
+                                cbxQueue.Items(i) + "' AND return_flag = 0;") ' check each item in the list starting from the top of the queue
+            Dim movieCopiesOut As Integer
+            If SQL.SQLTable.Rows.Count > 0 Then
+                movieCopiesOut = SQL.SQLTable.Rows(0).Item("copies")
+                'MsgBox(movieCopiesOut) ' for text purposes
             End If
-        End If
+            SQL.ExecuteQuery("SELECT inventory FROM Movie_Data WHERE movie_name='" + cbxQueue.Items(i) + "';")
+            If SQL.SQLTable.Rows.Count > 0 Then
+                If movieCopiesOut < SQL.SQLTable.Rows(0).Item("inventory") Then ' if there are no copies left to rent
+                    Exit For ' if a movie can be rented, go on 
+                End If
+            End If
+            If i = cbxQueue.Items.Count() - 1 Then ' if in the odd instance that no choices can be rented
+                MsgBox("Unfortunately, all of your choices are unavailable right now")
+                Exit Sub
+            End If
+        Next
+        sendMovie(movie) ' since all is good, go ahead and rent
     End Sub
+
+    Private Sub sendMovie(movieToRent As String) ' This seems to work *********************************************************************************************** DONE
+        If movieToRent = "" Then
+            MsgBox("Error")
+            Exit Sub
+        End If
+        ' get the number of employees
+        SQL.ExecuteQuery("SELECT count(*) as ttl FROM Employee_Data")
+        Dim ttl As Integer = 0
+        If SQL.SQLTable.Rows.Count > 0 Then
+            ttl = SQL.SQLTable.Rows(0).Item("ttl")
+        End If
+        Dim random As Random = New Random
+        Dim employee As Integer = random.Next(1, ttl + 1) ' generate and assign a random employee
+        ' generate the next order id
+        SQL.ExecuteQuery("SELECT count(*) as ttl FROM Order_Data")
+        Dim order_ID As Integer = 0
+        If SQL.SQLTable.Rows.Count > 0 Then
+            order_ID = SQL.SQLTable.Rows(0).Item("ttl") + 1
+        End If
+        ' get the movie id
+        SQL.ExecuteQuery("SELECT movie_id " &
+                         "FROM Movie_Data " &
+                         "WHERE movie_name LIKE '" + movieToRent + "';")
+        Dim movie_ID As String = ""
+        If SQL.SQLTable.Rows.Count > 0 Then
+            movie_ID = SQL.SQLTable.Rows(0).Item("movie_id").ToString
+        End If
+        If movie_ID = "" Then
+            MsgBox("error")
+            Exit Sub
+        End If
+        SQL.AddParam("@order_id", order_ID)
+        SQL.AddParam("@date", Date.Now)
+        SQL.AddParam("@sin", employee)
+        SQL.AddParam("@account", GetAccount().ToString)
+        SQL.AddParam("movie_id", movie_ID)
+        SQL.AddParam("@return", 0)
+        SQL.AddParam("@rate", "NULL")
+        'MsgBox("*** " + order_ID.ToString + " " + Date.Now.ToString + " " + employee.ToString + " " + GetAccount().ToString + " " + movie_ID.ToString) ' for test purposes
+        SQL.ExecuteQuery("INSERT INTO Order_Data (order_id, date, return_flag, account_number, movie_id, SIN) " &
+                         "VALUES (@order_id, @date, @return, @account, @movie_id, @sin); " &
+                         "INSERT INTO Rental_History (account_number, order_id) " &
+                         "VALUES (@account, @order_id);")
+        If SQL.HasException Then Exit Sub
+        ' update the movie queue
+        SQL.ExecuteQuery("DELETE FROM Order_Queue " &
+                         "WHERE account_number=" + GetAccount().ToString + " AND movie_id=" + movie_ID + ";")
+        'rental history
+        MsgBox("Your movie has been shipped")
+        LoadMovies()
+    End Sub
+
 
     Private Sub btnReturnMovie_Click(sender As Object, e As EventArgs) Handles btnReturnMovie.Click ' This works how I expect it to ******************************************** DONE
         ' return from the current rentals list
