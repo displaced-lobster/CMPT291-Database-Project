@@ -9,7 +9,7 @@ Public Class Recommendation
 
         'Get users movie ratings
         SQL.AddParam("@acct", ID)
-        SQL.ExecuteQuery("SELECT movie_data.movie_id, rental_history.rating FROM movie_data, rental_history, order_data " &
+        SQL.ExecuteQuery("SELECT movie_data.movie_id, rental_history.movie_rating as rating FROM movie_data, rental_history, order_data " &
                          "WHERE rental_history.account_number = @acct AND " &
                          "rental_history.order_id = order_data.order_id AND " &
                          "order_data.movie_id = movie_data.movie_id;")
@@ -22,7 +22,7 @@ Public Class Recommendation
 
         'Get everyone elses movie ratings
         SQL.AddParam("@acct", ID)
-        SQL.ExecuteQuery("SELECT rental_history.account_number, rental_history.rating, order_data.movie_id " &
+        SQL.ExecuteQuery("SELECT rental_history.account_number, rental_history.movie_rating as rating, order_data.movie_id " &
                          "FROM movie_data, rental_history, order_data " &
                          "WHERE rental_history.account_number != @acct AND " &
                          "rental_history.order_id = order_Data.order_id AND " &
