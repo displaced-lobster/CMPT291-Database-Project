@@ -485,11 +485,11 @@ Partial Class Customer_Rep
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CustData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.CustData.Location = New System.Drawing.Point(18, 65)
+        Me.CustData.Location = New System.Drawing.Point(19, 78)
         Me.CustData.Margin = New System.Windows.Forms.Padding(1)
         Me.CustData.Name = "CustData"
         Me.CustData.RowTemplate.Height = 40
-        Me.CustData.Size = New System.Drawing.Size(1738, 610)
+        Me.CustData.Size = New System.Drawing.Size(1114, 379)
         Me.CustData.TabIndex = 46
         '
         'Find

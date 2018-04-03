@@ -28,14 +28,22 @@
 
     Private Sub DelCust()
         SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
-        If SQL.HasException(True) Then Exit Sub
+        SQL.ExecuteQuery("SELECT count(*) FROM order_data WHERE account_number = @acctnum AND return_flag = 0")
 
-        SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
-        If SQL.HasException(True) Then Exit Sub
+        If 0 < SQL.SQLTable.Rows(0).ItemArray(0) Then
+            MsgBox("Cannot delete customer, they have outstanding movie rentals.")
+        Else
+            SQL.AddParam("@acctnum", delAcctNum.Text)
+            SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
+            If SQL.HasException(True) Then Exit Sub
 
-        MsgBox("Customer deleted.")
+            SQL.AddParam("@acctnum", delAcctNum.Text)
+            SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
+            If SQL.HasException(True) Then Exit Sub
+
+            MsgBox("Customer deleted.")
+        End If
+
         delAcctNum.Clear()
         delData.ClearSelection()
         del_cust.Enabled = False
