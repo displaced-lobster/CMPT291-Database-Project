@@ -90,7 +90,7 @@
 
             If IsDBNull(r("account_type")) Then Exit For
 
-            If r("account_type") = "lim" Then
+            If r("account_type") = "limited" Then
                 editLim.Checked = True
             ElseIf r("account_type") = "unlim1" Then
                 editUnlim1.Checked = True
@@ -148,13 +148,17 @@
         SQL.AddParam("@cc", editCC.Text)
         SQL.AddParam("@strnum", editStreetNum.Text)
         SQL.AddParam("@strname", editStreetName.Text)
-        SQL.AddParam("@aptnum", editAPTNum.Text)
+        If editAcctNum.Text.Length = 0 Then
+            SQL.AddParam("@aptnum", "NULL")
+        Else
+            SQL.AddParam("@aptnum", editAPTNum.Text)
+        End If
         SQL.AddParam("@city", editCity.Text)
         SQL.AddParam("@state", editState.Text)
         SQL.AddParam("@zip", editZip.Text)
 
         If editLim.Checked Then
-            SQL.AddParam("@type", "lim")
+            SQL.AddParam("@type", "limited")
         ElseIf editUnlim1.Checked Then
             SQL.AddParam("@type", "unlim1")
         ElseIf editUnlim2.Checked Then
@@ -310,7 +314,7 @@
         SQL.AddParam("@aptnum", addAPTNum.Text)
 
         If Lim1.Checked Then
-            SQL.AddParam("@type", "lim1")
+            SQL.AddParam("@type", "limited")
         ElseIf Unlim1.Checked Then
             SQL.AddParam("@type", "unlim1")
         ElseIf Unlim2.Checked Then
@@ -458,7 +462,7 @@
         Dim acct As String = FindMovieAcctNum.Text
         RecMovies.Items.Clear()
         If acct.Length > 0 Then
-            Dim movie_ids = Recommendation.GetRecommendations(Convert.ToInt32(acct))
+            Dim movie_ids = Recommendation.GetRecommendations(acct)
 
             For Each movie_id As Integer In movie_ids
                 SQL.AddParam("@movie", movie_id)

@@ -41,7 +41,7 @@ Partial Class Main_Manager_Interface
         Me.MI_movie_id_tb = New System.Windows.Forms.TextBox()
         Me.MI_add_movie_btn = New System.Windows.Forms.Button()
         Me.MI_EmpTab = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.emp_search_btn = New System.Windows.Forms.Button()
         Me.MI_emp_ap_num_tb = New System.Windows.Forms.TextBox()
         Me.MI_emp_ap_num = New System.Windows.Forms.Label()
         Me.MI_emp_street_num_tb = New System.Windows.Forms.TextBox()
@@ -271,7 +271,7 @@ Partial Class Main_Manager_Interface
         'MI_EmpTab
         '
         Me.MI_EmpTab.AllowDrop = True
-        Me.MI_EmpTab.Controls.Add(Me.Button1)
+        Me.MI_EmpTab.Controls.Add(Me.emp_search_btn)
         Me.MI_EmpTab.Controls.Add(Me.MI_emp_ap_num_tb)
         Me.MI_EmpTab.Controls.Add(Me.MI_emp_ap_num)
         Me.MI_EmpTab.Controls.Add(Me.MI_emp_street_num_tb)
@@ -306,14 +306,14 @@ Partial Class Main_Manager_Interface
         Me.MI_EmpTab.Text = "Employee Database"
         Me.MI_EmpTab.UseVisualStyleBackColor = True
         '
-        'Button1
+        'emp_search_btn
         '
-        Me.Button1.Location = New System.Drawing.Point(186, 52)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 26)
-        Me.Button1.TabIndex = 40
-        Me.Button1.Text = "Search"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.emp_search_btn.Location = New System.Drawing.Point(186, 47)
+        Me.emp_search_btn.Name = "emp_search_btn"
+        Me.emp_search_btn.Size = New System.Drawing.Size(75, 36)
+        Me.emp_search_btn.TabIndex = 40
+        Me.emp_search_btn.Text = "Search"
+        Me.emp_search_btn.UseVisualStyleBackColor = True
         '
         'MI_emp_ap_num_tb
         '
@@ -709,5 +709,5 @@ Partial Class Main_Manager_Interface
     Friend WithEvents MI_sr As Label
     Friend WithEvents MI_list_options As Label
     Friend WithEvents search_btn As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents emp_search_btn As Button
 End Class

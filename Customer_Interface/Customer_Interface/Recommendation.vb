@@ -17,12 +17,14 @@ Public Class Recommendation
 
         'Store results
         For Each r As DataRow In SQL.SQLTable.Rows
-            MyData.Add(r("movie_id"), r("rating"))
+            If Not IsDBNull(r("rating")) Then
+                MyData.Add(r("movie_id"), r("rating"))
+            End If
         Next
 
         'Get everyone elses movie ratings
         SQL.AddParam("@acct", ID)
-        SQL.ExecuteQuery("SELECT rental_history.account_number, rental_history.movie_rating as rating, order_data.movie_id " &
+        SQL.ExecuteQuery("SELECT rental_history.account_number, rental_history.movie_rating, order_data.movie_id " &
                          "FROM movie_data, rental_history, order_data " &
                          "WHERE rental_history.account_number != @acct AND " &
                          "rental_history.order_id = order_Data.order_id AND " &
@@ -32,8 +34,8 @@ Public Class Recommendation
         'Calculate the distance between all other users and the target user
         For Each r As DataRow In SQL.SQLTable.Rows
             Dim diff As Double = 0.0
-            If MyData.ContainsKey(r("movie_id")) Then
-                diff += (MyData(r("movie_id")) - r("rating")) ^ 2
+            If MyData.ContainsKey(r("movie_id")) And Not IsDBNull(r("movie_rating")) Then
+                diff += (MyData(r("movie_id")) - r("movie_rating")) ^ 2
             End If
 
             If Data.ContainsKey(r("account_number")) Then
@@ -65,7 +67,7 @@ Public Class Recommendation
             SQL.ExecuteQuery("SELECT order_data.movie_id FROM rental_history, order_data " &
                              "WHERE rental_history.order_id = order_data.order_id AND " &
                              "rental_history.account_number = @acct AND " &
-                             "rental_history.rating > 3;")
+                             "rental_history.movie_rating > 3;")
             If SQL.HasException(True) Then Exit Function
 
             'MsgBox(SQL.RecordCount)
@@ -77,6 +79,23 @@ Public Class Recommendation
                 End If
             Next
         Next
+
+        SQL.ExecuteQuery("SELECT movie_id FROM movie_data Where rating > 4;")
+        If SQL.HasException(True) Then Exit Function
+
+        Dim MoreMovies As New List(Of Integer)
+
+        For Each r As DataRow In SQL.SQLTable.Rows
+            MoreMovies.Add(r("movie_id"))
+        Next
+
+        Dim count As Integer = 0
+        While TopMovies.Count < 10
+            If Not TopMovies.Contains(MoreMovies.Item(count)) Then
+                TopMovies.Add(MoreMovies.Item(count))
+            End If
+            count += 1
+        End While
 
         Return TopMovies
     End Function
