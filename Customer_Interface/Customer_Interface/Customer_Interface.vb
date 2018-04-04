@@ -16,6 +16,7 @@ Public Class Customer_Interface
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click ' This Works *********************************************************************** DONE
         Me.Close()
         Customer_Login.Close() ' terminate the session
+        Main_Interface.pbBlueBox.Show()
         MsgBox("Current Session Closed")
     End Sub
 
@@ -190,16 +191,14 @@ Public Class Customer_Interface
 
         ttlMovies = Recommends.Count
 
-        'DataGridView1.DataSource = SQL.SQLTable
-
-        For i As Integer = 0 To (ttlMovies - 1)
-            movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
-        Next
-        txtRes.Text = movieList ' display movies
-
-        For i As Integer = 0 To (ttlMovies - 1)
-            movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-        Next
+        If Recommends.Count > 0 Then
+            For i As Integer = 0 To (ttlMovies - 1)
+                SQL.ExecuteQuery("SELECT movie_name FROM Movie_Data WHERE movie_id=" + Recommends(i).ToString + ";")
+                movieList = movieList + SQL.SQLTable.Rows(0).Item("movie_name") + vbCrLf 'SQL.SQLTable.Rows(i).Item("Movies").ToString
+                movieSelect.Items.Add(SQL.SQLTable.Rows(0).Item("movie_name"))
+            Next
+            txtRes.Text = movieList ' display movies
+        End If
 
     End Sub
 
