@@ -26,6 +26,11 @@ Partial Class Customer_Rep
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
         Me.recMovieId = New System.Windows.Forms.ComboBox()
         Me.recAcctNum = New System.Windows.Forms.Label()
         Me.orderList = New System.Windows.Forms.ListBox()
@@ -164,11 +169,6 @@ Partial Class Customer_Rep
         Me.Label40 = New System.Windows.Forms.Label()
         Me.MovieRec = New System.Windows.Forms.Button()
         Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -249,6 +249,51 @@ Partial Class Customer_Rep
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Create Order"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(106, 84)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(51, 13)
+        Me.Label45.TabIndex = 22
+        Me.Label45.Text = "Inventory"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(403, 325)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(61, 13)
+        Me.Label44.TabIndex = 21
+        Me.Label44.Text = "Low Priority"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(403, 100)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(63, 13)
+        Me.Label43.TabIndex = 20
+        Me.Label43.Text = "High Priority"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(225, 84)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(59, 13)
+        Me.Label42.TabIndex = 19
+        Me.Label42.Text = "Movie Title"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(23, 84)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(50, 13)
+        Me.Label41.TabIndex = 18
+        Me.Label41.Text = "Movie ID"
         '
         'recMovieId
         '
@@ -585,6 +630,7 @@ Partial Class Customer_Rep
         'Home3
         '
         Me.Home3.AutoSize = True
+        Me.Home3.Checked = True
         Me.Home3.Location = New System.Drawing.Point(6, 3)
         Me.Home3.Margin = New System.Windows.Forms.Padding(1)
         Me.Home3.Name = "Home3"
@@ -633,7 +679,6 @@ Partial Class Customer_Rep
         Me.Unlim3.Name = "Unlim3"
         Me.Unlim3.Size = New System.Drawing.Size(74, 17)
         Me.Unlim3.TabIndex = 74
-        Me.Unlim3.TabStop = True
         Me.Unlim3.Text = "Unlimited3"
         Me.Unlim3.UseVisualStyleBackColor = True
         '
@@ -645,7 +690,6 @@ Partial Class Customer_Rep
         Me.Unlim2.Name = "Unlim2"
         Me.Unlim2.Size = New System.Drawing.Size(74, 17)
         Me.Unlim2.TabIndex = 73
-        Me.Unlim2.TabStop = True
         Me.Unlim2.Text = "Unlimited2"
         Me.Unlim2.UseVisualStyleBackColor = True
         '
@@ -657,13 +701,13 @@ Partial Class Customer_Rep
         Me.Unlim1.Name = "Unlim1"
         Me.Unlim1.Size = New System.Drawing.Size(74, 17)
         Me.Unlim1.TabIndex = 72
-        Me.Unlim1.TabStop = True
         Me.Unlim1.Text = "Unlimited1"
         Me.Unlim1.UseVisualStyleBackColor = True
         '
         'Lim1
         '
         Me.Lim1.AutoSize = True
+        Me.Lim1.Checked = True
         Me.Lim1.Location = New System.Drawing.Point(9, 22)
         Me.Lim1.Margin = New System.Windows.Forms.Padding(1)
         Me.Lim1.Name = "Lim1"
@@ -713,6 +757,7 @@ Partial Class Customer_Rep
         'Home2
         '
         Me.Home2.AutoSize = True
+        Me.Home2.Checked = True
         Me.Home2.Location = New System.Drawing.Point(6, 3)
         Me.Home2.Margin = New System.Windows.Forms.Padding(1)
         Me.Home2.Name = "Home2"
@@ -762,6 +807,7 @@ Partial Class Customer_Rep
         'Home1
         '
         Me.Home1.AutoSize = True
+        Me.Home1.Checked = True
         Me.Home1.Location = New System.Drawing.Point(6, 3)
         Me.Home1.Margin = New System.Windows.Forms.Padding(1)
         Me.Home1.Name = "Home1"
@@ -1092,6 +1138,7 @@ Partial Class Customer_Rep
         'editHome3
         '
         Me.editHome3.AutoSize = True
+        Me.editHome3.Checked = True
         Me.editHome3.Location = New System.Drawing.Point(6, 3)
         Me.editHome3.Margin = New System.Windows.Forms.Padding(1)
         Me.editHome3.Name = "editHome3"
@@ -1107,7 +1154,7 @@ Partial Class Customer_Rep
         Me.editNum3.Margin = New System.Windows.Forms.Padding(1)
         Me.editNum3.Name = "editNum3"
         Me.editNum3.Size = New System.Drawing.Size(138, 20)
-        Me.editNum3.TabIndex = 124
+        Me.editNum3.TabIndex = 61
         '
         'Label23
         '
@@ -1191,6 +1238,7 @@ Partial Class Customer_Rep
         'editLim
         '
         Me.editLim.AutoSize = True
+        Me.editLim.Checked = True
         Me.editLim.Location = New System.Drawing.Point(9, 22)
         Me.editLim.Margin = New System.Windows.Forms.Padding(1)
         Me.editLim.Name = "editLim"
@@ -1240,6 +1288,7 @@ Partial Class Customer_Rep
         'editHome2
         '
         Me.editHome2.AutoSize = True
+        Me.editHome2.Checked = True
         Me.editHome2.Location = New System.Drawing.Point(6, 3)
         Me.editHome2.Margin = New System.Windows.Forms.Padding(1)
         Me.editHome2.Name = "editHome2"
@@ -1289,6 +1338,7 @@ Partial Class Customer_Rep
         'editHome1
         '
         Me.editHome1.AutoSize = True
+        Me.editHome1.Checked = True
         Me.editHome1.Location = New System.Drawing.Point(6, 3)
         Me.editHome1.Margin = New System.Windows.Forms.Padding(1)
         Me.editHome1.Name = "editHome1"
@@ -1304,7 +1354,7 @@ Partial Class Customer_Rep
         Me.editNum2.Margin = New System.Windows.Forms.Padding(1)
         Me.editNum2.Name = "editNum2"
         Me.editNum2.Size = New System.Drawing.Size(138, 20)
-        Me.editNum2.TabIndex = 117
+        Me.editNum2.TabIndex = 60
         '
         'editNum1
         '
@@ -1312,7 +1362,7 @@ Partial Class Customer_Rep
         Me.editNum1.Margin = New System.Windows.Forms.Padding(1)
         Me.editNum1.Name = "editNum1"
         Me.editNum1.Size = New System.Drawing.Size(138, 20)
-        Me.editNum1.TabIndex = 116
+        Me.editNum1.TabIndex = 59
         '
         'Label24
         '
@@ -1330,7 +1380,7 @@ Partial Class Customer_Rep
         Me.editCC.Margin = New System.Windows.Forms.Padding(1)
         Me.editCC.Name = "editCC"
         Me.editCC.Size = New System.Drawing.Size(138, 20)
-        Me.editCC.TabIndex = 114
+        Me.editCC.TabIndex = 52
         '
         'editEmail
         '
@@ -1338,7 +1388,7 @@ Partial Class Customer_Rep
         Me.editEmail.Margin = New System.Windows.Forms.Padding(1)
         Me.editEmail.Name = "editEmail"
         Me.editEmail.Size = New System.Drawing.Size(138, 20)
-        Me.editEmail.TabIndex = 113
+        Me.editEmail.TabIndex = 51
         '
         'Label25
         '
@@ -1376,7 +1426,7 @@ Partial Class Customer_Rep
         Me.editZip.Margin = New System.Windows.Forms.Padding(1)
         Me.editZip.Name = "editZip"
         Me.editZip.Size = New System.Drawing.Size(67, 20)
-        Me.editZip.TabIndex = 109
+        Me.editZip.TabIndex = 58
         '
         'Label28
         '
@@ -1394,7 +1444,7 @@ Partial Class Customer_Rep
         Me.editState.Margin = New System.Windows.Forms.Padding(1)
         Me.editState.Name = "editState"
         Me.editState.Size = New System.Drawing.Size(120, 20)
-        Me.editState.TabIndex = 107
+        Me.editState.TabIndex = 57
         '
         'Label29
         '
@@ -1412,7 +1462,7 @@ Partial Class Customer_Rep
         Me.editCity.Margin = New System.Windows.Forms.Padding(1)
         Me.editCity.Name = "editCity"
         Me.editCity.Size = New System.Drawing.Size(89, 20)
-        Me.editCity.TabIndex = 105
+        Me.editCity.TabIndex = 56
         '
         'Label30
         '
@@ -1450,7 +1500,7 @@ Partial Class Customer_Rep
         Me.editAPTNum.Margin = New System.Windows.Forms.Padding(1)
         Me.editAPTNum.Name = "editAPTNum"
         Me.editAPTNum.Size = New System.Drawing.Size(79, 20)
-        Me.editAPTNum.TabIndex = 101
+        Me.editAPTNum.TabIndex = 55
         '
         'editStreetName
         '
@@ -1458,7 +1508,7 @@ Partial Class Customer_Rep
         Me.editStreetName.Margin = New System.Windows.Forms.Padding(1)
         Me.editStreetName.Name = "editStreetName"
         Me.editStreetName.Size = New System.Drawing.Size(154, 20)
-        Me.editStreetName.TabIndex = 100
+        Me.editStreetName.TabIndex = 54
         '
         'editStreetNum
         '
@@ -1466,7 +1516,7 @@ Partial Class Customer_Rep
         Me.editStreetNum.Margin = New System.Windows.Forms.Padding(1)
         Me.editStreetNum.Name = "editStreetNum"
         Me.editStreetNum.Size = New System.Drawing.Size(43, 20)
-        Me.editStreetNum.TabIndex = 99
+        Me.editStreetNum.TabIndex = 53
         '
         'Label33
         '
@@ -1484,7 +1534,7 @@ Partial Class Customer_Rep
         Me.editLName.Margin = New System.Windows.Forms.Padding(1)
         Me.editLName.Name = "editLName"
         Me.editLName.Size = New System.Drawing.Size(138, 20)
-        Me.editLName.TabIndex = 97
+        Me.editLName.TabIndex = 50
         '
         'editFName
         '
@@ -1492,7 +1542,7 @@ Partial Class Customer_Rep
         Me.editFName.Margin = New System.Windows.Forms.Padding(1)
         Me.editFName.Name = "editFName"
         Me.editFName.Size = New System.Drawing.Size(138, 20)
-        Me.editFName.TabIndex = 96
+        Me.editFName.TabIndex = 49
         '
         'Label34
         '
@@ -1704,51 +1754,6 @@ Partial Class Customer_Rep
         Me.MovieRec.TabIndex = 46
         Me.MovieRec.Text = "Movie Recommendations"
         Me.MovieRec.UseVisualStyleBackColor = True
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(23, 84)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(50, 13)
-        Me.Label41.TabIndex = 18
-        Me.Label41.Text = "Movie ID"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(225, 84)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(59, 13)
-        Me.Label42.TabIndex = 19
-        Me.Label42.Text = "Movie Title"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(403, 100)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(63, 13)
-        Me.Label43.TabIndex = 20
-        Me.Label43.Text = "High Priority"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(403, 325)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(61, 13)
-        Me.Label44.TabIndex = 21
-        Me.Label44.Text = "Low Priority"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(106, 84)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(51, 13)
-        Me.Label45.TabIndex = 22
-        Me.Label45.Text = "Inventory"
         '
         'Customer_Rep
         '
