@@ -149,6 +149,42 @@
     End Sub
 
     Private Sub UpdateCustomer()
+        If editFName.Text.Length = 0 Then
+            MsgBox("First name is required.")
+            Exit Sub
+        End If
+        If editLName.Text.Length = 0 Then
+            MsgBox("Last name is required.")
+            Exit Sub
+        End If
+        If editEmail.Text.Length = 0 Then
+            MsgBox("Email is required.")
+            Exit Sub
+        End If
+        If editCC.Text.Length = 0 Then
+            MsgBox("Credit card is required.")
+            Exit Sub
+        End If
+        If editStreetNum.Text.Length = 0 Then
+            MsgBox("Street number is required.")
+            Exit Sub
+        End If
+        If editStreetName.Text.Length = 0 Then
+            MsgBox("Street name is required.")
+            Exit Sub
+        End If
+        If editCity.Text.Length = 0 Then
+            MsgBox("City is required.")
+            Exit Sub
+        End If
+        If editState.Text.Length = 0 Then
+            MsgBox("State is required.")
+            Exit Sub
+        End If
+        If editZip.Text.Length = 0 Then
+            MsgBox("Zip is required.")
+            Exit Sub
+        End If
         SQL.AddParam("@acctnum", editAcctNum.Text)
         SQL.AddParam("@fname", editFName.Text)
         SQL.AddParam("@lname", editLName.Text)
@@ -325,6 +361,42 @@
     End Sub
 
     Private Sub AddCust()
+        If addFName.Text.Length = 0 Then
+            MsgBox("First name is required.")
+            Exit Sub
+        End If
+        If addLName.Text.Length = 0 Then
+            MsgBox("Last name is required.")
+            Exit Sub
+        End If
+        If addEmail.Text.Length = 0 Then
+            MsgBox("Email is required.")
+            Exit Sub
+        End If
+        If addCC.Text.Length = 0 Then
+            MsgBox("Credit card is required.")
+            Exit Sub
+        End If
+        If addStreetNum.Text.Length = 0 Then
+            MsgBox("Street number is required.")
+            Exit Sub
+        End If
+        If addStreetName.Text.Length = 0 Then
+            MsgBox("Street name is required.")
+            Exit Sub
+        End If
+        If addCity.Text.Length = 0 Then
+            MsgBox("City is required.")
+            Exit Sub
+        End If
+        If addState.Text.Length = 0 Then
+            MsgBox("State is required.")
+            Exit Sub
+        End If
+        If addZip.Text.Length = 0 Then
+            MsgBox("Zip is required.")
+            Exit Sub
+        End If
         SQL.AddParam("@acctnum", addAcctNum.Text)
         SQL.AddParam("@fname", addFName.Text)
         SQL.AddParam("@lname", addLName.Text)
