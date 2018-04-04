@@ -35,6 +35,12 @@ Partial Class Main_Interface
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbBlueBox = New System.Windows.Forms.PictureBox()
+        Me.UserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmployeeHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManagerHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewUserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditingYourAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MoviesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -107,6 +113,7 @@ Partial Class Main_Interface
         '
         'HelpToolStripMenuItem
         '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserHelpToolStripMenuItem, Me.EmployeeHelpToolStripMenuItem, Me.ManagerHelpToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -120,6 +127,43 @@ Partial Class Main_Interface
         Me.pbBlueBox.Size = New System.Drawing.Size(1184, 683)
         Me.pbBlueBox.TabIndex = 2
         Me.pbBlueBox.TabStop = False
+        '
+        'UserHelpToolStripMenuItem
+        '
+        Me.UserHelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewUserHelpToolStripMenuItem, Me.EditingYourAccountToolStripMenuItem, Me.MoviesToolStripMenuItem})
+        Me.UserHelpToolStripMenuItem.Name = "UserHelpToolStripMenuItem"
+        Me.UserHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UserHelpToolStripMenuItem.Text = "Customer Help"
+        '
+        'EmployeeHelpToolStripMenuItem
+        '
+        Me.EmployeeHelpToolStripMenuItem.Name = "EmployeeHelpToolStripMenuItem"
+        Me.EmployeeHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmployeeHelpToolStripMenuItem.Text = "Employee Help"
+        '
+        'ManagerHelpToolStripMenuItem
+        '
+        Me.ManagerHelpToolStripMenuItem.Name = "ManagerHelpToolStripMenuItem"
+        Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ManagerHelpToolStripMenuItem.Text = "Manager Help"
+        '
+        'NewUserHelpToolStripMenuItem
+        '
+        Me.NewUserHelpToolStripMenuItem.Name = "NewUserHelpToolStripMenuItem"
+        Me.NewUserHelpToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.NewUserHelpToolStripMenuItem.Text = "Signing up"
+        '
+        'EditingYourAccountToolStripMenuItem
+        '
+        Me.EditingYourAccountToolStripMenuItem.Name = "EditingYourAccountToolStripMenuItem"
+        Me.EditingYourAccountToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.EditingYourAccountToolStripMenuItem.Text = "Editing your account"
+        '
+        'MoviesToolStripMenuItem
+        '
+        Me.MoviesToolStripMenuItem.Name = "MoviesToolStripMenuItem"
+        Me.MoviesToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.MoviesToolStripMenuItem.Text = "Movies"
         '
         'Main_Interface
         '
@@ -152,4 +196,10 @@ Partial Class Main_Interface
     Friend WithEvents TestToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManagerServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents pbBlueBox As PictureBox
+    Friend WithEvents UserHelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NewUserHelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmployeeHelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ManagerHelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditingYourAccountToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MoviesToolStripMenuItem As ToolStripMenuItem
 End Class
