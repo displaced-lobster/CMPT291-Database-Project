@@ -28,14 +28,22 @@
 
     Private Sub DelCust()
         SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
-        If SQL.HasException(True) Then Exit Sub
+        SQL.ExecuteQuery("SELECT count(*) FROM order_data WHERE account_number = @acctnum AND return_flag = 0")
 
-        SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
-        If SQL.HasException(True) Then Exit Sub
+        If 0 < SQL.SQLTable.Rows(0).ItemArray(0) Then
+            MsgBox("Cannot delete customer, they have outstanding movie rentals.")
+        Else
+            SQL.AddParam("@acctnum", delAcctNum.Text)
+            SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
+            If SQL.HasException(True) Then Exit Sub
 
-        MsgBox("Customer deleted.")
+            SQL.AddParam("@acctnum", delAcctNum.Text)
+            SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
+            If SQL.HasException(True) Then Exit Sub
+
+            MsgBox("Customer deleted.")
+        End If
+
         delAcctNum.Clear()
         delData.ClearSelection()
         del_cust.Enabled = False
@@ -256,15 +264,32 @@
     End Sub
 
     Private Sub CreateOrder()
-        SQL.AddParam("@orderid", recOrderID.Text)
         SQL.AddParam("@acctnum", recAcctNum.Text)
-        SQL.AddParam("@movieid", recMovieID.Text)
-        SQL.AddParam("@date", recDate.Text)
-        SQL.AddParam("@sin", recSIN.Text)
+        SQL.ExecuteQuery("SELECT count(*) FROM order_data WHERE account_number = @acctnum AND return_flag = 0;")
+        Dim count As Integer = SQL.SQLTable.Rows(0).ItemArray(0)
 
-        SQL.ExecuteQuery("INSERT INTO order_data (order_id, date, return_flag, account_number, movie_id, SIN) VALUES (@orderid, @date, 0, @acctnum, @movieid, @sin);")
+        SQL.AddParam("@acctnum", recAcctNum.Text)
+        SQL.ExecuteQuery("SELECT num_of_movies FROM customer_data, account WHERE account_number = @acctnum AND account_type = type;")
+        If SQL.HasException(True) Then Exit Sub
 
-        If SQL.HasException(False) Then Exit Sub
+        If count >= SQL.SQLTable.Rows(0).ItemArray(0) Then
+            MsgBox("Cannot create order, customer has reached order limited.")
+        Else
+            SQL.AddParam("@orderid", recOrderID.Text)
+            SQL.AddParam("@acctnum", recAcctNum.Text)
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.AddParam("@date", recDate.Text)
+            SQL.AddParam("@sin", recSIN.Text)
+
+            SQL.ExecuteQuery("INSERT INTO order_data (order_id, date, return_flag, account_number, movie_id, SIN) VALUES (@orderid, @date, 0, @acctnum, @movieid, @sin);")
+            If SQL.HasException(True) Then Exit Sub
+
+            SQL.AddParam("@acctnum", recAcctNum.Text)
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.ExecuteQuery("DELETE FROM order_queue WHERE account_number = @acctnum AND movie_id = @movieid;")
+            If SQL.HasException(True) Then Exit Sub
+            MsgBox("Order successfully created.")
+        End If
 
         SQL.ExecuteQuery("SELECT max(order_id) FROM order_data")
         recOrderID.Text = SQL.SQLTable.Rows(0).ItemArray(0)
@@ -272,7 +297,6 @@
         orderAcctNum.Clear()
         orderList.Items.Clear()
         recMovieId.Items.Clear()
-        MsgBox("Order successfully created.")
     End Sub
 
     Private Sub FindCust()
@@ -444,10 +468,11 @@
     Private Sub FindOrderQueue()
         orderList.Items.Clear()
         SQL.AddParam("@acct", orderAcctNum.Text)
-        SQL.ExecuteQuery("SELECT movie_data.movie_id, movie_data.movie_name FROM order_queue, movie_data WHERE account_number = @acct AND order_queue.movie_id = movie_data.movie_id;")
+        SQL.ExecuteQuery("SELECT movie_data.movie_id, movie_data.movie_name, movie_data.inventory FROM order_queue, movie_data " &
+                         "WHERE account_number = @acct AND order_queue.movie_id = movie_data.movie_id ORDER BY order_queue.date;")
 
         For Each r As DataRow In SQL.SQLTable.Rows
-            Dim movie As String = r("movie_id").ToString() + vbTab + r("movie_name")
+            Dim movie As String = r("movie_id").ToString() + vbTab + vbTab + r("inventory").ToString() + vbTab + vbTab + r("movie_name")
             orderList.Items.Add(movie)
             recMovieId.Items.Add(r("movie_id"))
         Next
