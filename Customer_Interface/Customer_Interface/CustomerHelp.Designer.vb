@@ -27,11 +27,11 @@ Partial Class CustomerHelp
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -82,6 +82,16 @@ Partial Class CustomerHelp
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Your Account"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label3.Location = New System.Drawing.Point(7, 25)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(1131, 420)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = resources.GetString("Label3.Text")
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -92,6 +102,16 @@ Partial Class CustomerHelp
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Movies"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label4.Location = New System.Drawing.Point(6, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(1132, 540)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = resources.GetString("Label4.Text")
         '
         'GroupBox1
         '
@@ -113,26 +133,6 @@ Partial Class CustomerHelp
         Me.Label2.Size = New System.Drawing.Size(1133, 340)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = resources.GetString("Label2.Text")
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label3.Location = New System.Drawing.Point(7, 25)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(1131, 420)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = resources.GetString("Label3.Text")
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label4.Location = New System.Drawing.Point(6, 25)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1132, 540)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = resources.GetString("Label4.Text")
         '
         'CustomerHelp
         '

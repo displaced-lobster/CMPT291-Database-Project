@@ -36,10 +36,9 @@ Partial Class Current_Rentals
         'rentals_cn_rbutton
         '
         Me.rentals_cn_rbutton.AutoSize = True
-        Me.rentals_cn_rbutton.Location = New System.Drawing.Point(65, 225)
-        Me.rentals_cn_rbutton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.rentals_cn_rbutton.Location = New System.Drawing.Point(43, 146)
         Me.rentals_cn_rbutton.Name = "rentals_cn_rbutton"
-        Me.rentals_cn_rbutton.Size = New System.Drawing.Size(149, 24)
+        Me.rentals_cn_rbutton.Size = New System.Drawing.Size(100, 17)
         Me.rentals_cn_rbutton.TabIndex = 15
         Me.rentals_cn_rbutton.Text = "Customer Name"
         Me.rentals_cn_rbutton.UseVisualStyleBackColor = True
@@ -47,10 +46,9 @@ Partial Class Current_Rentals
         'rentals_mt_rbutton
         '
         Me.rentals_mt_rbutton.AutoSize = True
-        Me.rentals_mt_rbutton.Location = New System.Drawing.Point(65, 176)
-        Me.rentals_mt_rbutton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.rentals_mt_rbutton.Location = New System.Drawing.Point(43, 114)
         Me.rentals_mt_rbutton.Name = "rentals_mt_rbutton"
-        Me.rentals_mt_rbutton.Size = New System.Drawing.Size(113, 24)
+        Me.rentals_mt_rbutton.Size = New System.Drawing.Size(81, 17)
         Me.rentals_mt_rbutton.TabIndex = 14
         Me.rentals_mt_rbutton.Text = "Movie Type"
         Me.rentals_mt_rbutton.UseVisualStyleBackColor = True
@@ -59,10 +57,9 @@ Partial Class Current_Rentals
         '
         Me.check_by_label.AutoSize = True
         Me.check_by_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.check_by_label.Location = New System.Drawing.Point(26, 70)
-        Me.check_by_label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.check_by_label.Location = New System.Drawing.Point(17, 45)
         Me.check_by_label.Name = "check_by_label"
-        Me.check_by_label.Size = New System.Drawing.Size(132, 29)
+        Me.check_by_label.Size = New System.Drawing.Size(88, 20)
         Me.check_by_label.TabIndex = 13
         Me.check_by_label.Text = "Check By..."
         '
@@ -70,10 +67,9 @@ Partial Class Current_Rentals
         '
         Me.rentals_mn_rbutton.AutoSize = True
         Me.rentals_mn_rbutton.Checked = True
-        Me.rentals_mn_rbutton.Location = New System.Drawing.Point(65, 127)
-        Me.rentals_mn_rbutton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.rentals_mn_rbutton.Location = New System.Drawing.Point(43, 83)
         Me.rentals_mn_rbutton.Name = "rentals_mn_rbutton"
-        Me.rentals_mn_rbutton.Size = New System.Drawing.Size(121, 24)
+        Me.rentals_mn_rbutton.Size = New System.Drawing.Size(85, 17)
         Me.rentals_mn_rbutton.TabIndex = 12
         Me.rentals_mn_rbutton.TabStop = True
         Me.rentals_mn_rbutton.Text = "Movie Name"
@@ -81,10 +77,9 @@ Partial Class Current_Rentals
         '
         'close_btn_rentals
         '
-        Me.close_btn_rentals.Location = New System.Drawing.Point(26, 14)
-        Me.close_btn_rentals.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.close_btn_rentals.Location = New System.Drawing.Point(17, 9)
         Me.close_btn_rentals.Name = "close_btn_rentals"
-        Me.close_btn_rentals.Size = New System.Drawing.Size(112, 35)
+        Me.close_btn_rentals.Size = New System.Drawing.Size(75, 23)
         Me.close_btn_rentals.TabIndex = 11
         Me.close_btn_rentals.Text = "Close"
         Me.close_btn_rentals.UseVisualStyleBackColor = True
@@ -93,35 +88,35 @@ Partial Class Current_Rentals
         '
         Me.data_grid_rentals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.data_grid_rentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_grid_rentals.Location = New System.Drawing.Point(258, -4)
-        Me.data_grid_rentals.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.data_grid_rentals.Location = New System.Drawing.Point(172, -3)
         Me.data_grid_rentals.Name = "data_grid_rentals"
-        Me.data_grid_rentals.Size = New System.Drawing.Size(620, 560)
+        Me.data_grid_rentals.Size = New System.Drawing.Size(413, 364)
         Me.data_grid_rentals.TabIndex = 10
         '
         'textbox_input
         '
-        Me.textbox_input.Location = New System.Drawing.Point(31, 293)
+        Me.textbox_input.Location = New System.Drawing.Point(21, 190)
+        Me.textbox_input.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.textbox_input.Name = "textbox_input"
-        Me.textbox_input.Size = New System.Drawing.Size(183, 26)
+        Me.textbox_input.Size = New System.Drawing.Size(123, 20)
         Me.textbox_input.TabIndex = 16
         Me.textbox_input.Text = "Input Here..."
         '
         'execute_button
         '
-        Me.execute_button.Location = New System.Drawing.Point(65, 345)
-        Me.execute_button.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.execute_button.Location = New System.Drawing.Point(43, 224)
         Me.execute_button.Name = "execute_button"
-        Me.execute_button.Size = New System.Drawing.Size(112, 35)
+        Me.execute_button.Size = New System.Drawing.Size(75, 23)
         Me.execute_button.TabIndex = 17
         Me.execute_button.Text = "Execute"
         Me.execute_button.UseVisualStyleBackColor = True
         '
         'Current_Rentals
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(879, 557)
+        Me.ClientSize = New System.Drawing.Size(1200, 750)
+        Me.ControlBox = False
         Me.Controls.Add(Me.execute_button)
         Me.Controls.Add(Me.textbox_input)
         Me.Controls.Add(Me.rentals_cn_rbutton)
@@ -130,9 +125,14 @@ Partial Class Current_Rentals
         Me.Controls.Add(Me.rentals_mn_rbutton)
         Me.Controls.Add(Me.close_btn_rentals)
         Me.Controls.Add(Me.data_grid_rentals)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Current_Rentals"
-        Me.Text = "Check_Most_Active"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
+        Me.Text = "Check Most Active"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.data_grid_rentals, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

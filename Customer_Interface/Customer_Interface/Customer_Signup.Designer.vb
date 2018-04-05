@@ -68,12 +68,14 @@ Partial Class Customer_SignUp
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 27)
+        Me.Label1.Location = New System.Drawing.Point(14, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(103, 13)
         Me.Label1.TabIndex = 1
@@ -81,7 +83,7 @@ Partial Class Customer_SignUp
         '
         'firstName
         '
-        Me.firstName.Location = New System.Drawing.Point(82, 52)
+        Me.firstName.Location = New System.Drawing.Point(81, 41)
         Me.firstName.MaxLength = 50
         Me.firstName.Name = "firstName"
         Me.firstName.Size = New System.Drawing.Size(192, 20)
@@ -89,7 +91,7 @@ Partial Class Customer_SignUp
         '
         'lastName
         '
-        Me.lastName.Location = New System.Drawing.Point(348, 52)
+        Me.lastName.Location = New System.Drawing.Point(347, 41)
         Me.lastName.MaxLength = 50
         Me.lastName.Name = "lastName"
         Me.lastName.Size = New System.Drawing.Size(194, 20)
@@ -97,7 +99,7 @@ Partial Class Customer_SignUp
         '
         'city
         '
-        Me.city.Location = New System.Drawing.Point(52, 262)
+        Me.city.Location = New System.Drawing.Point(51, 251)
         Me.city.MaxLength = 50
         Me.city.Name = "city"
         Me.city.Size = New System.Drawing.Size(184, 20)
@@ -105,7 +107,7 @@ Partial Class Customer_SignUp
         '
         'state
         '
-        Me.state.Location = New System.Drawing.Point(287, 261)
+        Me.state.Location = New System.Drawing.Point(286, 250)
         Me.state.MaxLength = 50
         Me.state.Name = "state"
         Me.state.Size = New System.Drawing.Size(158, 20)
@@ -114,7 +116,7 @@ Partial Class Customer_SignUp
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 219)
+        Me.Label2.Location = New System.Drawing.Point(14, 208)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 13)
         Me.Label2.TabIndex = 6
@@ -122,7 +124,7 @@ Partial Class Customer_SignUp
         '
         'street
         '
-        Me.street.Location = New System.Drawing.Point(205, 235)
+        Me.street.Location = New System.Drawing.Point(204, 224)
         Me.street.MaxLength = 50
         Me.street.Name = "street"
         Me.street.Size = New System.Drawing.Size(206, 20)
@@ -130,7 +132,7 @@ Partial Class Customer_SignUp
         '
         'zip
         '
-        Me.zip.Location = New System.Drawing.Point(486, 261)
+        Me.zip.Location = New System.Drawing.Point(485, 250)
         Me.zip.MaxLength = 5
         Me.zip.Name = "zip"
         Me.zip.Size = New System.Drawing.Size(56, 20)
@@ -138,7 +140,7 @@ Partial Class Customer_SignUp
         '
         'streetNum
         '
-        Me.streetNum.Location = New System.Drawing.Point(98, 235)
+        Me.streetNum.Location = New System.Drawing.Point(97, 224)
         Me.streetNum.MaxLength = 9
         Me.streetNum.Name = "streetNum"
         Me.streetNum.Size = New System.Drawing.Size(60, 20)
@@ -147,7 +149,7 @@ Partial Class Customer_SignUp
         'aptNum
         '
         Me.aptNum.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.aptNum.Location = New System.Drawing.Point(486, 235)
+        Me.aptNum.Location = New System.Drawing.Point(485, 224)
         Me.aptNum.MaxLength = 9
         Me.aptNum.Name = "aptNum"
         Me.aptNum.Size = New System.Drawing.Size(56, 20)
@@ -155,7 +157,7 @@ Partial Class Customer_SignUp
         '
         'email
         '
-        Me.email.Location = New System.Drawing.Point(98, 78)
+        Me.email.Location = New System.Drawing.Point(97, 67)
         Me.email.MaxLength = 50
         Me.email.Name = "email"
         Me.email.Size = New System.Drawing.Size(444, 20)
@@ -164,7 +166,7 @@ Partial Class Customer_SignUp
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 315)
+        Me.Label3.Location = New System.Drawing.Point(17, 304)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 13)
         Me.Label3.TabIndex = 12
@@ -172,7 +174,7 @@ Partial Class Customer_SignUp
         '
         'cardNum
         '
-        Me.cardNum.Location = New System.Drawing.Point(83, 334)
+        Me.cardNum.Location = New System.Drawing.Point(82, 323)
         Me.cardNum.MaxLength = 16
         Me.cardNum.Name = "cardNum"
         Me.cardNum.Size = New System.Drawing.Size(207, 20)
@@ -180,7 +182,7 @@ Partial Class Customer_SignUp
         '
         'num1
         '
-        Me.num1.Location = New System.Drawing.Point(20, 132)
+        Me.num1.Location = New System.Drawing.Point(19, 121)
         Me.num1.MaxLength = 11
         Me.num1.Name = "num1"
         Me.num1.Size = New System.Drawing.Size(125, 20)
@@ -192,7 +194,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop1.FormattingEnabled = True
         Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Cell"})
-        Me.phoneDrop1.Location = New System.Drawing.Point(151, 132)
+        Me.phoneDrop1.Location = New System.Drawing.Point(150, 121)
         Me.phoneDrop1.MaxDropDownItems = 3
         Me.phoneDrop1.Name = "phoneDrop1"
         Me.phoneDrop1.Size = New System.Drawing.Size(121, 21)
@@ -204,7 +206,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop2.FormattingEnabled = True
         Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Cell"})
-        Me.phoneDrop2.Location = New System.Drawing.Point(151, 157)
+        Me.phoneDrop2.Location = New System.Drawing.Point(150, 146)
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
         Me.phoneDrop2.Size = New System.Drawing.Size(121, 21)
@@ -212,7 +214,7 @@ Partial Class Customer_SignUp
         '
         'num2
         '
-        Me.num2.Location = New System.Drawing.Point(20, 158)
+        Me.num2.Location = New System.Drawing.Point(19, 147)
         Me.num2.MaxLength = 11
         Me.num2.Name = "num2"
         Me.num2.Size = New System.Drawing.Size(125, 20)
@@ -220,7 +222,7 @@ Partial Class Customer_SignUp
         '
         'num3
         '
-        Me.num3.Location = New System.Drawing.Point(20, 185)
+        Me.num3.Location = New System.Drawing.Point(19, 174)
         Me.num3.MaxLength = 11
         Me.num3.Name = "num3"
         Me.num3.Size = New System.Drawing.Size(125, 20)
@@ -232,7 +234,7 @@ Partial Class Customer_SignUp
         Me.phoneDrop3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop3.FormattingEnabled = True
         Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Cell"})
-        Me.phoneDrop3.Location = New System.Drawing.Point(151, 186)
+        Me.phoneDrop3.Location = New System.Drawing.Point(150, 175)
         Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
         Me.phoneDrop3.Size = New System.Drawing.Size(121, 21)
@@ -241,7 +243,7 @@ Partial Class Customer_SignUp
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(18, 386)
+        Me.Label4.Location = New System.Drawing.Point(17, 375)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 13)
         Me.Label4.TabIndex = 21
@@ -250,7 +252,7 @@ Partial Class Customer_SignUp
         'limited
         '
         Me.limited.AutoSize = True
-        Me.limited.Location = New System.Drawing.Point(21, 403)
+        Me.limited.Location = New System.Drawing.Point(20, 392)
         Me.limited.Name = "limited"
         Me.limited.Size = New System.Drawing.Size(58, 17)
         Me.limited.TabIndex = 17
@@ -261,7 +263,7 @@ Partial Class Customer_SignUp
         'unlim1
         '
         Me.unlim1.AutoSize = True
-        Me.unlim1.Location = New System.Drawing.Point(101, 403)
+        Me.unlim1.Location = New System.Drawing.Point(100, 392)
         Me.unlim1.Name = "unlim1"
         Me.unlim1.Size = New System.Drawing.Size(77, 17)
         Me.unlim1.TabIndex = 18
@@ -272,7 +274,7 @@ Partial Class Customer_SignUp
         'unlim2
         '
         Me.unlim2.AutoSize = True
-        Me.unlim2.Location = New System.Drawing.Point(197, 403)
+        Me.unlim2.Location = New System.Drawing.Point(196, 392)
         Me.unlim2.Name = "unlim2"
         Me.unlim2.Size = New System.Drawing.Size(77, 17)
         Me.unlim2.TabIndex = 19
@@ -283,7 +285,7 @@ Partial Class Customer_SignUp
         'unlim3
         '
         Me.unlim3.AutoSize = True
-        Me.unlim3.Location = New System.Drawing.Point(295, 403)
+        Me.unlim3.Location = New System.Drawing.Point(294, 392)
         Me.unlim3.Name = "unlim3"
         Me.unlim3.Size = New System.Drawing.Size(77, 17)
         Me.unlim3.TabIndex = 20
@@ -294,7 +296,7 @@ Partial Class Customer_SignUp
         'createAccount
         '
         Me.createAccount.Enabled = False
-        Me.createAccount.Location = New System.Drawing.Point(217, 524)
+        Me.createAccount.Location = New System.Drawing.Point(216, 513)
         Me.createAccount.Name = "createAccount"
         Me.createAccount.Size = New System.Drawing.Size(118, 23)
         Me.createAccount.TabIndex = 24
@@ -304,7 +306,7 @@ Partial Class Customer_SignUp
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 55)
+        Me.Label5.Location = New System.Drawing.Point(14, 44)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 13)
         Me.Label5.TabIndex = 27
@@ -313,7 +315,7 @@ Partial Class Customer_SignUp
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(277, 55)
+        Me.Label6.Location = New System.Drawing.Point(276, 44)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 28
@@ -322,7 +324,7 @@ Partial Class Customer_SignUp
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 81)
+        Me.Label7.Location = New System.Drawing.Point(14, 70)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 13)
         Me.Label7.TabIndex = 29
@@ -331,7 +333,7 @@ Partial Class Customer_SignUp
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(148, 116)
+        Me.Label8.Location = New System.Drawing.Point(147, 105)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(31, 13)
         Me.Label8.TabIndex = 30
@@ -340,7 +342,7 @@ Partial Class Customer_SignUp
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(17, 114)
+        Me.Label9.Location = New System.Drawing.Point(16, 103)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(38, 13)
         Me.Label9.TabIndex = 31
@@ -349,7 +351,7 @@ Partial Class Customer_SignUp
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(15, 238)
+        Me.Label10.Location = New System.Drawing.Point(14, 227)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(82, 13)
         Me.Label10.TabIndex = 32
@@ -358,7 +360,7 @@ Partial Class Customer_SignUp
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(158, 238)
+        Me.Label11.Location = New System.Drawing.Point(157, 227)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(42, 13)
         Me.Label11.TabIndex = 33
@@ -367,7 +369,7 @@ Partial Class Customer_SignUp
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(417, 238)
+        Me.Label12.Location = New System.Drawing.Point(416, 227)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(63, 13)
         Me.Label12.TabIndex = 34
@@ -376,7 +378,7 @@ Partial Class Customer_SignUp
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(15, 265)
+        Me.Label13.Location = New System.Drawing.Point(14, 254)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(31, 13)
         Me.Label13.TabIndex = 35
@@ -385,7 +387,7 @@ Partial Class Customer_SignUp
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(242, 265)
+        Me.Label14.Location = New System.Drawing.Point(241, 254)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(39, 13)
         Me.Label14.TabIndex = 36
@@ -394,7 +396,7 @@ Partial Class Customer_SignUp
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(451, 264)
+        Me.Label15.Location = New System.Drawing.Point(450, 253)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(29, 13)
         Me.Label15.TabIndex = 37
@@ -403,7 +405,7 @@ Partial Class Customer_SignUp
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(18, 337)
+        Me.Label17.Location = New System.Drawing.Point(17, 326)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(59, 13)
         Me.Label17.TabIndex = 39
@@ -412,7 +414,7 @@ Partial Class Customer_SignUp
         'label16
         '
         Me.label16.AutoSize = True
-        Me.label16.Location = New System.Drawing.Point(18, 440)
+        Me.label16.Location = New System.Drawing.Point(17, 429)
         Me.label16.Name = "label16"
         Me.label16.Size = New System.Drawing.Size(62, 13)
         Me.label16.TabIndex = 40
@@ -420,7 +422,7 @@ Partial Class Customer_SignUp
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(105, 437)
+        Me.txtUser.Location = New System.Drawing.Point(104, 426)
         Me.txtUser.MaxLength = 50
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(207, 20)
@@ -428,7 +430,7 @@ Partial Class Customer_SignUp
         '
         'txtPass
         '
-        Me.txtPass.Location = New System.Drawing.Point(105, 463)
+        Me.txtPass.Location = New System.Drawing.Point(104, 452)
         Me.txtPass.MaxLength = 50
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -438,7 +440,7 @@ Partial Class Customer_SignUp
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(17, 466)
+        Me.Label18.Location = New System.Drawing.Point(16, 455)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(60, 13)
         Me.Label18.TabIndex = 42
@@ -446,7 +448,7 @@ Partial Class Customer_SignUp
         '
         'txtPassCheck
         '
-        Me.txtPassCheck.Location = New System.Drawing.Point(105, 489)
+        Me.txtPassCheck.Location = New System.Drawing.Point(104, 478)
         Me.txtPassCheck.MaxLength = 50
         Me.txtPassCheck.Name = "txtPassCheck"
         Me.txtPassCheck.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -456,7 +458,7 @@ Partial Class Customer_SignUp
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(17, 492)
+        Me.Label19.Location = New System.Drawing.Point(16, 481)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(89, 13)
         Me.Label19.TabIndex = 44
@@ -464,7 +466,7 @@ Partial Class Customer_SignUp
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(217, 553)
+        Me.btnCancel.Location = New System.Drawing.Point(216, 542)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(118, 23)
         Me.btnCancel.TabIndex = 45
@@ -475,7 +477,7 @@ Partial Class Customer_SignUp
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!)
-        Me.Label20.Location = New System.Drawing.Point(124, 27)
+        Me.Label20.Location = New System.Drawing.Point(123, 16)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(91, 13)
         Me.Label20.TabIndex = 46
@@ -484,71 +486,81 @@ Partial Class Customer_SignUp
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(277, 135)
+        Me.Label21.Location = New System.Drawing.Point(276, 124)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(11, 13)
         Me.Label21.TabIndex = 47
         Me.Label21.Text = "*"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label21)
+        Me.Panel1.Controls.Add(Me.firstName)
+        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.lastName)
+        Me.Panel1.Controls.Add(Me.btnCancel)
+        Me.Panel1.Controls.Add(Me.city)
+        Me.Panel1.Controls.Add(Me.txtPassCheck)
+        Me.Panel1.Controls.Add(Me.state)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.txtPass)
+        Me.Panel1.Controls.Add(Me.street)
+        Me.Panel1.Controls.Add(Me.Label18)
+        Me.Panel1.Controls.Add(Me.zip)
+        Me.Panel1.Controls.Add(Me.txtUser)
+        Me.Panel1.Controls.Add(Me.streetNum)
+        Me.Panel1.Controls.Add(Me.label16)
+        Me.Panel1.Controls.Add(Me.aptNum)
+        Me.Panel1.Controls.Add(Me.Label17)
+        Me.Panel1.Controls.Add(Me.email)
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label14)
+        Me.Panel1.Controls.Add(Me.cardNum)
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.num1)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.phoneDrop1)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.phoneDrop2)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.num2)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.phoneDrop3)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.num3)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.limited)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.unlim1)
+        Me.Panel1.Controls.Add(Me.createAccount)
+        Me.Panel1.Controls.Add(Me.unlim2)
+        Me.Panel1.Controls.Add(Me.unlim3)
+        Me.Panel1.Location = New System.Drawing.Point(300, 50)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(564, 581)
+        Me.Panel1.TabIndex = 48
+        '
         'Customer_SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ClientSize = New System.Drawing.Size(1187, 727)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.txtPassCheck)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.txtPass)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.txtUser)
-        Me.Controls.Add(Me.label16)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.createAccount)
-        Me.Controls.Add(Me.unlim3)
-        Me.Controls.Add(Me.unlim2)
-        Me.Controls.Add(Me.unlim1)
-        Me.Controls.Add(Me.limited)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.num3)
-        Me.Controls.Add(Me.phoneDrop3)
-        Me.Controls.Add(Me.num2)
-        Me.Controls.Add(Me.phoneDrop2)
-        Me.Controls.Add(Me.phoneDrop1)
-        Me.Controls.Add(Me.num1)
-        Me.Controls.Add(Me.cardNum)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.email)
-        Me.Controls.Add(Me.aptNum)
-        Me.Controls.Add(Me.streetNum)
-        Me.Controls.Add(Me.zip)
-        Me.Controls.Add(Me.street)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.state)
-        Me.Controls.Add(Me.city)
-        Me.Controls.Add(Me.lastName)
-        Me.Controls.Add(Me.firstName)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Customer_SignUp"
-        Me.Text = "New Customer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -598,4 +610,5 @@ Partial Class Customer_SignUp
     Friend WithEvents btnCancel As Button
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
+    Friend WithEvents Panel1 As Panel
 End Class

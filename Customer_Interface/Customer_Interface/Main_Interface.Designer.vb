@@ -121,26 +121,26 @@ Partial Class Main_Interface
         'UserHelpToolStripMenuItem
         '
         Me.UserHelpToolStripMenuItem.Name = "UserHelpToolStripMenuItem"
-        Me.UserHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UserHelpToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.UserHelpToolStripMenuItem.Text = "Customer Help"
         '
         'EmployeeHelpToolStripMenuItem
         '
         Me.EmployeeHelpToolStripMenuItem.Name = "EmployeeHelpToolStripMenuItem"
-        Me.EmployeeHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmployeeHelpToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.EmployeeHelpToolStripMenuItem.Text = "Employee Help"
         '
         'ManagerHelpToolStripMenuItem
         '
         Me.ManagerHelpToolStripMenuItem.Name = "ManagerHelpToolStripMenuItem"
-        Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.ManagerHelpToolStripMenuItem.Text = "Manager Help"
         '
         'ContactUsToolStripMenuItem
         '
         Me.ContactUsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Phone1800BLUEBOXToolStripMenuItem, Me.EmailUsToolStripMenuItem})
         Me.ContactUsToolStripMenuItem.Name = "ContactUsToolStripMenuItem"
-        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.ContactUsToolStripMenuItem.Text = "Contact Us"
         '
         'Phone1800BLUEBOXToolStripMenuItem
@@ -159,9 +159,9 @@ Partial Class Main_Interface
         '
         Me.pbBlueBox.BackgroundImage = CType(resources.GetObject("pbBlueBox.BackgroundImage"), System.Drawing.Image)
         Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbBlueBox.Location = New System.Drawing.Point(0, 27)
+        Me.pbBlueBox.Location = New System.Drawing.Point(-1, 27)
         Me.pbBlueBox.Name = "pbBlueBox"
-        Me.pbBlueBox.Size = New System.Drawing.Size(1184, 683)
+        Me.pbBlueBox.Size = New System.Drawing.Size(1185, 700)
         Me.pbBlueBox.TabIndex = 2
         Me.pbBlueBox.TabStop = False
         '
@@ -169,9 +169,10 @@ Partial Class Main_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ClientSize = New System.Drawing.Size(1184, 724)
         Me.Controls.Add(Me.pbBlueBox)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Main_Interface"
