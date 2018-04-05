@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>If this if your first time using Blue Box's services, you will be required to first sign up as a new user. To do this, select "File" in the top left corner of the home page
+and click on "Accounts". From here, a side bar will appear and you will click on the "New User Signup" tab. Once selected, you will be led to the new user form that
+will need to be filled out completely before you can submit. However, please not that you only are required to submit one phone number. You may supply 
+additional numbers but you are not required.
+
+If you are finding that you are not able to press "Create Account", please check to make sure that all required fields are filled. If you have filled in a field incorrectly,
+you will be notified and redirected to go back and complete the areas that are incomplete. They have been highlighted yellow to assist you. If you are still finding
+that you are not allowed to fill out the form, check to make sure that any and all possible selections have been made such as the drop down for a phone number 
+type and the account type you wish to have.
+
+If you are denied creating your account because of the username you chose, it is because that username has already been used by another customer. Please try 
+a different username in this case. Also, a username may not contain the a space or the following punctuation ; ' " `. If you are not allowed to create your account 
+because of the password, please first check to make sure you put the same password in both of the password fields. If you are recieving an error message for 
+your password that you created, please note that you may not use spaces, "'" or ";" in your password.
+
+If you are still un able to create an account, please contact us at 1-800-BLUEBOX and one of our customer representatives will be happy to assist you in getting 
+an account started.</value>
+  </data>
 </root>

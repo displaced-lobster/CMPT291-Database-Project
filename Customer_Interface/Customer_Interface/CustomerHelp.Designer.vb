@@ -22,12 +22,20 @@ Partial Class CustomerHelp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomerHelp))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rtb2 = New System.Windows.Forms.RichTextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.rtb3 = New System.Windows.Forms.RichTextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -43,6 +51,7 @@ Partial Class CustomerHelp
         'Panel1
         '
         Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -53,18 +62,42 @@ Partial Class CustomerHelp
         Me.Panel1.Size = New System.Drawing.Size(1184, 711)
         Me.Panel1.TabIndex = 2
         '
-        'GroupBox1
+        'Button1
         '
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 50)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1147, 400)
-        Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "New Users"
+        Me.Button1.Location = New System.Drawing.Point(1085, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Close"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.rtb2)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.GroupBox3.Location = New System.Drawing.Point(13, 434)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(1147, 442)
+        Me.GroupBox3.TabIndex = 0
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Your Account"
+        '
+        'rtb2
+        '
+        Me.rtb2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtb2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.rtb2.Enabled = False
+        Me.rtb2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.rtb2.Location = New System.Drawing.Point(7, 29)
+        Me.rtb2.Name = "rtb2"
+        Me.rtb2.ReadOnly = True
+        Me.rtb2.Size = New System.Drawing.Size(1134, 385)
+        Me.rtb2.TabIndex = 2
+        Me.rtb2.Text = "This is more text"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.rtb3)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 882)
         Me.GroupBox2.Name = "GroupBox2"
@@ -73,15 +106,38 @@ Partial Class CustomerHelp
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Movies"
         '
-        'GroupBox3
+        'rtb3
         '
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 456)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1147, 420)
-        Me.GroupBox3.TabIndex = 0
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Your Account"
+        Me.rtb3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtb3.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.rtb3.Enabled = False
+        Me.rtb3.Location = New System.Drawing.Point(7, 29)
+        Me.rtb3.Name = "rtb3"
+        Me.rtb3.ReadOnly = True
+        Me.rtb3.Size = New System.Drawing.Size(1134, 367)
+        Me.rtb3.TabIndex = 3
+        Me.rtb3.Text = ""
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 50)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1147, 378)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "New Users"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label2.Location = New System.Drawing.Point(7, 29)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(1141, 340)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = resources.GetString("Label2.Text")
         '
         'CustomerHelp
         '
@@ -98,6 +154,10 @@ Partial Class CustomerHelp
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -107,4 +167,8 @@ Partial Class CustomerHelp
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents rtb2 As RichTextBox
+    Friend WithEvents rtb3 As RichTextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class
