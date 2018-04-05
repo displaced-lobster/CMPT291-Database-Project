@@ -88,7 +88,7 @@ Partial Class CustomerHelp
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 896)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1147, 583)
+        Me.GroupBox2.Size = New System.Drawing.Size(1147, 634)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Movies"
@@ -110,7 +110,7 @@ Partial Class CustomerHelp
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Label2.Location = New System.Drawing.Point(7, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1141, 340)
+        Me.Label2.Size = New System.Drawing.Size(1133, 340)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = resources.GetString("Label2.Text")
         '
@@ -120,7 +120,7 @@ Partial Class CustomerHelp
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Label3.Location = New System.Drawing.Point(7, 25)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(1150, 420)
+        Me.Label3.Size = New System.Drawing.Size(1131, 420)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = resources.GetString("Label3.Text")
         '
@@ -128,7 +128,7 @@ Partial Class CustomerHelp
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label4.Location = New System.Drawing.Point(8, 25)
+        Me.Label4.Location = New System.Drawing.Point(6, 25)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(1132, 540)
         Me.Label4.TabIndex = 0

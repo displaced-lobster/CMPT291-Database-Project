@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label3.Text" xml:space="preserve">
-    <value>In order to access your account and view our movie catalogue, you must first sign into your account using you username and password that you created when you 
-first signed up with Blue Box. If have not done so, please first go to the the "New User Signup" and create an account with us before proceeding. If you are having 
-difficulties logging in, please be sure to check and make sure that your username and password have been typed in correctly. Also, both fields are case sensitive 
-so please make sure that you do not have caps lock enabled while typing your username and password. If you have made a mistake and wish to clear both fields, 
-you can press the "Cancel" button to start over. If you wish the exit for what ever reason you may click the "Exit" button. IF you are still having issues, please 
-contact us at 1-800-BLUEBOX in order to have a customer representitive to help you access your account.
+    <value>In order to access your account and view our movie catalogue, you must first sign into your account using you username and password that you created when 
+you first signed up with Blue Box. If have not done so, please first go to the the "New User Signup" and create an account with us before proceeding. If you are 
+having difficulties logging in, please be sure to check and make sure that your username and password have been typed in correctly. Also, both fields are case 
+sensitive so please make sure that you do not have caps lock enabled while typing your username and password. If you have made a mistake and wish to clear 
+both fields, you can press the "Cancel" button to start over. If you wish the exit for what ever reason you may click the "Exit" button. IF you are still having issues, 
+please contact us at 1-800-BLUEBOX in order to have a customer representitive to help you access your account.
 
 If for any reason you must change your account information, you may do so my clicking on the "Edit" button. From here, you will be taken to another page that is 
-similar to the one when you first created your account. In order to changeany information in your account, simply select the text box that you wish to edit and delete 
-the information contained within and replace it with your new information. If you realized that you do not want to change a text box, simply leave it either blank or fill 
-it back in with the information you had before in order to not change its contents. Like with filling out the form, if you do change something, you will need to make 
-sure that it is filled out completely and correctly otherwise you will be notified and the incorrect fields will be highlighted. If you are editing your phone number, you 
-may delete additional numbers but you may only have at minimum one phone number on file. If you wish to change the primary phone on file, simply put in the new 
-number you wish to have as primary. You must have an associated type of number selected from the drop down for all numbers you wish to have on file. If you 
-wish to change your account username or password, simply fill out the fields like you did when you signed up.
+similar to the one when you first created your account. In order to changeany information in your account, simply select the text box that you wish to edit and 
+delete the information contained within and replace it with your new information. If you realized that you do not want to change a text box, simply leave it either 
+blank or fill it back in with the information you had before in order to not change its contents. Like with filling out the form, if you do change something, you will 
+need to make sure that it is filled out completely and correctly otherwise you will be notified and the incorrect fields will be highlighted. If you are editing your 
+phone number, you may delete additional numbers but you may only have at minimum one phone number on file. If you wish to change the primary phone on 
+file, simply put in the new number you wish to have as primary. You must have an associated type of number selected from the drop down for all numbers you 
+wish to have on file. If you wish to change your account username or password, simply fill out the fields like you did when you signed up.
 
-If you only wish to see what rentals you currently have out, there is a drop down to the right side of the page contained on the "Account Details" page. Like wise, if 
-you wish to see what rentals you have had in the past or what is in your queue, you need only select those drop downs to view their titles.
+If you only wish to see what rentals you currently have out, there is a drop down to the right side of the page contained on the "Account Details" page. Like wise, 
+if you wish to see what rentals you have had in the past or what is in your queue, you need only select those drop downs to view their titles.
 
-In order to terminate your session, simply press the "Logout" button located in the top right corner of the page. you may open up other sessions as different users 
-but note that your session will remain open until you press logout for this session or you close the program.
+In order to terminate your session, simply press the "Logout" button located in the top right corner of the page. you may open up other sessions as different 
+users but note that your session will remain open until you press logout for this session or you close the program.
 </value>
   </data>
   <data name="Label4.Text" xml:space="preserve">
@@ -172,19 +172,19 @@ representative assist you.</value>
   </data>
   <data name="Label2.Text" xml:space="preserve">
     <value>If this if your first time using Blue Box's services, you will be required to first sign up as a new user. To do this, select "File" in the top left corner of the home page
-and click on "Accounts". From here, a side bar will appear and you will click on the "New User Signup" tab. Once selected, you will be led to the new user form that
-will need to be filled out completely before you can submit. However, please not that you only are required to submit one phone number. You may supply 
+and click on "Accounts". From here, a side bar will appear and you will click on the "New User Signup" tab. Once selected, you will be led to the new user form 
+that will need to be filled out completely before you can submit. However, please not that you only are required to submit one phone number. You may supply 
 additional numbers but you are not required.
 
-If you are finding that you are not able to press "Create Account", please check to make sure that all required fields are filled. If you have filled in a field incorrectly,
-you will be notified and redirected to go back and complete the areas that are incomplete. They have been highlighted yellow to assist you. If you are still finding
-that you are not allowed to fill out the form, check to make sure that any and all possible selections have been made such as the drop down for a phone number 
-type and the account type you wish to have.
+If you are finding that you are not able to press "Create Account", please check to make sure that all required fields are filled. If you have filled in a field 
+incorrectly, you will be notified and redirected to go back and complete the areas that are incomplete. They have been highlighted yellow to assist you. If you are 
+still finding that you are not allowed to fill out the form, check to make sure that any and all possible selections have been made such as the drop down for a 
+phone number type and the account type you wish to have.
 
-If you are denied creating your account because of the username you chose, it is because that username has already been used by another customer. Please try 
-a different username in this case. Also, a username may not contain the a space or the following punctuation ; ' " `. If you are not allowed to create your account 
-because of the password, please first check to make sure you put the same password in both of the password fields. If you are recieving an error message for 
-your password that you created, please note that you may not use spaces, "'" or ";" in your password.
+If you are denied creating your account because of the username you chose, it is because that username has already been used by another customer. Please 
+try a different username in this case. Also, a username may not contain the a space or the following punctuation ; ' " `. If you are not allowed to create your 
+account because of the password, please first check to make sure you put the same password in both of the password fields. If you are recieving an error 
+message for your password that you created, please note that you may not use spaces, "'" or ";" in your password.
 
 If you are still un able to create an account, please contact us at 1-800-BLUEBOX and one of our customer representatives will be happy to assist you in getting 
 an account started.</value>
