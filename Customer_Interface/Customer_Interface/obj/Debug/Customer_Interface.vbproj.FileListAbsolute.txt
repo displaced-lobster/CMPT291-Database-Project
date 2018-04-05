@@ -68,7 +68,6 @@ C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.exe
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.pdb
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\bin\Debug\Customer_Interface.xml
-C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.vbprojResolveAssemblyReference.cache
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Current_Rentals.resources
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.CustomerHelp.resources
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.Customer_Login.resources

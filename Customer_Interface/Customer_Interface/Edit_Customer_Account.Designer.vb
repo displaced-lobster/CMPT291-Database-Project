@@ -75,7 +75,7 @@ Partial Class Edit_Customer_Account
         Me.btnExit.Location = New System.Drawing.Point(218, 543)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(118, 23)
-        Me.btnExit.TabIndex = 96
+        Me.btnExit.TabIndex = 27
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
@@ -86,7 +86,7 @@ Partial Class Edit_Customer_Account
         Me.txtPassCheck.Name = "txtPassCheck"
         Me.txtPassCheck.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassCheck.Size = New System.Drawing.Size(207, 20)
-        Me.txtPassCheck.TabIndex = 123
+        Me.txtPassCheck.TabIndex = 25
         '
         'Label19
         '
@@ -104,7 +104,7 @@ Partial Class Edit_Customer_Account
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(207, 20)
-        Me.txtPass.TabIndex = 122
+        Me.txtPass.TabIndex = 24
         '
         'Label18
         '
@@ -121,7 +121,7 @@ Partial Class Edit_Customer_Account
         Me.txtUser.MaxLength = 50
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(207, 20)
-        Me.txtUser.TabIndex = 121
+        Me.txtUser.TabIndex = 23
         '
         'label16
         '
@@ -245,7 +245,7 @@ Partial Class Edit_Customer_Account
         Me.btnSave.Location = New System.Drawing.Point(218, 514)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(118, 23)
-        Me.btnSave.TabIndex = 124
+        Me.btnSave.TabIndex = 26
         Me.btnSave.Text = "Save Changes"
         Me.btnSave.UseVisualStyleBackColor = True
         '
@@ -255,7 +255,7 @@ Partial Class Edit_Customer_Account
         Me.unlim3.Location = New System.Drawing.Point(296, 393)
         Me.unlim3.Name = "unlim3"
         Me.unlim3.Size = New System.Drawing.Size(77, 17)
-        Me.unlim3.TabIndex = 119
+        Me.unlim3.TabIndex = 22
         Me.unlim3.TabStop = True
         Me.unlim3.Text = "Unlimited 3"
         Me.unlim3.UseVisualStyleBackColor = True
@@ -266,7 +266,7 @@ Partial Class Edit_Customer_Account
         Me.unlim2.Location = New System.Drawing.Point(198, 393)
         Me.unlim2.Name = "unlim2"
         Me.unlim2.Size = New System.Drawing.Size(77, 17)
-        Me.unlim2.TabIndex = 118
+        Me.unlim2.TabIndex = 21
         Me.unlim2.TabStop = True
         Me.unlim2.Text = "Unlimited 2"
         Me.unlim2.UseVisualStyleBackColor = True
@@ -277,7 +277,7 @@ Partial Class Edit_Customer_Account
         Me.unlim1.Location = New System.Drawing.Point(102, 393)
         Me.unlim1.Name = "unlim1"
         Me.unlim1.Size = New System.Drawing.Size(77, 17)
-        Me.unlim1.TabIndex = 117
+        Me.unlim1.TabIndex = 20
         Me.unlim1.TabStop = True
         Me.unlim1.Text = "Unlimited 1"
         Me.unlim1.UseVisualStyleBackColor = True
@@ -288,7 +288,7 @@ Partial Class Edit_Customer_Account
         Me.limited.Location = New System.Drawing.Point(22, 393)
         Me.limited.Name = "limited"
         Me.limited.Size = New System.Drawing.Size(58, 17)
-        Me.limited.TabIndex = 116
+        Me.limited.TabIndex = 19
         Me.limited.TabStop = True
         Me.limited.Text = "Limited"
         Me.limited.UseVisualStyleBackColor = True
@@ -308,7 +308,7 @@ Partial Class Edit_Customer_Account
         Me.num3.MaxLength = 11
         Me.num3.Name = "num3"
         Me.num3.Size = New System.Drawing.Size(125, 20)
-        Me.num3.TabIndex = 106
+        Me.num3.TabIndex = 9
         '
         'phoneDrop3
         '
@@ -320,7 +320,7 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
         Me.phoneDrop3.Size = New System.Drawing.Size(121, 21)
-        Me.phoneDrop3.TabIndex = 107
+        Me.phoneDrop3.TabIndex = 10
         '
         'num2
         '
@@ -328,7 +328,7 @@ Partial Class Edit_Customer_Account
         Me.num2.MaxLength = 11
         Me.num2.Name = "num2"
         Me.num2.Size = New System.Drawing.Size(125, 20)
-        Me.num2.TabIndex = 104
+        Me.num2.TabIndex = 6
         '
         'phoneDrop2
         '
@@ -340,7 +340,7 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
         Me.phoneDrop2.Size = New System.Drawing.Size(121, 21)
-        Me.phoneDrop2.TabIndex = 105
+        Me.phoneDrop2.TabIndex = 7
         '
         'phoneDrop1
         '
@@ -352,7 +352,7 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop1.MaxDropDownItems = 3
         Me.phoneDrop1.Name = "phoneDrop1"
         Me.phoneDrop1.Size = New System.Drawing.Size(121, 21)
-        Me.phoneDrop1.TabIndex = 102
+        Me.phoneDrop1.TabIndex = 5
         '
         'num1
         '
@@ -360,7 +360,7 @@ Partial Class Edit_Customer_Account
         Me.num1.MaxLength = 11
         Me.num1.Name = "num1"
         Me.num1.Size = New System.Drawing.Size(125, 20)
-        Me.num1.TabIndex = 101
+        Me.num1.TabIndex = 4
         '
         'cardNum
         '
@@ -368,7 +368,7 @@ Partial Class Edit_Customer_Account
         Me.cardNum.MaxLength = 16
         Me.cardNum.Name = "cardNum"
         Me.cardNum.Size = New System.Drawing.Size(207, 20)
-        Me.cardNum.TabIndex = 115
+        Me.cardNum.TabIndex = 18
         '
         'Label3
         '
@@ -385,15 +385,16 @@ Partial Class Edit_Customer_Account
         Me.email.MaxLength = 50
         Me.email.Name = "email"
         Me.email.Size = New System.Drawing.Size(436, 20)
-        Me.email.TabIndex = 100
+        Me.email.TabIndex = 3
         '
         'aptNum
         '
         Me.aptNum.ForeColor = System.Drawing.SystemColors.ControlText
         Me.aptNum.Location = New System.Drawing.Point(466, 225)
+        Me.aptNum.MaxLength = 9
         Me.aptNum.Name = "aptNum"
         Me.aptNum.Size = New System.Drawing.Size(68, 20)
-        Me.aptNum.TabIndex = 111
+        Me.aptNum.TabIndex = 14
         '
         'streetNum
         '
@@ -401,7 +402,7 @@ Partial Class Edit_Customer_Account
         Me.streetNum.MaxLength = 9
         Me.streetNum.Name = "streetNum"
         Me.streetNum.Size = New System.Drawing.Size(60, 20)
-        Me.streetNum.TabIndex = 108
+        Me.streetNum.TabIndex = 12
         '
         'zip
         '
@@ -409,7 +410,7 @@ Partial Class Edit_Customer_Account
         Me.zip.MaxLength = 6
         Me.zip.Name = "zip"
         Me.zip.Size = New System.Drawing.Size(68, 20)
-        Me.zip.TabIndex = 114
+        Me.zip.TabIndex = 17
         '
         'street
         '
@@ -417,7 +418,7 @@ Partial Class Edit_Customer_Account
         Me.street.MaxLength = 50
         Me.street.Name = "street"
         Me.street.Size = New System.Drawing.Size(194, 20)
-        Me.street.TabIndex = 109
+        Me.street.TabIndex = 13
         '
         'Label2
         '
@@ -434,7 +435,7 @@ Partial Class Edit_Customer_Account
         Me.state.MaxLength = 50
         Me.state.Name = "state"
         Me.state.Size = New System.Drawing.Size(158, 20)
-        Me.state.TabIndex = 113
+        Me.state.TabIndex = 16
         '
         'city
         '
@@ -442,7 +443,7 @@ Partial Class Edit_Customer_Account
         Me.city.MaxLength = 50
         Me.city.Name = "city"
         Me.city.Size = New System.Drawing.Size(184, 20)
-        Me.city.TabIndex = 112
+        Me.city.TabIndex = 15
         '
         'lastName
         '
@@ -450,7 +451,7 @@ Partial Class Edit_Customer_Account
         Me.lastName.MaxLength = 50
         Me.lastName.Name = "lastName"
         Me.lastName.Size = New System.Drawing.Size(194, 20)
-        Me.lastName.TabIndex = 99
+        Me.lastName.TabIndex = 2
         '
         'firstName
         '
@@ -458,7 +459,7 @@ Partial Class Edit_Customer_Account
         Me.firstName.MaxLength = 50
         Me.firstName.Name = "firstName"
         Me.firstName.Size = New System.Drawing.Size(192, 20)
-        Me.firstName.TabIndex = 98
+        Me.firstName.TabIndex = 1
         '
         'Label1
         '
@@ -474,7 +475,7 @@ Partial Class Edit_Customer_Account
         Me.btnRem2.Location = New System.Drawing.Point(281, 149)
         Me.btnRem2.Name = "btnRem2"
         Me.btnRem2.Size = New System.Drawing.Size(102, 23)
-        Me.btnRem2.TabIndex = 141
+        Me.btnRem2.TabIndex = 8
         Me.btnRem2.Text = "Remove Number"
         Me.btnRem2.UseVisualStyleBackColor = True
         '
@@ -483,7 +484,7 @@ Partial Class Edit_Customer_Account
         Me.btnRem3.Location = New System.Drawing.Point(281, 178)
         Me.btnRem3.Name = "btnRem3"
         Me.btnRem3.Size = New System.Drawing.Size(102, 23)
-        Me.btnRem3.TabIndex = 142
+        Me.btnRem3.TabIndex = 11
         Me.btnRem3.Text = "Remove Number"
         Me.btnRem3.UseVisualStyleBackColor = True
         '

@@ -424,7 +424,7 @@ Public Class Customer_Interface
         If SQL.SQLTable.Rows.Count > 0 Then
             averageRating = SQL.SQLTable.Rows(0).Item("rating").ToString
         End If
-        MsgBox(averageRating)
+        ' MsgBox(averageRating) ' for test purposes
         SQL.ExecuteQuery("UPDATE Movie_Data " &
                          "SET rating=" + averageRating.ToString + " " &
                          "WHERE movie_id=" + movie_ID.ToString + ";")
@@ -512,7 +512,7 @@ Public Class Customer_Interface
                 End If
             End If
         End If ' WORKS UP TO THIS POINT
-        MsgBox("You may rent a movie") ' for test purposes
+        'MsgBox("You may rent a movie") ' for test purposes
         Return True
     End Function
 

@@ -131,7 +131,7 @@ Partial Class Customer_SignUp
         'zip
         '
         Me.zip.Location = New System.Drawing.Point(486, 261)
-        Me.zip.MaxLength = 6
+        Me.zip.MaxLength = 5
         Me.zip.Name = "zip"
         Me.zip.Size = New System.Drawing.Size(56, 20)
         Me.zip.TabIndex = 15
@@ -148,6 +148,7 @@ Partial Class Customer_SignUp
         '
         Me.aptNum.ForeColor = System.Drawing.SystemColors.ControlText
         Me.aptNum.Location = New System.Drawing.Point(486, 235)
+        Me.aptNum.MaxLength = 9
         Me.aptNum.Name = "aptNum"
         Me.aptNum.Size = New System.Drawing.Size(56, 20)
         Me.aptNum.TabIndex = 12
@@ -544,7 +545,7 @@ Partial Class Customer_SignUp
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Customer_SignUp"
-        Me.Text = "New Customer Form"
+        Me.Text = "New Customer"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()

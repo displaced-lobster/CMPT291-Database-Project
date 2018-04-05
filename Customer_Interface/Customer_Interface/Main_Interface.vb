@@ -10,21 +10,21 @@
     End Sub
 
     Private Sub EmployeeServicesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmployeeServicesToolStripMenuItem.Click
+        My.Application.OpenForms.Cast(Of Form)().Except({Me}).ToList().ForEach(Sub(form) form.Close())  ' close all forms open first to close any current sessions
+        Customer_Login.username.Clear() ' clear any past login information
+        Customer_Login.passwd.Clear()
         Customer_Login.Show()
         pbBlueBox.Hide()
     End Sub
 
     Private Sub EmployeeServicesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmployeeServicesToolStripMenuItem1.Click
+        My.Application.OpenForms.Cast(Of Form)().Except({Me}).ToList().ForEach(Sub(form) form.Close())  ' close all forms open first to close any current sessions
         Employee_Login.Show()
         pbBlueBox.Hide()
     End Sub
 
-    Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestToolStripMenuItem.Click
-        Test_Query_Page.Show()
-        pbBlueBox.Hide()
-    End Sub
-
     Private Sub ManagerServicesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManagerServicesToolStripMenuItem.Click
+        My.Application.OpenForms.Cast(Of Form)().Except({Me}).ToList().ForEach(Sub(form) form.Close())  ' close all forms open first to close any current sessions
         Main_Manager_Interface.Show()
         pbBlueBox.Hide()
     End Sub
@@ -33,4 +33,5 @@
         CustomerHelp.Show()
         pbBlueBox.Hide()
     End Sub
+
 End Class
