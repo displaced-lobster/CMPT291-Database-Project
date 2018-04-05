@@ -87,7 +87,7 @@ Partial Class CustomerHelp
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Label3.Location = New System.Drawing.Point(7, 25)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(1131, 420)
+        Me.Label3.Size = New System.Drawing.Size(1130, 420)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = resources.GetString("Label3.Text")
         '
@@ -129,7 +129,7 @@ Partial Class CustomerHelp
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Label2.Location = New System.Drawing.Point(7, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1133, 340)
+        Me.Label2.Size = New System.Drawing.Size(1129, 340)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = resources.GetString("Label2.Text")
         '
