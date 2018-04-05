@@ -32,12 +32,15 @@ Partial Class Main_Interface
         Me.ManagerServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
         Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbBlueBox = New System.Windows.Forms.PictureBox()
         Me.UserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManagerHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbBlueBox = New System.Windows.Forms.PictureBox()
+        Me.ContactUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Phone1800BLUEBOXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmailUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -63,61 +66,57 @@ Partial Class Main_Interface
         '
         Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1, Me.ManagerServicesToolStripMenuItem})
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(124, 22)
+        Me.Open.Size = New System.Drawing.Size(180, 22)
         Me.Open.Text = "Accounts"
         '
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CustomersToolStripMenuItem.Text = "New User Signup"
         '
         'EmployeeServicesToolStripMenuItem
         '
         Me.EmployeeServicesToolStripMenuItem.Name = "EmployeeServicesToolStripMenuItem"
-        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EmployeeServicesToolStripMenuItem.Text = "Customer Services"
         '
         'EmployeeServicesToolStripMenuItem1
         '
         Me.EmployeeServicesToolStripMenuItem1.Name = "EmployeeServicesToolStripMenuItem1"
-        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(171, 22)
+        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.EmployeeServicesToolStripMenuItem1.Text = "Employee Services"
         '
         'ManagerServicesToolStripMenuItem
         '
         Me.ManagerServicesToolStripMenuItem.Name = "ManagerServicesToolStripMenuItem"
-        Me.ManagerServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ManagerServicesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ManagerServicesToolStripMenuItem.Text = "Manager Services"
         '
         'Close
         '
         Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(124, 22)
+        Me.Close.Size = New System.Drawing.Size(180, 22)
         Me.Close.Text = "Close"
         '
         'TestToolStripMenuItem
         '
         Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TestToolStripMenuItem.Text = "Test"
+        '
+        'WindowToolStripMenuItem
+        '
+        Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.WindowToolStripMenuItem.Text = "About"
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserHelpToolStripMenuItem, Me.EmployeeHelpToolStripMenuItem, Me.ManagerHelpToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserHelpToolStripMenuItem, Me.EmployeeHelpToolStripMenuItem, Me.ManagerHelpToolStripMenuItem, Me.ContactUsToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'pbBlueBox
-        '
-        Me.pbBlueBox.BackgroundImage = CType(resources.GetObject("pbBlueBox.BackgroundImage"), System.Drawing.Image)
-        Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbBlueBox.Location = New System.Drawing.Point(0, 27)
-        Me.pbBlueBox.Name = "pbBlueBox"
-        Me.pbBlueBox.Size = New System.Drawing.Size(1184, 683)
-        Me.pbBlueBox.TabIndex = 2
-        Me.pbBlueBox.TabStop = False
         '
         'UserHelpToolStripMenuItem
         '
@@ -137,11 +136,34 @@ Partial Class Main_Interface
         Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ManagerHelpToolStripMenuItem.Text = "Manager Help"
         '
-        'WindowToolStripMenuItem
+        'pbBlueBox
         '
-        Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.WindowToolStripMenuItem.Text = "About"
+        Me.pbBlueBox.BackgroundImage = CType(resources.GetObject("pbBlueBox.BackgroundImage"), System.Drawing.Image)
+        Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbBlueBox.Location = New System.Drawing.Point(0, 27)
+        Me.pbBlueBox.Name = "pbBlueBox"
+        Me.pbBlueBox.Size = New System.Drawing.Size(1184, 683)
+        Me.pbBlueBox.TabIndex = 2
+        Me.pbBlueBox.TabStop = False
+        '
+        'ContactUsToolStripMenuItem
+        '
+        Me.ContactUsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Phone1800BLUEBOXToolStripMenuItem, Me.EmailUsToolStripMenuItem})
+        Me.ContactUsToolStripMenuItem.Name = "ContactUsToolStripMenuItem"
+        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContactUsToolStripMenuItem.Text = "Contact Us"
+        '
+        'Phone1800BLUEBOXToolStripMenuItem
+        '
+        Me.Phone1800BLUEBOXToolStripMenuItem.Name = "Phone1800BLUEBOXToolStripMenuItem"
+        Me.Phone1800BLUEBOXToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.Phone1800BLUEBOXToolStripMenuItem.Text = "Phone: 1800-BLUEBOX"
+        '
+        'EmailUsToolStripMenuItem
+        '
+        Me.EmailUsToolStripMenuItem.Name = "EmailUsToolStripMenuItem"
+        Me.EmailUsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.EmailUsToolStripMenuItem.Text = "Email Us"
         '
         'Main_Interface
         '
@@ -177,4 +199,7 @@ Partial Class Main_Interface
     Friend WithEvents EmployeeHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManagerHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WindowToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContactUsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Phone1800BLUEBOXToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmailUsToolStripMenuItem As ToolStripMenuItem
 End Class
