@@ -55,13 +55,13 @@
 
         For Each r As DataRow In SQL.SQLTable.Rows
             Dim mailee As String = r("first_name") + " " + r("last_name") + ", "
-            mailee += r("street_num").ToString() + " " + r("street") + " "
+            mailee += r("street_num").ToString() + " " + r("street") + ", "
 
             If Not IsDBNull(r("apartment_num")) And Not r("apartment_num").ToString() = "0" Then
-                mailee += "APT " + r("apartment_num").ToString() + " "
+                mailee += "APT " + r("apartment_num").ToString() + ", "
             End If
 
-            mailee += r("city") + ", " + r("state") + " " + r("zip_code").ToString()
+            mailee += r("city") + ", " + r("state") + ", " + r("zip_code").ToString()
 
             AddressList.Items.Add(mailee)
 
