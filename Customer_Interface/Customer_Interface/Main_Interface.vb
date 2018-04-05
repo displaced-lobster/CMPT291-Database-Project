@@ -33,4 +33,9 @@
         CustomerHelp.Show()
         pbBlueBox.Hide()
     End Sub
+
+    Private Sub EmployeeHelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmployeeHelpToolStripMenuItem.Click
+        EmployeeHelp.Show()
+        pbBlueBox.Hide()
+    End Sub
 End Class

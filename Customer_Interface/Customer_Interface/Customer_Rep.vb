@@ -324,6 +324,18 @@
             SQL.AddParam("@movieid", recMovieId.Text)
             SQL.ExecuteQuery("DELETE FROM order_queue WHERE account_number = @acctnum AND movie_id = @movieid;")
             If SQL.HasException(True) Then Exit Sub
+
+            Dim new_inventory As Integer
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.ExecuteQuery("SELECT inventory FROM movie_data WHERE movie_id = @movieid;")
+            If SQL.HasException(True) Then Exit Sub
+            new_inventory = SQL.SQLTable.Rows(0).ItemArray(0) - 1
+
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.AddParam("@inv", new_inventory)
+            SQL.ExecuteQuery("UPDATE movie_data SET inventory = @inv WHERE movie_id = @movieid;")
+            If SQL.HasException(True) Then Exit Sub
+
             MsgBox("Order successfully created.")
         End If
 
@@ -541,7 +553,7 @@
         orderList.Items.Clear()
         SQL.AddParam("@acct", orderAcctNum.Text)
         SQL.ExecuteQuery("SELECT movie_data.movie_id, movie_data.movie_name, movie_data.inventory FROM order_queue, movie_data " &
-                         "WHERE account_number = @acct AND order_queue.movie_id = movie_data.movie_id ORDER BY order_queue.date;")
+                         "WHERE account_number = @acct AND order_queue.movie_id = movie_data.movie_id AND inventory > 0 ORDER BY order_queue.date;")
 
         For Each r As DataRow In SQL.SQLTable.Rows
             Dim movie As String = r("movie_id").ToString() + vbTab + vbTab + r("inventory").ToString() + vbTab + vbTab + r("movie_name")
