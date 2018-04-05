@@ -70,7 +70,7 @@ Partial Class Employee_Login
         '
         'AccessAccount
         '
-        Me.AccessAccount.Location = New System.Drawing.Point(363, 250)
+        Me.AccessAccount.Location = New System.Drawing.Point(363, 267)
         Me.AccessAccount.Name = "AccessAccount"
         Me.AccessAccount.Size = New System.Drawing.Size(123, 23)
         Me.AccessAccount.TabIndex = 23
@@ -98,7 +98,10 @@ Partial Class Employee_Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1019, 588)
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(1222, 714)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.Label2)
@@ -106,8 +109,11 @@ Partial Class Employee_Login
         Me.Controls.Add(Me.AccessAccount)
         Me.Controls.Add(Me.passwd)
         Me.Controls.Add(Me.username)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Employee_Login"
-        Me.Text = "Form1"
+        Me.Text = "Employee Login"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
