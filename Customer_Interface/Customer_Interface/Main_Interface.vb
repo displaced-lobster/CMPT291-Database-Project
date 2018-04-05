@@ -57,7 +57,7 @@
                          "WHERE actor_data.actor_id = acts_in.actor_id AND " &
                          "movie_data.movie_id = acts_in.movie_id AND " &
                          "actor_data.rating > 4 AND movie_data.rating < 2 " &
-                         "GROUP BY actor_data.actor_id ORDER BY bad_movies) AS flops " &
+                         "GROUP BY actor_data.actor_id ORDER BY bad_movies DESC) AS flops " &
                          "WHERE actor_data.actor_id = flops.actor_id;")
         If SQL.HasException(True) Then Exit Sub
 
