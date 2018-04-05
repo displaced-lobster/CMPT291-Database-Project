@@ -88,3 +88,5 @@ C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.exe
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.xml
 C:\Users\glenn\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.pdb
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.CustomerHelp.resources
+C:\Users\rchrd\Source\Repos\CMPT291-Database-Project\Customer_Interface\Customer_Interface\obj\Debug\Customer_Interface.EmployeeHelp.resources

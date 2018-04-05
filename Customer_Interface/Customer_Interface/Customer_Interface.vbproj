@@ -100,6 +100,12 @@
     <Compile Include="CustomerHelp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployeeHelp.Designer.vb">
+      <DependentUpon>EmployeeHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Recommendation.vb" />
     <Compile Include="CMPT291_ProjectDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Customer_Account.resx">
       <DependentUpon>Edit_Customer_Account.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHelp.resx">
+      <DependentUpon>EmployeeHelp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee_Login.resx">
       <DependentUpon>Employee_Login.vb</DependentUpon>

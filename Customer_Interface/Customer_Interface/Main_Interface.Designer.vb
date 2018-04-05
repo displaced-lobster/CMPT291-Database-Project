@@ -31,6 +31,7 @@ Partial Class Main_Interface
         Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManagerServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,7 +57,7 @@ Partial Class Main_Interface
         '
         'File
         '
-        Me.File.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Open, Me.Close})
+        Me.File.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Open, Me.Close, Me.TestToolStripMenuItem})
         Me.File.Name = "File"
         Me.File.Size = New System.Drawing.Size(37, 20)
         Me.File.Text = "File"
@@ -65,7 +66,7 @@ Partial Class Main_Interface
         '
         Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1, Me.ManagerServicesToolStripMenuItem})
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(180, 22)
+        Me.Open.Size = New System.Drawing.Size(124, 22)
         Me.Open.Text = "Accounts"
         '
         'CustomersToolStripMenuItem
@@ -95,8 +96,14 @@ Partial Class Main_Interface
         'Close
         '
         Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(180, 22)
+        Me.Close.Size = New System.Drawing.Size(124, 22)
         Me.Close.Text = "Close"
+        '
+        'TestToolStripMenuItem
+        '
+        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.TestToolStripMenuItem.Text = "Test"
         '
         'WindowToolStripMenuItem
         '
@@ -114,26 +121,26 @@ Partial Class Main_Interface
         'UserHelpToolStripMenuItem
         '
         Me.UserHelpToolStripMenuItem.Name = "UserHelpToolStripMenuItem"
-        Me.UserHelpToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.UserHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UserHelpToolStripMenuItem.Text = "Customer Help"
         '
         'EmployeeHelpToolStripMenuItem
         '
         Me.EmployeeHelpToolStripMenuItem.Name = "EmployeeHelpToolStripMenuItem"
-        Me.EmployeeHelpToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.EmployeeHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EmployeeHelpToolStripMenuItem.Text = "Employee Help"
         '
         'ManagerHelpToolStripMenuItem
         '
         Me.ManagerHelpToolStripMenuItem.Name = "ManagerHelpToolStripMenuItem"
-        Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ManagerHelpToolStripMenuItem.Text = "Manager Help"
         '
         'ContactUsToolStripMenuItem
         '
         Me.ContactUsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Phone1800BLUEBOXToolStripMenuItem, Me.EmailUsToolStripMenuItem})
         Me.ContactUsToolStripMenuItem.Name = "ContactUsToolStripMenuItem"
-        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ContactUsToolStripMenuItem.Text = "Contact Us"
         '
         'Phone1800BLUEBOXToolStripMenuItem
@@ -185,6 +192,7 @@ Partial Class Main_Interface
     Friend WithEvents CustomersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TestToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManagerServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents pbBlueBox As PictureBox
     Friend WithEvents UserHelpToolStripMenuItem As ToolStripMenuItem
