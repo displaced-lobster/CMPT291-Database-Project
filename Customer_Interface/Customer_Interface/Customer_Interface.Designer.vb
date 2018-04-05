@@ -401,10 +401,10 @@ Partial Class Customer_Interface
         Me.rbActor.AutoSize = True
         Me.rbActor.Location = New System.Drawing.Point(317, 99)
         Me.rbActor.Name = "rbActor"
-        Me.rbActor.Size = New System.Drawing.Size(106, 17)
+        Me.rbActor.Size = New System.Drawing.Size(101, 17)
         Me.rbActor.TabIndex = 10
         Me.rbActor.TabStop = True
-        Me.rbActor.Text = "Search by Actors"
+        Me.rbActor.Text = "Search by Actor"
         Me.rbActor.UseVisualStyleBackColor = True
         '
         'cbEditQueue
