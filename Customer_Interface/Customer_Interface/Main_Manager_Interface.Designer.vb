@@ -84,9 +84,10 @@ Partial Class Main_Manager_Interface
         'ManagerLabel
         '
         Me.ManagerLabel.AutoSize = True
-        Me.ManagerLabel.Location = New System.Drawing.Point(13, 37)
+        Me.ManagerLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.ManagerLabel.Location = New System.Drawing.Point(12, 40)
         Me.ManagerLabel.Name = "ManagerLabel"
-        Me.ManagerLabel.Size = New System.Drawing.Size(49, 13)
+        Me.ManagerLabel.Size = New System.Drawing.Size(85, 24)
         Me.ManagerLabel.TabIndex = 0
         Me.ManagerLabel.Text = "Manager"
         '
@@ -632,6 +633,7 @@ Partial Class Main_Manager_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1200, 750)
         Me.ControlBox = False
         Me.Controls.Add(Me.ManagerTab1)

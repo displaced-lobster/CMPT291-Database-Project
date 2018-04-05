@@ -31,7 +31,6 @@ Partial Class Main_Interface
         Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManagerServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,7 +56,7 @@ Partial Class Main_Interface
         '
         'File
         '
-        Me.File.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Open, Me.Close, Me.TestToolStripMenuItem})
+        Me.File.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Open, Me.Close})
         Me.File.Name = "File"
         Me.File.Size = New System.Drawing.Size(37, 20)
         Me.File.Text = "File"
@@ -98,12 +97,6 @@ Partial Class Main_Interface
         Me.Close.Name = "Close"
         Me.Close.Size = New System.Drawing.Size(124, 22)
         Me.Close.Text = "Close"
-        '
-        'TestToolStripMenuItem
-        '
-        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
-        Me.TestToolStripMenuItem.Text = "Test"
         '
         'WindowToolStripMenuItem
         '
@@ -157,6 +150,7 @@ Partial Class Main_Interface
         '
         'pbBlueBox
         '
+        Me.pbBlueBox.BackColor = System.Drawing.SystemColors.Highlight
         Me.pbBlueBox.BackgroundImage = CType(resources.GetObject("pbBlueBox.BackgroundImage"), System.Drawing.Image)
         Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pbBlueBox.Location = New System.Drawing.Point(-1, 27)
@@ -169,12 +163,14 @@ Partial Class Main_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Highlight
         Me.ClientSize = New System.Drawing.Size(1184, 724)
         Me.Controls.Add(Me.pbBlueBox)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "Main_Interface"
         Me.Text = "Blue Box Rental Service"
         Me.MenuStrip1.ResumeLayout(False)
@@ -193,7 +189,6 @@ Partial Class Main_Interface
     Friend WithEvents CustomersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents TestToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManagerServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents pbBlueBox As PictureBox
     Friend WithEvents UserHelpToolStripMenuItem As ToolStripMenuItem

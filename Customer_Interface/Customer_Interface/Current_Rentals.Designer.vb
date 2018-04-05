@@ -115,7 +115,8 @@ Partial Class Current_Rentals
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1187, 727)
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ClientSize = New System.Drawing.Size(1179, 719)
         Me.ControlBox = False
         Me.Controls.Add(Me.execute_button)
         Me.Controls.Add(Me.textbox_input)

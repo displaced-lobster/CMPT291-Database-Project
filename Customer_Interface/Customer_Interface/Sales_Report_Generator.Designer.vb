@@ -127,6 +127,7 @@ Partial Class Sales_Report_Generator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1171, 688)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button1)

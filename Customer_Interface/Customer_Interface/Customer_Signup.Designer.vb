@@ -75,6 +75,7 @@ Partial Class Customer_SignUp
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label1.Location = New System.Drawing.Point(14, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(103, 13)
@@ -83,6 +84,7 @@ Partial Class Customer_SignUp
         '
         'firstName
         '
+        Me.firstName.ForeColor = System.Drawing.SystemColors.ControlText
         Me.firstName.Location = New System.Drawing.Point(81, 41)
         Me.firstName.MaxLength = 50
         Me.firstName.Name = "firstName"
@@ -91,6 +93,7 @@ Partial Class Customer_SignUp
         '
         'lastName
         '
+        Me.lastName.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lastName.Location = New System.Drawing.Point(347, 41)
         Me.lastName.MaxLength = 50
         Me.lastName.Name = "lastName"
@@ -99,6 +102,7 @@ Partial Class Customer_SignUp
         '
         'city
         '
+        Me.city.ForeColor = System.Drawing.SystemColors.ControlText
         Me.city.Location = New System.Drawing.Point(51, 251)
         Me.city.MaxLength = 50
         Me.city.Name = "city"
@@ -107,6 +111,7 @@ Partial Class Customer_SignUp
         '
         'state
         '
+        Me.state.ForeColor = System.Drawing.SystemColors.ControlText
         Me.state.Location = New System.Drawing.Point(286, 250)
         Me.state.MaxLength = 50
         Me.state.Name = "state"
@@ -116,6 +121,7 @@ Partial Class Customer_SignUp
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Location = New System.Drawing.Point(14, 208)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 13)
@@ -124,6 +130,7 @@ Partial Class Customer_SignUp
         '
         'street
         '
+        Me.street.ForeColor = System.Drawing.SystemColors.ControlText
         Me.street.Location = New System.Drawing.Point(204, 224)
         Me.street.MaxLength = 50
         Me.street.Name = "street"
@@ -132,6 +139,7 @@ Partial Class Customer_SignUp
         '
         'zip
         '
+        Me.zip.ForeColor = System.Drawing.SystemColors.ControlText
         Me.zip.Location = New System.Drawing.Point(485, 250)
         Me.zip.MaxLength = 5
         Me.zip.Name = "zip"
@@ -140,6 +148,7 @@ Partial Class Customer_SignUp
         '
         'streetNum
         '
+        Me.streetNum.ForeColor = System.Drawing.SystemColors.ControlText
         Me.streetNum.Location = New System.Drawing.Point(97, 224)
         Me.streetNum.MaxLength = 9
         Me.streetNum.Name = "streetNum"
@@ -157,6 +166,7 @@ Partial Class Customer_SignUp
         '
         'email
         '
+        Me.email.ForeColor = System.Drawing.SystemColors.ControlText
         Me.email.Location = New System.Drawing.Point(97, 67)
         Me.email.MaxLength = 50
         Me.email.Name = "email"
@@ -166,6 +176,7 @@ Partial Class Customer_SignUp
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label3.Location = New System.Drawing.Point(17, 304)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 13)
@@ -174,6 +185,7 @@ Partial Class Customer_SignUp
         '
         'cardNum
         '
+        Me.cardNum.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cardNum.Location = New System.Drawing.Point(82, 323)
         Me.cardNum.MaxLength = 16
         Me.cardNum.Name = "cardNum"
@@ -182,6 +194,7 @@ Partial Class Customer_SignUp
         '
         'num1
         '
+        Me.num1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.num1.Location = New System.Drawing.Point(19, 121)
         Me.num1.MaxLength = 11
         Me.num1.Name = "num1"
@@ -192,6 +205,7 @@ Partial Class Customer_SignUp
         '
         Me.phoneDrop1.AllowDrop = True
         Me.phoneDrop1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.phoneDrop1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.phoneDrop1.FormattingEnabled = True
         Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Cell"})
         Me.phoneDrop1.Location = New System.Drawing.Point(150, 121)
@@ -204,9 +218,10 @@ Partial Class Customer_SignUp
         '
         Me.phoneDrop2.AllowDrop = True
         Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.phoneDrop2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.phoneDrop2.FormattingEnabled = True
         Me.phoneDrop2.Items.AddRange(New Object() {"Home", "Work", "Cell"})
-        Me.phoneDrop2.Location = New System.Drawing.Point(150, 146)
+        Me.phoneDrop2.Location = New System.Drawing.Point(150, 148)
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
         Me.phoneDrop2.Size = New System.Drawing.Size(121, 21)
@@ -214,7 +229,8 @@ Partial Class Customer_SignUp
         '
         'num2
         '
-        Me.num2.Location = New System.Drawing.Point(19, 147)
+        Me.num2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.num2.Location = New System.Drawing.Point(19, 149)
         Me.num2.MaxLength = 11
         Me.num2.Name = "num2"
         Me.num2.Size = New System.Drawing.Size(125, 20)
@@ -222,7 +238,8 @@ Partial Class Customer_SignUp
         '
         'num3
         '
-        Me.num3.Location = New System.Drawing.Point(19, 174)
+        Me.num3.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.num3.Location = New System.Drawing.Point(19, 176)
         Me.num3.MaxLength = 11
         Me.num3.Name = "num3"
         Me.num3.Size = New System.Drawing.Size(125, 20)
@@ -232,6 +249,7 @@ Partial Class Customer_SignUp
         '
         Me.phoneDrop3.AllowDrop = True
         Me.phoneDrop3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.phoneDrop3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.phoneDrop3.FormattingEnabled = True
         Me.phoneDrop3.Items.AddRange(New Object() {"Home", "Work", "Cell"})
         Me.phoneDrop3.Location = New System.Drawing.Point(150, 175)
@@ -243,6 +261,7 @@ Partial Class Customer_SignUp
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label4.Location = New System.Drawing.Point(17, 375)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 13)
@@ -252,6 +271,7 @@ Partial Class Customer_SignUp
         'limited
         '
         Me.limited.AutoSize = True
+        Me.limited.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.limited.Location = New System.Drawing.Point(20, 392)
         Me.limited.Name = "limited"
         Me.limited.Size = New System.Drawing.Size(58, 17)
@@ -263,6 +283,7 @@ Partial Class Customer_SignUp
         'unlim1
         '
         Me.unlim1.AutoSize = True
+        Me.unlim1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.unlim1.Location = New System.Drawing.Point(100, 392)
         Me.unlim1.Name = "unlim1"
         Me.unlim1.Size = New System.Drawing.Size(77, 17)
@@ -274,6 +295,7 @@ Partial Class Customer_SignUp
         'unlim2
         '
         Me.unlim2.AutoSize = True
+        Me.unlim2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.unlim2.Location = New System.Drawing.Point(196, 392)
         Me.unlim2.Name = "unlim2"
         Me.unlim2.Size = New System.Drawing.Size(77, 17)
@@ -285,6 +307,7 @@ Partial Class Customer_SignUp
         'unlim3
         '
         Me.unlim3.AutoSize = True
+        Me.unlim3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.unlim3.Location = New System.Drawing.Point(294, 392)
         Me.unlim3.Name = "unlim3"
         Me.unlim3.Size = New System.Drawing.Size(77, 17)
@@ -306,6 +329,7 @@ Partial Class Customer_SignUp
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label5.Location = New System.Drawing.Point(14, 44)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 13)
@@ -315,6 +339,7 @@ Partial Class Customer_SignUp
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label6.Location = New System.Drawing.Point(276, 44)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
@@ -324,6 +349,7 @@ Partial Class Customer_SignUp
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label7.Location = New System.Drawing.Point(14, 70)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 13)
@@ -333,6 +359,7 @@ Partial Class Customer_SignUp
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label8.Location = New System.Drawing.Point(147, 105)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(31, 13)
@@ -342,6 +369,7 @@ Partial Class Customer_SignUp
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label9.Location = New System.Drawing.Point(16, 103)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(38, 13)
@@ -351,6 +379,7 @@ Partial Class Customer_SignUp
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label10.Location = New System.Drawing.Point(14, 227)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(82, 13)
@@ -360,6 +389,7 @@ Partial Class Customer_SignUp
         'Label11
         '
         Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label11.Location = New System.Drawing.Point(157, 227)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(42, 13)
@@ -369,6 +399,7 @@ Partial Class Customer_SignUp
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label12.Location = New System.Drawing.Point(416, 227)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(63, 13)
@@ -378,6 +409,7 @@ Partial Class Customer_SignUp
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label13.Location = New System.Drawing.Point(14, 254)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(31, 13)
@@ -387,6 +419,7 @@ Partial Class Customer_SignUp
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label14.Location = New System.Drawing.Point(241, 254)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(39, 13)
@@ -396,6 +429,7 @@ Partial Class Customer_SignUp
         'Label15
         '
         Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label15.Location = New System.Drawing.Point(450, 253)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(29, 13)
@@ -405,6 +439,7 @@ Partial Class Customer_SignUp
         'Label17
         '
         Me.Label17.AutoSize = True
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label17.Location = New System.Drawing.Point(17, 326)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(59, 13)
@@ -414,6 +449,7 @@ Partial Class Customer_SignUp
         'label16
         '
         Me.label16.AutoSize = True
+        Me.label16.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.label16.Location = New System.Drawing.Point(17, 429)
         Me.label16.Name = "label16"
         Me.label16.Size = New System.Drawing.Size(62, 13)
@@ -422,6 +458,7 @@ Partial Class Customer_SignUp
         '
         'txtUser
         '
+        Me.txtUser.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtUser.Location = New System.Drawing.Point(104, 426)
         Me.txtUser.MaxLength = 50
         Me.txtUser.Name = "txtUser"
@@ -430,6 +467,7 @@ Partial Class Customer_SignUp
         '
         'txtPass
         '
+        Me.txtPass.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtPass.Location = New System.Drawing.Point(104, 452)
         Me.txtPass.MaxLength = 50
         Me.txtPass.Name = "txtPass"
@@ -440,6 +478,7 @@ Partial Class Customer_SignUp
         'Label18
         '
         Me.Label18.AutoSize = True
+        Me.Label18.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label18.Location = New System.Drawing.Point(16, 455)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(60, 13)
@@ -448,6 +487,7 @@ Partial Class Customer_SignUp
         '
         'txtPassCheck
         '
+        Me.txtPassCheck.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtPassCheck.Location = New System.Drawing.Point(104, 478)
         Me.txtPassCheck.MaxLength = 50
         Me.txtPassCheck.Name = "txtPassCheck"
@@ -458,6 +498,7 @@ Partial Class Customer_SignUp
         'Label19
         '
         Me.Label19.AutoSize = True
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label19.Location = New System.Drawing.Point(16, 481)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(89, 13)
@@ -477,6 +518,7 @@ Partial Class Customer_SignUp
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!)
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label20.Location = New System.Drawing.Point(123, 16)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(91, 13)
@@ -486,6 +528,7 @@ Partial Class Customer_SignUp
         'Label21
         '
         Me.Label21.AutoSize = True
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label21.Location = New System.Drawing.Point(276, 124)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(11, 13)
@@ -549,6 +592,7 @@ Partial Class Customer_SignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Highlight
         Me.ClientSize = New System.Drawing.Size(1187, 727)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)

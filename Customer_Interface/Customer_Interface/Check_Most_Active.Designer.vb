@@ -24,7 +24,6 @@ Partial Class Check_Most_Active
     Private Sub InitializeComponent()
         Me.current_rentals_close_btn = New System.Windows.Forms.Button()
         Me.data_grid_most_active = New System.Windows.Forms.DataGridView()
-        Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
         Me.most_rented_movies_rbutton = New System.Windows.Forms.RadioButton()
         Me.most_actively_label = New System.Windows.Forms.Label()
         Me.customers_rbutton = New System.Windows.Forms.RadioButton()
@@ -52,15 +51,6 @@ Partial Class Check_Most_Active
         Me.data_grid_most_active.Name = "data_grid_most_active"
         Me.data_grid_most_active.Size = New System.Drawing.Size(419, 364)
         Me.data_grid_most_active.TabIndex = 2
-        '
-        'MenuStrip2
-        '
-        Me.MenuStrip2.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(1187, 24)
-        Me.MenuStrip2.TabIndex = 5
-        Me.MenuStrip2.Text = "MenuStrip2"
         '
         'most_rented_movies_rbutton
         '
@@ -116,7 +106,7 @@ Partial Class Check_Most_Active
         'top_x_tb
         '
         Me.top_x_tb.Location = New System.Drawing.Point(111, 181)
-        Me.top_x_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.top_x_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.top_x_tb.Name = "top_x_tb"
         Me.top_x_tb.Size = New System.Drawing.Size(27, 20)
         Me.top_x_tb.TabIndex = 11
@@ -135,7 +125,8 @@ Partial Class Check_Most_Active
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1187, 727)
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ClientSize = New System.Drawing.Size(1179, 719)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.top_x_tb)
@@ -146,7 +137,6 @@ Partial Class Check_Most_Active
         Me.Controls.Add(Me.most_rented_movies_rbutton)
         Me.Controls.Add(Me.current_rentals_close_btn)
         Me.Controls.Add(Me.data_grid_most_active)
-        Me.Controls.Add(Me.MenuStrip2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -163,7 +153,6 @@ Partial Class Check_Most_Active
 
     Friend WithEvents current_rentals_close_btn As Button
     Friend WithEvents data_grid_most_active As DataGridView
-    Friend WithEvents MenuStrip2 As MenuStrip
     Friend WithEvents most_rented_movies_rbutton As RadioButton
     Friend WithEvents most_actively_label As Label
     Friend WithEvents customers_rbutton As RadioButton

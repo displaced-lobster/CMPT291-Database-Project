@@ -193,10 +193,11 @@ Partial Class Customer_Rep
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 42)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.Label1.Location = New System.Drawing.Point(13, 41)
         Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(126, 13)
+        Me.Label1.Size = New System.Drawing.Size(221, 24)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Customer Representative"
         '
@@ -212,11 +213,11 @@ Partial Class Customer_Rep
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(13, 65)
+        Me.TabControl1.Location = New System.Drawing.Point(10, 66)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1680, 854)
+        Me.TabControl1.Size = New System.Drawing.Size(1167, 651)
         Me.TabControl1.TabIndex = 3
         '
         'TabPage1
@@ -245,7 +246,7 @@ Partial Class Customer_Rep
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage1.Size = New System.Drawing.Size(1672, 828)
+        Me.TabPage1.Size = New System.Drawing.Size(1159, 625)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Create Order"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -447,7 +448,7 @@ Partial Class Customer_Rep
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage2.Size = New System.Drawing.Size(1672, 828)
+        Me.TabPage2.Size = New System.Drawing.Size(1159, 625)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Find Customer"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -530,11 +531,11 @@ Partial Class Customer_Rep
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CustData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.CustData.Location = New System.Drawing.Point(19, 78)
+        Me.CustData.Location = New System.Drawing.Point(3, 78)
         Me.CustData.Margin = New System.Windows.Forms.Padding(1)
         Me.CustData.Name = "CustData"
         Me.CustData.RowTemplate.Height = 40
-        Me.CustData.Size = New System.Drawing.Size(1101, 379)
+        Me.CustData.Size = New System.Drawing.Size(1154, 545)
         Me.CustData.TabIndex = 46
         '
         'Find
@@ -585,7 +586,7 @@ Partial Class Customer_Rep
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage4.Size = New System.Drawing.Size(1672, 828)
+        Me.TabPage4.Size = New System.Drawing.Size(1159, 625)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Add Customer"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1093,7 +1094,7 @@ Partial Class Customer_Rep
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1672, 828)
+        Me.TabPage5.Size = New System.Drawing.Size(1159, 625)
         Me.TabPage5.TabIndex = 6
         Me.TabPage5.Text = " Edit Customer"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1602,7 +1603,7 @@ Partial Class Customer_Rep
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1672, 828)
+        Me.TabPage6.Size = New System.Drawing.Size(1159, 625)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Delete Customer"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -1620,11 +1621,11 @@ Partial Class Customer_Rep
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.delData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.delData.Location = New System.Drawing.Point(25, 81)
+        Me.delData.Location = New System.Drawing.Point(13, 84)
         Me.delData.Margin = New System.Windows.Forms.Padding(1)
         Me.delData.Name = "delData"
         Me.delData.RowTemplate.Height = 40
-        Me.delData.Size = New System.Drawing.Size(1115, 125)
+        Me.delData.Size = New System.Drawing.Size(1132, 229)
         Me.delData.TabIndex = 92
         '
         'delSearch
@@ -1665,7 +1666,7 @@ Partial Class Customer_Rep
         Me.TabPage7.Controls.Add(Me.mailingList)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1672, 828)
+        Me.TabPage7.Size = New System.Drawing.Size(1159, 625)
         Me.TabPage7.TabIndex = 7
         Me.TabPage7.Text = "Mailing List"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1716,7 +1717,7 @@ Partial Class Customer_Rep
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage3.Size = New System.Drawing.Size(1672, 828)
+        Me.TabPage3.Size = New System.Drawing.Size(1159, 625)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Movie Recommendations"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1761,6 +1762,7 @@ Partial Class Customer_Rep
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1187, 727)
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
