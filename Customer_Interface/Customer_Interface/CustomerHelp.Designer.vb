@@ -27,11 +27,11 @@ Partial Class CustomerHelp
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.rtb2 = New System.Windows.Forms.RichTextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.rtb3 = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -73,50 +73,25 @@ Partial Class CustomerHelp
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.rtb2)
+        Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GroupBox3.Location = New System.Drawing.Point(13, 434)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1147, 442)
+        Me.GroupBox3.Size = New System.Drawing.Size(1147, 456)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Your Account"
         '
-        'rtb2
-        '
-        Me.rtb2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.rtb2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.rtb2.Enabled = False
-        Me.rtb2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.rtb2.Location = New System.Drawing.Point(7, 29)
-        Me.rtb2.Name = "rtb2"
-        Me.rtb2.ReadOnly = True
-        Me.rtb2.Size = New System.Drawing.Size(1134, 385)
-        Me.rtb2.TabIndex = 2
-        Me.rtb2.Text = "This is more text"
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.rtb3)
+        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 882)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 896)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1147, 402)
+        Me.GroupBox2.Size = New System.Drawing.Size(1147, 634)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Movies"
-        '
-        'rtb3
-        '
-        Me.rtb3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.rtb3.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.rtb3.Enabled = False
-        Me.rtb3.Location = New System.Drawing.Point(7, 29)
-        Me.rtb3.Name = "rtb3"
-        Me.rtb3.ReadOnly = True
-        Me.rtb3.Size = New System.Drawing.Size(1134, 367)
-        Me.rtb3.TabIndex = 3
-        Me.rtb3.Text = ""
         '
         'GroupBox1
         '
@@ -135,9 +110,29 @@ Partial Class CustomerHelp
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Label2.Location = New System.Drawing.Point(7, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1141, 340)
+        Me.Label2.Size = New System.Drawing.Size(1133, 340)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = resources.GetString("Label2.Text")
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label3.Location = New System.Drawing.Point(7, 25)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(1131, 420)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = resources.GetString("Label3.Text")
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label4.Location = New System.Drawing.Point(6, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(1132, 540)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = resources.GetString("Label4.Text")
         '
         'CustomerHelp
         '
@@ -155,7 +150,9 @@ Partial Class CustomerHelp
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -167,8 +164,8 @@ Partial Class CustomerHelp
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents rtb2 As RichTextBox
-    Friend WithEvents rtb3 As RichTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
