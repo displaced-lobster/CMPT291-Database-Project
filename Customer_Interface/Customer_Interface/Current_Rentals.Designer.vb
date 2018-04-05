@@ -96,7 +96,7 @@ Partial Class Current_Rentals
         'textbox_input
         '
         Me.textbox_input.Location = New System.Drawing.Point(21, 190)
-        Me.textbox_input.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.textbox_input.Margin = New System.Windows.Forms.Padding(2)
         Me.textbox_input.Name = "textbox_input"
         Me.textbox_input.Size = New System.Drawing.Size(123, 20)
         Me.textbox_input.TabIndex = 16
@@ -115,7 +115,7 @@ Partial Class Current_Rentals
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 750)
+        Me.ClientSize = New System.Drawing.Size(1187, 727)
         Me.ControlBox = False
         Me.Controls.Add(Me.execute_button)
         Me.Controls.Add(Me.textbox_input)
@@ -125,13 +125,13 @@ Partial Class Current_Rentals
         Me.Controls.Add(Me.rentals_mn_rbutton)
         Me.Controls.Add(Me.close_btn_rentals)
         Me.Controls.Add(Me.data_grid_rentals)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Current_Rentals"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.Text = "Check Most Active"
+        Me.Text = "Current Rentals"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.data_grid_rentals, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

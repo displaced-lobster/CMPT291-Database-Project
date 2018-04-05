@@ -56,10 +56,9 @@ Partial Class CustomerHelp
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(0, 42)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1184, 711)
+        Me.Panel1.Size = New System.Drawing.Size(1184, 669)
         Me.Panel1.TabIndex = 2
         '
         'Button1
@@ -98,7 +97,7 @@ Partial Class CustomerHelp
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 896)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1147, 634)
+        Me.GroupBox2.Size = New System.Drawing.Size(1147, 588)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Movies"
@@ -139,13 +138,15 @@ Partial Class CustomerHelp
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.ClientSize = New System.Drawing.Size(1187, 727)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "CustomerHelp"
-        Me.Text = "Customer Help"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

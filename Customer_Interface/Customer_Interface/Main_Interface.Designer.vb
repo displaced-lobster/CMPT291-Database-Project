@@ -176,7 +176,7 @@ Partial Class Main_Interface
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Main_Interface"
-        Me.Text = "Main Interface"
+        Me.Text = "Blue Box Rental Service"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).EndInit()
