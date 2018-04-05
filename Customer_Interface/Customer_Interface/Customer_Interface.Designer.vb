@@ -78,10 +78,10 @@ Partial Class Customer_Interface
         '
         'BtnExit
         '
-        Me.BtnExit.Location = New System.Drawing.Point(786, 7)
+        Me.BtnExit.Location = New System.Drawing.Point(928, 58)
         Me.BtnExit.Name = "BtnExit"
         Me.BtnExit.Size = New System.Drawing.Size(75, 23)
-        Me.BtnExit.TabIndex = 3
+        Me.BtnExit.TabIndex = 1
         Me.BtnExit.Text = "Logout"
         Me.BtnExit.UseVisualStyleBackColor = True
         '
@@ -89,11 +89,11 @@ Partial Class Customer_Interface
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(13, 36)
+        Me.TabControl1.Location = New System.Drawing.Point(155, 87)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(852, 447)
-        Me.TabControl1.TabIndex = 4
+        Me.TabControl1.TabIndex = 3
         '
         'TabPage1
         '
@@ -118,7 +118,7 @@ Partial Class Customer_Interface
         Me.GroupBox2.Location = New System.Drawing.Point(471, 7)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(367, 408)
-        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabIndex = 40
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Rental History"
         '
@@ -129,7 +129,7 @@ Partial Class Customer_Interface
         Me.cbxPrev.Location = New System.Drawing.Point(92, 117)
         Me.cbxPrev.Name = "cbxPrev"
         Me.cbxPrev.Size = New System.Drawing.Size(269, 21)
-        Me.cbxPrev.TabIndex = 8
+        Me.cbxPrev.TabIndex = 7
         '
         'cbxQueue
         '
@@ -165,7 +165,7 @@ Partial Class Customer_Interface
         Me.cbxCur.Location = New System.Drawing.Point(92, 20)
         Me.cbxCur.Name = "cbxCur"
         Me.cbxCur.Size = New System.Drawing.Size(269, 21)
-        Me.cbxCur.TabIndex = 1
+        Me.cbxCur.TabIndex = 5
         '
         'Label1
         '
@@ -183,7 +183,7 @@ Partial Class Customer_Interface
         Me.GroupBox1.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(457, 408)
-        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabIndex = 41
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Account Information"
         '
@@ -192,7 +192,7 @@ Partial Class Customer_Interface
         Me.btnChangeInfo.Location = New System.Drawing.Point(179, 366)
         Me.btnChangeInfo.Name = "btnChangeInfo"
         Me.btnChangeInfo.Size = New System.Drawing.Size(107, 23)
-        Me.btnChangeInfo.TabIndex = 1
+        Me.btnChangeInfo.TabIndex = 4
         Me.btnChangeInfo.Text = "Edit Account"
         Me.btnChangeInfo.UseVisualStyleBackColor = True
         '
@@ -207,7 +207,7 @@ Partial Class Customer_Interface
         Me.txtInfo.Name = "txtInfo"
         Me.txtInfo.ReadOnly = True
         Me.txtInfo.Size = New System.Drawing.Size(444, 340)
-        Me.txtInfo.TabIndex = 0
+        Me.txtInfo.TabIndex = 30
         '
         'TabPage2
         '
@@ -230,7 +230,7 @@ Partial Class Customer_Interface
         Me.GroupBox5.Location = New System.Drawing.Point(474, 7)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(364, 408)
-        Me.GroupBox5.TabIndex = 14
+        Me.GroupBox5.TabIndex = 42
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Rate a Past Rental"
         '
@@ -243,14 +243,14 @@ Partial Class Customer_Interface
         Me.cbRateRes.MaxDropDownItems = 50
         Me.cbRateRes.Name = "cbRateRes"
         Me.cbRateRes.Size = New System.Drawing.Size(186, 21)
-        Me.cbRateRes.TabIndex = 16
+        Me.cbRateRes.TabIndex = 27
         '
         'btnRate
         '
         Me.btnRate.Location = New System.Drawing.Point(234, 126)
         Me.btnRate.Name = "btnRate"
         Me.btnRate.Size = New System.Drawing.Size(89, 23)
-        Me.btnRate.TabIndex = 17
+        Me.btnRate.TabIndex = 28
         Me.btnRate.Text = "Rate"
         Me.btnRate.UseVisualStyleBackColor = True
         '
@@ -282,7 +282,7 @@ Partial Class Customer_Interface
         Me.rb5.Location = New System.Drawing.Point(154, 11)
         Me.rb5.Name = "rb5"
         Me.rb5.Size = New System.Drawing.Size(31, 17)
-        Me.rb5.TabIndex = 21
+        Me.rb5.TabIndex = 26
         Me.rb5.TabStop = True
         Me.rb5.Text = "5"
         Me.rb5.UseVisualStyleBackColor = True
@@ -293,7 +293,7 @@ Partial Class Customer_Interface
         Me.rb4.Location = New System.Drawing.Point(117, 11)
         Me.rb4.Name = "rb4"
         Me.rb4.Size = New System.Drawing.Size(31, 17)
-        Me.rb4.TabIndex = 20
+        Me.rb4.TabIndex = 25
         Me.rb4.TabStop = True
         Me.rb4.Text = "4"
         Me.rb4.UseVisualStyleBackColor = True
@@ -304,7 +304,7 @@ Partial Class Customer_Interface
         Me.rb2.Location = New System.Drawing.Point(43, 11)
         Me.rb2.Name = "rb2"
         Me.rb2.Size = New System.Drawing.Size(31, 17)
-        Me.rb2.TabIndex = 17
+        Me.rb2.TabIndex = 23
         Me.rb2.TabStop = True
         Me.rb2.Text = "2"
         Me.rb2.UseVisualStyleBackColor = True
@@ -315,7 +315,7 @@ Partial Class Customer_Interface
         Me.rb3.Location = New System.Drawing.Point(80, 11)
         Me.rb3.Name = "rb3"
         Me.rb3.Size = New System.Drawing.Size(31, 17)
-        Me.rb3.TabIndex = 19
+        Me.rb3.TabIndex = 24
         Me.rb3.TabStop = True
         Me.rb3.Text = "3"
         Me.rb3.UseVisualStyleBackColor = True
@@ -326,7 +326,7 @@ Partial Class Customer_Interface
         Me.rb1.Location = New System.Drawing.Point(6, 11)
         Me.rb1.Name = "rb1"
         Me.rb1.Size = New System.Drawing.Size(31, 17)
-        Me.rb1.TabIndex = 16
+        Me.rb1.TabIndex = 22
         Me.rb1.TabStop = True
         Me.rb1.Text = "1"
         Me.rb1.UseVisualStyleBackColor = True
@@ -352,7 +352,7 @@ Partial Class Customer_Interface
         Me.GroupBox3.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(460, 408)
-        Me.GroupBox3.TabIndex = 1
+        Me.GroupBox3.TabIndex = 42
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Movie Search"
         '
@@ -361,7 +361,7 @@ Partial Class Customer_Interface
         Me.rentMovie.Location = New System.Drawing.Point(267, 376)
         Me.rentMovie.Name = "rentMovie"
         Me.rentMovie.Size = New System.Drawing.Size(116, 23)
-        Me.rentMovie.TabIndex = 14
+        Me.rentMovie.TabIndex = 21
         Me.rentMovie.Text = "Rent Next Movie"
         Me.rentMovie.UseVisualStyleBackColor = True
         '
@@ -371,7 +371,7 @@ Partial Class Customer_Interface
         Me.rbCategory.Location = New System.Drawing.Point(317, 53)
         Me.rbCategory.Name = "rbCategory"
         Me.rbCategory.Size = New System.Drawing.Size(118, 17)
-        Me.rbCategory.TabIndex = 11
+        Me.rbCategory.TabIndex = 10
         Me.rbCategory.TabStop = True
         Me.rbCategory.Text = "Search by Category"
         Me.rbCategory.UseVisualStyleBackColor = True
@@ -385,14 +385,14 @@ Partial Class Customer_Interface
         Me.cbCurrentRentals.MaxDropDownItems = 50
         Me.cbCurrentRentals.Name = "cbCurrentRentals"
         Me.cbCurrentRentals.Size = New System.Drawing.Size(186, 21)
-        Me.cbCurrentRentals.TabIndex = 13
+        Me.cbCurrentRentals.TabIndex = 17
         '
         'btnEditQueue
         '
         Me.btnEditQueue.Location = New System.Drawing.Point(267, 347)
         Me.btnEditQueue.Name = "btnEditQueue"
         Me.btnEditQueue.Size = New System.Drawing.Size(116, 23)
-        Me.btnEditQueue.TabIndex = 11
+        Me.btnEditQueue.TabIndex = 20
         Me.btnEditQueue.Text = "Remove from Queue"
         Me.btnEditQueue.UseVisualStyleBackColor = True
         '
@@ -402,7 +402,7 @@ Partial Class Customer_Interface
         Me.rbActor.Location = New System.Drawing.Point(317, 99)
         Me.rbActor.Name = "rbActor"
         Me.rbActor.Size = New System.Drawing.Size(101, 17)
-        Me.rbActor.TabIndex = 10
+        Me.rbActor.TabIndex = 12
         Me.rbActor.TabStop = True
         Me.rbActor.Text = "Search by Actor"
         Me.rbActor.UseVisualStyleBackColor = True
@@ -416,7 +416,7 @@ Partial Class Customer_Interface
         Me.cbEditQueue.MaxDropDownItems = 50
         Me.cbEditQueue.Name = "cbEditQueue"
         Me.cbEditQueue.Size = New System.Drawing.Size(186, 21)
-        Me.cbEditQueue.TabIndex = 10
+        Me.cbEditQueue.TabIndex = 19
         '
         'rbTitle
         '
@@ -424,7 +424,7 @@ Partial Class Customer_Interface
         Me.rbTitle.Location = New System.Drawing.Point(317, 76)
         Me.rbTitle.Name = "rbTitle"
         Me.rbTitle.Size = New System.Drawing.Size(96, 17)
-        Me.rbTitle.TabIndex = 9
+        Me.rbTitle.TabIndex = 11
         Me.rbTitle.TabStop = True
         Me.rbTitle.Text = "Search by Title"
         Me.rbTitle.UseVisualStyleBackColor = True
@@ -434,7 +434,7 @@ Partial Class Customer_Interface
         Me.btnReturnMovie.Location = New System.Drawing.Point(267, 320)
         Me.btnReturnMovie.Name = "btnReturnMovie"
         Me.btnReturnMovie.Size = New System.Drawing.Size(116, 23)
-        Me.btnReturnMovie.TabIndex = 9
+        Me.btnReturnMovie.TabIndex = 18
         Me.btnReturnMovie.Text = "Return A Movie"
         Me.btnReturnMovie.UseVisualStyleBackColor = True
         '
@@ -444,7 +444,7 @@ Partial Class Customer_Interface
         Me.btnSearch.Location = New System.Drawing.Point(199, 99)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(89, 23)
-        Me.btnSearch.TabIndex = 8
+        Me.btnSearch.TabIndex = 14
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = True
         '
@@ -466,14 +466,14 @@ Partial Class Customer_Interface
         Me.txtRes.Name = "txtRes"
         Me.txtRes.ReadOnly = True
         Me.txtRes.Size = New System.Drawing.Size(434, 134)
-        Me.txtRes.TabIndex = 0
+        Me.txtRes.TabIndex = 29
         '
         'btnPersonal
         '
         Me.btnPersonal.Location = New System.Drawing.Point(103, 59)
         Me.btnPersonal.Name = "btnPersonal"
         Me.btnPersonal.Size = New System.Drawing.Size(89, 23)
-        Me.btnPersonal.TabIndex = 6
+        Me.btnPersonal.TabIndex = 9
         Me.btnPersonal.Text = "Recommended"
         Me.btnPersonal.UseVisualStyleBackColor = True
         '
@@ -482,7 +482,7 @@ Partial Class Customer_Interface
         Me.btnBest.Location = New System.Drawing.Point(6, 59)
         Me.btnBest.Name = "btnBest"
         Me.btnBest.Size = New System.Drawing.Size(89, 23)
-        Me.btnBest.TabIndex = 5
+        Me.btnBest.TabIndex = 8
         Me.btnBest.Text = "Best Sellers"
         Me.btnBest.UseVisualStyleBackColor = True
         '
@@ -491,7 +491,7 @@ Partial Class Customer_Interface
         Me.btnAddQueue.Location = New System.Drawing.Point(267, 293)
         Me.btnAddQueue.Name = "btnAddQueue"
         Me.btnAddQueue.Size = New System.Drawing.Size(116, 23)
-        Me.btnAddQueue.TabIndex = 3
+        Me.btnAddQueue.TabIndex = 16
         Me.btnAddQueue.Text = "Add To Queue"
         Me.btnAddQueue.UseVisualStyleBackColor = True
         '
@@ -513,20 +513,21 @@ Partial Class Customer_Interface
         Me.movieSelect.MaxDropDownItems = 50
         Me.movieSelect.Name = "movieSelect"
         Me.movieSelect.Size = New System.Drawing.Size(186, 21)
-        Me.movieSelect.TabIndex = 2
+        Me.movieSelect.TabIndex = 15
         '
         'txtSearch
         '
         Me.txtSearch.Location = New System.Drawing.Point(6, 101)
+        Me.txtSearch.MaxLength = 200
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(186, 20)
-        Me.txtSearch.TabIndex = 0
+        Me.txtSearch.TabIndex = 13
         '
         'txtUserName
         '
         Me.txtUserName.AutoSize = True
         Me.txtUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.txtUserName.Location = New System.Drawing.Point(13, 7)
+        Me.txtUserName.Location = New System.Drawing.Point(155, 58)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(0, 24)
         Me.txtUserName.TabIndex = 5
@@ -535,15 +536,16 @@ Partial Class Customer_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.BackColor = System.Drawing.SystemColors.Highlight
+        Me.ClientSize = New System.Drawing.Size(1187, 727)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtUserName)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Customer_Interface"
-        Me.Text = "Customer Interface"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

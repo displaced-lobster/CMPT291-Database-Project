@@ -113,7 +113,7 @@ Public Class Edit_Customer_Account
         If street.Text <> i.Item("street") And street.Text <> "" Then SQL.ExecuteQuery("UPDATE Customer_Data SET street='" + street.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
         ' check to see if apt number need to be null or not
         If aptNum.Text <> i.Item("apartment_num").ToString And aptNum.Text = "" Then
-            MsgBox("changing to null")
+            ' MsgBox("changing to null") ' for test purposes
             SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num=NULL WHERE account_number=" + accountNumber.ToString + ";")
         ElseIf aptNum.Text <> i.Item("apartment_num").ToString Then
             SQL.ExecuteQuery("UPDATE Customer_Data SET apartment_num='" + aptNum.Text + "' WHERE account_number=" + accountNumber.ToString + ";")
