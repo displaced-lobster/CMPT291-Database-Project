@@ -67,5 +67,6 @@ Public Class Customer_Login
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
+        Main_Interface.pbBlueBox.Show()
     End Sub
 End Class

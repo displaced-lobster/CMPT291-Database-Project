@@ -22,6 +22,7 @@ Partial Class Main_Interface
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Interface))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.File = New System.Windows.Forms.ToolStripMenuItem()
         Me.Open = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,7 +34,9 @@ Partial Class Main_Interface
         Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbBlueBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -108,11 +111,22 @@ Partial Class Main_Interface
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
+        'pbBlueBox
+        '
+        Me.pbBlueBox.BackgroundImage = CType(resources.GetObject("pbBlueBox.BackgroundImage"), System.Drawing.Image)
+        Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbBlueBox.Location = New System.Drawing.Point(0, 27)
+        Me.pbBlueBox.Name = "pbBlueBox"
+        Me.pbBlueBox.Size = New System.Drawing.Size(1184, 683)
+        Me.pbBlueBox.TabIndex = 2
+        Me.pbBlueBox.TabStop = False
+        '
         'Main_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1184, 711)
+        Me.Controls.Add(Me.pbBlueBox)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
@@ -120,6 +134,7 @@ Partial Class Main_Interface
         Me.Text = "Main Interface"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -136,4 +151,5 @@ Partial Class Main_Interface
     Friend WithEvents EmployeeServicesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TestToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManagerServicesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents pbBlueBox As PictureBox
 End Class

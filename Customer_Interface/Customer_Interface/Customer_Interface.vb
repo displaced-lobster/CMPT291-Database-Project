@@ -16,6 +16,7 @@ Public Class Customer_Interface
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click ' This Works *********************************************************************** DONE
         Me.Close()
         Customer_Login.Close() ' terminate the session
+        Main_Interface.pbBlueBox.Show()
         MsgBox("Current Session Closed")
     End Sub
 

@@ -225,5 +225,6 @@ Public Class Customer_SignUp
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
+        Main_Interface.pbBlueBox.Show()
     End Sub
 End Class
