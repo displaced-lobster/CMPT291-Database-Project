@@ -511,6 +511,16 @@
             delData.DataSource = SQL.SQLTable
 
             del_cust.Enabled = True
+
+            SQL.AddParam("@acct", delAcctNum.Text)
+            SQL.ExecuteQuery("SELECT count(*) FROM order_data " &
+                             "WHERE account_number = @acct AND return_flag = 0;")
+
+            If SQL.SQLTable.Rows(0).ItemArray(0) > 0 Then
+                delWarning.Text = "WARNING: customer has unreturned movie rentals."
+            Else
+                delWarning.Text = ""
+            End If
         End If
     End Sub
 
@@ -550,6 +560,7 @@
     End Sub
 
     Private Sub FindOrderQueue()
+        recWarning.Text = ""
         orderList.Items.Clear()
         SQL.AddParam("@acct", orderAcctNum.Text)
         SQL.ExecuteQuery("SELECT movie_data.movie_id, movie_data.movie_name, movie_data.inventory FROM order_queue, movie_data " &
@@ -560,6 +571,20 @@
             orderList.Items.Add(movie)
             recMovieId.Items.Add(r("movie_id"))
         Next
+
+        SQL.AddParam("@acct", orderAcctNum.Text)
+        SQL.ExecuteQuery("SELECT count(*) FROM order_data " &
+                         "WHERE account_number = @acct AND return_flag = 0;")
+        Dim count As Integer = SQL.SQLTable.Rows(0).ItemArray(0)
+        SQL.AddParam("@acct", orderAcctNum.Text)
+        SQL.ExecuteQuery("Select num_of_movies FROM customer_data, account " &
+                         "WHERE account_number = @acct AND type = account_type;")
+
+        If count >= SQL.SQLTable.Rows(0).ItemArray(0) Then
+            recWarning.Text = "WARNING: customer has rented maximum number of movies."
+        Else
+            recWarning.Text = ""
+        End If
     End Sub
 
     Private Sub orderSearch_Click(sender As Object, e As EventArgs) Handles orderSearch.Click
