@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main_Interface
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main_Interface
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Interface))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -34,13 +34,13 @@ Partial Class Main_Interface
         Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbBlueBox = New System.Windows.Forms.PictureBox()
         Me.UserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManagerHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewUserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditingYourAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MoviesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbBlueBox = New System.Windows.Forms.PictureBox()
+        Me.ContactUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Phone1800BLUEBOXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmailUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -66,43 +66,43 @@ Partial Class Main_Interface
         '
         Me.Open.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomersToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem, Me.EmployeeServicesToolStripMenuItem1, Me.ManagerServicesToolStripMenuItem})
         Me.Open.Name = "Open"
-        Me.Open.Size = New System.Drawing.Size(124, 22)
+        Me.Open.Size = New System.Drawing.Size(180, 22)
         Me.Open.Text = "Accounts"
         '
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CustomersToolStripMenuItem.Text = "New User Signup"
         '
         'EmployeeServicesToolStripMenuItem
         '
         Me.EmployeeServicesToolStripMenuItem.Name = "EmployeeServicesToolStripMenuItem"
-        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.EmployeeServicesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EmployeeServicesToolStripMenuItem.Text = "Customer Services"
         '
         'EmployeeServicesToolStripMenuItem1
         '
         Me.EmployeeServicesToolStripMenuItem1.Name = "EmployeeServicesToolStripMenuItem1"
-        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(171, 22)
+        Me.EmployeeServicesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.EmployeeServicesToolStripMenuItem1.Text = "Employee Services"
         '
         'ManagerServicesToolStripMenuItem
         '
         Me.ManagerServicesToolStripMenuItem.Name = "ManagerServicesToolStripMenuItem"
-        Me.ManagerServicesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ManagerServicesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ManagerServicesToolStripMenuItem.Text = "Manager Services"
         '
         'Close
         '
         Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(124, 22)
+        Me.Close.Size = New System.Drawing.Size(180, 22)
         Me.Close.Text = "Close"
         '
         'TestToolStripMenuItem
         '
         Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TestToolStripMenuItem.Text = "Test"
         '
         'WindowToolStripMenuItem
@@ -113,24 +113,13 @@ Partial Class Main_Interface
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserHelpToolStripMenuItem, Me.EmployeeHelpToolStripMenuItem, Me.ManagerHelpToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserHelpToolStripMenuItem, Me.EmployeeHelpToolStripMenuItem, Me.ManagerHelpToolStripMenuItem, Me.ContactUsToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
-        'pbBlueBox
-        '
-        Me.pbBlueBox.BackgroundImage = CType(resources.GetObject("pbBlueBox.BackgroundImage"), System.Drawing.Image)
-        Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbBlueBox.Location = New System.Drawing.Point(0, 27)
-        Me.pbBlueBox.Name = "pbBlueBox"
-        Me.pbBlueBox.Size = New System.Drawing.Size(1184, 683)
-        Me.pbBlueBox.TabIndex = 2
-        Me.pbBlueBox.TabStop = False
-        '
         'UserHelpToolStripMenuItem
         '
-        Me.UserHelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewUserHelpToolStripMenuItem, Me.EditingYourAccountToolStripMenuItem, Me.MoviesToolStripMenuItem})
         Me.UserHelpToolStripMenuItem.Name = "UserHelpToolStripMenuItem"
         Me.UserHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UserHelpToolStripMenuItem.Text = "Customer Help"
@@ -147,23 +136,34 @@ Partial Class Main_Interface
         Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ManagerHelpToolStripMenuItem.Text = "Manager Help"
         '
-        'NewUserHelpToolStripMenuItem
+        'pbBlueBox
         '
-        Me.NewUserHelpToolStripMenuItem.Name = "NewUserHelpToolStripMenuItem"
-        Me.NewUserHelpToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.NewUserHelpToolStripMenuItem.Text = "Signing up"
+        Me.pbBlueBox.BackgroundImage = CType(resources.GetObject("pbBlueBox.BackgroundImage"), System.Drawing.Image)
+        Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbBlueBox.Location = New System.Drawing.Point(0, 27)
+        Me.pbBlueBox.Name = "pbBlueBox"
+        Me.pbBlueBox.Size = New System.Drawing.Size(1184, 683)
+        Me.pbBlueBox.TabIndex = 2
+        Me.pbBlueBox.TabStop = False
         '
-        'EditingYourAccountToolStripMenuItem
+        'ContactUsToolStripMenuItem
         '
-        Me.EditingYourAccountToolStripMenuItem.Name = "EditingYourAccountToolStripMenuItem"
-        Me.EditingYourAccountToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.EditingYourAccountToolStripMenuItem.Text = "Editing your account"
+        Me.ContactUsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Phone1800BLUEBOXToolStripMenuItem, Me.EmailUsToolStripMenuItem})
+        Me.ContactUsToolStripMenuItem.Name = "ContactUsToolStripMenuItem"
+        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContactUsToolStripMenuItem.Text = "Contact Us"
         '
-        'MoviesToolStripMenuItem
+        'Phone1800BLUEBOXToolStripMenuItem
         '
-        Me.MoviesToolStripMenuItem.Name = "MoviesToolStripMenuItem"
-        Me.MoviesToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.MoviesToolStripMenuItem.Text = "Movies"
+        Me.Phone1800BLUEBOXToolStripMenuItem.Name = "Phone1800BLUEBOXToolStripMenuItem"
+        Me.Phone1800BLUEBOXToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.Phone1800BLUEBOXToolStripMenuItem.Text = "Phone: 1800-BLUEBOX"
+        '
+        'EmailUsToolStripMenuItem
+        '
+        Me.EmailUsToolStripMenuItem.Name = "EmailUsToolStripMenuItem"
+        Me.EmailUsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.EmailUsToolStripMenuItem.Text = "Email Us"
         '
         'Main_Interface
         '
@@ -188,7 +188,6 @@ Partial Class Main_Interface
     Friend WithEvents File As ToolStripMenuItem
     Friend WithEvents Open As ToolStripMenuItem
     Friend WithEvents Close As ToolStripMenuItem
-    Friend WithEvents WindowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CustomersToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeServicesToolStripMenuItem As ToolStripMenuItem
@@ -197,9 +196,10 @@ Partial Class Main_Interface
     Friend WithEvents ManagerServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents pbBlueBox As PictureBox
     Friend WithEvents UserHelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NewUserHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManagerHelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditingYourAccountToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MoviesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WindowToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContactUsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Phone1800BLUEBOXToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmailUsToolStripMenuItem As ToolStripMenuItem
 End Class
