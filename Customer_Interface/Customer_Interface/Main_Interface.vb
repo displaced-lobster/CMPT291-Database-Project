@@ -50,11 +50,7 @@
         pbBlueBox.Hide()
     End Sub
 
-    Private Sub Main_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub SpecialQuery_Click(sender As Object, e As EventArgs) Handles SpecialQuery.Click
+    Private Sub InterestingFactoidToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InterestingFactoidToolStripMenuItem.Click
         Dim SQL As New SQLControl
         SQL.ExecuteQuery("SELECT first_name, last_name " &
                          "FROM actor_data, " &
