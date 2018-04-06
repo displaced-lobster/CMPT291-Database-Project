@@ -26,7 +26,6 @@ Partial Class Main_Manager_Interface
         Me.ManagerTab1 = New System.Windows.Forms.TabControl()
         Me.MI_MoiveTab = New System.Windows.Forms.TabPage()
         Me.search_btn = New System.Windows.Forms.Button()
-        Me.MI_movie_note1 = New System.Windows.Forms.Label()
         Me.MI_rem_movie_btn = New System.Windows.Forms.Button()
         Me.MI_edit_movie_btn = New System.Windows.Forms.Button()
         Me.MI_inventory_tb = New System.Windows.Forms.TextBox()
@@ -75,6 +74,8 @@ Partial Class Main_Manager_Interface
         Me.MI_list_rentals_btn = New System.Windows.Forms.Button()
         Me.MI_list_movies_btn = New System.Windows.Forms.Button()
         Me.MI_sr_btn = New System.Windows.Forms.Button()
+        Me.movie_clear_btn = New System.Windows.Forms.Button()
+        Me.emp_clear_btn = New System.Windows.Forms.Button()
         Me.ManagerTab1.SuspendLayout()
         Me.MI_MoiveTab.SuspendLayout()
         Me.MI_EmpTab.SuspendLayout()
@@ -106,8 +107,8 @@ Partial Class Main_Manager_Interface
         '
         'MI_MoiveTab
         '
+        Me.MI_MoiveTab.Controls.Add(Me.movie_clear_btn)
         Me.MI_MoiveTab.Controls.Add(Me.search_btn)
-        Me.MI_MoiveTab.Controls.Add(Me.MI_movie_note1)
         Me.MI_MoiveTab.Controls.Add(Me.MI_rem_movie_btn)
         Me.MI_MoiveTab.Controls.Add(Me.MI_edit_movie_btn)
         Me.MI_MoiveTab.Controls.Add(Me.MI_inventory_tb)
@@ -138,16 +139,6 @@ Partial Class Main_Manager_Interface
         Me.search_btn.TabIndex = 14
         Me.search_btn.Text = "Search"
         Me.search_btn.UseVisualStyleBackColor = True
-        '
-        'MI_movie_note1
-        '
-        Me.MI_movie_note1.AutoSize = True
-        Me.MI_movie_note1.Location = New System.Drawing.Point(560, 346)
-        Me.MI_movie_note1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MI_movie_note1.Name = "MI_movie_note1"
-        Me.MI_movie_note1.Size = New System.Drawing.Size(383, 20)
-        Me.MI_movie_note1.TabIndex = 13
-        Me.MI_movie_note1.Text = "For removing a movie, only the movie ID is neccesary."
         '
         'MI_rem_movie_btn
         '
@@ -272,6 +263,7 @@ Partial Class Main_Manager_Interface
         'MI_EmpTab
         '
         Me.MI_EmpTab.AllowDrop = True
+        Me.MI_EmpTab.Controls.Add(Me.emp_clear_btn)
         Me.MI_EmpTab.Controls.Add(Me.emp_search_btn)
         Me.MI_EmpTab.Controls.Add(Me.MI_emp_ap_num_tb)
         Me.MI_EmpTab.Controls.Add(Me.MI_emp_ap_num)
@@ -632,6 +624,24 @@ Partial Class Main_Manager_Interface
         Me.MI_sr_btn.Text = "Produce Sales Report"
         Me.MI_sr_btn.UseVisualStyleBackColor = True
         '
+        'movie_clear_btn
+        '
+        Me.movie_clear_btn.Location = New System.Drawing.Point(184, 88)
+        Me.movie_clear_btn.Name = "movie_clear_btn"
+        Me.movie_clear_btn.Size = New System.Drawing.Size(75, 35)
+        Me.movie_clear_btn.TabIndex = 15
+        Me.movie_clear_btn.Text = "Clear"
+        Me.movie_clear_btn.UseVisualStyleBackColor = True
+        '
+        'emp_clear_btn
+        '
+        Me.emp_clear_btn.Location = New System.Drawing.Point(186, 88)
+        Me.emp_clear_btn.Name = "emp_clear_btn"
+        Me.emp_clear_btn.Size = New System.Drawing.Size(75, 35)
+        Me.emp_clear_btn.TabIndex = 41
+        Me.emp_clear_btn.Text = "Clear"
+        Me.emp_clear_btn.UseVisualStyleBackColor = True
+        '
         'Main_Manager_Interface
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -678,7 +688,6 @@ Partial Class Main_Manager_Interface
     Friend WithEvents MI_inventory As Label
     Friend WithEvents MI_edit_movie_btn As Button
     Friend WithEvents MI_rem_movie_btn As Button
-    Friend WithEvents MI_movie_note1 As Label
     Friend WithEvents MI_rem_emp_btn As Button
     Friend WithEvents MI_edit_emp_btn As Button
     Friend WithEvents MI_emp_hr_tb As TextBox
@@ -712,4 +721,6 @@ Partial Class Main_Manager_Interface
     Friend WithEvents MI_list_options As Label
     Friend WithEvents search_btn As Button
     Friend WithEvents emp_search_btn As Button
+    Friend WithEvents movie_clear_btn As Button
+    Friend WithEvents emp_clear_btn As Button
 End Class
