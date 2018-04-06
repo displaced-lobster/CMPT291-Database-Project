@@ -61,31 +61,79 @@
         MdiParent = Main_Interface
     End Sub
 
-    Private Sub MI_most_active_Click(sender As Object, e As EventArgs) Handles MI_most_active.Click
-
-    End Sub
-
     Public Function check_movie_values()
         If (MI_movie_title_tb.Text.Length < 1) Then
-            MsgBox("Movie name required.")
+            MsgBox("Movie title is required.")
             Return False
         End If
 
         If (MI_movie_type_tb.Text.Length < 1) Then
-            MsgBox("Movie type required.")
+            MsgBox("Movie type is required.")
             Return False
         End If
 
         If (MI_dist_fee_tb.Text.Length < 1) Then
-            MsgBox("Movie distribution fee required.")
+            MsgBox("Movie distribution fee is required.")
             Return False
         End If
 
         If (MI_inventory_tb.Text.Length < 1) Then
-            MsgBox("Inventory required.")
+            MsgBox("Movie title is required.")
             Return False
         End If
 
+        Return True
+    End Function
+
+    Public Function check_employee_values()
+        If (MI_emp_fn_tb.Text.Length < 1) Then
+            MsgBox("Employee first name is required.")
+            Return False
+        End If
+
+        If (MI_emp_ln_tb.Text.Length < 1) Then
+            MsgBox("Employee last name is required.")
+            Return False
+        End If
+
+        If (MI_emp_city_tb.Text.Length < 1) Then
+            MsgBox("Employee city is required.")
+            Return False
+        End If
+
+        If (MI_emp_state_tb.Text.Length < 1) Then
+            MsgBox("Employee state is required.")
+            Return False
+        End If
+
+        If (MI_emp_zip_tb.Text.Length < 1) Then
+            MsgBox("Employee ZIP code is required.")
+            Return False
+        End If
+
+        If (MI_emp_street_tb.Text.Length < 1) Then
+            MsgBox("Employee street is required.")
+            Return False
+        End If
+
+        If (MI_emp_street_num_tb.Text.Length < 1) Then
+            MsgBox("Employee street number is required.")
+            Return False
+        End If
+
+        If (MI_emp_ap_num_tb.Text.Length < 1) Then
+            MI_emp_ap_num_tb.Text = "NULL"
+        End If
+
+        If (MI_emp_start_tb.Text.Length < 1) Then
+            MsgBox("Employee start date is required.")
+            Return False
+        End If
+
+        If (MI_emp_hr_tb.Text.Length < 1) Then
+            MsgBox("Employee hourly rate is required.")
+            Return False
+        End If
         Return True
     End Function
 
@@ -112,6 +160,10 @@
         MI_emp_hr_tb.Text = ""
         Return True
     End Function
+
+    Private Sub MI_most_active_Click(sender As Object, e As EventArgs) Handles MI_most_active.Click
+
+    End Sub
 
     Private Sub search_btn_Click(sender As Object, e As EventArgs) Handles search_btn.Click
         If (MI_movie_id_tb.Text.Length > 0) Then
@@ -147,64 +199,12 @@
         End If
     End Sub
 
-    Public Function check_emp_values()
-        If (MI_emp_fn_tb.Text.Length < 1) Then
-            MsgBox("Employee first name required.")
-            Return False
-        End If
-
-        If (MI_emp_ln_tb.Text.Length < 1) Then
-            MsgBox("Employee last name required.")
-            Return False
-        End If
-
-        If (MI_emp_city_tb.Text.Length < 1) Then
-            MsgBox("Employee city required.")
-            Return False
-        End If
-
-        If (MI_emp_state_tb.Text.Length < 1) Then
-            MsgBox("Employee state required.")
-            Return False
-        End If
-
-        If (MI_emp_zip_tb.Text.Length < 1) Then
-            MsgBox("Employee ZIP code required.")
-            Return False
-        End If
-
-        If (MI_emp_street_tb.Text.Length < 1) Then
-            MsgBox("Employee street required.")
-            Return False
-        End If
-
-        If (MI_emp_street_num_tb.Text.Length < 1) Then
-            MsgBox("Employee street number required.")
-            Return False
-        End If
-
-        If (MI_emp_ap_num_tb.Text.Length < 1) Then
-            MI_emp_ap_num_tb.Text = "NULL"
-        End If
-
-        If (MI_emp_start_tb.Text.Length < 1) Then
-            MsgBox("Employee start date required.")
-            Return False
-        End If
-
-        If (MI_emp_hr_tb.Text.Length < 1) Then
-            MsgBox("Employee hourly rate required.")
-            Return False
-        End If
-        Return True
-    End Function
-
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles MI_add_emp_btn.Click
         If (MI_emp_sin_tb.Text.Length < 1) Then
             SQL.ExecuteQuery("select MAX(SIN) as LargestSin from Employee_Data;")
             MI_emp_sin_tb.Text = Convert.ToString(Convert.ToInt16(SQL.SQLTable.Rows(0).Item("LargestSIN")) + 1)
         End If
-        If (check_emp_values()) Then
+        If (check_employee_values()) Then
             SQL.ExecuteQuery("INSERT INTO Employee_Data (SIN, first_name, last_name, city, state, zip_code, street, street_num, apartment_num, start_date, hourly_rate) " &
                          "VALUES (" & MI_emp_sin_tb.Text & ", '" & MI_emp_fn_tb.Text & "', '" & MI_emp_ln_tb.Text & "', '" & MI_emp_city_tb.Text &
                                   "', '" & MI_emp_state_tb.Text & "', '" & MI_emp_zip_tb.Text & "', '" & MI_emp_street_tb.Text & "', '" & MI_emp_street_num_tb.Text &
@@ -251,7 +251,7 @@
     End Sub
 
     Private Sub MI_edit_emp_btn_Click(sender As Object, e As EventArgs) Handles MI_edit_emp_btn.Click
-        If (check_emp_values()) Then
+        If (check_employee_values()) Then
             SQL.ExecuteQuery("UPDATE Employee_Data " &
                          "SET first_name = '" & MI_emp_fn_tb.Text & "', last_name = '" & MI_emp_ln_tb.Text & "', city = '" &
                          MI_emp_city_tb.Text & "', state = '" & MI_emp_state_tb.Text & "', zip_code = " & MI_emp_zip_tb.Text &
@@ -271,11 +271,17 @@
 
     End Sub
 
-    Private Sub movie_clear_btn_Click(sender As Object, e As EventArgs) Handles movie_clear_btn.Click
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
+        Manager_LogIn.Close()
+        Main_Interface.pbBlueBox.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         clear_movie()
     End Sub
 
-    Private Sub emp_clear_btn_Click(sender As Object, e As EventArgs) Handles emp_clear_btn.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         clear_employee()
     End Sub
 End Class

@@ -92,18 +92,18 @@ Partial Class ManagerHelp
         Me.Panel1.Location = New System.Drawing.Point(3, 63)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1773, 1031)
+        Me.Panel1.Size = New System.Drawing.Size(1773, 1088)
         Me.Panel1.TabIndex = 7
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GroupBox1.Location = New System.Drawing.Point(15, 84)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 95)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox1.Size = New System.Drawing.Size(1720, 229)
+        Me.GroupBox1.Size = New System.Drawing.Size(1720, 233)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Adding, Editing, and Removing a Movie"
@@ -114,7 +114,7 @@ Partial Class ManagerHelp
         Me.Label1.Location = New System.Drawing.Point(10, 38)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1590, 186)
+        Me.Label1.Size = New System.Drawing.Size(1590, 185)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
@@ -253,7 +253,7 @@ Partial Class ManagerHelp
         Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox8.Size = New System.Drawing.Size(1720, 242)
+        Me.GroupBox8.Size = New System.Drawing.Size(1720, 232)
         Me.GroupBox8.TabIndex = 0
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Adding, Editing, and Removing an Employee"
@@ -264,7 +264,7 @@ Partial Class ManagerHelp
         Me.Label9.Location = New System.Drawing.Point(10, 38)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(1590, 199)
+        Me.Label9.Size = New System.Drawing.Size(1590, 180)
         Me.Label9.TabIndex = 1
         Me.Label9.Text = resources.GetString("Label9.Text")
         '

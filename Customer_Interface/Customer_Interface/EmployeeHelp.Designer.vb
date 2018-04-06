@@ -74,7 +74,7 @@ Partial Class EmployeeHelp
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(4, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1182, 669)
+        Me.Panel1.Size = New System.Drawing.Size(1182, 708)
         Me.Panel1.TabIndex = 3
         '
         'GroupBox7
@@ -239,7 +239,7 @@ Partial Class EmployeeHelp
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1187, 715)
+        Me.ClientSize = New System.Drawing.Size(1187, 760)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
