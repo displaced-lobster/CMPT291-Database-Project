@@ -98,7 +98,7 @@ Partial Class Main_Manager_Interface
         Me.ManagerTab1.Controls.Add(Me.MI_EmpTab)
         Me.ManagerTab1.Controls.Add(Me.MI_DataTab)
         Me.ManagerTab1.Location = New System.Drawing.Point(15, 100)
-        Me.ManagerTab1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ManagerTab1.Margin = New System.Windows.Forms.Padding(2)
         Me.ManagerTab1.Name = "ManagerTab1"
         Me.ManagerTab1.SelectedIndex = 0
         Me.ManagerTab1.Size = New System.Drawing.Size(1056, 449)
@@ -122,9 +122,9 @@ Partial Class Main_Manager_Interface
         Me.MI_MoiveTab.Controls.Add(Me.MI_movie_id_tb)
         Me.MI_MoiveTab.Controls.Add(Me.MI_add_movie_btn)
         Me.MI_MoiveTab.Location = New System.Drawing.Point(4, 29)
-        Me.MI_MoiveTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_MoiveTab.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_MoiveTab.Name = "MI_MoiveTab"
-        Me.MI_MoiveTab.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_MoiveTab.Padding = New System.Windows.Forms.Padding(2)
         Me.MI_MoiveTab.Size = New System.Drawing.Size(1048, 416)
         Me.MI_MoiveTab.TabIndex = 0
         Me.MI_MoiveTab.Text = "Movie Database"
@@ -152,7 +152,7 @@ Partial Class Main_Manager_Interface
         'MI_rem_movie_btn
         '
         Me.MI_rem_movie_btn.Location = New System.Drawing.Point(332, 289)
-        Me.MI_rem_movie_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_rem_movie_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_rem_movie_btn.Name = "MI_rem_movie_btn"
         Me.MI_rem_movie_btn.Size = New System.Drawing.Size(116, 77)
         Me.MI_rem_movie_btn.TabIndex = 12
@@ -162,7 +162,7 @@ Partial Class Main_Manager_Interface
         'MI_edit_movie_btn
         '
         Me.MI_edit_movie_btn.Location = New System.Drawing.Point(184, 289)
-        Me.MI_edit_movie_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_edit_movie_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_edit_movie_btn.Name = "MI_edit_movie_btn"
         Me.MI_edit_movie_btn.Size = New System.Drawing.Size(116, 77)
         Me.MI_edit_movie_btn.TabIndex = 11
@@ -172,7 +172,7 @@ Partial Class Main_Manager_Interface
         'MI_inventory_tb
         '
         Me.MI_inventory_tb.Location = New System.Drawing.Point(266, 226)
-        Me.MI_inventory_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_inventory_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_inventory_tb.Name = "MI_inventory_tb"
         Me.MI_inventory_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_inventory_tb.TabIndex = 10
@@ -190,7 +190,7 @@ Partial Class Main_Manager_Interface
         'MI_dist_fee_tb
         '
         Me.MI_dist_fee_tb.Location = New System.Drawing.Point(266, 180)
-        Me.MI_dist_fee_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_dist_fee_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_dist_fee_tb.Name = "MI_dist_fee_tb"
         Me.MI_dist_fee_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_dist_fee_tb.TabIndex = 8
@@ -208,7 +208,7 @@ Partial Class Main_Manager_Interface
         'MI_movie_type_tb
         '
         Me.MI_movie_type_tb.Location = New System.Drawing.Point(266, 137)
-        Me.MI_movie_type_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_movie_type_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_movie_type_tb.Name = "MI_movie_type_tb"
         Me.MI_movie_type_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_movie_type_tb.TabIndex = 6
@@ -226,7 +226,7 @@ Partial Class Main_Manager_Interface
         'MI_movie_title_tb
         '
         Me.MI_movie_title_tb.Location = New System.Drawing.Point(266, 92)
-        Me.MI_movie_title_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_movie_title_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_movie_title_tb.Name = "MI_movie_title_tb"
         Me.MI_movie_title_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_movie_title_tb.TabIndex = 4
@@ -239,7 +239,7 @@ Partial Class Main_Manager_Interface
         Me.MI_movie_type.Name = "MI_movie_type"
         Me.MI_movie_type.Size = New System.Drawing.Size(88, 20)
         Me.MI_movie_type.TabIndex = 3
-        Me.MI_movie_type.Text = "Moive Type"
+        Me.MI_movie_type.Text = "Movie Type"
         '
         'MI_movie_id
         '
@@ -254,7 +254,7 @@ Partial Class Main_Manager_Interface
         'MI_movie_id_tb
         '
         Me.MI_movie_id_tb.Location = New System.Drawing.Point(266, 52)
-        Me.MI_movie_id_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_movie_id_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_movie_id_tb.Name = "MI_movie_id_tb"
         Me.MI_movie_id_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_movie_id_tb.TabIndex = 1
@@ -262,7 +262,7 @@ Partial Class Main_Manager_Interface
         'MI_add_movie_btn
         '
         Me.MI_add_movie_btn.Location = New System.Drawing.Point(32, 289)
-        Me.MI_add_movie_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_add_movie_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_add_movie_btn.Name = "MI_add_movie_btn"
         Me.MI_add_movie_btn.Size = New System.Drawing.Size(116, 77)
         Me.MI_add_movie_btn.TabIndex = 0
@@ -299,9 +299,9 @@ Partial Class Main_Manager_Interface
         Me.MI_EmpTab.Controls.Add(Me.MI_emp_sin_tb)
         Me.MI_EmpTab.Controls.Add(Me.MI_add_emp_btn)
         Me.MI_EmpTab.Location = New System.Drawing.Point(4, 29)
-        Me.MI_EmpTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_EmpTab.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_EmpTab.Name = "MI_EmpTab"
-        Me.MI_EmpTab.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_EmpTab.Padding = New System.Windows.Forms.Padding(2)
         Me.MI_EmpTab.Size = New System.Drawing.Size(1048, 416)
         Me.MI_EmpTab.TabIndex = 1
         Me.MI_EmpTab.Text = "Employee Database"
@@ -319,7 +319,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_ap_num_tb
         '
         Me.MI_emp_ap_num_tb.Location = New System.Drawing.Point(780, 272)
-        Me.MI_emp_ap_num_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_ap_num_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_ap_num_tb.Name = "MI_emp_ap_num_tb"
         Me.MI_emp_ap_num_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_ap_num_tb.TabIndex = 39
@@ -337,7 +337,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_street_num_tb
         '
         Me.MI_emp_street_num_tb.Location = New System.Drawing.Point(780, 226)
-        Me.MI_emp_street_num_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_street_num_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_street_num_tb.Name = "MI_emp_street_num_tb"
         Me.MI_emp_street_num_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_street_num_tb.TabIndex = 37
@@ -355,7 +355,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_street_tb
         '
         Me.MI_emp_street_tb.Location = New System.Drawing.Point(780, 180)
-        Me.MI_emp_street_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_street_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_street_tb.Name = "MI_emp_street_tb"
         Me.MI_emp_street_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_street_tb.TabIndex = 35
@@ -373,7 +373,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_zip_tb
         '
         Me.MI_emp_zip_tb.Location = New System.Drawing.Point(780, 137)
-        Me.MI_emp_zip_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_zip_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_zip_tb.Name = "MI_emp_zip_tb"
         Me.MI_emp_zip_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_zip_tb.TabIndex = 33
@@ -391,7 +391,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_state_tb
         '
         Me.MI_emp_state_tb.Location = New System.Drawing.Point(780, 92)
-        Me.MI_emp_state_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_state_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_state_tb.Name = "MI_emp_state_tb"
         Me.MI_emp_state_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_state_tb.TabIndex = 31
@@ -419,7 +419,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_city_tb
         '
         Me.MI_emp_city_tb.Location = New System.Drawing.Point(780, 52)
-        Me.MI_emp_city_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_city_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_city_tb.Name = "MI_emp_city_tb"
         Me.MI_emp_city_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_city_tb.TabIndex = 28
@@ -427,7 +427,7 @@ Partial Class Main_Manager_Interface
         'MI_rem_emp_btn
         '
         Me.MI_rem_emp_btn.Location = New System.Drawing.Point(333, 289)
-        Me.MI_rem_emp_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_rem_emp_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_rem_emp_btn.Name = "MI_rem_emp_btn"
         Me.MI_rem_emp_btn.Size = New System.Drawing.Size(116, 77)
         Me.MI_rem_emp_btn.TabIndex = 26
@@ -437,7 +437,7 @@ Partial Class Main_Manager_Interface
         'MI_edit_emp_btn
         '
         Me.MI_edit_emp_btn.Location = New System.Drawing.Point(186, 289)
-        Me.MI_edit_emp_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_edit_emp_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_edit_emp_btn.Name = "MI_edit_emp_btn"
         Me.MI_edit_emp_btn.Size = New System.Drawing.Size(116, 77)
         Me.MI_edit_emp_btn.TabIndex = 25
@@ -447,7 +447,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_hr_tb
         '
         Me.MI_emp_hr_tb.Location = New System.Drawing.Point(267, 226)
-        Me.MI_emp_hr_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_hr_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_hr_tb.Name = "MI_emp_hr_tb"
         Me.MI_emp_hr_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_hr_tb.TabIndex = 24
@@ -465,7 +465,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_start_tb
         '
         Me.MI_emp_start_tb.Location = New System.Drawing.Point(267, 180)
-        Me.MI_emp_start_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_start_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_start_tb.Name = "MI_emp_start_tb"
         Me.MI_emp_start_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_start_tb.TabIndex = 22
@@ -483,7 +483,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_ln_tb
         '
         Me.MI_emp_ln_tb.Location = New System.Drawing.Point(267, 137)
-        Me.MI_emp_ln_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_ln_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_ln_tb.Name = "MI_emp_ln_tb"
         Me.MI_emp_ln_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_ln_tb.TabIndex = 20
@@ -501,7 +501,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_fn_tb
         '
         Me.MI_emp_fn_tb.Location = New System.Drawing.Point(267, 92)
-        Me.MI_emp_fn_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_fn_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_fn_tb.Name = "MI_emp_fn_tb"
         Me.MI_emp_fn_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_fn_tb.TabIndex = 18
@@ -529,7 +529,7 @@ Partial Class Main_Manager_Interface
         'MI_emp_sin_tb
         '
         Me.MI_emp_sin_tb.Location = New System.Drawing.Point(267, 52)
-        Me.MI_emp_sin_tb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_emp_sin_tb.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_emp_sin_tb.Name = "MI_emp_sin_tb"
         Me.MI_emp_sin_tb.Size = New System.Drawing.Size(180, 26)
         Me.MI_emp_sin_tb.TabIndex = 15
@@ -537,7 +537,7 @@ Partial Class Main_Manager_Interface
         'MI_add_emp_btn
         '
         Me.MI_add_emp_btn.Location = New System.Drawing.Point(33, 289)
-        Me.MI_add_emp_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_add_emp_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_add_emp_btn.Name = "MI_add_emp_btn"
         Me.MI_add_emp_btn.Size = New System.Drawing.Size(116, 77)
         Me.MI_add_emp_btn.TabIndex = 14
@@ -554,9 +554,9 @@ Partial Class Main_Manager_Interface
         Me.MI_DataTab.Controls.Add(Me.MI_list_movies_btn)
         Me.MI_DataTab.Controls.Add(Me.MI_sr_btn)
         Me.MI_DataTab.Location = New System.Drawing.Point(4, 29)
-        Me.MI_DataTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_DataTab.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_DataTab.Name = "MI_DataTab"
-        Me.MI_DataTab.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_DataTab.Padding = New System.Windows.Forms.Padding(2)
         Me.MI_DataTab.Size = New System.Drawing.Size(1048, 416)
         Me.MI_DataTab.TabIndex = 2
         Me.MI_DataTab.Text = "Data"
@@ -595,7 +595,7 @@ Partial Class Main_Manager_Interface
         'MI_active_custs_btn
         '
         Me.MI_active_custs_btn.Location = New System.Drawing.Point(732, 126)
-        Me.MI_active_custs_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_active_custs_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_active_custs_btn.Name = "MI_active_custs_btn"
         Me.MI_active_custs_btn.Size = New System.Drawing.Size(267, 52)
         Me.MI_active_custs_btn.TabIndex = 4
@@ -605,7 +605,7 @@ Partial Class Main_Manager_Interface
         'MI_list_rentals_btn
         '
         Me.MI_list_rentals_btn.Location = New System.Drawing.Point(44, 225)
-        Me.MI_list_rentals_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_list_rentals_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_list_rentals_btn.Name = "MI_list_rentals_btn"
         Me.MI_list_rentals_btn.Size = New System.Drawing.Size(267, 52)
         Me.MI_list_rentals_btn.TabIndex = 2
@@ -615,7 +615,7 @@ Partial Class Main_Manager_Interface
         'MI_list_movies_btn
         '
         Me.MI_list_movies_btn.Location = New System.Drawing.Point(44, 126)
-        Me.MI_list_movies_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_list_movies_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_list_movies_btn.Name = "MI_list_movies_btn"
         Me.MI_list_movies_btn.Size = New System.Drawing.Size(267, 52)
         Me.MI_list_movies_btn.TabIndex = 1
@@ -625,7 +625,7 @@ Partial Class Main_Manager_Interface
         'MI_sr_btn
         '
         Me.MI_sr_btn.Location = New System.Drawing.Point(388, 126)
-        Me.MI_sr_btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MI_sr_btn.Margin = New System.Windows.Forms.Padding(2)
         Me.MI_sr_btn.Name = "MI_sr_btn"
         Me.MI_sr_btn.Size = New System.Drawing.Size(267, 52)
         Me.MI_sr_btn.TabIndex = 0

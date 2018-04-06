@@ -26,8 +26,13 @@
 
         If SQL.HasException(True) Then Exit Sub
 
-        ' Converting float to a string making sure it only has two decimal places.
-        income_label.Text = Convert.ToString(FormatNumber(SQL.SQLTable.Rows(0).Item("Sum"), 2))
+        Try
+            ' Converting float to a string making sure it only has two decimal places.
+            income_label.Text = Convert.ToString(FormatNumber(SQL.SQLTable.Rows(0).Item("Sum"), 2))
+        Catch
+            income_label.Text = "0"
+            Exit Sub
+        End Try
     End Sub
 
     Private Sub income_label_Click(sender As Object, e As EventArgs) Handles income_label.Click

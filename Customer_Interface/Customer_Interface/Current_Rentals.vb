@@ -12,13 +12,13 @@
     Private Sub execute_button_Click(sender As Object, e As EventArgs) Handles execute_button.Click
         If rentals_mn_rbutton.Checked = True Then
             ' If Movie Name was the selected option
-            SQL.ExecuteQuery("Select C.first_name, C.last_name, O.date " &
+            SQL.ExecuteQuery("Select M.movie_id as Movie_ID, M.movie_name as Movie_Name, M.movie_type as Movie_Type, C.first_name as First, C.last_name as Last, O.date as Date " &
                              "From Movie_Data as M, Order_Data as O, Customer_Data as C " &
                              "Where O.movie_id = M.movie_id and O.account_number = C.account_number and M.movie_name = '" & textbox_input.Text &
                              "' and O.return_flag = 0;")
         ElseIf rentals_mt_rbutton.Checked = True Then
             ' Movie Type
-            SQL.ExecuteQuery("Select C.first_name, C.last_name, O.date " &
+            SQL.ExecuteQuery("Select M.movie_id as Movie_ID, M.movie_name as Movie_Name, M.movie_type as Movie_Type, C.first_name as First, C.last_name as Last, O.date as Date " &
                              "From Movie_Data as M, Order_Data as O, Customer_Data as C " &
                              "Where O.movie_id = M.movie_id and O.account_number = C.account_number and M.movie_type = '" & textbox_input.Text &
                              "' and O.return_flag = 0;")
@@ -28,7 +28,7 @@
             If (strArr.Length <> 2) Then
                 Exit Sub
             Else
-                SQL.ExecuteQuery("Select C.first_name, C.last_name, O.date " &
+                SQL.ExecuteQuery("Select M.movie_id as Movie_ID, M.movie_name as Movie_Name, M.movie_type as Movie_Type, C.first_name as First, C.last_name as Last, O.date as Date " &
                                  "From Movie_Data as M, Order_Data as O, Customer_Data as C, Rental_History as R " &
                                  "Where O.movie_id = M.movie_id And O.order_id = R.order_id And R.account_number = C.account_number " &
                                  "And C.first_name = '" & strArr(0) & "' and C.last_name = '" & strArr(1) & "' and O.return_flag = 0;")
