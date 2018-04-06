@@ -28,7 +28,7 @@
 
     Private Sub ManagerServicesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManagerServicesToolStripMenuItem.Click
         My.Application.OpenForms.Cast(Of Form)().Except({Me}).ToList() ' close all previous windows
-        Main_Manager_Interface.Show()
+        Manager_LogIn.Show()
         pbBlueBox.Hide()
     End Sub
 
