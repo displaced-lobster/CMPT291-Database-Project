@@ -61,6 +61,106 @@
         MdiParent = Main_Interface
     End Sub
 
+    Public Function check_movie_values()
+        If (MI_movie_title_tb.Text.Length < 1) Then
+            MsgBox("Movie title is required.")
+            Return False
+        End If
+
+        If (MI_movie_type_tb.Text.Length < 1) Then
+            MsgBox("Movie type is required.")
+            Return False
+        End If
+
+        If (MI_dist_fee_tb.Text.Length < 1) Then
+            MsgBox("Movie distribution fee is required.")
+            Return False
+        End If
+
+        If (MI_inventory_tb.Text.Length < 1) Then
+            MsgBox("Movie title is required.")
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Public Function check_employee_values()
+        If (MI_emp_fn_tb.Text.Length < 1) Then
+            MsgBox("Employee first name is required.")
+            Return False
+        End If
+
+        If (MI_emp_ln_tb.Text.Length < 1) Then
+            MsgBox("Employee last name is required.")
+            Return False
+        End If
+
+        If (MI_emp_city_tb.Text.Length < 1) Then
+            MsgBox("Employee city is required.")
+            Return False
+        End If
+
+        If (MI_emp_state_tb.Text.Length < 1) Then
+            MsgBox("Employee state is required.")
+            Return False
+        End If
+
+        If (MI_emp_zip_tb.Text.Length < 1) Then
+            MsgBox("Employee ZIP code is required.")
+            Return False
+        End If
+
+        If (MI_emp_street_tb.Text.Length < 1) Then
+            MsgBox("Employee street is required.")
+            Return False
+        End If
+
+        If (MI_emp_street_num_tb.Text.Length < 1) Then
+            MsgBox("Employee street number is required.")
+            Return False
+        End If
+
+        If (MI_emp_ap_num_tb.Text.Length < 1) Then
+            MI_emp_ap_num_tb.Text = "NULL"
+        End If
+
+        If (MI_emp_start_tb.Text.Length < 1) Then
+            MsgBox("Employee start date is required.")
+            Return False
+        End If
+
+        If (MI_emp_hr_tb.Text.Length < 1) Then
+            MsgBox("Employee hourly rate is required.")
+            Return False
+        End If
+        Return True
+    End Function
+
+    Public Function clear_movie()
+        MI_movie_id_tb.Text = ""
+        MI_movie_title_tb.Text = ""
+        MI_movie_type_tb.Text = ""
+        MI_dist_fee_tb.Text = ""
+        MI_inventory_tb.Text = ""
+        Return True
+    End Function
+
+    Public Function clear_employee()
+        MI_emp_sin_tb.Text = ""
+        MI_emp_fn_tb.Text = ""
+        MI_emp_ln_tb.Text = ""
+        MI_emp_city_tb.Text = ""
+        MI_emp_state_tb.Text = ""
+        MI_emp_zip_tb.Text = ""
+        MI_emp_street_tb.Text = ""
+        MI_emp_street_num_tb.Text = ""
+        MI_emp_ap_num_tb.Text = ""
+        MI_emp_start_tb.Text = ""
+        MI_emp_hr_tb.Text = ""
+        Return True
+    End Function
+
     Private Sub MI_most_active_Click(sender As Object, e As EventArgs) Handles MI_most_active.Click
 
     End Sub
@@ -92,9 +192,11 @@
             SQL.ExecuteQuery("select MAX(movie_id) as LargestID from Movie_Data;")
             MI_movie_id_tb.Text = Convert.ToString(Convert.ToInt16(SQL.SQLTable.Rows(0).Item("LargestID")) + 1)
         End If
-        SQL.ExecuteQuery("INSERT INTO Movie_Data (movie_id, movie_name, movie_type, distribution_fee, inventory, rating) " &
+        If (check_movie_values()) Then
+            SQL.ExecuteQuery("INSERT INTO Movie_Data (movie_id, movie_name, movie_type, distribution_fee, inventory, rating) " &
                          "VALUES (" & MI_movie_id_tb.Text & ", '" & MI_movie_title_tb.Text & "', '" &
                          MI_movie_type_tb.Text & "', " & MI_dist_fee_tb.Text & ", " & MI_inventory_tb.Text & ", 0);")
+        End If
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles MI_add_emp_btn.Click
@@ -102,27 +204,27 @@
             SQL.ExecuteQuery("select MAX(SIN) as LargestSin from Employee_Data;")
             MI_emp_sin_tb.Text = Convert.ToString(Convert.ToInt16(SQL.SQLTable.Rows(0).Item("LargestSIN")) + 1)
         End If
-        SQL.ExecuteQuery("INSERT INTO Employee_Data (SIN, first_name, last_name, city, state, zip_code, street, street_num, apartment_num, start_date, hourly_rate) " &
+        If (check_employee_values()) Then
+            SQL.ExecuteQuery("INSERT INTO Employee_Data (SIN, first_name, last_name, city, state, zip_code, street, street_num, apartment_num, start_date, hourly_rate) " &
                          "VALUES (" & MI_emp_sin_tb.Text & ", '" & MI_emp_fn_tb.Text & "', '" & MI_emp_ln_tb.Text & "', '" & MI_emp_city_tb.Text &
                                   "', '" & MI_emp_state_tb.Text & "', '" & MI_emp_zip_tb.Text & "', '" & MI_emp_street_tb.Text & "', '" & MI_emp_street_num_tb.Text &
                                   "', " & MI_emp_ap_num_tb.Text & ", '" & MI_emp_start_tb.Text & "', '$" & MI_emp_hr_tb.Text & "');")
+        End If
     End Sub
 
     Private Sub MI_edit_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_edit_movie_btn.Click
-        SQL.ExecuteQuery("UPDATE Movie_Data " &
+        If (check_movie_values()) Then
+            SQL.ExecuteQuery("UPDATE Movie_Data " &
                          "SET movie_name = '" & MI_movie_title_tb.Text & "', movie_type = '" & MI_movie_type_tb.Text &
                          "', distribution_fee = " & MI_dist_fee_tb.Text & ", inventory = " & MI_inventory_tb.Text &
                          " Where movie_id = " & MI_movie_id_tb.Text & ";")
+        End If
     End Sub
 
     Private Sub MI_rem_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_rem_movie_btn.Click
         SQL.ExecuteQuery("DELETE FROM Movie_Data Where movie_id = " & MI_movie_id_tb.Text & ";")
 
-        MI_movie_id_tb.Text = ""
-        MI_movie_title_tb.Text = ""
-        MI_movie_type_tb.Text = ""
-        MI_dist_fee_tb.Text = ""
-        MI_inventory_tb.Text = ""
+        clear_movie()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles emp_search_btn.Click
@@ -149,28 +251,20 @@
     End Sub
 
     Private Sub MI_edit_emp_btn_Click(sender As Object, e As EventArgs) Handles MI_edit_emp_btn.Click
-        SQL.ExecuteQuery("UPDATE Employee_Data " &
+        If (check_employee_values()) Then
+            SQL.ExecuteQuery("UPDATE Employee_Data " &
                          "SET first_name = '" & MI_emp_fn_tb.Text & "', last_name = '" & MI_emp_ln_tb.Text & "', city = '" &
                          MI_emp_city_tb.Text & "', state = '" & MI_emp_state_tb.Text & "', zip_code = " & MI_emp_zip_tb.Text &
                          ", street = '" & MI_emp_street_tb.Text & "', street_num = " & MI_emp_street_num_tb.Text & ", apartment_num = " &
                          MI_emp_ap_num_tb.Text & ", start_date = '" & MI_emp_start_tb.Text & "', hourly_rate = '$" & MI_emp_hr_tb.Text & "' " &
                          "Where SIN = " & MI_emp_sin_tb.Text & ";")
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles MI_rem_emp_btn.Click
         SQL.ExecuteQuery("DELETE FROM Employee_Data WHERE SIN = " & MI_emp_sin_tb.Text & ";")
 
-        MI_emp_sin_tb.Text = ""
-        MI_emp_fn_tb.Text = ""
-        MI_emp_ln_tb.Text = ""
-        MI_emp_city_tb.Text = ""
-        MI_emp_state_tb.Text = ""
-        MI_emp_zip_tb.Text = ""
-        MI_emp_street_tb.Text = ""
-        MI_emp_street_num_tb.Text = ""
-        MI_emp_ap_num_tb.Text = ""
-        MI_emp_start_tb.Text = ""
-        MI_emp_hr_tb.Text = ""
+        clear_employee()
     End Sub
 
     Private Sub MI_emp_start_tb_TextChanged(sender As Object, e As EventArgs) Handles MI_emp_start_tb.TextChanged
@@ -181,5 +275,13 @@
         Me.Close()
         Manager_LogIn.Close()
         Main_Interface.pbBlueBox.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        clear_movie()
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        clear_employee()
     End Sub
 End Class
