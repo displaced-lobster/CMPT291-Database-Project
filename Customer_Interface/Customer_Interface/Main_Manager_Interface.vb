@@ -176,4 +176,10 @@
     Private Sub MI_emp_start_tb_TextChanged(sender As Object, e As EventArgs) Handles MI_emp_start_tb.TextChanged
 
     End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
+        Manager_LogIn.Close()
+        Main_Interface.pbBlueBox.Show()
+    End Sub
 End Class
