@@ -31,14 +31,11 @@ Partial Class Main_Interface
         Me.EmployeeServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManagerServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Close = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InterestingFactoidToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmployeeHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManagerHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContactUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Phone1800BLUEBOXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmailUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InterestingFactoidToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbBlueBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,9 +95,15 @@ Partial Class Main_Interface
         Me.Close.Size = New System.Drawing.Size(124, 22)
         Me.Close.Text = "Close"
         '
+        'InterestingFactoidToolStripMenuItem
+        '
+        Me.InterestingFactoidToolStripMenuItem.Name = "InterestingFactoidToolStripMenuItem"
+        Me.InterestingFactoidToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
+        Me.InterestingFactoidToolStripMenuItem.Text = "Interesting Factoid"
+        '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserHelpToolStripMenuItem, Me.EmployeeHelpToolStripMenuItem, Me.ManagerHelpToolStripMenuItem, Me.ContactUsToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserHelpToolStripMenuItem, Me.EmployeeHelpToolStripMenuItem, Me.ManagerHelpToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -122,31 +125,6 @@ Partial Class Main_Interface
         Me.ManagerHelpToolStripMenuItem.Name = "ManagerHelpToolStripMenuItem"
         Me.ManagerHelpToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ManagerHelpToolStripMenuItem.Text = "Manager Help"
-        '
-        'ContactUsToolStripMenuItem
-        '
-        Me.ContactUsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Phone1800BLUEBOXToolStripMenuItem, Me.EmailUsToolStripMenuItem})
-        Me.ContactUsToolStripMenuItem.Name = "ContactUsToolStripMenuItem"
-        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ContactUsToolStripMenuItem.Text = "Contact Us"
-        '
-        'Phone1800BLUEBOXToolStripMenuItem
-        '
-        Me.Phone1800BLUEBOXToolStripMenuItem.Name = "Phone1800BLUEBOXToolStripMenuItem"
-        Me.Phone1800BLUEBOXToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.Phone1800BLUEBOXToolStripMenuItem.Text = "Phone: 1800-BLUEBOX"
-        '
-        'EmailUsToolStripMenuItem
-        '
-        Me.EmailUsToolStripMenuItem.Name = "EmailUsToolStripMenuItem"
-        Me.EmailUsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.EmailUsToolStripMenuItem.Text = "Email Us"
-        '
-        'InterestingFactoidToolStripMenuItem
-        '
-        Me.InterestingFactoidToolStripMenuItem.Name = "InterestingFactoidToolStripMenuItem"
-        Me.InterestingFactoidToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
-        Me.InterestingFactoidToolStripMenuItem.Text = "Interesting Factoid"
         '
         'pbBlueBox
         '
@@ -196,8 +174,5 @@ Partial Class Main_Interface
     Friend WithEvents UserHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeHelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManagerHelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ContactUsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Phone1800BLUEBOXToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EmailUsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InterestingFactoidToolStripMenuItem As ToolStripMenuItem
 End Class
