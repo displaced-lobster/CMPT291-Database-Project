@@ -58,7 +58,7 @@ Public Class Customer_Login
         If SQL.HasConnection = True Then
             If IsAuthenticated() = True Then
                 ValidUser = SQL.SQLTable.Rows(0).Item("account_number") ' pass authenticated primary key to global variable
-                MsgBox("Login Successful")
+                'MsgBox("Login Successful") ' for test purposes
                 Me.Hide() ' keep open to access global account number for duration of session
                 Customer_Interface.Show()
             End If
@@ -67,5 +67,6 @@ Public Class Customer_Login
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
+        Main_Interface.pbBlueBox.Show()
     End Sub
 End Class

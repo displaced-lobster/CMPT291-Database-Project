@@ -29,13 +29,16 @@ Partial Class Employee_Login
         Me.AccessAccount = New System.Windows.Forms.Button()
         Me.passwd = New System.Windows.Forms.TextBox()
         Me.username = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.Label3.Location = New System.Drawing.Point(385, 119)
+        Me.Label3.Location = New System.Drawing.Point(82, 18)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(80, 26)
         Me.Label3.TabIndex = 27
@@ -43,7 +46,7 @@ Partial Class Employee_Login
         '
         'BtnCancel
         '
-        Me.BtnCancel.Location = New System.Drawing.Point(363, 308)
+        Me.BtnCancel.Location = New System.Drawing.Point(60, 178)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(123, 23)
         Me.BtnCancel.TabIndex = 26
@@ -53,7 +56,7 @@ Partial Class Employee_Login
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(304, 212)
+        Me.Label2.Location = New System.Drawing.Point(1, 111)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 25
@@ -62,7 +65,7 @@ Partial Class Employee_Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(302, 173)
+        Me.Label1.Location = New System.Drawing.Point(-1, 72)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(55, 13)
         Me.Label1.TabIndex = 24
@@ -70,7 +73,7 @@ Partial Class Employee_Login
         '
         'AccessAccount
         '
-        Me.AccessAccount.Location = New System.Drawing.Point(363, 250)
+        Me.AccessAccount.Location = New System.Drawing.Point(60, 149)
         Me.AccessAccount.Name = "AccessAccount"
         Me.AccessAccount.Size = New System.Drawing.Size(123, 23)
         Me.AccessAccount.TabIndex = 23
@@ -79,7 +82,7 @@ Partial Class Employee_Login
         '
         'passwd
         '
-        Me.passwd.Location = New System.Drawing.Point(363, 209)
+        Me.passwd.Location = New System.Drawing.Point(60, 108)
         Me.passwd.Name = "passwd"
         Me.passwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.passwd.Size = New System.Drawing.Size(135, 20)
@@ -87,29 +90,54 @@ Partial Class Employee_Login
         '
         'username
         '
-        Me.username.Location = New System.Drawing.Point(363, 170)
+        Me.username.Location = New System.Drawing.Point(60, 69)
         Me.username.MaxLength = 31
         Me.username.Name = "username"
         Me.username.Size = New System.Drawing.Size(135, 20)
         Me.username.TabIndex = 21
         Me.username.WordWrap = False
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.btnExit)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.username)
+        Me.Panel1.Controls.Add(Me.BtnCancel)
+        Me.Panel1.Controls.Add(Me.passwd)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.AccessAccount)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(460, 200)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 250)
+        Me.Panel1.TabIndex = 28
+        '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(60, 207)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(123, 23)
+        Me.btnExit.TabIndex = 28
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
+        '
         'Employee_Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1019, 588)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.BtnCancel)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.AccessAccount)
-        Me.Controls.Add(Me.passwd)
-        Me.Controls.Add(Me.username)
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ClientSize = New System.Drawing.Size(1187, 727)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Panel1)
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Employee_Login"
-        Me.Text = "Form1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -120,4 +148,6 @@ Partial Class Employee_Login
     Friend WithEvents AccessAccount As Button
     Friend WithEvents passwd As TextBox
     Friend WithEvents username As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnExit As Button
 End Class

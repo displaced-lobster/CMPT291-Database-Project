@@ -28,14 +28,22 @@
 
     Private Sub DelCust()
         SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
-        If SQL.HasException(True) Then Exit Sub
+        SQL.ExecuteQuery("SELECT count(*) FROM order_data WHERE account_number = @acctnum AND return_flag = 0")
 
-        SQL.AddParam("@acctnum", delAcctNum.Text)
-        SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
-        If SQL.HasException(True) Then Exit Sub
+        If 0 < SQL.SQLTable.Rows(0).ItemArray(0) Then
+            MsgBox("Cannot delete customer, they have outstanding movie rentals.")
+        Else
+            SQL.AddParam("@acctnum", delAcctNum.Text)
+            SQL.ExecuteQuery("DELETE FROM customer_data WHERE account_number = @acctnum;")
+            If SQL.HasException(True) Then Exit Sub
 
-        MsgBox("Customer deleted.")
+            SQL.AddParam("@acctnum", delAcctNum.Text)
+            SQL.ExecuteQuery("DELETE From customer_phone_numbers WHERE account_number = @acctnum;")
+            If SQL.HasException(True) Then Exit Sub
+
+            MsgBox("Customer deleted.")
+        End If
+
         delAcctNum.Clear()
         delData.ClearSelection()
         del_cust.Enabled = False
@@ -47,13 +55,13 @@
 
         For Each r As DataRow In SQL.SQLTable.Rows
             Dim mailee As String = r("first_name") + " " + r("last_name") + ", "
-            mailee += r("street_num").ToString() + " " + r("street") + " "
+            mailee += r("street_num").ToString() + " " + r("street") + ", "
 
             If Not IsDBNull(r("apartment_num")) And Not r("apartment_num").ToString() = "0" Then
-                mailee += "APT " + r("apartment_num").ToString() + " "
+                mailee += "APT " + r("apartment_num").ToString() + ", "
             End If
 
-            mailee += r("city") + ", " + r("state") + " " + r("zip_code").ToString()
+            mailee += r("city") + ", " + r("state") + ", " + r("zip_code").ToString()
 
             AddressList.Items.Add(mailee)
 
@@ -90,7 +98,7 @@
 
             If IsDBNull(r("account_type")) Then Exit For
 
-            If r("account_type") = "lim" Then
+            If r("account_type") = "limited" Then
                 editLim.Checked = True
             ElseIf r("account_type") = "unlim1" Then
                 editUnlim1.Checked = True
@@ -141,6 +149,42 @@
     End Sub
 
     Private Sub UpdateCustomer()
+        If editFName.Text.Length = 0 Then
+            MsgBox("First name is required.")
+            Exit Sub
+        End If
+        If editLName.Text.Length = 0 Then
+            MsgBox("Last name is required.")
+            Exit Sub
+        End If
+        If editEmail.Text.Length = 0 Then
+            MsgBox("Email is required.")
+            Exit Sub
+        End If
+        If editCC.Text.Length = 0 Then
+            MsgBox("Credit card is required.")
+            Exit Sub
+        End If
+        If editStreetNum.Text.Length = 0 Then
+            MsgBox("Street number is required.")
+            Exit Sub
+        End If
+        If editStreetName.Text.Length = 0 Then
+            MsgBox("Street name is required.")
+            Exit Sub
+        End If
+        If editCity.Text.Length = 0 Then
+            MsgBox("City is required.")
+            Exit Sub
+        End If
+        If editState.Text.Length = 0 Then
+            MsgBox("State is required.")
+            Exit Sub
+        End If
+        If editZip.Text.Length = 0 Then
+            MsgBox("Zip is required.")
+            Exit Sub
+        End If
         SQL.AddParam("@acctnum", editAcctNum.Text)
         SQL.AddParam("@fname", editFName.Text)
         SQL.AddParam("@lname", editLName.Text)
@@ -148,13 +192,17 @@
         SQL.AddParam("@cc", editCC.Text)
         SQL.AddParam("@strnum", editStreetNum.Text)
         SQL.AddParam("@strname", editStreetName.Text)
-        SQL.AddParam("@aptnum", editAPTNum.Text)
+        If editAcctNum.Text.Length = 0 Then
+            SQL.AddParam("@aptnum", "NULL")
+        Else
+            SQL.AddParam("@aptnum", editAPTNum.Text)
+        End If
         SQL.AddParam("@city", editCity.Text)
         SQL.AddParam("@state", editState.Text)
         SQL.AddParam("@zip", editZip.Text)
 
         If editLim.Checked Then
-            SQL.AddParam("@type", "lim")
+            SQL.AddParam("@type", "limited")
         ElseIf editUnlim1.Checked Then
             SQL.AddParam("@type", "unlim1")
         ElseIf editUnlim2.Checked Then
@@ -252,15 +300,44 @@
     End Sub
 
     Private Sub CreateOrder()
-        SQL.AddParam("@orderid", recOrderID.Text)
         SQL.AddParam("@acctnum", recAcctNum.Text)
-        SQL.AddParam("@movieid", recMovieID.Text)
-        SQL.AddParam("@date", recDate.Text)
-        SQL.AddParam("@sin", recSIN.Text)
+        SQL.ExecuteQuery("SELECT count(*) FROM order_data WHERE account_number = @acctnum AND return_flag = 0;")
+        Dim count As Integer = SQL.SQLTable.Rows(0).ItemArray(0)
 
-        SQL.ExecuteQuery("INSERT INTO order_data (order_id, date, return_flag, account_number, movie_id, SIN) VALUES (@orderid, @date, 0, @acctnum, @movieid, @sin);")
+        SQL.AddParam("@acctnum", recAcctNum.Text)
+        SQL.ExecuteQuery("SELECT num_of_movies FROM customer_data, account WHERE account_number = @acctnum AND account_type = type;")
+        If SQL.HasException(True) Then Exit Sub
 
-        If SQL.HasException(False) Then Exit Sub
+        If count >= SQL.SQLTable.Rows(0).ItemArray(0) Then
+            MsgBox("Cannot create order, customer has reached order limited.")
+        Else
+            SQL.AddParam("@orderid", recOrderID.Text)
+            SQL.AddParam("@acctnum", recAcctNum.Text)
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.AddParam("@date", recDate.Text)
+            SQL.AddParam("@sin", recSIN.Text)
+
+            SQL.ExecuteQuery("INSERT INTO order_data (order_id, date, return_flag, account_number, movie_id, SIN) VALUES (@orderid, @date, 0, @acctnum, @movieid, @sin);")
+            If SQL.HasException(True) Then Exit Sub
+
+            SQL.AddParam("@acctnum", recAcctNum.Text)
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.ExecuteQuery("DELETE FROM order_queue WHERE account_number = @acctnum AND movie_id = @movieid;")
+            If SQL.HasException(True) Then Exit Sub
+
+            Dim new_inventory As Integer
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.ExecuteQuery("SELECT inventory FROM movie_data WHERE movie_id = @movieid;")
+            If SQL.HasException(True) Then Exit Sub
+            new_inventory = SQL.SQLTable.Rows(0).ItemArray(0) - 1
+
+            SQL.AddParam("@movieid", recMovieId.Text)
+            SQL.AddParam("@inv", new_inventory)
+            SQL.ExecuteQuery("UPDATE movie_data SET inventory = @inv WHERE movie_id = @movieid;")
+            If SQL.HasException(True) Then Exit Sub
+
+            MsgBox("Order successfully created.")
+        End If
 
         SQL.ExecuteQuery("SELECT max(order_id) FROM order_data")
         recOrderID.Text = SQL.SQLTable.Rows(0).ItemArray(0)
@@ -268,7 +345,6 @@
         orderAcctNum.Clear()
         orderList.Items.Clear()
         recMovieId.Items.Clear()
-        MsgBox("Order successfully created.")
     End Sub
 
     Private Sub FindCust()
@@ -297,6 +373,42 @@
     End Sub
 
     Private Sub AddCust()
+        If addFName.Text.Length = 0 Then
+            MsgBox("First name is required.")
+            Exit Sub
+        End If
+        If addLName.Text.Length = 0 Then
+            MsgBox("Last name is required.")
+            Exit Sub
+        End If
+        If addEmail.Text.Length = 0 Then
+            MsgBox("Email is required.")
+            Exit Sub
+        End If
+        If addCC.Text.Length = 0 Then
+            MsgBox("Credit card is required.")
+            Exit Sub
+        End If
+        If addStreetNum.Text.Length = 0 Then
+            MsgBox("Street number is required.")
+            Exit Sub
+        End If
+        If addStreetName.Text.Length = 0 Then
+            MsgBox("Street name is required.")
+            Exit Sub
+        End If
+        If addCity.Text.Length = 0 Then
+            MsgBox("City is required.")
+            Exit Sub
+        End If
+        If addState.Text.Length = 0 Then
+            MsgBox("State is required.")
+            Exit Sub
+        End If
+        If addZip.Text.Length = 0 Then
+            MsgBox("Zip is required.")
+            Exit Sub
+        End If
         SQL.AddParam("@acctnum", addAcctNum.Text)
         SQL.AddParam("@fname", addFName.Text)
         SQL.AddParam("@lname", addLName.Text)
@@ -310,7 +422,7 @@
         SQL.AddParam("@aptnum", addAPTNum.Text)
 
         If Lim1.Checked Then
-            SQL.AddParam("@type", "lim1")
+            SQL.AddParam("@type", "limited")
         ElseIf Unlim1.Checked Then
             SQL.AddParam("@type", "unlim1")
         ElseIf Unlim2.Checked Then
@@ -399,6 +511,16 @@
             delData.DataSource = SQL.SQLTable
 
             del_cust.Enabled = True
+
+            SQL.AddParam("@acct", delAcctNum.Text)
+            SQL.ExecuteQuery("SELECT count(*) FROM order_data " &
+                             "WHERE account_number = @acct AND return_flag = 0;")
+
+            If SQL.SQLTable.Rows(0).ItemArray(0) > 0 Then
+                delWarning.Text = "WARNING: customer has unreturned movie rentals."
+            Else
+                delWarning.Text = ""
+            End If
         End If
     End Sub
 
@@ -438,15 +560,31 @@
     End Sub
 
     Private Sub FindOrderQueue()
+        recWarning.Text = ""
         orderList.Items.Clear()
         SQL.AddParam("@acct", orderAcctNum.Text)
-        SQL.ExecuteQuery("SELECT movie_data.movie_id, movie_data.movie_name FROM order_queue, movie_data WHERE account_number = @acct AND order_queue.movie_id = movie_data.movie_id;")
+        SQL.ExecuteQuery("SELECT movie_data.movie_id, movie_data.movie_name, movie_data.inventory FROM order_queue, movie_data " &
+                         "WHERE account_number = @acct AND order_queue.movie_id = movie_data.movie_id AND inventory > 0 ORDER BY order_queue.date;")
 
         For Each r As DataRow In SQL.SQLTable.Rows
-            Dim movie As String = r("movie_id").ToString() + vbTab + r("movie_name")
+            Dim movie As String = r("movie_id").ToString() + vbTab + vbTab + r("inventory").ToString() + vbTab + vbTab + r("movie_name")
             orderList.Items.Add(movie)
             recMovieId.Items.Add(r("movie_id"))
         Next
+
+        SQL.AddParam("@acct", orderAcctNum.Text)
+        SQL.ExecuteQuery("SELECT count(*) FROM order_data " &
+                         "WHERE account_number = @acct AND return_flag = 0;")
+        Dim count As Integer = SQL.SQLTable.Rows(0).ItemArray(0)
+        SQL.AddParam("@acct", orderAcctNum.Text)
+        SQL.ExecuteQuery("Select num_of_movies FROM customer_data, account " &
+                         "WHERE account_number = @acct AND type = account_type;")
+
+        If count >= SQL.SQLTable.Rows(0).ItemArray(0) Then
+            recWarning.Text = "WARNING: customer has rented maximum number of movies."
+        Else
+            recWarning.Text = ""
+        End If
     End Sub
 
     Private Sub orderSearch_Click(sender As Object, e As EventArgs) Handles orderSearch.Click
@@ -458,7 +596,7 @@
         Dim acct As String = FindMovieAcctNum.Text
         RecMovies.Items.Clear()
         If acct.Length > 0 Then
-            Dim movie_ids = Recommendation.GetRecommendations(Convert.ToInt32(acct))
+            Dim movie_ids = Recommendation.GetRecommendations(acct)
 
             For Each movie_id As Integer In movie_ids
                 SQL.AddParam("@movie", movie_id)

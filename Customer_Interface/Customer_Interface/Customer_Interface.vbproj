@@ -94,6 +94,18 @@
     <Compile Include="Current_Rentals.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomerHelp.Designer.vb">
+      <DependentUpon>CustomerHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeHelp.Designer.vb">
+      <DependentUpon>EmployeeHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Recommendation.vb" />
     <Compile Include="CMPT291_ProjectDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -155,7 +167,6 @@
     <Compile Include="Main_Manager_Interface.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recommend.vb" />
     <Compile Include="Sales_Report_Generator.Designer.vb">
       <DependentUpon>Sales_Report_Generator.vb</DependentUpon>
     </Compile>
@@ -195,6 +206,9 @@
     <EmbeddedResource Include="Current_Rentals.resx">
       <DependentUpon>Current_Rentals.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHelp.resx">
+      <DependentUpon>CustomerHelp.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer_Login.resx">
       <DependentUpon>Customer_Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Customer_Account.resx">
       <DependentUpon>Edit_Customer_Account.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHelp.resx">
+      <DependentUpon>EmployeeHelp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee_Login.resx">
       <DependentUpon>Employee_Login.vb</DependentUpon>

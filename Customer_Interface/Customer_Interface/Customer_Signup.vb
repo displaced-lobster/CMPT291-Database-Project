@@ -183,16 +183,16 @@ Public Class Customer_SignUp
         End If
 
         ' check against SQL injection attacks
-        Dim invalid As String = " ,./<>?;'\:[]{}+_)(*&^%$#@!~=`"""
+        Dim invalid As String = " ;'`"""
         While txtUser.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
-            MsgBox("There can be no non-alphanumeric characters in the username")
+            MsgBox("Your username may not contain spaces or ;'`"" ")
             txtUser.Clear()
             txtPass.Clear()
             Return False
         End While
-        Dim otherInvalid As String = " '"
+        Dim otherInvalid As String = " ';"
         While txtPass.Text.Where(Function(ch) invalid.Contains(ch)).Count > 0
-            MsgBox("There can be no spaces or ""'"" in the password")
+            MsgBox("There can be no spaces, "";"" or ""'"" in the password")
             txtPass.Clear()
             Return False
         End While
@@ -225,5 +225,6 @@ Public Class Customer_SignUp
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
+        Main_Interface.pbBlueBox.Show()
     End Sub
 End Class

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>In order to access your account and view our movie catalogue, you must first sign into your account using you username and password that you created when 
+you first signed up with Blue Box. If have not done so, please first go to the the "New User Signup" and create an account with us before proceeding. If you are 
+having difficulties logging in, please be sure to check and make sure that your username and password have been typed in correctly. Also, both fields are case 
+sensitive so please make sure that you do not have caps lock enabled while typing your username and password. If you have made a mistake and wish to clear 
+both fields, you can press the "Cancel" button to start over. If you wish the exit for whatever reason you may click the "Exit" button. If you are still having issues, 
+please contact us at 1-800-BLUEBOX in order to have a customer representative to help you access your account.
+
+If for any reason you must change your account information, you may do so my clicking on the "Edit" button. From here, you will be taken to another page that is 
+similar to the one when you first created your account. In order to change any information in your account, simply select the text box that you wish to edit and 
+delete the information contained within and replace it with your new information. If you realized that you do not want to change a text box, simply leave it either 
+blank or fill it back in with the information you had before in order to not change its contents. Like with filling out the form, if you do change something, you will 
+need to make sure that it is filled out completely and correctly otherwise you will be notified and the incorrect fields will be highlighted. If you are editing your 
+phone number, you may delete additional numbers but you may only have at minimum one phone number on file. If you wish to change the primary phone on 
+file, simply put in the new number you wish to have as primary. You must have an associated type of number selected from the drop down for all numbers you 
+wish to have on file. If you wish to change your account username or password, simply fill out the fields like you did when you signed up.
+
+If you only wish to see what rentals you currently have out, there is a drop down to the right side of the page contained on the "Account Details" page. Likewise, 
+if you wish to see what rentals you have had in the past or what is in your queue, you need only select those drop downs to view their titles.
+
+In order to terminate your session, simply press the "Logout" button located in the top right corner of the page. you may open up other sessions as different 
+users but note that your session will remain open until you press logout for this session or you close the program.
+</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>In order to search movies, change your queue, rate a past rental, or rent and return movies, you must click the tab in the top left of your account page labeled 
+"Movies". If you wish to search our selection of movies, there are several ways that you may do so. if you wish to see what best sellers we have in stock, simply
+press the "Best Sellers" button. Likewise, if you wish to have a personalized movie list, simply press "Recommended". If you wish to be more specific with your 
+search criteria, you must select one of the three options located to the right of the search bar.
+
+If you are searching by category, you must type in the category that you are wishing to search for. Unfortunately, due to our limited selection, we currently only
+have 4 different categories. They are: Action, Comedy, Drama, and Foreign. If however, you wish to do a custom search, simply select either "search by title" or
+"search by actor". Once selected, you may type keywords into the search bar in order to find the movies you are looking for.
+
+If you wish to add a movie from your search into your queue, simply go to the bottom of the page and click on the drop down bar next to the "Add to Queue"
+button. in the drop down you will find all of the movies that was displayed from your search. Simply select the movie you wish to add and press the button to
+the right of that drop down. Please note that the ordering of your queue is based on when you added a movie to it. Also, the movies at the top of your queue
+will be the first, if available, movies that will be rented and so on to the end of your queue. if you wish to change the ordering of your queue, select the drop down
+next to "Remove From Queue". You may only delete from your queue so if you wish to move a movie forward in your queue, you will have to delete any movies 
+that are currently in front of it in the queue and add them back in after by searching for them and selecting them to add to the queue.
+
+In order to rent a movie, you need to go to the bottom of the page and select "Rent Next Movie". If you are allowed to, based on your account type, the next 
+available movie from your queue will be sent to you. If, however, you are not able to based on the current number of rentals you have out, simply go to the drop
+down menu left of the button labeled "Return A Movie" and select whichever movies you wish to return. Once you have returned enough movies, go back and try
+to rent a movie again. Please note that those on the limited account are only allowed a maximum of 2 rentals within a one month period. IF this is the case, you 
+will be notified with the number of days left you have until you can rent another movie.
+
+Any movie that you have rented in the past can be rated by you once. If you wish to rate a movie you have watched, go to the right panel and select a past rental 
+from the drop down menu. Only movies that you have not rented will be displayed. You must select a rating and once you have done so, press the rate button.
+
+If for any reason you are you are having issues with renting a movie or changing your queue, please contact us at 1-800-BLUEBOX to have a customer 
+representative assist you.</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>If this if your first time using Blue Box's services, you will be required to first sign up as a new user. To do this, select "File" in the top left corner of the home page
+and click on "Accounts". From here, a side bar will appear and you will click on the "New User Signup" tab. Once selected, you will be led to the new user form 
+that will need to be filled out completely before you can submit. However, please not that you only are required to submit one phone number. You may supply 
+additional numbers but you are not required.
+
+If you are finding that you are not able to press "Create Account", please check to make sure that all required fields are filled. If you have filled in a field 
+incorrectly, you will be notified and redirected to go back and complete the areas that are incomplete. They have been highlighted yellow to assist you. If you are 
+still finding that you are not allowed to fill out the form, check to make sure that any and all possible selections have been made such as the drop down for a 
+phone number type and the account type you wish to have.
+
+If you are denied creating your account because of the username you chose, it is because that username has already been used by another customer. Please 
+try a different username in this case. Also, a username may not contain the a space or the following punctuation ; ' " `. If you are not allowed to create your 
+account because of the password, please first check to make sure you put the same password in both of the password fields. If you are receiving an error 
+message for your password that you created, please note that you may not use spaces, "'" or ";" in your password.
+
+If you are still unable to create an account, please contact us at 1-800-BLUEBOX and one of our customer representatives will be happy to assist you in getting 
+an account started.</value>
+  </data>
+</root>
