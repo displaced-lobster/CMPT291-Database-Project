@@ -83,6 +83,11 @@
     End Sub
 
     Private Sub MI_add_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_add_movie_btn.Click
+        Dim id_gen As Integer = 0;
+        If (MI_movie_id_tb.Text.Length < 1) Then
+            SQL.ExecuteQuery("select MAX(movie_id) from (select movie_id from Movie_Data) as G;")
+            MI_movie_id_tb.Text = Convert.ToString(Convert.ToInt16(SQL.SQLTable.Rows(0).Item("movie_id")) + 1)
+        End If
         SQL.ExecuteQuery("INSERT INTO Movie_Data (movie_id, movie_name, movie_type, distribution_fee, inventory, rating) " &
                          "VALUES (" & MI_movie_id_tb.Text & ", '" & MI_movie_title_tb.Text & "', '" &
                          MI_movie_type_tb.Text & "', " & MI_dist_fee_tb.Text & ", " & MI_inventory_tb.Text & ", 0);")
