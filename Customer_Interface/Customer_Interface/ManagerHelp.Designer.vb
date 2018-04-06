@@ -22,7 +22,6 @@ Partial Class ManagerHelp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim Label10 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerHelp))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -40,9 +39,9 @@ Partial Class ManagerHelp
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
@@ -51,18 +50,8 @@ Partial Class ManagerHelp
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label10
-        '
-        Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Label10.Location = New System.Drawing.Point(8, 29)
-        Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(1099, 107)
-        Label10.TabIndex = 0
-        Label10.Text = resources.GetString("Label10.Text")
-        AddHandler Label10.Click, AddressOf Me.Label10_Click
         '
         'GroupBox3
         '
@@ -88,6 +77,7 @@ Partial Class ManagerHelp
         'Panel1
         '
         Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.GroupBox10)
         Me.Panel1.Controls.Add(Me.GroupBox6)
         Me.Panel1.Controls.Add(Me.GroupBox5)
@@ -95,7 +85,6 @@ Partial Class ManagerHelp
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.GroupBox8)
-        Me.Panel1.Controls.Add(Me.GroupBox9)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Location = New System.Drawing.Point(2, 41)
         Me.Panel1.Name = "Panel1"
@@ -233,17 +222,6 @@ Partial Class ManagerHelp
         Me.Label9.TabIndex = 1
         Me.Label9.Text = resources.GetString("Label9.Text")
         '
-        'GroupBox9
-        '
-        Me.GroupBox9.Controls.Add(Label10)
-        Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GroupBox9.Location = New System.Drawing.Point(10, 50)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(1146, 144)
-        Me.GroupBox9.TabIndex = 2
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "Adding, Editing, and Removing a Movie"
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -253,6 +231,26 @@ Partial Class ManagerHelp
         Me.Label11.Size = New System.Drawing.Size(217, 37)
         Me.Label11.TabIndex = 1
         Me.Label11.Text = "Manager Help"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 62)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1147, 142)
+        Me.GroupBox1.TabIndex = 9
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Adding, Editing, and Removing a Movie"
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label1.Location = New System.Drawing.Point(7, 25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(1060, 107)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = resources.GetString("Label1.Text")
         '
         'ManagerHelp
         '
@@ -264,7 +262,7 @@ Partial Class ManagerHelp
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "ManagerHelp"
@@ -281,7 +279,7 @@ Partial Class ManagerHelp
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -300,8 +298,9 @@ Partial Class ManagerHelp
     Friend WithEvents Button2 As Button
     Friend WithEvents GroupBox8 As GroupBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents GroupBox9 As GroupBox
     Friend WithEvents Label11 As Label
     Friend WithEvents GroupBox10 As GroupBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label1 As Label
 End Class
