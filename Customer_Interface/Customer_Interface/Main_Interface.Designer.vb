@@ -39,8 +39,8 @@ Partial Class Main_Interface
         Me.ContactUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Phone1800BLUEBOXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmailUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbBlueBox = New System.Windows.Forms.PictureBox()
         Me.InterestingFactoidToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbBlueBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -149,6 +149,12 @@ Partial Class Main_Interface
         Me.EmailUsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.EmailUsToolStripMenuItem.Text = "Email Us"
         '
+        'InterestingFactoidToolStripMenuItem
+        '
+        Me.InterestingFactoidToolStripMenuItem.Name = "InterestingFactoidToolStripMenuItem"
+        Me.InterestingFactoidToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
+        Me.InterestingFactoidToolStripMenuItem.Text = "Interesting Factoid"
+        '
         'pbBlueBox
         '
         Me.pbBlueBox.BackColor = System.Drawing.SystemColors.Highlight
@@ -156,15 +162,9 @@ Partial Class Main_Interface
         Me.pbBlueBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pbBlueBox.Location = New System.Drawing.Point(-1, 27)
         Me.pbBlueBox.Name = "pbBlueBox"
-        Me.pbBlueBox.Size = New System.Drawing.Size(1185, 700)
+        Me.pbBlueBox.Size = New System.Drawing.Size(1187, 727)
         Me.pbBlueBox.TabIndex = 2
         Me.pbBlueBox.TabStop = False
-        '
-        'InterestingFactoidToolStripMenuItem
-        '
-        Me.InterestingFactoidToolStripMenuItem.Name = "InterestingFactoidToolStripMenuItem"
-        Me.InterestingFactoidToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
-        Me.InterestingFactoidToolStripMenuItem.Text = "Interesting Factoid"
         '
         'Main_Interface
         '
@@ -180,6 +180,7 @@ Partial Class Main_Interface
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "Main_Interface"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Blue Box Rental Service"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

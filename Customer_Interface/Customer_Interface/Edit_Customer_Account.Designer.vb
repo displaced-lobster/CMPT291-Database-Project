@@ -342,7 +342,7 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.phoneDrop3.FormattingEnabled = True
-        Me.phoneDrop3.Items.AddRange(New Object() {"", "Home", "Work", "Cell"})
+        Me.phoneDrop3.Items.AddRange(New Object() {"", "home", "work", "cell"})
         Me.phoneDrop3.Location = New System.Drawing.Point(150, 180)
         Me.phoneDrop3.MaxDropDownItems = 3
         Me.phoneDrop3.Name = "phoneDrop3"
@@ -364,7 +364,7 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.phoneDrop2.FormattingEnabled = True
-        Me.phoneDrop2.Items.AddRange(New Object() {"", "Home", "Work", "Cell"})
+        Me.phoneDrop2.Items.AddRange(New Object() {"", "home", "work", "cell"})
         Me.phoneDrop2.Location = New System.Drawing.Point(150, 151)
         Me.phoneDrop2.MaxDropDownItems = 3
         Me.phoneDrop2.Name = "phoneDrop2"
@@ -377,7 +377,7 @@ Partial Class Edit_Customer_Account
         Me.phoneDrop1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.phoneDrop1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.phoneDrop1.FormattingEnabled = True
-        Me.phoneDrop1.Items.AddRange(New Object() {"Home", "Work", "Cell"})
+        Me.phoneDrop1.Items.AddRange(New Object() {"home", "work", "cell"})
         Me.phoneDrop1.Location = New System.Drawing.Point(150, 124)
         Me.phoneDrop1.MaxDropDownItems = 3
         Me.phoneDrop1.Name = "phoneDrop1"
@@ -591,7 +591,7 @@ Partial Class Edit_Customer_Account
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
-        Me.ClientSize = New System.Drawing.Size(1187, 727)
+        Me.ClientSize = New System.Drawing.Size(1200, 750)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -600,7 +600,6 @@ Partial Class Edit_Customer_Account
         Me.Name = "Edit_Customer_Account"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
