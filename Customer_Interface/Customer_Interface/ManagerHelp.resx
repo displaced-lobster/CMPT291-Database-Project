@@ -128,15 +128,6 @@
 partial matching first name, last name, or email. Search key priority is from left (highest) to right (lowest). If no parameters are specified, the search
 will return all customers.</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>To create an order, the representative must  input the customer’s account number and click search. The search will return those movies in the customer’s
-movie queue that are currently in the inventory, sorted from highest priority to lowest priority, or oldest in the queue to newest in the queue. To complete
-an order, the representative must select which movie to order via the drop down list of movie id’s. The representative may enter a movie id that is not in
-the list but this should only be done with the customer’s express permission. The date field is pre-populated but can be adjusted if necessary. The ‘Record
-Order’  order button will complete the action if the customer is eligible to order another movie, based on their account type. On order creation, the movie
-is removed from the customer queue and the 
-current inventory is reduced by 1.</value>
-  </data>
   <data name="Label12.Text" xml:space="preserve">
     <value>When this button is pressed, the manager is taken to an interface that prompts them for a month and a year (to be inputted in the proper, given format MM YYYY). When the fields are filled, the manager may press the “Execute” button and the sales for that month will be shown. The “Close” button will take the manager back to the data tab.</value>
   </data>
