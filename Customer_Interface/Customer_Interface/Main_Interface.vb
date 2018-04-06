@@ -44,6 +44,12 @@
         pbBlueBox.Hide()
     End Sub
 
+    Private Sub ManagerHelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManagerHelpToolStripMenuItem.Click
+        My.Application.OpenForms.Cast(Of Form)().Except({Me}).ToList() ' close all previous windows
+        ManagerHelp.Show()
+        pbBlueBox.Hide()
+    End Sub
+
     Private Sub Main_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
