@@ -171,6 +171,7 @@ Partial Class Customer_Rep
         Me.Label40 = New System.Windows.Forms.Label()
         Me.MovieRec = New System.Windows.Forms.Button()
         Me.CMPT291ProjectDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -460,7 +461,7 @@ Partial Class Customer_Rep
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage2.Size = New System.Drawing.Size(1618, 891)
+        Me.TabPage2.Size = New System.Drawing.Size(1631, 924)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Find Customer"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -598,7 +599,7 @@ Partial Class Customer_Rep
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage4.Size = New System.Drawing.Size(1618, 891)
+        Me.TabPage4.Size = New System.Drawing.Size(1631, 924)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Add Customer"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1106,7 +1107,7 @@ Partial Class Customer_Rep
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1618, 891)
+        Me.TabPage5.Size = New System.Drawing.Size(1631, 924)
         Me.TabPage5.TabIndex = 6
         Me.TabPage5.Text = " Edit Customer"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1616,7 +1617,7 @@ Partial Class Customer_Rep
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1618, 891)
+        Me.TabPage6.Size = New System.Drawing.Size(1631, 924)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Delete Customer"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -1688,7 +1689,7 @@ Partial Class Customer_Rep
         Me.TabPage7.Controls.Add(Me.mailingList)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1618, 891)
+        Me.TabPage7.Size = New System.Drawing.Size(1631, 924)
         Me.TabPage7.TabIndex = 7
         Me.TabPage7.Text = "Mailing List"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1739,7 +1740,7 @@ Partial Class Customer_Rep
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(1)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabPage3.Size = New System.Drawing.Size(1618, 891)
+        Me.TabPage3.Size = New System.Drawing.Size(1631, 924)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Movie Recommendations"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1778,6 +1779,15 @@ Partial Class Customer_Rep
         Me.MovieRec.Text = "Movie Recommendations"
         Me.MovieRec.UseVisualStyleBackColor = True
         '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(1073, 39)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.TabIndex = 4
+        Me.btnExit.Text = "Logout"
+        Me.btnExit.UseVisualStyleBackColor = True
+        '
         'Customer_Rep
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1787,6 +1797,7 @@ Partial Class Customer_Rep
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1200, 760)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -1982,4 +1993,5 @@ Partial Class Customer_Rep
     Friend WithEvents Label45 As Label
     Friend WithEvents recWarning As Label
     Friend WithEvents delWarning As Label
+    Friend WithEvents btnExit As Button
 End Class
