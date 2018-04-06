@@ -65,6 +65,19 @@
 
     End Sub
 
+    Public Function check_movie_values()
+        If (MI_movie_title_tb.Text.Length < 1) Then
+            MI_movie_id_tb.Text = "NULL"
+        ElseIf (MI_movie_type_tb.Text.Length < 1) Then
+            MI_movie_type_tb.Text = "NULL"
+        ElseIf (MI_dist_fee_tb.Text.Length < 1) Then
+            MI_dist_fee_tb.Text = "NULL"
+        ElseIf (MI_inventory_tb.Text.Length < 1) Then
+            MI_inventory_tb.Text = "NULL"
+        End If
+        Return True
+    End Function
+
     Private Sub search_btn_Click(sender As Object, e As EventArgs) Handles search_btn.Click
         If (MI_movie_id_tb.Text.Length > 0) Then
             SQL.ExecuteQuery("Select * From Movie_Data Where movie_id = " & MI_movie_id_tb.Text & ";")
@@ -85,9 +98,15 @@
     Private Sub MI_add_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_add_movie_btn.Click
         Dim id_gen As Integer = 0;
         If (MI_movie_id_tb.Text.Length < 1) Then
+            If ((MI_movie_title_tb.Text.Length + MI_movie_type_tb.Text.Length + MI_dist_fee_tb.Text.Length +
+                MI_inventory_tb.Text.Length) < 0) Then
+                ' If no other fields are inputted, do not generate a ID and exit function
+                Exit Sub
+            End If
             SQL.ExecuteQuery("select MAX(movie_id) from (select movie_id from Movie_Data) as G;")
             MI_movie_id_tb.Text = Convert.ToString(Convert.ToInt16(SQL.SQLTable.Rows(0).Item("movie_id")) + 1)
         End If
+        check_movie_values()
         SQL.ExecuteQuery("INSERT INTO Movie_Data (movie_id, movie_name, movie_type, distribution_fee, inventory, rating) " &
                          "VALUES (" & MI_movie_id_tb.Text & ", '" & MI_movie_title_tb.Text & "', '" &
                          MI_movie_type_tb.Text & "', " & MI_dist_fee_tb.Text & ", " & MI_inventory_tb.Text & ", 0);")
@@ -101,6 +120,7 @@
     End Sub
 
     Private Sub MI_edit_movie_btn_Click(sender As Object, e As EventArgs) Handles MI_edit_movie_btn.Click
+        check_movie_values()
         SQL.ExecuteQuery("UPDATE Movie_Data " &
                          "SET movie_name = '" & MI_movie_title_tb.Text & "', movie_type = '" & MI_movie_type_tb.Text &
                          "', distribution_fee = " & MI_dist_fee_tb.Text & ", inventory = " & MI_inventory_tb.Text &
