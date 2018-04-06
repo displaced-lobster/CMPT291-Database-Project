@@ -58,7 +58,7 @@ Partial Class CustomerHelp
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, 42)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1184, 669)
+        Me.Panel1.Size = New System.Drawing.Size(1184, 706)
         Me.Panel1.TabIndex = 2
         '
         'Button1
@@ -139,7 +139,7 @@ Partial Class CustomerHelp
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1187, 727)
+        Me.ClientSize = New System.Drawing.Size(1187, 760)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
