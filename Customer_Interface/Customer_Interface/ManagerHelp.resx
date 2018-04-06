@@ -117,16 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Label10.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="Label10.Text" xml:space="preserve">
-    <value>Modifying the movie database is very easy as a manager. For ease of use, a "Search" button is added which when pressed will search for the movie of the ID in the ID field and fill out all of the remaining fields if the movie exists. This makes it easy to edit movies and to confirm a movie you are thinking of removing. To add a movie, simply fill out the details and press "Add Movie". Not all fields need to be filled and an ID will be automatically generated if one is not given. To edit a movie, use the "Search" button to fill out the fields of a movie of a specific ID and edit the fields desired, afterwards pressing "Edit Movie". Finally, to remove a movie, one can input its ID and press the "Delete Movie" button.</value>
-  </data>
   <data name="Label3.Text" xml:space="preserve">
     <value>The Find Customer tab operates as a general purpose customer database query. Customers can be search via exact matching account number or by
 partial matching first name, last name, or email. Search key priority is from left (highest) to right (lowest). If no parameters are specified, the search
 will return all customers.</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Modifying the movie database is very easy as a manager. For ease of use, a "Search" button is added which when pressed will search for the movie of the ID in the ID field and fill out all of the remaining fields if the movie exists. This makes it easy to edit movies and to confirm a movie you are thinking of removing. To add a movie, simply fill out the details and press "Add Movie". Not all fields need to be filled and an ID will be automatically generated if one is not given. To edit a movie, use the "Search" button to fill out the fields of a movie of a specific ID and edit the fields desired, afterwards pressing "Edit Movie". Finally, to remove a movie, one can input its ID and press the "Delete Movie" button.
+
+</value>
   </data>
   <data name="Label12.Text" xml:space="preserve">
     <value>When this button is pressed, the manager is taken to an interface that prompts them for a month and a year (to be inputted in the proper, given format MM YYYY). When the fields are filled, the manager may press the “Execute” button and the sales for that month will be shown. The “Close” button will take the manager back to the data tab.</value>
