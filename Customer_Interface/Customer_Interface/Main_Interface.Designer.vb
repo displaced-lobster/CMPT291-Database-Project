@@ -40,7 +40,7 @@ Partial Class Main_Interface
         Me.Phone1800BLUEBOXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmailUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pbBlueBox = New System.Windows.Forms.PictureBox()
-        Me.SpecialQuery = New System.Windows.Forms.Button()
+        Me.InterestingFactoidToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.pbBlueBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,7 +48,7 @@ Partial Class Main_Interface
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.File, Me.WindowToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.File, Me.WindowToolStripMenuItem, Me.HelpToolStripMenuItem, Me.InterestingFactoidToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1184, 24)
@@ -160,15 +160,11 @@ Partial Class Main_Interface
         Me.pbBlueBox.TabIndex = 2
         Me.pbBlueBox.TabStop = False
         '
-        'SpecialQuery
+        'InterestingFactoidToolStripMenuItem
         '
-        Me.SpecialQuery.Location = New System.Drawing.Point(745, 533)
-        Me.SpecialQuery.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.SpecialQuery.Name = "SpecialQuery"
-        Me.SpecialQuery.Size = New System.Drawing.Size(119, 33)
-        Me.SpecialQuery.TabIndex = 4
-        Me.SpecialQuery.Text = "Interesting Factoid"
-        Me.SpecialQuery.UseVisualStyleBackColor = True
+        Me.InterestingFactoidToolStripMenuItem.Name = "InterestingFactoidToolStripMenuItem"
+        Me.InterestingFactoidToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
+        Me.InterestingFactoidToolStripMenuItem.Text = "Interesting Factoid"
         '
         'Main_Interface
         '
@@ -177,7 +173,6 @@ Partial Class Main_Interface
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Highlight
         Me.ClientSize = New System.Drawing.Size(1184, 711)
-        Me.Controls.Add(Me.SpecialQuery)
         Me.Controls.Add(Me.pbBlueBox)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -211,5 +206,5 @@ Partial Class Main_Interface
     Friend WithEvents ContactUsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Phone1800BLUEBOXToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmailUsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SpecialQuery As Button
+    Friend WithEvents InterestingFactoidToolStripMenuItem As ToolStripMenuItem
 End Class
