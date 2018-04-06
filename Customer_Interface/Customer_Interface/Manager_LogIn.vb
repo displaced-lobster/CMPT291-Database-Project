@@ -28,7 +28,7 @@
         End While
         SQL.AddParam("@uname", username.Text)
         SQL.AddParam("@passwd", passwd.Text)
-        SQL.ExecuteQuery("SELECT * FROM employee_passwords WHERE username = @uname " &
+        SQL.ExecuteQuery("SELECT * FROM Manager_Passwords WHERE username = @uname " &
                          "COLLATE Latin1_General_CS_AS " &
                          "And password = @passwd COLLATE Latin1_General_CS_AS;")
 
@@ -45,7 +45,7 @@
     Private Sub AccessAccount_Click(sender As Object, e As EventArgs) Handles AccessAccount.Click
         If SQL.HasConnection = True Then
             If IsAuthenticated() = True Then
-                ValidUser = SQL.SQLTable.Rows(0).Item("SIN")
+                ValidUser = SQL.SQLTable.Rows(0).Item("account_number")
                 Me.Hide()
                 Main_Manager_Interface.Show()
             End If
