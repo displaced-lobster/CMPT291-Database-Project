@@ -112,6 +112,12 @@
     <Compile Include="ManagerHelp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Manager_LogIn.Designer.vb">
+      <DependentUpon>Manager_LogIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_LogIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Recommendation.vb" />
     <Compile Include="CMPT291_ProjectDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerHelp.resx">
       <DependentUpon>ManagerHelp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_LogIn.resx">
+      <DependentUpon>Manager_LogIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales_Report_Generator.resx">
       <DependentUpon>Sales_Report_Generator.vb</DependentUpon>
