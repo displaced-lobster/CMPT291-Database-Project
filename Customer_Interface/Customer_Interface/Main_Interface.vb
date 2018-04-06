@@ -44,4 +44,23 @@
         pbBlueBox.Hide()
     End Sub
 
+    Private Sub Main_Interface_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub SpecialQuery_Click(sender As Object, e As EventArgs) Handles SpecialQuery.Click
+        Dim SQL As New SQLControl
+        SQL.ExecuteQuery("SELECT first_name, last_name " &
+                         "FROM actor_data, " &
+                         "(SELECT TOP 1 actor_data.actor_id, count(movie_data.movie_id) AS bad_movies " &
+                         "FROM actor_data, movie_data, acts_in " &
+                         "WHERE actor_data.actor_id = acts_in.actor_id AND " &
+                         "movie_data.movie_id = acts_in.movie_id AND " &
+                         "actor_data.rating > 4 AND movie_data.rating < 2 " &
+                         "GROUP BY actor_data.actor_id ORDER BY bad_movies DESC) AS flops " &
+                         "WHERE actor_data.actor_id = flops.actor_id;")
+        If SQL.HasException(True) Then Exit Sub
+
+        MsgBox("The best actor in the worst films: " + SQL.SQLTable.Rows(0).ItemArray(0) + " " + SQL.SQLTable.Rows(0).ItemArray(1))
+    End Sub
 End Class
