@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
+        Me.Close()
         Main_Interface.pbBlueBox.Show()
     End Sub
 End Class

@@ -216,26 +216,29 @@ Public Class Customer_Interface
         txtRes.Clear() ' clear the text field
         txtRes.Text = ""
         If txtSearch.Text = "" Then Exit Sub ' to take care of when the user has entered nothing at all
-
         ' run the query
-        If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or
-           Trim(txtSearch.Text.ToLower) = "drama" Or Trim(txtSearch.Text.ToLower) = "foreign" Then
-            SQL.ExecuteQuery("SELECT movie_name AS Movies " &
+        If rbCategory.Checked Then
+            If Trim(txtSearch.Text.ToLower) = "action" Or Trim(txtSearch.Text.ToLower) = "comedy" Or
+            Trim(txtSearch.Text.ToLower) = "drama" Or Trim(txtSearch.Text.ToLower) = "foreign" Then
+                SQL.ExecuteQuery("SELECT movie_name AS Movies " &
                              "FROM Movie_Data " &
                              "WHERE movie_type LIKE '" + Trim(txtSearch.Text.ToLower) + "';")
-            If SQL.HasException(True) Then Exit Sub
+                If SQL.HasException(True) Then Exit Sub
 
-            ttlMovies = SQL.SQLTable.Rows.Count()
+                ttlMovies = SQL.SQLTable.Rows.Count()
 
-            For i As Integer = 0 To (ttlMovies - 1)
-                movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
-            Next
-            txtRes.Text = movieList ' display movies
+                For i As Integer = 0 To (ttlMovies - 1)
+                    movieList = movieList + SQL.SQLTable.Rows(i).Item("Movies").ToString + vbCrLf
+                Next
+                txtRes.Text = movieList ' display movies
 
-            For i As Integer = 0 To (ttlMovies - 1)
-                movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
-            Next
+                For i As Integer = 0 To (ttlMovies - 1)
+                    movieSelect.Items.Add(SQL.SQLTable.Rows(i).Item("Movies").ToString)
+                Next
 
+            Else
+                MsgBox("If you are searching by category, the category name must be spelled correctly")
+            End If
         Else
             Dim words() As String = txtSearch.Text.Split(" "c) ' split based on the space character
             Dim queryString As String = "SELECT DISTINCT(movie_name) AS Movies "
